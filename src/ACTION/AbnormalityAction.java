@@ -81,7 +81,7 @@ public class AbnormalityAction extends ActionSupport{
 	public String list() {
 		try {
 			setRecords(getDao().getAllAbnormaity(jtSorting));
-			//sysout;
+		
 			System.out.println("Records = "+getRecords());
 			setResult("OK");
 		} catch (Exception e) {
