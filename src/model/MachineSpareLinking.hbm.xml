@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.MachineSpareLinking" table="machine_spare_linking">
+
+	<composite-id>
+	<key-property name="spareId" type="java.lang.Integer">
+			<column name="spare_id"></column>
+		</key-property>
+	<key-property name="parentId" type="java.lang.Integer">
+			<column name="parent_id"></column>
+		</key-property>	
+		
+	</composite-id>	
+		<property name="qty" type="java.lang.Integer">
+			<column name="qty"></column>
+		</property>
+			<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+  
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date"></column>
+		</property>
+		<property name="childLevel" type="java.lang.Integer">
+			<column name="child_level"></column>
+		</property>
+	</class>
+</hibernate-mapping>

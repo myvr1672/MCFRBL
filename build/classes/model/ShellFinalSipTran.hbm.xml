@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23 Jan, 2020 5:22:39 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.ShellFinalSipTran" table="shell_final_sip_tran">
+        <id name="shellAssetId" type="int">
+            <column name="shell_asset_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="docNo" type="string">
+            <column name="doc_no" length="30"/>
+        </property>
+        <property name="docNoRev" type="string">
+            <column name="doc_no_rev" length="10" />
+        </property>
+        <property name="docNoDate" type="date">
+            <column name="doc_no_date" length="13" />
+        </property>
+        <property name="shiftOfTesting" type="string">
+            <column name="shift_of_testing" length="10" />
+        </property>
+        <property name="dateOfTesting" type="date">
+            <column name="date_of_testing" length="13" />
+        </property>
+        <property name="alignmentRoofarchCarline" type="string">
+            <column name="alignment_roofarch_carline" length="10" />
+        </property>
+        <property name="weldingGrindingRwg" type="string">
+            <column name="welding_grinding_rwg" length="10" />
+        </property>
+        <property name="doorCutBackPiece" type="string">
+            <column name="door_cut_back_piece" length="15" />
+        </property>
+        <property name="carlineRoofsheetLeakageTest" type="string">
+            <column name="carline_roofsheet_leakage_test" length="10" />
+        </property>
+        <property name="weldingAttachmentWallHolding" type="string">
+            <column name="welding_attachment_wall_holding" length="10" />
+        </property>
+        <property name="weldingAuxiliaryWatertankBkt" type="string">
+            <column name="welding_auxiliary_watertank_bkt" length="10" />
+        </property>
+        <property name="weldingGrindingSidewall" type="string">
+            <column name="welding_grinding_sidewall" length="10" />
+        </property>
+        <property name="weldingStiffeningPlate" type="string">
+            <column name="welding_stiffening_plate" length="10" />
+        </property>
+        <property name="diagonalRmpuMountingStud" type="string">
+            <column name="diagonal_rmpu_mounting_stud" length="50" />
+        </property>
+        <property name="roofelementEndwallJoint" type="string">
+            <column name="roofelement_endwall_joint" length="10" />
+        </property>
+        <property name="dimensionAcOpeningRmpu" type="string">
+            <column name="dimension_ac_opening_rmpu" length="30" />
+        </property>
+        <property name="lavMountingBracketDistance" type="string">
+            <column name="lav_mounting_bracket_distance" length="20" />
+        </property>
+        <property name="carlineRoofsheetWelding" type="string">
+            <column name="carline_roofsheet_welding" length="10" />
+        </property>
+        <property name="roofarchCarlineWelding" type="string">
+            <column name="roofarch_carline_welding" length="10" />
+        </property>
+        <property name="sidewallVerticalpillarCoveringPlateWeld" type="string">
+            <column name="sidewall_verticalpillar_covering_plate_weld" length="10" />
+        </property>
+        <property name="doorCutoutWelding" type="string">
+            <column name="door_cutout_welding" length="10" />
+        </property>
+        <property name="roofelementLavsidewallWelding" type="string">
+            <column name="roofelement_lavsidewall_welding" length="10" />
+        </property>
+        <property name="lavsidewallSidewallWelding" type="string">
+            <column name="lavsidewall_sidewall_welding" length="10" />
+        </property>
+        <property name="endwallLavsidewallRoofUfWelding" type="string">
+            <column name="endwall_lavsidewall_roof_uf_welding" length="10" />
+        </property>
+        <property name="shellAssemblyGrinding" type="string">
+            <column name="shell_assembly_grinding" length="10" />
+        </property>
+        <property name="roofelementRmpuHoleDieAlignment" type="string">
+            <column name="roofelement_rmpu_hole_die_alignment" length="10" />
+        </property>
+        <property name="roofBktFitmentStage4" type="string">
+            <column name="roof_bkt_fitment_stage4" length="10" />
+        </property>
+        <property name="bodyWidth" type="string">
+            <column name="body_width" length="25" />
+        </property>
+        <property name="insulatingPin" type="string">
+            <column name="insulating_pin" length="15" />
+        </property>
+        <property name="crossBraceHeightL3t" type="string">
+            <column name="cross_brace_height_l3t" length="100" />
+        </property>
+        <property name="crossBraceHeightL2t" type="string">
+            <column name="cross_brace_height_l2t" length="100" />
+        </property>
+        <property name="roofHeightTroughSheet" type="string">
+            <column name="roof_height_trough_sheet" length="20" />
+        </property>
+        <property name="dbCnBkt" type="string">
+            <column name="db_cn_bkt" length="15" />
+        </property>
+        <property name="parameterRemark" type="string">
+            <column name="parameter_remark" length="500" />
+        </property>
+        <property name="finalTestingObservation" type="string">
+            <column name="final_testing_observation" length="2000" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" length="29" />
+        </property>
+    </class>
+</hibernate-mapping>

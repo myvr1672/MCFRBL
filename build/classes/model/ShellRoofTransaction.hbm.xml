@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ShellRoofTransaction" table="shell_roof_sip_tran">
+
+<id name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id"></column>
+		</id>
+            <property name="roofSipDocNo" type="string">
+               <column name="roof_sip_doc_no" length="20" /> 
+             </property>
+             <property name="roofSipShift" type="string">
+               <column name="roof_sip_shift" length="10" /> 
+             </property> 
+             
+             <property name="roofSipDate" type="date">
+               <column name="roof_sip_date"  /> 
+             </property> 
+             
+             
+             <property name="roofType" type="string">
+               <column name="roof_type" length="20" /> 
+             </property> 
+             <property name="roofMake" type="string">
+               <column name="roof_make" length="20" /> 
+             </property> 
+              <property name="machineSpotWeild" type="string">
+            <column name="machine_spot_weild" length="15" />
+        </property> 
+             
+         <property name="applicableDrawingNo" type="string">
+            <column name="applicable_drawing_no" length="15" />
+        </property>
+         <property name="applicableWiNo" type="string">
+            <column name="applicable_wi_no" length="15" />
+        </property>
+       
+         <property name="observationItemAsPerDrawing" type="string">
+            <column name="observation_item_as_per_drawing" length="15" />
+        </property>
+        <property name="observationComplianceWi" type="string">
+            <column name="observation_compliance_wi" length="15" />
+        </property>
+         
+         <property name="observationWeildingThroatLength" type="string">
+            <column name="observation_welding_throat_length" length="15" />
+        </property>
+          <property name="lengthRoof" type="integer">
+            <column name="length_roof"  />
+        </property>
+        
+         <property name="lengthRoofsheet" type="integer">
+            <column name="length_roofsheet"  />
+        </property>
+         <property name="widthRoofsheet" type="integer">
+            <column name="width_roofsheet"  />
+        </property>
+         <property name="roofArchPositionPp" type="integer">
+            <column name="roof_arch_position_pp"  />
+        </property>
+        <property name="roofArchPositionNpp" type="integer">
+            <column name="roof_arch_position_npp"  />
+        </property>
+        
+         <property name="roofArchCompletePp" type="integer">
+            <column name="roof_arch_complete_pp"  />
+        </property>
+          <property name="roofArchCompleteNpp" type="integer">
+            <column name="roof_arch_complete_npp"  />
+        </property>
+        
+        <property name="crossBraceHeight" type="integer">
+            <column name="cros_brace_height"  />
+        </property>
+            <property name="roofArchWidth" type="integer">
+            <column name="roof_arch_width"  />
+        </property>
+        
+        <property name="distanceRoofcenterlineFanbkt" type="string">
+            <column name="distance_roofcenterline_fanbkt" length="10" />
+        </property>
+         <property name="distanceRoofcenterlineCenterlinebkt" type="string">
+            <column name="distance_roofcenterline_centerlinebkt" length="10" />
+        </property>
+      
+         <property name="distanceRoofcenterlineBerthsuspensionbkt" type="string">
+            <column name="distance_roofcenterline_berthsuspensionbkt" length="10" />
+        </property>
+        <property name="trayAreaLength" type="string">
+            <column name="tray_area_length" length="50" />
+        </property>
+        
+       
+        <property name="distanceRoofcenterlineFanbktNppPp" type="string">
+            <column name="distance_roofcenterline_fanbkt_npp_pp" length="15" />
+        </property>
+        <property name="distanceRoofcenterlineTerminalboardbktNppPp" type="string">
+            <column name="distance_roofcenterline_terminalboardbkt_npp_pp" length="20" />
+        </property>
+        
+    
+        <property name="distanceRoofcenterlineChannelLhRh" type="string">
+            <column name="distance_roofcenterline_channel_lh_rh" length="15" />
+        </property>
+        <property name="distanceCrossBraceBracket" type="string">
+            <column name="distance_cross_brace_bracket" length="10" />
+        </property>
+        
+        <property name="checkedDimensionRemark" type="string">
+            <column name="checked_dimension_remark" length="15" />
+        </property>
+        
+        <property name="distanceCenterlineroofCenterlineflbkts" type="string">
+            <column name="distance_centerlineroof_centerlineflbkts" length="15" />
+        </property>
+        
+        
+         <property name="conditionRoofSheetJoint" type="string">
+            <column name="condition_roof_sheet_joint" length="15" />
+        </property>
+         <property name="roofSheetJointLeakage" type="string">
+            <column name="roof_sheet_joint_leakage" length="15" />
+        </property>
+         <property name="conditionRoofSheetArch" type="string">
+            <column name="condition_roof_sheet_arch" length="15" />
+        </property>
+         <property name="distanceRoofcenterlineCenterlineelbkt" type="string">
+            <column name="distance_roofcenterline_centerlineelbkt" length="15" />
+        </property>
+        
+        <property name="fittmentLstiffener" type="string">
+            <column name="fittment_lstiffener" length="15"/>
+        </property>
+        <property name="distanceRoofcenterlineSpeakerbkt" type="string">
+            <column name="distance_roofcenterline_speakerbkt" length="10" />
+        </property>
+        
+        <property name="distanceRoofcenterlineElbkt" type="string">
+            <column name="distance_roofcenterline_elbkt" length="15" />
+        </property>
+        <property name="noCrossBracesFitted" type="string">
+            <column name="no_cross_braces_fitted" length="15" />
+        </property>
+         <property name="detailsOfModification" type="string">
+            <column name="details_of_modification" length="10" />
+        </property>
+        
+        <property name="detailsOfTrial" type="string">
+            <column name="Details_of_trial" length="15" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="15" />
+        </property>
+        <property name="shellRoofSipTestingStatus" type="string">
+            <column name="shell_roof_sip_testing_status" length="15" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="date">
+            <column name="entry_time"  />
+        </property>
+    </class>
+</hibernate-mapping>

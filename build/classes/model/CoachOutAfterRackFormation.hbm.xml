@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.CoachOutAfterRackFormation" table="coach_out_after_rack">
+
+<id name="coachOutID" type="java.lang.Integer">
+			<column name="coach_out_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            <property name="rackId" type="string">
+               <column name="rack_id" length="15" /> 
+             </property>
+             
+             <property name="coachNumbers" type="string">
+               <column name="coach_numbers" length="100" /> 
+             </property> 
+             
+             <property name="rackFormationDate" type="date">
+               <column name="rack_formation_date"  /> 
+             </property> 
+             <property name="dispatchDate" type="date">
+               <column name="dispatch_date"  /> 
+             </property> 
+             <property name="remarks" type="string">
+               <column name="remarks" length="500" /> 
+             </property> 
+             <property name="comissionedDate" type="date">
+               <column name="commissioned_date"  /> 
+             </property> 
+             <property name="dispatchedRailway" type="string">
+               <column name="dispatched_railway" length="5" /> 
+             </property>
+    </class>
+</hibernate-mapping>

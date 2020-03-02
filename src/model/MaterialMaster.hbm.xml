@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.MaterialMaster" table="material_master" >
+		<id name="unifiedPL" type="java.lang.String">
+			<column name="unified_pl" length="12"></column>	
+		</id>
+		<property name="plNo" type="java.lang.String">
+			<column name="pl_no" length="12"></column>
+		</property>
+		<property name="materialDesc" type="java.lang.String">
+			<column name="material_desc" length="250"></column>
+		</property>
+		<property name="unitOfMeasure" type="java.lang.String">
+			<column name="unit_of_measure" length="12"></column>
+		</property>
+		<property name="ratePerUnit" type="java.lang.Integer">
+			<column name="rate_per_unit"></column>
+		</property>
+		<property name="weight" type="float">
+			<column name="weight"></column>
+		</property>
+		<property name="weightUnit" type="java.lang.String">
+			<column name="weight_unit" length="10"></column>
+		</property>
+		<property name="dimensionLength" type="float">
+			<column name="dimension_length"></column>
+		</property>
+		<property name="dimensionWidth" type="float">
+			<column name="dimension_width"></column>
+		</property>
+		<property name="dimensionHeight" type="float">
+			<column name="dimension_height"></column>
+		</property>
+		
+		<property name="dimensionUnit" type="java.lang.String">
+			<column name="dimension_unit" length="10"></column>
+		</property>
+		<property name="volume" type="float">
+			<column name="volume"></column>
+		</property>
+		<property name="volumeUnit" type="java.lang.String">
+			<column name="volume_unit" length="10"></column>
+		</property>
+		<property name="criticalityLevel" type="java.lang.String">
+			<column name="criticality_level" length="5"></column>
+		</property>
+				
+		<property name="drawing" type="java.lang.String">
+			<column name="drawing" length="25"></column>
+		</property>
+		<property name="typeOfMaterial" type="java.lang.String">
+			<column name="type_of_material" length="25"></column>
+		</property>
+		<property name="selfLife" type="java.lang.String">
+			<column name="self_life" length="10"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

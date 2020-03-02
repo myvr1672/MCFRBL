@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ShellTransaction" table="shell_tran">
+
+<id name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            <property name="shellTransactionId" type="string">
+               <column name="shell_transaction_id" length="20" /> 
+             </property>
+             <property name="stageId" type="string">
+               <column name="stage_id" length="10" /> 
+             </property> 
+             
+             <property name="previousStageId" type="string">
+               <column name="prev_stage_id" length="20" /> 
+             </property>             
+         <property name="underFrameNumber" type="string">
+            <column name="underframe_no" length="15" />
+        </property>
+        
+         <property name="shellNumber" type="string">
+            <column name="shell_no" length="15" />
+        </property>
+         <property name="shellType" type="string">
+            <column name="shell_type" length="15" />
+        </property>
+     <property name="assemblyStartDate" type="date">
+            <column name="assembly_start_date" length="10" />
+        </property>
+         <property name="assemblyEndDate" type="date">
+            <column name="assembly_end_date" length="10" />
+        </property>
+      
+        <property name="expectedExitDate" type="date">
+            <column name="expected_exit_date" length="10" />
+        </property>
+       
+        
+         <property name="assemblyDispatchDate" type="date">
+            <column name="assembly_dispatch_date" length="10" />
+        </property>
+  
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+         <property name="exitRemarks" type="string">
+            <column name="exit_remarks" length="300" />
+        </property>
+          <property name="lateRemarks" type="string">
+            <column name="late_reason" length="300" />
+        </property>
+     
+        <property name="transactionUser" type="string">
+            <column name="transaction_user" length="15" />
+        </property>
+        <property name="transactionDate" type="string">
+            <column name="transaction_date" length="20" />
+        </property>
+        
+    
+        <property name="asignedFlag" type="java.lang.Integer">
+            <column name="asigned_flag"/>
+        </property>
+        <property name="receiptatNextStage" type="date">
+            <column name="receipt_at_next_stage" length="10" />
+        </property>
+        <property name="cbcPpEndMake" type="string">
+            <column name="cbc_pp_end_make" length="50" />
+        </property>
+        <property name="cbcPpEndSrno" type="string">
+            <column name="cbc_pp_end_srno" length="50" />
+        </property>
+        <property name="cbcNppEndMake" type="string">
+            <column name="cbc_npp_end_make" length="50" />
+        </property>
+        <property name="cbcNppEndSrno" type="string">
+            <column name="cbc_npp_end_srno" length="50" />
+        </property>
+       <property name="cbcFittedByPp" type="string">
+            <column name="cbc_fitted_by_pp" length="30" />
+        </property>
+        <property name="cbcFittedByNpp" type="string">
+            <column name="cbc_fitted_by_npp" length="20" />
+        </property>
+        <property name="sideWallMakeNoPp" type="string">
+            <column name="side_wall_make_no_pp" length="20" />
+        </property>
+         <property name="sideWallMakeNoNpp" type="string">
+            <column name="side_wall_make_no_npp" length="20" />
+        </property>
+         <property name="underframeFrontPartMakePp" type="string">
+            <column name="underframe_front_part_make_pp" length="20" />
+        </property>
+        <property name="underframeFrontPartMakeNpp" type="string">
+            <column name="underframe_front_part_make_npp" length="20" />
+        </property>
+         <property name="underframeCompleteMake" type="string">
+            <column name="underframe_complete_make" length="50" />
+        </property>
+        <property name="roofMake" type="string">
+            <column name="roof_make" length="50" />
+        </property>
+         <property name="endwallMakePp" type="string">
+            <column name="endwall_make_pp" length="50" />
+        </property>
+        <property name="endwallMakeNpp" type="string">
+            <column name="endwall_make_npp" length="50" />
+        </property>
+     <property name="endwallSipFlag" type="java.lang.Integer">
+            <column name="endwall_sip_flag"/>
+        </property>
+         <property name="roofSipFlag" type="java.lang.Integer">
+            <column name="roof_sip_flag"/>
+        </property>
+         <property name="underframeSipFlag" type="java.lang.Integer">
+            <column name="underframe_sip_flag"/>
+        </property>
+          <property name="sidewallSipFlag" type="java.lang.Integer">
+            <column name="sidewall_sip_flag"/>
+        </property>
+         <property name="lavsidewallSipFlag" type="java.lang.Integer">
+            <column name="lavsidewall_sip_flag"/>
+        </property>
+        <property name="stage1SipFlag" type="java.lang.Integer">
+            <column name="stage1_sip_flag"/>
+        </property>
+        <property name="stage2SipFlag" type="java.lang.Integer">
+            <column name="stage2_sip_flag"/>
+        </property>
+        <property name="stage3SipFlag" type="java.lang.Integer">
+            <column name="stage3_sip_flag"/>
+        </property>
+        <property name="stage4SipFlag" type="java.lang.Integer">
+            <column name="stage4_sip_flag"/>
+        </property>
+        
+        
+        <property name="finalIspectionReportFlag" type="java.lang.Integer">
+            <column name="final_ispection_report_flag"/>
+        </property>
+        <property name="checkListFlag" type="java.lang.Integer">
+            <column name="check_list_flag"/>
+        </property>
+        <property name="testingClearanceMemoFlag" type="java.lang.Integer">
+            <column name="testing_clearance_memo_flag"/>
+        </property>
+   
+   <property name="testingClearanceMemoDocNo" type="string">
+            <column name="testing_clearance_memo_doc_no" length="50" />
+        </property>
+      <property name="testingClearanceMemoDate" type="date">
+            <column name="testing_clearance_memo_date"/>
+        </property>
+         <property name="testingClearanceMemoStatus" type="string">
+            <column name="testing_clearance_memo_status" length="30" />
+        </property>
+         <property name="testingClearanceMemoRemark" type="string">
+            <column name="testing_clearance_memo_remark" length="500" />
+        </property>
+  
+         <property name="waterTankBkt1" type="string">
+            <column name="water_tank_bkt_1" length="30" />
+        </property>
+         <property name="waterTankBkt2" type="string">
+            <column name="water_tank_bkt_2" length="30" />
+        </property>
+         <property name="waterTankBkt3" type="string">
+            <column name="water_tank_bkt_3" length="30" />
+        </property>
+         <property name="waterTankBkt4" type="string">
+            <column name="water_tank_bkt_4" length="30" />
+        </property>
+        <property name="sideDoorMakeNoLeft" type="string">
+            <column name="side_door_make_no_left" length="15" />
+        </property>
+        <property name="sideDoorMakeNoRight" type="string">
+            <column name="side_door_make_no_right" length="15" />
+        </property>
+        <property name="roofAcAssemblyMakeNoPp" type="string">
+            <column name="roof_ac_assembly_make_no_pp" length="15" />
+        </property>
+        <property name="roofAcAssemblyMakeNoNpp" type="string">
+            <column name="roof_ac_assembly_make_no_npp" length="15" />
+        </property>
+        <property name="wtccMakeNoPp" type="string">
+            <column name="wtcc_make_no_pp" length="15" />
+        </property>
+        <property name="wtccMakeNoNpp" type="string">
+            <column name="wtcc_make_no_npp" length="15" />
+        </property>
+        <property name="slidingDoorMakeNoLeft" type="string">
+            <column name="sliding_door_make_no_left" length="15" />
+        </property>
+        <property name="slidingDoorMakeNoRight" type="string">
+            <column name="sliding_door_make_no_right" length="15" />
+        </property>
+        <property name="shellAssembledBy" type="string">
+            <column name="shell_assembled_by" length="15" />
+        </property>
+        <property name="jigNo" type="string">
+            <column name="jig_no" length="15" />
+        </property>
+        <property name="assemblySipFlag" type="integer">
+            <column name="assembly_sip_flag"  />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="shell_ds" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">shell_transaction_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_transaction_id</text-property>
+                    <text-property name="heading">shell_transaction_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">expected_exit_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">expected_exit_date</text-property>
+                    <text-property name="heading">expected_exit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remarks</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remarks</text-property>
+                    <text-property name="heading">remarks</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">shell_transaction_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">expected_exit_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">remarks</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">shell_transaction_id</property>
+                    <property name="nativeName">shell_transaction_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">expected_exit_date</property>
+                    <property name="nativeName">expected_exit_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">remarks</property>
+                    <property name="nativeName">remarks</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.shell_tran.shell_transaction_id,public.shell_tran.expected_exit_date,public.shell_tran.shell_type,public.shell_tran.remarks,public.shell_tran.assembly_start_date
+from shell_tran]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-ledger</property>
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="6">
+            <property name="dataSet">shell_ds</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">shell_transaction_id</property>
+                    <text-property name="displayName">shell_transaction_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["shell_transaction_id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">assembly_start_date</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">expected_exit_date</property>
+                    <text-property name="displayName">expected_exit_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["expected_exit_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">shell_type</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["shell_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">remarks</property>
+                    <text-property name="displayName">remarks</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["remarks"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="25"/>
+            <column id="26"/>
+            <column id="27"/>
+            <column id="28"/>
+            <column id="43"/>
+            <header>
+                <row id="7">
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#000040</property>
+                    <cell id="8">
+                        <label id="30">
+                            <text-property name="text">Shell Production Id</text-property>
+                        </label>
+                    </cell>
+                    <cell id="9">
+                        <label id="32">
+                            <text-property name="text">Jig Entry Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="34">
+                            <text-property name="text">Expected  Dispatch Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="11">
+                        <label id="36">
+                            <text-property name="text">Shell Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="40">
+                        <label id="44">
+                            <text-property name="text">Remarks</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="13">
+                    <cell id="14">
+                        <data id="31">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">shell_transaction_id</property>
+                        </data>
+                    </cell>
+                    <cell id="15">
+                        <data id="33">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">assembly_start_date</property>
+                        </data>
+                    </cell>
+                    <cell id="16">
+                        <data id="35">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">expected_exit_date</property>
+                        </data>
+                    </cell>
+                    <cell id="17">
+                        <data id="37">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">shell_type</property>
+                        </data>
+                    </cell>
+                    <cell id="41">
+                        <data id="45">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">remarks</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

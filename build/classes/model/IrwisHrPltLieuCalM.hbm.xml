@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.IrwisHrPltLieuCalM" table="IRWIS_HR_PLT_LIEU_CAL_M">
+        <composite-id name="id" class="beans.IrwisHrPltLieuCalMId">
+            <key-property name="pcalId" type="string">
+                <column name="PCAL_ID" length="5" />
+            </key-property>
+            <key-property name="plant" type="string">
+                <column name="PLANT" length="10" />
+            </key-property>
+            <key-property name="calHodyDate" type="date">
+                <column name="CAL_HODY_DATE" length="10" />
+            </key-property>
+            <key-property name="hodyCode" type="string">
+                <column name="HODY_CODE" length="5" />
+            </key-property>
+            <key-property name="lieuDate" type="date">
+                <column name="LIEU_DATE" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

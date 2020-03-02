@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.MachineList" table="machine_master">
+
+	<id name="machineId" type="java.lang.Integer">
+			<column name="machine_id"></column>
+			
+		</id>
+		<!-- <property name="maintenanceShopId" type="string">
+            <column name="maintenance_shop_id" />
+            <generator class="increment"></generator>
+        </property> -->
+            <property name="machineSrNo" type="string">
+               <column name="machine_sr_no"/> 
+             </property>
+   
+        <property name="machineDescription" type="string">
+            <column name="machine_description" />
+        </property>
+        
+         <property name="workingShop" type="string">
+               <column name="working_shop"/> 
+             </property>
+         
+         
+      
+    </class>
+</hibernate-mapping>

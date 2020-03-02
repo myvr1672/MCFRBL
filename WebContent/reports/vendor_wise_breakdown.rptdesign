@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">5</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <parameters>
+        <scalar-parameter name="Vendor" id="111">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdlc3M=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="vendorWiseData Set" id="5">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">machine_sr_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">machine_sr_no</text-property>
+                    <text-property name="heading">machine_sr_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">machine_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">machine_type</text-property>
+                    <text-property name="heading">machine_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">machine_type_description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">machine_type_description</text-property>
+                    <text-property name="heading">machine_type_description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amc_agency_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">amc_agency_id</text-property>
+                    <text-property name="heading">amc_agency_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amc_agency_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">amc_agency_name</text-property>
+                    <text-property name="heading">amc_agency_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">date_of_commissioned</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">date_of_commissioned</text-property>
+                    <text-property name="heading">date_of_commissioned</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">purchase_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">purchase_by</text-property>
+                    <text-property name="heading">purchase_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">purchased_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">purchased_no</text-property>
+                    <text-property name="heading">purchased_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">working_shop</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">working_shop</text-property>
+                    <text-property name="heading">working_shop</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">machine_status</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">machine_status</text-property>
+                    <text-property name="heading">machine_status</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">breakdown_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">breakdown_date</text-property>
+                    <text-property name="heading">breakdown_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">breakdown_details</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">breakdown_details</text-property>
+                    <text-property name="heading">breakdown_details</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dispatch_date_for_repair</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dispatch_date_for_repair</text-property>
+                    <text-property name="heading">dispatch_date_for_repair</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">failure_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">failure_code</text-property>
+                    <text-property name="heading">failure_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remarks</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remarks</text-property>
+                    <text-property name="heading">remarks</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">Vendor</property>
+                    <property name="paramName">Vendor</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">machine_sr_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">machine_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">machine_type_description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">amc_agency_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">amc_agency_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">date_of_commissioned</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">purchase_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">purchased_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">working_shop</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">machine_status</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">breakdown_date</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">breakdown_details</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">dispatch_date_for_repair</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">failure_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">remarks</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">machine_sr_no</property>
+                    <property name="nativeName">machine_sr_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">machine_type</property>
+                    <property name="nativeName">machine_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">machine_type_description</property>
+                    <property name="nativeName">machine_type_description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">amc_agency_id</property>
+                    <property name="nativeName">amc_agency_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">amc_agency_name</property>
+                    <property name="nativeName">amc_agency_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">date_of_commissioned</property>
+                    <property name="nativeName">date_of_commissioned</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">purchase_by</property>
+                    <property name="nativeName">purchase_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">purchased_no</property>
+                    <property name="nativeName">purchased_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">working_shop</property>
+                    <property name="nativeName">working_shop</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">machine_status</property>
+                    <property name="nativeName">machine_status</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">breakdown_date</property>
+                    <property name="nativeName">breakdown_date</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">breakdown_details</property>
+                    <property name="nativeName">breakdown_details</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">dispatch_date_for_repair</property>
+                    <property name="nativeName">dispatch_date_for_repair</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">failure_code</property>
+                    <property name="nativeName">failure_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">remarks</property>
+                    <property name="nativeName">remarks</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+B.machine_sr_no,B.machine_type,
+B.machine_description AS machine_type_description,
+A.amc_agency_id,A.amc_agency_name,B.date_of_commissioned AS date_of_commissioned,
+B.purchased_by AS purchase_by,B.purchase_no AS purchased_no,
+B.working_shop AS working_shop,
+B.machine_status AS machine_status,
+C.breakdown_date AS breakdown_date,
+C.breakdown_details AS breakdown_details,
+C.dispatch_date_for_repair AS dispatch_date_for_repair,
+C.failure_code AS failure_code,
+C.remarks AS remarks
+
+from
+machine_amc_agency A INNER JOIN  machine_master B 
+ON
+A.amc_agency_id = B.amc_agency_id
+INNER JOIN machine_breakdown C
+ON B.machine_id::text = C.machine_id::text
+where A.amc_agency_id=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amc_agency_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amc_agency_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amc_agency_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amc_agency_name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>150</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amc_agency_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amc_agency_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>150</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>machine_sr_no</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>machine_sr_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>machine_sr_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>machine_type_description</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>machine_type_description</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>machine_type_description</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>date_of_commissioned</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>date_of_commissioned</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>date_of_commissioned</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>purchase_by</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>purchase_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>purchase_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>purchased_no</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>purchased_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>purchased_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>working_shop</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>working_shop</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>working_shop</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>machine_status</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>machine_status</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>machine_status</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>breakdown_date</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>breakdown_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>breakdown_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>breakdown_details</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>breakdown_details</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>breakdown_details</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>dispatch_date_for_repair</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>dispatch_date_for_repair</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>dispatch_date_for_repair</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>failure_code</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>failure_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>failure_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>remarks</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>500</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>remarks</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>remarks</design:label>
+            <design:formattingHints>
+              <design:displaySize>500</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="7">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="8">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="9">
+                            <property name="levels">
+                                <tabular-level name="machine_type" id="10">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">machine_type</property>
+                                </tabular-level>
+                                <tabular-level name="machine_type_description" id="19">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">machine_type_description</property>
+                                </tabular-level>
+                                <tabular-level name="amc_agency_id" id="11">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">amc_agency_id</property>
+                                </tabular-level>
+                                <tabular-level name="amc_agency_name" id="12">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">amc_agency_name</property>
+                                </tabular-level>
+                                <tabular-level name="breakdown_date" id="13">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">breakdown_date</property>
+                                </tabular-level>
+                                <tabular-level name="breakdown_details" id="14">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">breakdown_details</property>
+                                </tabular-level>
+                                <tabular-level name="date_of_commissioned" id="15">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">date_of_commissioned</property>
+                                </tabular-level>
+                                <tabular-level name="dispatch_date_for_repair" id="16">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">dispatch_date_for_repair</property>
+                                </tabular-level>
+                                <tabular-level name="failure_code" id="17">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">failure_code</property>
+                                </tabular-level>
+                                <tabular-level name="machine_sr_no" id="18">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">machine_sr_no</property>
+                                </tabular-level>
+                                <tabular-level name="purchase_by" id="20">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">purchase_by</property>
+                                </tabular-level>
+                                <tabular-level name="purchased_no" id="21">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">purchased_no</property>
+                                </tabular-level>
+                                <tabular-level name="remarks" id="22">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">remarks</property>
+                                </tabular-level>
+                                <tabular-level name="working_shop" id="23">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">working_shop</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">vendorWiseData Set</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="97">
+            <column id="98">
+                <property name="width">0.975in</property>
+            </column>
+            <column id="99">
+                <property name="width">4.333333333333333in</property>
+            </column>
+            <column id="100"/>
+            <row id="101">
+                <cell id="102">
+                    <image id="106">
+                        <property name="height">65px</property>
+                        <property name="width">80px</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="103">
+                    <text id="105">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textUnderline">underline</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[VENDOR-WISE MACHINE BREAKDOWN ]]></text-property>
+                    </text>
+                    <data id="109">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontStyle">italic</property>
+                        <property name="textAlign">center</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Vendor</property>
+                                <expression name="expression" type="javascript">params["Vendor"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Vendor</property>
+                    </data>
+                </cell>
+                <cell id="104">
+                    <image id="107">
+                        <property name="height">74px</property>
+                        <property name="width">95px</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="24">
+            <property name="cube">Data Cube</property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="26">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="27">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="28">
+                                    <property name="level">Group/machine_type</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="29">
+                                            <property name="content">
+                                                <data name="machine_type" id="30">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">machine_type</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="31">
+                                    <property name="level">Group/machine_type_description</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="32">
+                                            <property name="content">
+                                                <data name="machine_sr_no" id="66">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">machine_sr_no</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="35">
+                                    <property name="level">Group/amc_agency_id</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="36">
+                                            <property name="content">
+                                                <data name="machine_type_description" id="34">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">machine_type_description</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="39">
+                                    <property name="level">Group/amc_agency_name</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="40">
+                                            <property name="content">
+                                                <data name="amc_agency_id" id="38">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">amc_agency_id</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="43">
+                                    <property name="level">Group/breakdown_date</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="44">
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View5" id="47">
+                                    <property name="level">Group/breakdown_details</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="48">
+                                            <property name="content">
+                                                <data name="breakdown_date" id="46">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">breakdown_date</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View6" id="51">
+                                    <property name="level">Group/date_of_commissioned</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="52">
+                                            <property name="content">
+                                                <data name="breakdown_details" id="50">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">breakdown_details</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View7" id="55">
+                                    <property name="level">Group/dispatch_date_for_repair</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="56">
+                                            <property name="content">
+                                                <data name="dispatch_date_for_repair" id="58">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">dispatch_date_for_repair</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View8" id="59">
+                                    <property name="level">Group/failure_code</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="60">
+                                            <property name="content">
+                                                <data name="failure_code" id="62">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">failure_code</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View9" id="63">
+                                    <property name="level">Group/machine_sr_no</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="64">
+                                            <property name="content">
+                                                <data name="date_of_commissioned" id="54">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">date_of_commissioned</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View10" id="67">
+                                    <property name="level">Group/purchase_by</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="68">
+                                            <property name="content">
+                                                <data name="purchase_by" id="70">
+                                                    <property name="resultSetColumn">purchase_by</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View11" id="71">
+                                    <property name="level">Group/purchased_no</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="72">
+                                            <property name="content">
+                                                <data name="purchased_no" id="74">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">purchased_no</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View12" id="75">
+                                    <property name="level">Group/remarks</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="76">
+                                            <property name="content">
+                                                <data name="remarks" id="78">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">remarks</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View13" id="79">
+                                    <property name="level">Group/working_shop</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="80">
+                                            <property name="content">
+                                                <data name="working_shop" id="82">
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">working_shop</property>
+                                                </data>
+                                            </property>
+                                            <property name="borderTopStyle">solid</property>
+                                            <property name="borderTopWidth">thin</property>
+                                            <property name="borderLeftStyle">solid</property>
+                                            <property name="borderLeftWidth">thin</property>
+                                            <property name="borderBottomStyle">solid</property>
+                                            <property name="borderBottomWidth">thin</property>
+                                            <property name="borderRightStyle">solid</property>
+                                            <property name="borderRightWidth">thin</property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="25">
+                    <property name="content">
+                        <label id="83">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Machine Type</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="33">
+                    <property name="content">
+                        <label id="92">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Machine SrNo</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="37">
+                    <property name="content">
+                        <label id="84">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Machine Type Description</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="41">
+                    <property name="content">
+                        <label id="85">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">AMC Agency Id</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="45">
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="49">
+                    <property name="content">
+                        <label id="87">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Breakdown Date</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="53">
+                    <property name="content">
+                        <label id="88">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Breakdown Details</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="57">
+                    <property name="content">
+                        <label id="90">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Dispatch Date For Repair</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="61">
+                    <property name="content">
+                        <label id="91">
+                            <text-property name="text">Failure Code</text-property>
+                        </label>
+                    </property>
+                    <property name="textAlign">center</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="65">
+                    <property name="content">
+                        <label id="89">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Date Of Commissioned</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="69">
+                    <property name="content">
+                        <label id="93">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Purchase By</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="73">
+                    <property name="content">
+                        <label id="94">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Purchased No</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="77">
+                    <property name="content">
+                        <label id="95">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Remarks</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="81">
+                    <property name="content">
+                        <label id="96">
+                            <property name="textAlign">center</property>
+                            <text-property name="text">Working Shop</text-property>
+                        </label>
+                    </property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                </extended-item>
+            </property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">machine_type</property>
+                    <expression name="expression">dimension["Group"]["machine_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">machine_type_description</property>
+                    <expression name="expression">dimension["Group"]["machine_type_description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amc_agency_id</property>
+                    <expression name="expression">dimension["Group"]["amc_agency_id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">amc_agency_name</property>
+                    <expression name="expression">dimension["Group"]["amc_agency_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">breakdown_date</property>
+                    <expression name="expression">dimension["Group"]["breakdown_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">breakdown_details</property>
+                    <expression name="expression">dimension["Group"]["breakdown_details"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">date_of_commissioned</property>
+                    <expression name="expression">dimension["Group"]["date_of_commissioned"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">dispatch_date_for_repair</property>
+                    <expression name="expression">dimension["Group"]["dispatch_date_for_repair"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">failure_code</property>
+                    <expression name="expression">dimension["Group"]["failure_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">machine_sr_no</property>
+                    <expression name="expression">dimension["Group"]["machine_sr_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">purchase_by</property>
+                    <expression name="expression">dimension["Group"]["purchase_by"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">purchased_no</property>
+                    <expression name="expression">dimension["Group"]["purchased_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">remarks</property>
+                    <expression name="expression">dimension["Group"]["remarks"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">working_shop</property>
+                    <expression name="expression">dimension["Group"]["working_shop"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

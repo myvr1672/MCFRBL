@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.MachinePerformAction" table="machine_failed_action">
+        <composite-id>
+            <key-property name="machineId" type="java.lang.Integer">
+                <column name="machine_id"/>
+            </key-property>
+            <key-property name="breakdownId" type="java.lang.Integer">
+                <column name="breakdown_id"/>
+            </key-property>
+           
+        </composite-id>
+      
+        <property name="actionPerformed" type="string">
+            <column name="action_performed" length="250" />
+        </property>
+         <property name="remarks" type="string">
+            <column name="remarks" length="100" />
+        </property>
+         <property name="status" type="string">
+            <column name="status" length="250" />
+        </property>
+         <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="createdDate" type="date">
+            <column name="created_date"/>
+        </property>      
+        <property name="rectificationDate" type="timestamp">
+            <column name="rectification_date"/>
+        </property>
+        
+            </class>
+</hibernate-mapping>

@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="furnish_ds" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">furnishing_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">furnishing_asset_id</text-property>
+                    <text-property name="heading">furnishing_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_no</text-property>
+                    <text-property name="heading">shell_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_pp_side_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bogie_pp_side_asset_id</text-property>
+                    <text-property name="heading">bogie_pp_side_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_npp_side_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bogie_npp_side_asset_id</text-property>
+                    <text-property name="heading">bogie_npp_side_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">expected_exit_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">expected_exit_date</text-property>
+                    <text-property name="heading">expected_exit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">production_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">production_by</text-property>
+                    <text-property name="heading">production_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remarks</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remarks</text-property>
+                    <text-property name="heading">remarks</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">bogie_number</text-property>
+                    <text-property name="heading">bogie_number</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">furnishing_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shell_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">bogie_pp_side_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">bogie_npp_side_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">expected_exit_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">production_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">remarks</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">bogie_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">furnishing_asset_id</property>
+                    <property name="nativeName">furnishing_asset_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shell_no</property>
+                    <property name="nativeName">shell_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">bogie_pp_side_asset_id</property>
+                    <property name="nativeName">bogie_pp_side_asset_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">bogie_npp_side_asset_id</property>
+                    <property name="nativeName">bogie_npp_side_asset_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">expected_exit_date</property>
+                    <property name="nativeName">expected_exit_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">production_by</property>
+                    <property name="nativeName">production_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">remarks</property>
+                    <property name="nativeName">remarks</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">bogie_number</property>
+                    <property name="nativeName">bogie_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.furnishing_tran.furnishing_asset_id,public.shell_tran.shell_no,public.shell_tran.assembly_dispatch_date,public.shell_tran.shell_type,public.furnishing_tran.bogie_pp_side_asset_id,public.furnishing_tran.bogie_npp_side_asset_id,public.furnishing_tran.assembly_start_date,public.furnishing_tran.expected_exit_date,public.furnishing_tran.production_by,public.furnishing_tran.remarks,public.bogieset_trans.bogie_number
+from furnishing_tran,public.shell_tran,public.bogieset_trans
+where public.shell_tran.shell_asset_id=public.furnishing_tran.shell_asset_id AND public.bogieset_trans.bogie_asset_id=public.furnishing_tran.bogie_pp_side_asset_id;]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="np_side" id="99">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">furnishing_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">furnishing_asset_id</text-property>
+                    <text-property name="heading">furnishing_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">bogie_number</text-property>
+                    <text-property name="heading">bogie_number</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">furnishing_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">bogie_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">furnishing_asset_id</property>
+                    <property name="nativeName">furnishing_asset_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">bogie_number</property>
+                    <property name="nativeName">bogie_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.furnishing_tran.furnishing_asset_id,public.bogieset_trans.bogie_number
+from furnishing_tran,public.shell_tran,public.bogieset_trans
+where public.shell_tran.shell_asset_id=public.furnishing_tran.shell_asset_id AND public.bogieset_trans.bogie_asset_id=public.furnishing_tran.bogie_npp_side_asset_id;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnishing_asset_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnishing_asset_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnishing_asset_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>bogie_number</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>bogie_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>bogie_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="join_ds" id="100">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">furnish_ds::bogie_number</property>
+                    <property name="alias">furnish_ds::bogie_number</property>
+                    <text-property name="displayName">furnish_ds::bogie_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::furnishing_asset_id</property>
+                    <property name="alias">furnish_ds::furnishing_asset_id</property>
+                    <text-property name="displayName">furnish_ds::furnishing_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">np_side::furnishing_asset_id</property>
+                    <property name="alias">np_side::furnishing_asset_id</property>
+                    <text-property name="displayName">np_side::furnishing_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::production_by</property>
+                    <property name="alias">production_by</property>
+                    <text-property name="displayName">furnish_ds::production_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::expected_exit_date</property>
+                    <property name="alias">expected_exit_date</property>
+                    <text-property name="displayName">furnish_ds::expected_exit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::bogie_npp_side_asset_id</property>
+                    <property name="alias">bogie_npp_side_asset_id</property>
+                    <text-property name="displayName">furnish_ds::bogie_npp_side_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::assembly_dispatch_date</property>
+                    <property name="alias">assembly_dispatch_date</property>
+                    <text-property name="displayName">furnish_ds::assembly_dispatch_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::assembly_start_date</property>
+                    <property name="alias">assembly_start_date</property>
+                    <text-property name="displayName">furnish_ds::assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::shell_type</property>
+                    <property name="alias">shell_type</property>
+                    <text-property name="displayName">furnish_ds::shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::bogie_pp_side_asset_id</property>
+                    <property name="alias">bogie_pp_side_asset_id</property>
+                    <text-property name="displayName">furnish_ds::bogie_pp_side_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::shell_no</property>
+                    <property name="alias">shell_no</property>
+                    <text-property name="displayName">furnish_ds::shell_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnish_ds::remarks</property>
+                    <property name="alias">remarks</property>
+                    <text-property name="displayName">furnish_ds::remarks</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">np_side::bogie_number</property>
+                    <property name="alias">np_side::bogie_number</property>
+                    <text-property name="displayName">np_side::bogie_number</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">furnish_ds::furnishing_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shell_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">bogie_pp_side_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">bogie_npp_side_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">expected_exit_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">production_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">remarks</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">furnish_ds::bogie_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">np_side::furnishing_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">np_side::bogie_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>furnish_ds</value>
+                <value>np_side</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">right-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">furnish_ds</property>
+                    <property name="rightDataSet">np_side</property>
+                    <expression name="leftExpression">dataSetRow["furnishing_asset_id"]</expression>
+                    <expression name="rightExpression">dataSetRow["furnishing_asset_id"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-ledger</property>
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="46">
+            <property name="fontSize">12pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#000040</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">FURNISHING SHOP</text-property>
+        </label>
+        <table id="101">
+            <property name="dataSet">join_ds</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">shell_no</property>
+                    <text-property name="displayName">furnish_ds::shell_no</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["shell_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">shell_type</property>
+                    <text-property name="displayName">furnish_ds::shell_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["shell_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">assembly_dispatch_date</property>
+                    <text-property name="displayName">furnish_ds::assembly_dispatch_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["assembly_dispatch_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">assembly_start_date</property>
+                    <text-property name="displayName">furnish_ds::assembly_start_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">furnish_ds::bogie_number</property>
+                    <text-property name="displayName">furnish_ds::bogie_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["furnish_ds::bogie_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">np_side::bogie_number</property>
+                    <text-property name="displayName">np_side::bogie_number</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["np_side::bogie_number"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">expected_exit_date</property>
+                    <text-property name="displayName">furnish_ds::expected_exit_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["expected_exit_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">production_by</property>
+                    <text-property name="displayName">furnish_ds::production_by</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["production_by"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">remarks</property>
+                    <text-property name="displayName">furnish_ds::remarks</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["remarks"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="132"/>
+            <column id="133"/>
+            <column id="134"/>
+            <column id="135"/>
+            <column id="136"/>
+            <column id="137"/>
+            <column id="138"/>
+            <column id="139"/>
+            <column id="140"/>
+            <header>
+                <row id="102">
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#000040</property>
+                    <cell id="103">
+                        <label id="141">
+                            <text-property name="text">Shell No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="104">
+                        <label id="143">
+                            <text-property name="text">Shell Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="105">
+                        <label id="145">
+                            <text-property name="text">Dispatched From Shell</text-property>
+                        </label>
+                    </cell>
+                    <cell id="106">
+                        <label id="147">
+                            <text-property name="text">Assembly Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="107">
+                        <label id="149">
+                            <text-property name="text">PP side Bogie No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="108">
+                        <label id="151">
+                            <text-property name="text">N-PP side Bogie No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="109">
+                        <label id="153">
+                            <text-property name="text">Expected Exit Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="110">
+                        <label id="155">
+                            <text-property name="text">Production By</text-property>
+                        </label>
+                    </cell>
+                    <cell id="111">
+                        <label id="157">
+                            <text-property name="text">Remarks</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="112">
+                    <cell id="113">
+                        <data id="142">
+                            <property name="resultSetColumn">shell_no</property>
+                        </data>
+                    </cell>
+                    <cell id="114">
+                        <data id="144">
+                            <property name="resultSetColumn">shell_type</property>
+                        </data>
+                    </cell>
+                    <cell id="115">
+                        <data id="146">
+                            <property name="resultSetColumn">assembly_dispatch_date</property>
+                        </data>
+                    </cell>
+                    <cell id="116">
+                        <data id="148">
+                            <property name="resultSetColumn">assembly_start_date</property>
+                        </data>
+                    </cell>
+                    <cell id="117">
+                        <data id="150">
+                            <property name="resultSetColumn">furnish_ds::bogie_number</property>
+                        </data>
+                    </cell>
+                    <cell id="118">
+                        <data id="152">
+                            <property name="resultSetColumn">np_side::bogie_number</property>
+                        </data>
+                    </cell>
+                    <cell id="119">
+                        <data id="154">
+                            <property name="resultSetColumn">expected_exit_date</property>
+                        </data>
+                    </cell>
+                    <cell id="120">
+                        <data id="156">
+                            <property name="resultSetColumn">production_by</property>
+                        </data>
+                    </cell>
+                    <cell id="121">
+                        <data id="158">
+                            <property name="resultSetColumn">remarks</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="122">
+                    <cell id="123"/>
+                    <cell id="124"/>
+                    <cell id="125"/>
+                    <cell id="126"/>
+                    <cell id="127"/>
+                    <cell id="128"/>
+                    <cell id="129"/>
+                    <cell id="130"/>
+                    <cell id="131"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

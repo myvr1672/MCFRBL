@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.ShowerTestingTransaction" table="shower_testing_transaction" >
+		<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+			
+		</id>
+		<property name="docNo" type="java.lang.String">
+			<column name="doc_no" length="100"></column>
+		</property>
+		<property name="dateOfTesting" type="date">
+			<column name="date_of_testing" ></column>
+		</property>	
+		<property name="shift" type="java.lang.String">
+			<column name="shift" length="10"></column>
+		</property>	
+		<property name="testingTimeFlag" type="java.lang.String">
+			<column name="testing_time_flag" length="3"></column>
+		</property>	
+		<property name="leakageRoofFlag" type="java.lang.String">
+			<column name="leakage_roof_flag" length="3"></column>
+		</property>
+		<property name="leakageJoinEndRoofFlag" type="java.lang.String">
+			<column name="leakage_join_end_roof_flag" length="3"></column>
+		</property>
+		<property name="leakageCantRailAreaFlag" type="java.lang.String">
+			<column name="leakage_cant_rail_area_flag" length="3"></column>
+		</property>
+		<property name="leakageVentilatorAreaFlag" type="java.lang.String">
+			<column name="leakage_ventilator_area_flag" length="3"></column>
+		</property>
+		<property name="leakageShutterSlidingFlag" type="java.lang.String">
+			<column name="leakage_shutter_sliding_flag" length="3"></column>
+		</property>
+		<property name="leakageAcThroughFlag" type="java.lang.String">
+			<column name="leakage_ac_through_flag" length="3"></column>
+		</property>
+		<property name="leakageWindowsFlag" type="java.lang.String">
+			<column name="leakage_windows_flag" length="3"></column>
+		</property>
+		
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date"></column>
+		</property>
+		
+		<property name="showerTestingStatus" type="java.lang.String">
+			<column name="shower_testing_status"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

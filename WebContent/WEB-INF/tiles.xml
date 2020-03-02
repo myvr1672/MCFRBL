@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+<tiles-definitions>
+	<definition name="baseLayout" template="/BaseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/Header.jsp" />
+		<put-attribute name="menu" value="/Menu.jsp" />
+		<put-attribute name="body" value="" />
+<!-- 		<put-attribute name="chat" value="/chatApplication.jsp" /> -->
+		<put-attribute name="footer" value="/Footer.jsp" />
+		
+	</definition>
+	
+	<definition name="/working_days_by_year.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/working_days_by_year.jsp" />
+</definition>
+<definition name="/working_days_by_financial_year.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/working_days_by_financial_year.jsp" />
+</definition>
+	
+	<definition name="/working_days.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/working_days.jsp" />
+</definition>
+<definition name="/empMasterHelp.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/empMasterHelp.jsp" />
+</definition>
+<definition name="/assetMasterFin.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AssetMasterFin.jsp" />
+</definition>
+<definition name="/sheetMaster.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Shell Production" />
+		<put-attribute name="body" value="/sheetMaster.jsp" />
+</definition>
+
+<definition name="/sheetMetalTransaction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Daily production in Sheet Metal Shop" />
+		<put-attribute name="body" value="/sheetMetalShopTrans.jsp" />
+</definition>
+
+<definition name="/assetMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AssetMaster.jsp" />
+</definition>
+<definition name="/empMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/EmpMaster.jsp" />
+</definition>
+
+<definition name="/dash_board.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/dashboard.jsp" />
+</definition>
+	
+	<definition name="/workshop_holidays.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/workshop_holidays.jsp" />
+</definition>
+<definition name="/chatApplication.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/chatApplication.jsp" />
+</definition>
+<definition name="/jobCreationHelp.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/JobCreationHelp.jsp" />
+</definition>
+
+<definition name="/shiftAllotmentHelp.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/ShiftAllotmentHelp.jsp" />
+</definition>
+
+<definition name="/attendenceMarkingHelp.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AttendanceMarkingHelp.jsp" />
+</definition>
+<definition name="/jobAllocationHelp.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/JobAllocationHelp.jsp" />
+</definition>
+<definition name="/addJobMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AddJobMaster.jsp" />
+</definition>
+<definition name="/linkSpareMasterByMachine.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/linkSpareMasterByMachine.jsp" />
+</definition>
+<definition name="/jobAllotment.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Job Allotment" />
+        <put-attribute name="body" value="/JobAllocationDate.jsp" />
+</definition>
+
+<definition name="/define_holidays.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/DefineHolidayType.jsp" />
+</definition>
+<definition name="/sheet_cutting.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/sheet_cutting.jsp" />
+</definition>
+
+<definition name="/layout-shop.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/shop_dashboard_calender.jsp" />
+</definition>
+
+
+<definition name="/dashboard-manpower-bogie.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/dashboard-manpower-bogie.jsp" />
+</definition>
+<definition name="/dashboard-shop-production.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/dashboard-shop-production.jsp" />
+</definition>
+
+<definition name="/AttendanceListReport.tiles" extends="baseLayout">
+        <put-attribute name="body" value= "/dashboard_attendance.jsp"/>
+</definition>
+
+<definition name="/ShiftRoaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/dashboard_shiftroater.jsp" />
+</definition>
+
+<definition name="/CoachTurnOut.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/Coach_turnout_report.jsp" />
+</definition>
+
+<definition name="/CoachProductionStatus.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/Coach_production_status_report.jsp" />
+</definition>
+<definition name="/CoachProdStatus.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/coachprod_status_report.jsp" />
+</definition>
+
+	<definition name="/yearwiseRSP.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/yearwiseRSP.jsp" />
+</definition>
+
+<definition name="/MonthlyYearwise.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Yearwise Report" />
+		<put-attribute name="body" value="/MonthlyYearwiseReport.jsp" />
+		
+	</definition>
+	
+	<definition name="/DaywiseTotalDespatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daywise Total Despatch Report" />
+		<put-attribute name="body" value="/DaywiseTotalDespatch.jsp" />
+		
+	</definition>
+	
+	<definition name="/DespatchSummary.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Despatch Summary Report" />
+		<put-attribute name="body" value="/DespatchSummary.jsp" />
+		
+	</definition>
+	
+	<definition name="/Gateout.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Gateout Report" />
+		<put-attribute name="body" value="/Gateout.jsp" />
+		
+	</definition>
+	
+	<definition name="/FurnishingReport2.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Furnishing Report 2" />
+		<put-attribute name="body" value="/FurnishingShop2.jsp" />
+		
+	</definition>
+	<definition name="/shellSIPComponent.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/shellSIPComponent.jsp"/>
+	</definition>
+
+<definition name="/shellSIPStage.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/shellSIPStage.jsp"/>
+	</definition>
+
+<definition name="/shellSIPAssembly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/shellSIPAssembly.jsp"/>
+	</definition>
+	<definition name="/shellSIPFinal.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/shellSIPFinal.jsp"/>
+	</definition>
+<definition name="/shellCheckList.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/shellCheckList.jsp"/>
+	</definition>
+<definition name="/bogieSIP.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/bogieSIP.jsp"/>
+	</definition>
+<definition name="/shellQualityClearanceMemo.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Issue Testing Clearance" />
+		<put-attribute name="body" value="/shellQualityClearanceMemo.jsp"/>
+	</definition>
+<definition name="/shellQualityClearanceReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Issue Testing Clearance" />
+		<put-attribute name="body" value="/shellQualityClearanceReportList.jsp"/>
+	</definition>
+	<definition name="/DailyAttendanceBogie.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daily Attendance Bogie" />
+		<put-attribute name="body" value="/DailyAttendanceBogie.jsp" />
+		
+	</definition>
+	
+		<definition name="/DailyReportBogie.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daily Report Bogie" />
+		<put-attribute name="body" value="/dailyrptbogie.jsp" />
+		
+	</definition>
+	
+	<definition name="/GMPositionBogie.tiles" extends="baseLayout">
+		<put-attribute name="title" value="GM Position Bogie" />
+		<put-attribute name="body" value="/GMpositionBogieShop.jsp" />
+		
+	</definition>
+	
+		<definition name="/PositionRSP.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Position RSP" />
+		<put-attribute name="body" value="/positionRSP.jsp" />
+		
+	</definition>
+	<definition name="/wheelQualityClearancePara.tiles" extends="baseLayout"> 
+         <put-attribute name="body" value="/wheelQualityClearancePara.jsp" />
+	</definition> 
+	<definition name="/wheelSelfInspectionCtrb.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/wheelSelfInspectionPara.jsp" />
+	</definition>
+	
+	<definition name="/DailyAttWheel.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daily attendance wheel" />
+		<put-attribute name="body" value="/dailyattwheel.jsp" />
+		
+	</definition>
+	
+	<definition name="/inspectionwheelaxlectrbreport.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/wheel_axle_SIP_report.jsp" />
+	</definition>
+	<definition name="/inspectionCTRBreport.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/wheel_ctrb_SIP_report.jsp" />
+	</definition>
+	<definition name="/ListBogieWheel.tiles" extends="baseLayout">
+		<put-attribute name="title" value="List Bogie Wheel" />
+		<put-attribute name="body" value="/list_of_bogie_wheel_prod.jsp" />
+		
+	</definition>
+	
+	<definition name="/flatBogieSIPReport.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/flatBogieSipPara.jsp" />
+	</definition>
+	<definition name="/finalBogieSIPReport.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/finalBogieSipPara.jsp" />
+	</definition>
+	
+	<definition name="/WheelProd.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Wheel Prod" />
+		<put-attribute name="body" value="/wheel_prod.jsp" />
+		
+	</definition>
+	
+	<definition name="/CoachPositionTypewise.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Position Typewise" />
+		<put-attribute name="body" value="/coach_position_typewise.jsp" />
+		
+	</definition>
+	<definition name="/CoachPositionYearlySumm.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Position Yearly" />
+		<put-attribute name="body" value="/coach_position_yearly_summary.jsp" />
+		
+	</definition>
+	
+	<definition name="/DailyAttendanceFurnishing.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daily Attendance Furnishing" />
+		<put-attribute name="body" value="/daily_attendance_furnishing.jsp" />
+		
+	</definition>
+	
+	<definition name="/MonthlyDispatchedCoaches.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Dispatched Coaches" />
+		<put-attribute name="body" value="/monthly_dispatched_coaches.jsp" />
+		
+	</definition>
+	<definition name="/DispatchedCoachesAsOn.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Dispatched Coaches As On" />
+		<put-attribute name="body" value="/dispatched_coaches_as_on.jsp" />
+		
+	</definition>
+	
+	<definition name="/MonthlyAwaitingToDispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Awaiting To Dispatch" />
+		<put-attribute name="body" value="/monthly_awaiting_to_dispatch.jsp" />
+		
+	</definition>
+	
+		<definition name="/MonthlyWithheldCoaches.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Withheld Coaches" />
+		<put-attribute name="body" value="/monthly_withheld_coaches.jsp" />
+		
+	</definition>
+	
+		<definition name="/YearlyAwaitingToDispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Awaiting To Dispatch" />
+		<put-attribute name="body" value="/yearly_awaitingtodispatch_furnishing.jsp" />
+		
+	</definition>
+	
+		<definition name="/YearlyDispatchCoaches.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Dispatch Coaches" />
+		<put-attribute name="body" value="/yearly_dispatch_coaches_furnishing.jsp" />
+		
+	</definition>
+	
+		<definition name="/YearlyWithheldCoaches.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Withheld Coaches" />
+		<put-attribute name="body" value="/yearly_withheld_coaches_furnishing.jsp" />
+		
+	</definition>	
+	
+	<definition name="/DailyAttendance.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daily Attendance" />
+		<put-attribute name="body" value="/daily_attendance_paint.jsp" />
+		
+	</definition>	
+	
+	<definition name="/DailyAttendanceS.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Daily Attendance" />
+		<put-attribute name="body" value="/daily_attendance_shell.jsp" />
+		
+	</definition>	
+	
+		<definition name="/CoachDispatchDetails.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Dispatch Details" />
+		<put-attribute name="body" value="/coach_despatch_details.jsp" />
+		
+	</definition>	
+	
+	<definition name="/ShopwiseMonthlyStaffPosition.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shopwise Monthly Staff Position" />
+		<put-attribute name="body" value="/shopwise_monthly_staff_position.jsp" />
+		
+	</definition>	
+	<definition name="/wheelSIPAxle.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/wheelSIPForAxle.jsp" />
+	</definition>
+<definition name="/wheelQualityClearanceMemo.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/wheelQualityClearanceMemo.jsp" />
+	</definition>
+<definition name="/wheelQualityClearanceReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/wheelQualityClearanceFinalReport.jsp" />
+	</definition>
+	
+	<definition name="/awaitingToDispatchAsondate.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Awaiting To Dispatch As On" />
+		<put-attribute name="body" value="/awaitingtodispatch_asondate_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/dispatchedCoachesAsondate.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Dispatched Coaches As On" />
+		<put-attribute name="body" value="/dispatched_coaches_asondate_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/coachHoldingAsondate.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Holding As On" />
+		<put-attribute name="body" value="/withheld_coaches_asondate_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/awaitingToDispatchMonthly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Awaiting To Dispatch " />
+		<put-attribute name="body" value="/monthly_awaiting_to_dispatch_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/dispatchedCoachesMonthly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Dispatched Coaches" />
+		<put-attribute name="body" value="/BogieShopParameterDateSelection.jsp" />
+		
+	</definition>	
+	
+	<definition name="/coachHoldingMonthly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Coach Holding" />
+		<put-attribute name="body" value="/monthly_withheld_coaches_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/awaitingToDispatchYearly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Awaiting To Dispatch" />
+		<put-attribute name="body" value="/yearly_awaitingtodispatchcoaches_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/dispatchedCoachesYearly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Dispatched Coaches" />
+		<put-attribute name="body" value="/yearly_dispatched_coaches_bogie.jsp" />
+		
+	</definition>	
+	
+	<definition name="/coachHoldingYearly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Coach Holding" />
+		<put-attribute name="body" value="/yearly_withheld_coaches_bogie.jsp" />
+		
+	</definition>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+<definition name="/layout_shop_trial.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/shop_dashboard_calender_trial.jsp" />
+</definition>
+<definition name="/gantChartExampleDisplay.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Gantt Chart" />
+        <put-attribute name="body" value="/GantChartExample.jsp"/>
+</definition>
+
+<definition name="/shellDefectMaster.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/ShellDefectMaster.jsp"/>
+	</definition>
+
+<definition name="/shellDefectLogEntry.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Shell Defect"/>
+		<put-attribute name="body" value="/ShellDefectsEntry.jsp"/>
+	</definition>
+
+<definition name="/coachReceiptAtQuality.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Receipt Coach for Quality Check" />
+		<put-attribute name="body" value="/coachReceiptAtQualityShop.jsp" />
+	</definition>
+<definition name="/coachAvailableForQuality.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach for Quality Check" />
+		<put-attribute name="body" value="/coachAvailableForQualityCheck.jsp"/>
+	</definition>
+<definition name="/bogiProductionStatus.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/bogiProductionStatusReport.jsp" />
+</definition>
+
+<definition name="/bogieAssemblyYearlyOutturn.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/bogieAssemblyYearlyOutturnReport.jsp" />
+</definition>
+<definition name="/performTestingInCoach.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach for Quality Check" />
+		<put-attribute name="body" value="/performTestingInCoach.jsp"/>
+	</definition>
+<definition name="/furnishingStageClearance.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/furnishingStageClearance.jsp"/>
+	</definition>	
+
+<definition name="/ShowDetails.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/ShowCoachPositionInFurn.jsp"/>
+	</definition>
+<definition name="/FailedStages.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/FailedStages.jsp"/>
+	</definition>
+<definition name="/ShellStage.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/ShellStage.jsp"/>
+	</definition>	
+<definition name="/interval.tiles" extends="baseLayout">
+	<put-attribute name="body" value="/intervalfind.jsp"/>
+	</definition>	
+<definition name="/RSPStatusRlyDistribution.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/RSPStatusRlyDistributionReport.jsp" />
+</definition>
+
+<definition name="/bogiePositionRSP.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/bogiePositionRSPReport.jsp" />
+</definition>
+<definition name="/bogieQualityClearanceMemo.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/bogieQualityClearanceMemo.jsp" />
+	</definition>
+
+<definition name="/bogieQualityClearanceReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add SIP Details" />
+		<put-attribute name="body" value="/bogieQualityClearanceReport.jsp" />
+	</definition>
+
+<definition name="/displayEmployeeJob.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/manpower_parameter.jsp" />
+</definition>
+
+
+<definition name="/layout-stage-count.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/countstagewise.jsp" />
+</definition>
+
+<!-- <definition name="/ShiftAllotment.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/Shiftmaster.jsp" />
+</definition>
+ -->
+ 
+ <definition name="/shiftAllotment.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Shift Allotment" />
+        <put-attribute name="body" value="/EmployeeShiftDate.jsp" />
+</definition>
+
+
+<definition name="/attendanceMarking.tiles" extends="baseLayout">
+        <put-attribute name="title" value="Shift Allotment" />
+        <put-attribute name="body" value="/EmployeeAttendanceDate.jsp" />
+</definition>
+
+ 
+<definition name="/AttendanceAbsent.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/attendence.jsp" />
+</definition>
+
+<definition name="/PendingJobList.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/dashboard_pendingjoblist.jsp" />
+</definition>
+
+<definition name="/AttendanceList.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/prst_abst_list.jsp" />
+</definition>
+
+
+<definition name="/layout-shop-all.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/shop_dashboard_calender_allstages.jsp" />
+</definition>
+	
+	<definition name="/listofwheel.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/listofwheel.jsp" />
+</definition>
+	<definition name="/listofwheelch.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/wheel_list.jsp" />
+   </definition>
+<definition name="/materialShortage.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Material Shortage" />
+		<put-attribute name="body" value="/MaterialShoratage.jsp" />
+</definition>
+	<definition name="/listofbogieall.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/listofbogieall.jsp" />
+   </definition>
+
+	<definition name="/listofbogie.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/dashboard_bogie_fur.jsp" />
+    </definition>
+     <definition name="/listofshell.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/listofshell.jsp" />
+    </definition>
+    
+     <definition name="/listofpaint.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/listofpaint.jsp" />
+    </definition>
+    
+     <definition name="/listoffurnish.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/listoffurnish.jsp" />
+    </definition>
+    
+      <definition name="/coach_dispatch_list.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/Asset_Rly_Production_Year.jsp" />
+    </definition>
+    
+     <definition name="/coach_dispatch.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/Coach_year_list.jsp" />
+    </definition>
+
+	<definition name="/resetSuccess.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Reset Password" />
+		<put-attribute name="body" value="/resetSuccess.jsp" />
+	</definition>
+	<definition name="/resetPwd.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Reset Password" />
+		<put-attribute name="body" value="/ResetPassword.jsp" />
+	</definition>
+	
+	<definition name="/changeSuccess.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/changePasswordSuccess.jsp" />
+	</definition>
+	<definition name="/changePwd.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/changePassword.jsp" />
+	</definition>
+<!--      <definition name="/welcome.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Welcome" /> -->
+<!-- 		<put-attribute name="body" value="/Welcome.jsp" /> -->
+<!-- 	</definition> -->
+	<definition name="/dashboard_coach.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/dashboard_coach.jsp" />
+	</definition>
+	<definition name="/user.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add User" />
+		<put-attribute name="body" value="/User.jsp" />
+	</definition>
+	<definition name="/user.success.tiles" extends="baseLayout">
+		<put-attribute name="title" value="User Added" />
+		<put-attribute name="body" value="/SuccessUser.jsp" />
+	</definition>
+	
+	<definition name="/abnormality.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Abnormality" />
+		<put-attribute name="body" value="/Abnormality.jsp" />
+	</definition>
+	<definition name="/shelltype.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Sheet Cutting" />
+		<put-attribute name="body" value="/sheet_cutting.jsp" />
+	</definition>
+	
+	<definition name="/wheeltype.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Whell Production" />
+		<put-attribute name="body" value="/wheelShopProduction.jsp" />
+	</definition>
+	<definition name="/bogietype.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Bogie Production" />
+		<put-attribute name="body" value="/bogieShopProduction.jsp" />
+	</definition>
+	
+	<definition name="/furnishingShopProduction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Furnishing Shop Production" />
+		<put-attribute name="body" value="/furnishingShopProduction.jsp" />
+	</definition>
+	
+	<definition name="/shellAvailableAtFurnishing.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shell Avaiable at Furnishing Shop" />
+		<put-attribute name="body" value="/shellAvailableAtFurnishing.jsp" />
+	</definition>
+	
+	<definition name="/shelltransaction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Shell Production" />
+		<put-attribute name="body" value="/shellShopProduction.jsp" />
+	</definition>
+	<definition name="/coachOutforRailway.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Out for Railway" />
+		<put-attribute name="body" value="/coachOutForRailway.jsp" />
+	</definition>
+	
+	<definition name="/coachSentToRailway.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coaches sent to Railway" />
+		<put-attribute name="body" value="/coachSentToRailway.jsp" />
+	</definition>
+	
+	<definition name="/paintTransaction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Paint Production" />
+		<put-attribute name="body" value="/paintShopProduction.jsp" />
+	</definition>
+	<definition name="/PaintSipTran.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Paint Interior Inspection" />
+		<put-attribute name="body" value="/paintShopSip.jsp" />
+	</definition>
+	
+	<definition name="/PaintInspClearTran.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Paint Quality Clearance" />
+		<put-attribute name="body" value="/paintShopInspClearance.jsp"/>
+	</definition>
+<definition name="/creLhbPowerCar.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/creLHBPowerCarPara.jsp" />
+</definition>	
+	
+<definition name="/safetyparadasets.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/safetyparadasetsPara.jsp" />
+</definition>
+
+	
+	<definition name="/addMachineProduction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Machine Production" />
+		<put-attribute name="body" value="/MachineUtilizationDate.jsp" />
+</definition>
+	<definition name="/finishingTransaction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Paint Production" />
+		<put-attribute name="body" value="/finishingShopProduction.jsp" />
+	</definition>
+	
+	<definition name="/wheeldispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Wheel Dispatch" />
+		<put-attribute name="body" value="/wheelDispatchFromWheelShop.jsp" />
+	</definition>
+	
+	<definition name="/bogiedispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Bogie Dispatch" />
+		<put-attribute name="body" value="/bogieDispatchFromBogieShop.jsp" />
+	</definition>
+	
+	<definition name="/shelldispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shell Dispatch" />
+		<put-attribute name="body" value="/shellDispatchFromShellShop.jsp" />
+	</definition>
+	
+	<definition name="/paintMemoClearance.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Dispatch Certificate of Painted Shell" />
+		<put-attribute name="body" value="/paintMemoClearancePara.jsp" />
+	</definition>
+	
+	<definition name="/extrPaintFinalInspection.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Final Inspection of Exterior Painting of Shell" />
+		<put-attribute name="body" value="/extrPaintFinalInspectionPara.jsp" />
+	</definition>
+
+	<definition name="/extrPaintSip.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Self Inspection of Exterior Painting of Shell" />
+		<put-attribute name="body" value="/extrPaintSipPara.jsp" />
+	</definition>
+
+	<definition name="/intrPaintFinalInspection.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Final Inspection of Interior Painting of Shell" />
+		<put-attribute name="body" value="/intrPaintFinalInspectionPara.jsp" />
+	</definition>
+
+	<definition name="/intrPaintSip.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Self Inspection of Interior Painting of Shell" />
+		<put-attribute name="body" value="/intrPaintSipPara.jsp" />
+	</definition>
+		
+	
+	
+	
+	
+	
+	<definition name="/paintdispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Paint Dispatch" />
+		<put-attribute name="body" value="/shellDispatchFromPaintShop.jsp" />
+	</definition>
+
+	<definition name="/furnishingdispatch.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Furnishing Dispatch" />
+		<put-attribute name="body" value="/coachDispatchFromFurnishingShop.jsp" />
+	</definition>
+	
+	<definition name="/wheelreceipt.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Wheel Receipt" />
+		<put-attribute name="body" value="/wheelReceiptAtBogieShop.jsp" />
+	</definition>
+	
+	<definition name="/bogiereceipt.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Bogie Receipt" />
+		<put-attribute name="body" value="/bogieReceiptAtFurnishingShop.jsp" />
+	</definition>
+	<definition name="/shellreceipt.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shell Receipt" />
+		<put-attribute name="body" value="/shellReceiptAtPaintShop.jsp" />
+	</definition>
+	<definition name="/shellreceiptAtFurnishing.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shell Receipt at Furnishing Shop" />
+		<put-attribute name="body" value="/shellReceiptAtFurnishingShop.jsp" />
+	</definition>
+	<definition name="/furnishingreceipt.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Furnishing Receipt" />
+		<put-attribute name="body" value="/coachReceiptAtfinishingShop.jsp" />
+	</definition>
+	
+	
+<definition name="/addEmpMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AddEmpMaster.jsp" />
+</definition>
+
+<definition name="/addMachineMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AddMachineMaster.jsp" />
+</definition>
+
+<definition name="/performActionMachine.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/performActionMachine.jsp" />
+</definition>
+<definition name="/machine_FIR_master.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/MachineFIRMaster.jsp" />
+</definition>
+<definition name="/MachineSpare.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/MachineSpare.jsp" />
+</definition>
+<definition name="/MachineScheduleActivity.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/MachineScheduleActivity.jsp" />
+</definition>
+<definition name="/reportMachineFailure.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/reportMachineFailure.jsp" />
+</definition>
+<definition name="/machineFailed.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Failed" />
+		<put-attribute name="body" value="/MachineFailedTemp.jsp" />
+	</definition>
+<definition name="/performActionMachine.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/performActionMachine.jsp" />
+</definition>
+<definition name="/SafetyInstructionMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/SafetyInstructionMaster.jsp" />
+</definition>
+
+<definition name="/MachineList.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/MachineList.jsp" />
+</definition>
+
+<definition name="/addAMCAgencyMaster.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/AddAmcAgencyMaster.jsp" />
+</definition>
+
+<definition name="/machineScheduleActivity.tiles" extends="baseLayout">
+     <put-attribute name="title" value="Link Activity with Machine"/>
+        <put-attribute name="body" value="/LinkActivityWithMachine.jsp" />
+</definition>
+<definition name="/machineScheduleAdd.tiles" extends="baseLayout">
+     <put-attribute name="title" value="Link Activity with Machine"/>
+        <put-attribute name="body" value="/AddMachineSchedule.jsp" />
+</definition>
+
+<definition name="/transferEmpWithinMCF.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/transferEmpWithingMCF.jsp" />
+</definition>
+<definition name="/transferEmpOutMCF.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/transferEmpOutMCF.jsp" />
+</definition>
+	
+	<definition name="/employeejobdescription.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/EmployeeJobMaster.jsp" />
+</definition>
+	
+	
+	<definition name="/coachreceipt.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Firnishing Receipt" />
+		<put-attribute name="body" value="/coachReceiptForTurnout.jsp" />
+	</definition>
+	
+	<definition name="/MachineOperation.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Operation" />
+		<put-attribute name="body" value="/MachineOperation.jsp" />
+	</definition>
+	
+	<definition name="/MachineBreakdown.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Breakdown" />
+		<put-attribute name="body" value="/MachineBreakdown.jsp" />
+	</definition>
+	
+	<definition name="/coachavailableforRack.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Ready for Dispatch" />
+		<put-attribute name="body" value="/coachReadyForRack.jsp" />
+	</definition>
+	
+	<definition name="/wheelavailable.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Wheelset Available" />
+		<put-attribute name="body" value="/wheelAvailableAtBogieShop.jsp" />
+	</definition>
+	<definition name="/bogieavailable.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Bogieset Available" />
+		<put-attribute name="body" value="/bogieAvailableAtFurnishingShop.jsp" />
+	</definition>
+	
+	<definition name="/coachavailable.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Coach Available" />
+		<put-attribute name="body" value="/coachAvailableAtFinishingShop.jsp" />
+	</definition>
+	
+	
+	<definition name="/shellavailable.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shell Available" />
+		<put-attribute name="body" value="/shellAvailableAtPaintShop.jsp" />
+	</definition>
+	<definition name="/shellAssemblyMearging.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Shell Assembly" />
+		<put-attribute name="body" value="/shell_assembly_merging.jsp" />
+	</definition>
+	<definition name="/user.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Create" />
+		<put-attribute name="body" value="/CreateUser.jsp" />
+	</definition>
+	<definition name="/addCoachProduction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Coach Production" />
+		<put-attribute name="body" value="/CoachStageCountDate.jsp" />
+	</definition>
+	<definition name="/addShopProduction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Coach Production" />
+		<put-attribute name="body" value="/ShopCountDate.jsp" />
+	</definition>
+	
+	<definition name="/addAssetGateOut.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Asset Gate Out" />
+		<put-attribute name="body" value="/AssetOutturnRailwayDate.jsp" />
+		
+	</definition>
+	<definition name="/addAnnualTarget.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Annual Coach Target" />
+		<put-attribute name="body" value="/CreateAnnualTargetYear.jsp" />
+	</definition>
+	
+	<definition name="/addAnnualTargetShop.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Annual Shop Target" />
+		<put-attribute name="body" value="/CreateAnnualTargetShopYear.jsp" />
+	</definition>
+	
+	<definition name="/addAnnualTargetRSP.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Annual RSP Target" />
+		<put-attribute name="body" value="/CreateAnnualTargetRSPYear.jsp" />
+	</definition>
+	<definition name="/machineMaster.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add New Machine" />
+		<put-attribute name="body" value="/CreateMachineTransaction.jsp" />
+	</definition>
+	
+	<definition name="/addAnnualTargetMonthly.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Monthly Coach Target" />
+		<put-attribute name="body" value="/CreateMonthlyTargetYear.jsp" />
+	</definition>
+	
+	
+	<definition name="/ActionOnFailedMachine.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Failed" />
+		<put-attribute name="body" value="/ActionOnFailedMachine.jsp" />
+	</definition>
+	
+	<definition name="/FailedMachineRelease.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Release Failed Machine" />
+		<put-attribute name="body" value="/MachineFailedTemp.jsp" />
+	</definition>
+	<definition name="/machineFailedAction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Failed" />
+		<put-attribute name="body" value="/MachineFailedPerformAction.jsp" />
+	</definition>
+	
+	<definition name="/BogieReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Bogie Report" />
+		<put-attribute name="body" value="/BogieReport.jsp" />
+	</definition>
+	<definition name="/userManualMachineMaintenance.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/machineMaintenanceHelp.jsp"/>
+     </definition>
+     
+     <definition name="/userManualMachineMaintenance2.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/machineMaintenanceHelp2.jsp"/>
+     </definition>
+     
+	<definition name="/MachineScheduleDue.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Overdue Schedule Machine" />
+		<put-attribute name="body" value="/MachineScheduleDue.jsp" />
+	</definition>
+	<definition name="/overduePerformAction.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/overduePerformAction.jsp" />
+   </definition>
+<!-- 	<definition name="/MachineScheduleTargetDue.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Overdue Target Schedule Machine" /> -->
+<!-- 		<put-attribute name="body" value="/TargetMachineScheduleDue.jsp" /> -->
+<!-- 	</definition> -->
+	
+	<definition name="/EquipmentMasterReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Equipment Master Report" />
+		<put-attribute name="body" value="/EquipmentMasterReport.jsp" />
+	</definition>
+
+	
+	
+	<definition name="/spareMaster.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Spare Master" />
+		<put-attribute name="body" value="/SpareMaster.jsp" />
+	</definition>
+	
+	
+	<definition name="/MachineMasterReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Master Report" />
+		<put-attribute name="body" value="/MachineMasterReportSelection.jsp" />
+	</definition>
+	
+	<definition name="/outputPositionBogieComponent.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/OutputBogieComponentPositionReport.jsp" />
+	</definition>
+	<definition name="/shopProductionStatus.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Shop Production Status" />
+        <put-attribute name="body" value="/ProductionShopParameterDateSelection.jsp" />
+	</definition>
+
+<definition name="/coachOutturnDetail.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/coachOutturnPositionReport.jsp" />
+</definition>
+	<definition name="/MachineBreakdownReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Breakdown Report" />
+		<put-attribute name="body" value="/MachineBreakdownReport.jsp" />
+	</definition>
+	
+	<definition name="/machineBreakdownReportDatewise.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Breakdown Report" />
+		<put-attribute name="body" value="/MachineBreakDownReportDateSelection.jsp" />
+	</definition>
+	<definition name="/machineBreakdownHistory.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Breakdown Report" />
+		<put-attribute name="body" value="/MachineBreakDownHistoryReport.jsp" />
+	</definition>
+	<definition name="/machineBreakdownReportVendorwise.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Machine Breakdown Report" />
+		<put-attribute name="body" value="/MachineBreakDownVendorSelection.jsp" />
+	</definition>
+	
+	<definition name="/withheldCoachesAsOnDatePaint.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Withheld Coaches As On Date Paint" />
+		<put-attribute name="body" value="/withheldCoachesAsOnDatePaintReport.jsp" />
+	</definition>
+	<definition name="/yearlyDispatchedCoachesPaint.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Dispatched Coaches Paint Report" />
+		<put-attribute name="body" value="/yearlyDispatchedCoachesPaint.jsp" />
+	</definition>
+	<definition name="/yearlyWithheldCoachesPaint.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearly Withheld Coaches Paint Report" />
+		<put-attribute name="body" value="/yearlyWithheldCoachesPaint.jsp" />
+	</definition>
+	<definition name="/yearwise.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Yearwise Report" />
+		<put-attribute name="body" value="/yearwise.jsp" />
+	</definition>
+	<definition name="/monthlyDispatchCoachesPaint.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Dispatch Coaches Paint Report" />
+		<put-attribute name="body" value="/PaintShopParameterDateSelection.jsp" />
+	</definition>
+	<definition name="/monthlyWithheldCoachesPaint.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Monthly Withheld Coaches Paint Report" />
+		<put-attribute name="body" value="/monthlyWithheldCoachesPaint.jsp" />
+	</definition>
+	<definition name="/awaitingToDispatchAsOnDate.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Awaiting to dispatch as on date Report" />
+		<put-attribute name="body" value="/awaitingToDispatchAsOnDate.jsp" />
+	</definition>
+	<definition name="/dispatchedCoachesAsOnDatePaint.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Dispatched Coaches as on date paint Report" />
+		<put-attribute name="body" value="/PaintParameterDateSelection.jsp" />
+	</definition>
+	
+	
+	<definition name="/ScheduleDueDateReport.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Schedule Due Date Report" />
+		<put-attribute name="body" value="/ScheduleDueDateReport.jsp" />
+	</definition>
+	
+	
+		
+<!-- 	<definition name="/addAndListUser.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Add User Form" /> -->
+<!-- 		<put-attribute name="body" value="/index.jsp" /> -->
+<!-- 	</definition> -->
+	
+<!-- 	<definition name="/addAndListUser1.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Add User Form" /> -->
+<!-- 		<put-attribute name="body" value="/Welcome.jsp" /> -->
+<!-- 	</definition> -->
+	
+</tiles-definitions>

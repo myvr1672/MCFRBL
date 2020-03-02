@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.IrwisHrPltCalidMapM" table="IRWIS_HR_PLT_CALID_MAP_M">
+        <composite-id name="id" class="beans.IrwisHrPltCalidMapMId">
+            <key-property name="plant" type="string">
+                <column name="PLANT" length="10" />
+            </key-property>
+            <key-property name="pcalId" type="string">
+                <column name="PCAL_ID" length="5" />
+            </key-property>
+        </composite-id>
+        <property name="satType" type="string">
+            <column name="SAT_TYPE" length="10" />
+        </property>
+        <property name="sunType" type="string">
+            <column name="SUN_TYPE" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.SupplierDetails" table="supplier_details" >
+		<id name="supplierCode" type="java.lang.String">
+			<column name="supplier_code" length="15"></column>
+		</id>
+		<property name="supplierName" type="java.lang.String">
+			<column name="supplier_name" length="150"></column>
+		</property>
+		<property name="supplierAddress" type="java.lang.String">
+			<column name="supplier_address" length="250"></column>
+		</property>
+		<property name="supplierCountry" type="java.lang.String">
+			<column name="supplier_country" length="25"></column>
+		</property>
+		<property name="telephoneNo" type="java.lang.String">
+			<column name="telephone_no" length="50"></column>
+		</property>
+		<property name="faxNo" type="java.lang.String">
+			<column name="fax_no" length="50"></column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" length="75"></column>
+		</property>
+		
+		<property name="contactPerson" type="java.lang.String">
+			<column name="contact_person" length="25"></column>
+		</property>
+		<property name="mobileNo" type="java.lang.String">
+			<column name="mobile_no" length="15"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

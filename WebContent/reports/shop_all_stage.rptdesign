@@ -1,0 +1,2314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">48</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">48</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">48</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="coach_number" id="6">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="wheel_Data Set" id="5">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">axle_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">axle_no</text-property>
+                    <text-property name="heading">axle_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">coach_number</property>
+                    <property name="paramName">coach_number</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">axle_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">axle_no</property>
+                    <property name="nativeName">axle_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.wheelset_tran.axle_no,public.wheelset_tran.assembly_start_date,public.wheelset_tran.assembly_end_date,public.wheelset_tran.assembly_dispatch_date
+from public.wheelset_tran,public.furnishing_tran,public.bogieset_trans
+where public.furnishing_tran.coach_number=?
+and (public.furnishing_tran.bogie_pp_side_asset_id=public.bogieset_trans.bogie_asset_id
+ or public.bogieset_trans.bogie_asset_id=public.furnishing_tran.bogie_npp_side_asset_id)
+and (public.bogieset_trans.left_wheel_asset_id=public.wheelset_tran.wheelset_asset_id 
+or public.wheelset_tran.wheelset_asset_id=public.bogieset_trans.right_wheel_asset_id)
+]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="finishing_ds" id="7">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">coach_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">coach_number</text-property>
+                    <text-property name="heading">coach_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">expected_exit_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">expected_exit_date</text-property>
+                    <text-property name="heading">expected_exit_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">coach_number</property>
+                    <property name="paramName">coach_number</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">coach_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">expected_exit_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">coach_number</property>
+                    <property name="nativeName">coach_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">expected_exit_date</property>
+                    <property name="nativeName">expected_exit_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.finishing_tran.coach_number,public.finishing_tran.assembly_start_date,public.finishing_tran.expected_exit_date,public.finishing_tran.assembly_end_date,public.finishing_tran.assembly_dispatch_date
+from public.finishing_tran
+where public.finishing_tran.coach_number=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>coach_number</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>coach_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>coach_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_start_date</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_start_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_start_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>expected_exit_date</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>expected_exit_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>expected_exit_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_end_date</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_end_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_end_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_dispatch_date</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_dispatch_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_dispatch_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="furnish_ds" id="48">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_no</text-property>
+                    <text-property name="heading">shell_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">coach_number</property>
+                    <property name="paramName">coach_number</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shell_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shell_no</property>
+                    <property name="nativeName">shell_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.furnishing_tran.shell_type,public.shell_tran.shell_no,public.furnishing_tran.assembly_start_date,public.furnishing_tran.assembly_end_date,public.furnishing_tran.assembly_dispatch_date
+from public.furnishing_tran,public.finishing_tran,public.shell_tran
+where public.finishing_tran.furnishing_asset_id=public.furnishing_tran.furnishing_asset_id
+and public.shell_tran.shell_asset_id=public.furnishing_tran.shell_asset_id
+and public.finishing_tran.coach_number=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="bogie_fur_ds" id="50">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_no</text-property>
+                    <text-property name="heading">shell_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bogie_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">bogie_number</text-property>
+                    <text-property name="heading">bogie_number</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shell_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">bogie_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shell_no</property>
+                    <property name="nativeName">shell_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">bogie_number</property>
+                    <property name="nativeName">bogie_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.furnishing_tran.shell_type,public.shell_tran.shell_no,public.furnishing_tran.assembly_start_date,public.furnishing_tran.assembly_end_date,public.furnishing_tran.assembly_dispatch_date,bogie_number
+from furnishing_tran,public.finishing_tran,public.shell_tran,bogieset_trans
+where public.finishing_tran.furnishing_asset_id=public.furnishing_tran.furnishing_asset_id
+and public.shell_tran.shell_asset_id=public.furnishing_tran.shell_asset_id
+and (furnishing_tran.bogie_pp_side_asset_id=bogie_asset_id or furnishing_tran.bogie_npp_side_asset_id=bogie_asset_id)
+and public.finishing_tran.coach_number='coach123456']]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="paint_ds" id="356">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">shell_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_no</text-property>
+                    <text-property name="heading">shell_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">coach_number</property>
+                    <property name="paramName">coach_number</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">shell_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">shell_no</property>
+                    <property name="nativeName">shell_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.shell_tran.shell_no,public.paint_tran.shell_type,public.paint_tran.assembly_start_date,public.paint_tran.assembly_end_date,public.paint_tran.assembly_dispatch_date
+from public.paint_tran,public.furnishing_tran,public.shell_tran
+where public.furnishing_tran.coach_number=?
+and public.furnishing_tran.paint_asset_id=public.paint_tran.paint_asset_id
+and public.paint_tran.shell_asset_id=public.shell_tran.shell_asset_id]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell_no</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell_type</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_start_date</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_start_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_start_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_end_date</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_end_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_end_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_dispatch_date</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_dispatch_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_dispatch_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="shell_ds" id="407">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">shell_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_no</text-property>
+                    <text-property name="heading">shell_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">coach_number</property>
+                    <property name="paramName">coach_number</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">shell_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">shell_no</property>
+                    <property name="nativeName">shell_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.shell_tran.shell_no,public.shell_tran.shell_type,public.shell_tran.assembly_start_date,public.shell_tran.assembly_end_date,public.shell_tran.assembly_dispatch_date
+from public.furnishing_tran,public.shell_tran
+where public.furnishing_tran.coach_number=?
+and public.furnishing_tran.shell_asset_id=public.shell_tran.shell_asset_id]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell_no</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell_type</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_start_date</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_start_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_start_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_end_date</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_end_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_end_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>assembly_dispatch_date</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>assembly_dispatch_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>assembly_dispatch_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="bogie_ds" id="442">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">bogie_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">bogie_number</text-property>
+                    <text-property name="heading">bogie_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">axle_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">axle_no</text-property>
+                    <text-property name="heading">axle_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_exit_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_exit_date</text-property>
+                    <text-property name="heading">assembly_exit_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">coach_number</property>
+                    <property name="paramName">coach_number</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">bogie_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">axle_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">assembly_exit_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">bogie_number</property>
+                    <property name="nativeName">bogie_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">axle_no</property>
+                    <property name="nativeName">axle_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">assembly_exit_date</property>
+                    <property name="nativeName">assembly_exit_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.bogieset_trans.bogie_number,public.wheelset_tran.axle_no,public.bogieset_trans.assembly_start_date,public.bogieset_trans.assembly_end_date,public.bogieset_trans.assembly_exit_date
+from public.furnishing_tran,public.bogieset_trans,public.wheelset_tran
+where public.furnishing_tran.coach_number=?
+and (public.furnishing_tran.bogie_pp_side_asset_id=public.bogieset_trans.bogie_asset_id
+or public.bogieset_trans.bogie_asset_id=public.furnishing_tran.bogie_npp_side_asset_id)
+and (public.bogieset_trans.left_wheel_asset_id=public.wheelset_tran.wheelset_asset_id 
+  or public.wheelset_tran.wheelset_asset_id=public.bogieset_trans.right_wheel_asset_id)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="49">
+            <property name="dimensions">
+                <tabular-dimension name="shell" id="51">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="52">
+                            <property name="levels">
+                                <tabular-level name="shell_no" id="53">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">shell_no</property>
+                                </tabular-level>
+                                <tabular-level name="shell_type" id="54">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">shell_type</property>
+                                </tabular-level>
+                                <tabular-level name="assembly_start_date" id="248">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">assembly_start_date</property>
+                                </tabular-level>
+                                <tabular-level name="assembly_end_date" id="249">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">assembly_end_date</property>
+                                </tabular-level>
+                                <tabular-level name="assembly_dispatch_date" id="250">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">assembly_dispatch_date</property>
+                                </tabular-level>
+                                <tabular-level name="bogie_number" id="284">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">bogie_number</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="bog_Group" id="197">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="198">
+                            <property name="levels">
+                                <tabular-level name="bogie_number" id="199">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">bogie_number</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="58">
+                    <property name="measures">
+                        <tabular-measure name="bogie_number" id="59">
+                            <property name="function">first</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["bogie_number"]</expression>
+                            <property name="dataType">string</property>
+                            <property name="isVisible">false</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">bogie_fur_ds</property>
+        </tabular-cube>
+        <tabular-cube name="bog_data_cube" id="444">
+            <property name="dimensions">
+                <tabular-dimension name="Bogie_Group" id="445">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="446">
+                            <property name="levels">
+                                <tabular-level name="bogie_number" id="447">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">bogie_number</property>
+                                </tabular-level>
+                                <tabular-level name="assembly_start_date" id="448">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">assembly_start_date</property>
+                                </tabular-level>
+                                <tabular-level name="assembly_end_date" id="449">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">assembly_end_date</property>
+                                </tabular-level>
+                                <tabular-level name="assembly_exit_date" id="450">
+                                    <property name="dataType">date</property>
+                                    <property name="columnName">assembly_exit_date</property>
+                                </tabular-level>
+                                <tabular-level name="axle_no" id="453">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">axle_no</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">bogie_ds</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="8">
+            <property name="height">5.302083333333333in</property>
+            <property name="width">7.395833333333333in</property>
+            <column id="9">
+                <property name="width">3.8020833333333335in</property>
+            </column>
+            <column id="10">
+                <property name="width">3.34375in</property>
+            </column>
+            <row id="11">
+                <property name="height">0.8333333333333334in</property>
+                <cell id="12">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="392">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">FINISHING</text-property>
+                    </label>
+                    <table id="20">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="dataSet">finishing_ds</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">coach_number</property>
+                                <text-property name="displayName">coach_number</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["coach_number"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_start_date</property>
+                                <text-property name="displayName">assembly_start_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_end_date</property>
+                                <text-property name="displayName">assembly_end_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_end_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_dispatch_date</property>
+                                <text-property name="displayName">assembly_dispatch_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_dispatch_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <column id="44"/>
+                        <column id="45"/>
+                        <column id="46"/>
+                        <column id="47"/>
+                        <header>
+                            <row id="21">
+                                <property name="backgroundColor">#FF8080</property>
+                                <cell id="22">
+                                    <label id="23">
+                                        <text-property name="text">Coach Number</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="24">
+                                    <label id="25">
+                                        <text-property name="text">Start Date</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="26">
+                                    <label id="27">
+                                        <text-property name="text">End Date</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="28">
+                                    <label id="29">
+                                        <text-property name="text">Dispatch</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="30">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <cell id="31">
+                                    <data id="32">
+                                        <property name="resultSetColumn">coach_number</property>
+                                    </data>
+                                </cell>
+                                <cell id="33">
+                                    <data id="34">
+                                        <property name="resultSetColumn">assembly_start_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="35">
+                                    <data id="36">
+                                        <property name="resultSetColumn">assembly_end_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="37">
+                                    <data id="38">
+                                        <property name="resultSetColumn">assembly_dispatch_date</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="14">
+                <property name="height">1.0104166666666667in</property>
+                <cell id="15">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="393">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">FURNISHING</text-property>
+                    </label>
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="251">
+                        <property name="cube">Data Cube</property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="285">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="286">
+                                        <property name="dimension">shell</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View" id="287">
+                                                <property name="level">shell/shell_no</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="288">
+                                                        <property name="content">
+                                                            <data name="shell_no" id="289">
+                                                                <property name="resultSetColumn">shell_no</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="width">0.84375in</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View1" id="291">
+                                                <property name="level">shell/shell_type</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="292">
+                                                        <property name="content">
+                                                            <data name="shell_type" id="294">
+                                                                <property name="resultSetColumn">shell_type</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="width">0.7604166666666666in</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="296">
+                                                <property name="level">shell/assembly_start_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="297">
+                                                        <property name="content">
+                                                            <data name="assembly_start_date" id="299">
+                                                                <property name="resultSetColumn">assembly_start_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="width">1.3333333333333333in</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View3" id="301">
+                                                <property name="level">shell/assembly_end_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="302">
+                                                        <property name="content">
+                                                            <data name="assembly_end_date" id="304">
+                                                                <property name="resultSetColumn">assembly_end_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="width">1.15625in</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View4" id="306">
+                                                <property name="level">shell/assembly_dispatch_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="307">
+                                                        <property name="content">
+                                                            <data name="assembly_dispatch_date" id="309">
+                                                                <property name="resultSetColumn">assembly_dispatch_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="width">1.0625in</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View5" id="311">
+                                                <property name="level">shell/bogie_number</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="312">
+                                                        <property name="content">
+                                                            <data name="bogie_number" id="314">
+                                                                <property name="resultSetColumn">bogie_number</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">none</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                        <property name="width">1.125in</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="252">
+                                <property name="content">
+                                    <label id="290">
+                                        <text-property name="text">Shell No</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="293">
+                                <property name="content">
+                                    <label id="295">
+                                        <text-property name="text">Shell Type</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="298">
+                                <property name="content">
+                                    <label id="300">
+                                        <text-property name="text">Start</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="303">
+                                <property name="content">
+                                    <label id="305">
+                                        <text-property name="text">End</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="308">
+                                <property name="content">
+                                    <label id="310">
+                                        <text-property name="text">Dispatch</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="313">
+                                <property name="content">
+                                    <label id="315">
+                                        <text-property name="text">Bogie No.</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                            </extended-item>
+                        </property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">shell_no</property>
+                                <expression name="expression">dimension["shell"]["shell_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">shell_type</property>
+                                <expression name="expression">dimension["shell"]["shell_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_start_date</property>
+                                <expression name="expression">dimension["shell"]["assembly_start_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_end_date</property>
+                                <expression name="expression">dimension["shell"]["assembly_end_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_dispatch_date</property>
+                                <expression name="expression">dimension["shell"]["assembly_dispatch_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">bogie_number</property>
+                                <expression name="expression">dimension["shell"]["bogie_number"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+            <row id="17">
+                <property name="height">0.8333333333333334in</property>
+                <cell id="18">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="394">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">PAINT</text-property>
+                    </label>
+                    <table id="357">
+                        <property name="width">7.322916666666667in</property>
+                        <property name="dataSet">paint_ds</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">shell_no</property>
+                                <text-property name="displayName">shell_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["shell_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">shell_type</property>
+                                <text-property name="displayName">shell_type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["shell_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_start_date</property>
+                                <text-property name="displayName">assembly_start_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_end_date</property>
+                                <text-property name="displayName">assembly_end_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_end_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_dispatch_date</property>
+                                <text-property name="displayName">assembly_dispatch_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_dispatch_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <column id="386">
+                            <property name="width">1.4166666666666667in</property>
+                        </column>
+                        <column id="387">
+                            <property name="width">1.6666666666666667in</property>
+                        </column>
+                        <column id="388">
+                            <property name="width">1.46875in</property>
+                        </column>
+                        <column id="389">
+                            <property name="width">1.4583333333333333in</property>
+                        </column>
+                        <column id="390">
+                            <property name="width">1.4583333333333333in</property>
+                        </column>
+                        <header>
+                            <row id="358">
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <cell id="359">
+                                    <label id="360">
+                                        <text-property name="text">Shell No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="361">
+                                    <label id="362">
+                                        <text-property name="text">Shell Type</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="363">
+                                    <label id="364">
+                                        <text-property name="text">Start</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="365">
+                                    <label id="366">
+                                        <text-property name="text">End</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="367">
+                                    <label id="368">
+                                        <text-property name="text">Dispatch</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="369">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <cell id="370">
+                                    <data id="371">
+                                        <property name="resultSetColumn">shell_no</property>
+                                    </data>
+                                </cell>
+                                <cell id="372">
+                                    <data id="373">
+                                        <property name="resultSetColumn">shell_type</property>
+                                    </data>
+                                </cell>
+                                <cell id="374">
+                                    <data id="375">
+                                        <property name="resultSetColumn">assembly_start_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="376">
+                                    <data id="377">
+                                        <property name="resultSetColumn">assembly_end_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="378">
+                                    <data id="379">
+                                        <property name="resultSetColumn">assembly_dispatch_date</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+            <row id="395">
+                <property name="height">0.8333333333333334in</property>
+                <cell id="396">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="404">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">SHELL</text-property>
+                    </label>
+                    <table id="408">
+                        <property name="dataSet">shell_ds</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">shell_no</property>
+                                <text-property name="displayName">shell_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["shell_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">shell_type</property>
+                                <text-property name="displayName">shell_type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["shell_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_start_date</property>
+                                <text-property name="displayName">assembly_start_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_end_date</property>
+                                <text-property name="displayName">assembly_end_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_end_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_dispatch_date</property>
+                                <text-property name="displayName">assembly_dispatch_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_dispatch_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <column id="437"/>
+                        <column id="438"/>
+                        <column id="439"/>
+                        <column id="440"/>
+                        <column id="441"/>
+                        <header>
+                            <row id="409">
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <cell id="410">
+                                    <label id="411">
+                                        <text-property name="text">Shell No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="412">
+                                    <label id="413">
+                                        <text-property name="text">Shell Type</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="414">
+                                    <label id="415">
+                                        <text-property name="text">Start</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="416">
+                                    <label id="417">
+                                        <text-property name="text">End</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="418">
+                                    <label id="419">
+                                        <text-property name="text">Dispatch</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="420">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <cell id="421">
+                                    <data id="422">
+                                        <property name="resultSetColumn">shell_no</property>
+                                    </data>
+                                </cell>
+                                <cell id="423">
+                                    <data id="424">
+                                        <property name="resultSetColumn">shell_type</property>
+                                    </data>
+                                </cell>
+                                <cell id="425">
+                                    <data id="426">
+                                        <property name="resultSetColumn">assembly_start_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="427">
+                                    <data id="428">
+                                        <property name="resultSetColumn">assembly_end_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="429">
+                                    <data id="430">
+                                        <property name="resultSetColumn">assembly_dispatch_date</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="431">
+                                <cell id="432"/>
+                                <cell id="433"/>
+                                <cell id="434"/>
+                                <cell id="435"/>
+                                <cell id="436"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+            <row id="398">
+                <property name="height">0.9583333333333334in</property>
+                <cell id="399">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="405">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">BOGIE</text-property>
+                    </label>
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="454">
+                        <property name="cube">bog_data_cube</property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="456">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="457">
+                                        <property name="dimension">Bogie_Group</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View6" id="458">
+                                                <property name="level">Bogie_Group/bogie_number</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="459">
+                                                        <property name="content">
+                                                            <data name="bogie_number1" id="460">
+                                                                <property name="resultSetColumn">bogie_number</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View7" id="462">
+                                                <property name="level">Bogie_Group/assembly_start_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="463">
+                                                        <property name="content">
+                                                            <data name="assembly_start_date1" id="465">
+                                                                <property name="resultSetColumn">assembly_start_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View8" id="467">
+                                                <property name="level">Bogie_Group/assembly_end_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="468">
+                                                        <property name="content">
+                                                            <data name="assembly_end_date1" id="470">
+                                                                <property name="resultSetColumn">assembly_end_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View9" id="472">
+                                                <property name="level">Bogie_Group/assembly_exit_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="473">
+                                                        <property name="content">
+                                                            <data name="assembly_exit_date" id="475">
+                                                                <property name="resultSetColumn">assembly_exit_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View10" id="477">
+                                                <property name="level">Bogie_Group/axle_no</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="478">
+                                                        <property name="content">
+                                                            <data name="axle_no" id="480">
+                                                                <property name="resultSetColumn">axle_no</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#C0C0C0</property>
+                                                        <property name="borderTopStyle">none</property>
+                                                        <property name="borderLeftStyle">none</property>
+                                                        <property name="borderRightStyle">none</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="455">
+                                <property name="content">
+                                    <label id="461">
+                                        <text-property name="text">Bogie No</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="height">0.3125in</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="464">
+                                <property name="content">
+                                    <label id="466">
+                                        <text-property name="text">Start</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="469">
+                                <property name="content">
+                                    <label id="471">
+                                        <text-property name="text">End</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="474">
+                                <property name="content">
+                                    <label id="476">
+                                        <text-property name="text">Dispatch</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="479">
+                                <property name="content">
+                                    <label id="481">
+                                        <text-property name="text">Axle No</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                            </extended-item>
+                        </property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">bogie_number</property>
+                                <expression name="expression">dimension["Bogie_Group"]["bogie_number"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_start_date</property>
+                                <expression name="expression">dimension["Bogie_Group"]["assembly_start_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_end_date</property>
+                                <expression name="expression">dimension["Bogie_Group"]["assembly_end_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_exit_date</property>
+                                <expression name="expression">dimension["Bogie_Group"]["assembly_exit_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">axle_no</property>
+                                <expression name="expression">dimension["Bogie_Group"]["axle_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+            <row id="401">
+                <property name="height">0.8333333333333334in</property>
+                <cell id="402">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <label id="406">
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#0000A0</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">WHEEL</text-property>
+                    </label>
+                    <table id="482">
+                        <property name="dataSet">wheel_Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">axle_no</property>
+                                <text-property name="displayName">axle_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["axle_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_start_date</property>
+                                <text-property name="displayName">assembly_start_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_end_date</property>
+                                <text-property name="displayName">assembly_end_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_end_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                            <structure>
+                                <property name="name">assembly_dispatch_date</property>
+                                <text-property name="displayName">assembly_dispatch_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["assembly_dispatch_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <column id="506"/>
+                        <column id="507"/>
+                        <column id="508"/>
+                        <column id="509"/>
+                        <header>
+                            <row id="483">
+                                <property name="backgroundColor">#FF8080</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <cell id="484">
+                                    <label id="485">
+                                        <text-property name="text">Axle No</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="486">
+                                    <label id="487">
+                                        <text-property name="text">Start</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="488">
+                                    <label id="489">
+                                        <text-property name="text">End</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="490">
+                                    <label id="491">
+                                        <text-property name="text">Dispatch</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="492">
+                                <property name="backgroundColor">#C0C0C0</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">none</property>
+                                <property name="borderRightStyle">none</property>
+                                <property name="borderTopStyle">none</property>
+                                <cell id="493">
+                                    <data id="494">
+                                        <property name="resultSetColumn">axle_no</property>
+                                    </data>
+                                </cell>
+                                <cell id="495">
+                                    <data id="496">
+                                        <property name="resultSetColumn">assembly_start_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="497">
+                                    <data id="498">
+                                        <property name="resultSetColumn">assembly_end_date</property>
+                                    </data>
+                                </cell>
+                                <cell id="499">
+                                    <data id="500">
+                                        <property name="resultSetColumn">assembly_dispatch_date</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="NewVariableElement">
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>

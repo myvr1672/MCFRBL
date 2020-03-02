@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+	<package name="struts_definitions" extends="default" namespace="/">
+
+		<action name="login" class="ACTION.LoginAction">
+			<result name="input">Login.jsp</result>
+			<result name="success" type="tiles">/welcome.tiles</result>
+			<result name="error">Login.jsp</result>
+		</action>
+
+		<action name="resetPwd" class="ACTION.LoginAction" method="resetPwd">
+			<result name="input" type="tiles">/resetPwd.tiles</result>
+			<result name="success" type="tiles">/resetSuccess.tiles</result>
+			<result name="error" type="tiles">/resetPwd.tiles</result>
+		</action>
+		<action name="logout" class="ACTION.LoginAction" method="logout">
+			<result name="LOGOUT">Login.jsp</result>
+		</action>
+
+		<action name="changePwd" class="ACTION.LoginAction" method="changePwd">
+			<result name="input" type="tiles">/changePwd.tiles</result>
+			<result name="success" type="tiles">/changeSuccess.tiles</result>
+			<result name="error" type="tiles">/changePwd.tiles</result>
+		</action>
+
+		<action name="working_days" class="ACTION.WorkingDayAction"
+			method="working_days">
+
+			<result name="success" type="tiles">/working_days.tiles</result>
+
+		</action>
+		<action name="dash_board" class="ACTION.DashboardAction"
+			method="dash_board">
+
+			<result name="success" type="tiles">/dash_board.tiles</result>
+
+		</action>
+
+		<action name="working_days_year">
+			<result name="success" type="tiles">/working_days_by_year.tiles
+			</result>
+		</action>
+
+		<action name="working_days_financial_year">
+			<result name="success" type="tiles">/working_days_by_financial_year.tiles
+			</result>
+		</action>
+
+		<action name="abnormality-form">
+			<result name="success" type="tiles">/abnormality.tiles</result>
+		</action>
+		<action name="user-form">
+			<result name="success" type="tiles">/user.tiles</result>
+		</action>
+		<action name="add-coach-production">
+			<result name="success" type="tiles">/addCoachProduction.tiles</result>
+		</action>
+		<action name="annual-target">
+			<result name="success" type="tiles">/addAnnualTarget.tiles</result>
+		</action>
+
+		<action name="reset-password">
+			<result name="success" type="tiles">/resetPwd.tiles</result>
+		</action>
+
+		<action name="change-password">
+			<result name="success" type="tiles">/changePwd.tiles</result>
+		</action>
+
+		<action name="update_workshop_holidays">
+			<result name="success" type="tiles">/workshop_holidays.tiles</result>
+
+		</action>
+		<action name="define_new_holidays">
+			<result name="success" type="tiles">/define_holidays.tiles</result>
+
+		</action>
+		<action name="*LieuMasterAction" class="struts.action.master.LieuMasterAction"
+			method="{1}">
+			<result type="json" />
+		</action>
+
+
+		<action name="assignLieuDate" class="struts.action.master.LieuAction"
+			method="assignLieuDate">
+			<result name="success" type="json" />
+		</action>
+		<action name="isHolidayHavingLieuDate" class="struts.action.master.LieuAction"
+			method="isHolidayHavingLieuDate">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="*HolidayMasterAction" class="struts.action.master.HolidayMasterAction"
+			method="{1}">
+			<result type="json" />
+		</action>
+
+		<action name="getWorkingDayByYear" class="ACTION.WorkingDayAction"
+			method="getWorkingDayByYear">
+			<result name="success" type="json" />
+		</action>
+
+		<action name="getWorkingDayByFinancialYear" class="ACTION.WorkingDaybyFinancialyYearAction"
+			method="getWorkingDayByFinancialYear">
+			<result name="success" type="json" />
+		</action>
+		<action name="getHolidayCodesAndNames" class="struts.action.master.HolidayAction"
+			method="getHolidayCodesAndNames">
+			<result name="success" type="json" />
+		</action>
+
+
+		<action name="getHolidayNameByCode" class="struts.action.master.HolidayAction"
+			method="getHolidayNameByCode">
+			<result name="success" type="json" />
+		</action>
+
+
+		<action name="*AbnormalityAction" class="ACTION.AbnormalityAction"
+			method="{1}">
+			<result type="json" />
+		</action>
+
+		<action name="*UserAction" class="ACTION.UserAction" method="{1}">
+			<result type="json" />
+		</action>
+
+		<action name="*DefineHolidayAction" class="ACTION.DefineHolidayAction"
+			method="{1}">
+			<result type="json" />
+		</action>
+
+	</package>
+
+
+
+</struts>

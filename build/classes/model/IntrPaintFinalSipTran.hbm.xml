@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.IntrPaintFinalSipTran" table="intr_paint_final_sip_tran" >
+		<id name="paintAssetId" type="java.lang.Integer">
+			<column name="paint_asset_id"></column>
+		</id>
+		<property name="intrPaintSipDocNo" type="string">
+			<column name="intr_paint_sip_doc_no" length="20"></column>
+		</property>
+		<property name="intrPaintSipVersNo" type="string">
+			<column name="intr_paint_sip_vers_no" length="20"></column>
+		</property>		
+		<property name="intrPaintSipDate" type="date">
+			<column name="intr_paint_sip_date"></column>
+		</property>
+		<property name="intrPaintSipSurfPrimer" type="string">
+			<column name="intr_paint_sip_surf_primer" length="50"></column>
+		</property>
+		<property name="intrPaintSipSurfPrimerDate" type="date">
+			<column name="intr_paint_sip_surf_primer_date"></column>
+		</property>
+		<property name="intrPaintSipAppEpoxyPrimer" type="string">
+			<column name="intr_paint_sip_app_epoxy_primer" length="50"></column>
+		</property>
+		<property name="intrPaintSipAppEpoxyPrimerDate" type="date">
+			<column name="intr_paint_sip_app_epoxy_primer_date" ></column>
+		</property>
+		<property name="intrPaintSipAppSoundDrawing" type="string">
+			<column name="intr_paint_sip_app_sound_drawing" length="50"></column>
+		</property>
+		<property name="intrPaintSipAppSoundDrawingDate" type="date">
+			<column name="intr_paint_sip_app_sound_drawing_date" ></column>
+		</property>
+		<property name="intrPaintSipAppHeatResistSideWall" type="string">
+			<column name="intr_paint_sip_app_heat_resist_side_wall" length="50"></column>
+		</property>
+		<property name="intrPaintSipAppHeatResistSideWallDate" type="date">
+			<column name="intr_paint_sip_app_heat_resist_side_wall_date"></column>
+		</property>
+		<property name="intrPaintSipAppHeatResistFloor" type="string">
+			<column name="intr_paint_sip_app_heat_resist_floor" length="50"></column>
+		</property>
+			<property name="intrPaintSipAppHeatResistFloorDate" type="date">
+			<column name="intr_paint_sip_app_heat_resist_floor_date"></column>
+		</property>
+			<property name="intrPaintSipAppAlumGrosWool" type="string">
+			<column name="intr_paint_sip_app_alum_gros_wool" length="50"></column>
+		</property>
+			<property name="intrPaintSipAppAlumGrosWoolDate" type="date">
+			<column name="intr_paint_sip_app_alum_gros_wool_date"></column>
+		</property>
+			<property name="intrPaintFinalDocNo" type="string">
+			<column name="intr_paint_final_doc_no" length="20"></column>
+		</property>
+			<property name="intrPaintFinalVersNo" type="string">
+			<column name="intr_paint_final_vers_no" length="20"></column>
+		</property>
+			<property name="intrPaintFinalDate" type="date">
+			<column name="intr_paint_final_date"></column>
+		</property>
+			<property name="intrPaintFinalGarnetBlastingFlag" type="string">
+			<column name="intr_paint_final_garnet_blasting_flag" length="20"></column>
+		</property>
+			<property name="intrPaintFinalGarnetBlastingReas" type="string">
+			<column name="intr_paint_final_garnet_blasting_reas" length="20"></column>
+		</property>
+			<property name="intrPaintFinalEpoxyPhosphateFlag" type="string">
+			<column name="intr_paint_final_epoxy_phosphate_flag" length="20"></column>
+		</property>
+		<property name="intrPaintFinalEpoxyPhosphateReas" type="string">
+			<column name="intr_paint_final_epoxy_phosphate_reas" length="20"></column>
+		</property>
+		<property name="intrPaintFinalSoundInsulDrawingFlag" type="string">
+			<column name="intr_paint_final_sound_insul_drawing_flag" length="20"></column>
+		</property>
+		<property name="intrPaintFinalSoundInsulDrawingReas" type="string">
+			<column name="intr_paint_final_sound_insul_drawing_reas" length="20"></column>
+		</property>
+		<property name="intrPaintFinalClearFlag" type="string">
+			<column name="intr_paint_final_clear_flag" length="20"></column>
+		</property>
+	</class>
+</hibernate-mapping>

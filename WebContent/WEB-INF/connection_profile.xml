@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DataTools.ServerProfiles version="1.0">
+<profile autoconnect="No" 
+desc="" 
+id="d1f41be1-27ec-11e6-baf6-9a6f3a17e14f" 
+name="Data Source" 
+providerID="org.eclipse.birt.report.data.oda.jdbc">
+<baseproperties>
+
+<property name="odaURL" value="jdbc:postgresql://localhost/MCFRBL"/>
+<property name="odaDriverClass" value="org.postgresql.Driver"/>
+<property name="odaPassword" value="postgress"/>
+<property name="odaUser" value="postgres"/>
+<property name="contentBidiFormatStr" value="ILYNN"/>
+<property name="metadataBidiFormatStr" value="ILYNN"/>
+</baseproperties>
+</profile></DataTools.ServerProfiles>
+

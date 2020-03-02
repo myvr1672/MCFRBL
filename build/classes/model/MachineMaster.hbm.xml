@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.MachineMaster" table="machine_master" >
+		<id name="machineId" type="java.lang.Integer">
+			<column name="machine_id"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="machineSrNo" type="java.lang.String">
+			<column name="machine_sr_no" length="15"></column>
+		</property>
+		<property name="machineType" type="java.lang.String">
+			<column name="machine_type" length="15"></column>
+		</property>
+		<property name="machineDescription" type="java.lang.String">
+			<column name="machine_description" length="50"></column>
+		</property>
+		<property name="make" type="java.lang.String">
+			<column name="make" length="15"></column>
+		</property>
+		<property name="model" type="java.lang.String">
+			<column name="model" length="15"></column>
+		</property>
+		<property name="purchasedBy" type="java.lang.String">
+			<column name="purchased_by" length="20"></column>
+		</property>
+		<property name="purchaseNo" type="java.lang.String">
+			<column name="purchase_no" length="25"></column>
+		</property>
+		<property name="workingShop" type="java.lang.String">
+			<column name="working_shop" length="15"></column>
+		</property>
+		<property name="maintenanceShopId" type="java.lang.String">
+			<column name="maintenance_shop_id" length="10"></column>
+		</property>
+		<property name="dateOfComissioned" type="date">
+			<column name="date_of_commissioned" ></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+				
+		<property name="createdDate" type="timestamp">
+			<column name="created_date" length="30"></column>
+		</property>
+		<property name="machineStatus" type="java.lang.String">
+			<column name="machine_status" length="4"></column>
+		</property>
+		<property name="machineCost" type="java.lang.Float">
+			<column name="machine_cost"></column>
+		</property>
+		<property name="machineLife" type="java.lang.Float">
+			<column name="machine_life"></column>
+		</property>
+		
+		<property name="amcAgencyId" type="java.lang.String">
+			<column name="amc_agency_id"  length="15"></column>
+		</property>
+		<property name="poDate" type="date">
+			<column name="po_date"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

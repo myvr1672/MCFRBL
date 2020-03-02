@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.EmployeeJobMaster" table="job_master" >
+
+	
+	<id name="job_id" type="java.lang.String">
+	<column name="job_id" length="10"></column>
+    </id>
+  
+		<property name="shop" type="java.lang.String">
+			<column name="shop" length="20"></column>
+		</property>
+		<property name="section" type="java.lang.String">
+			<column name="section" length="25"></column>
+		</property>
+		<property name="subSection" type="java.lang.String">
+			<column name="subSection" length="20"></column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="15"></column>
+		</property>
+		<property name="job_desc" type="java.lang.String">
+			<column name="job_desc" length="30"></column>
+		</property>
+		<property name="allowed_time" type="float">
+			<column name="allowed_time"></column>
+		</property>
+		<property name="prep_time" type="float">
+			<column name="prep_time"></column>
+		</property>
+		<property name="load_center_id" type="java.lang.String">
+			<column name="load_center_id" length="10"></column>
+		</property>
+		<property name="machine_id" type="java.lang.String">
+			<column name="machine_id" length="10"></column>
+		</property>
+		<property name="jig_fix_id" type="java.lang.String">
+			<column name="jig_fix_id" length="10"></column>
+		</property>
+	</class>
+</hibernate-mapping>

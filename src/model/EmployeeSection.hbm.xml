@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.EmployeeSection" table="employee_section" >
+	
+	<id name="subsectionId" type="java.lang.String">
+			<column name="subsection_id" length="20"></column>
+		</id>
+		
+		<property name="subsectionDescription" type="java.lang.String" >
+		<column name="subsection_description" length="50"></column>
+		</property>
+  
+	
+		<property name="parentSubsectionId" type="java.lang.String">
+			<column name="parent_subsection_id" length="20"></column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="model.MachinePerformedAction" table="machine_failed_action" >
+		<composite-id>
+	    <key-property name="machineId" type="java.lang.Integer" >
+	    <column name="machine_id"></column>
+	    </key-property>
+	  
+		<key-property name="breakdownId" type="java.lang.Integer" >
+		<column name="breakdown_id" ></column>
+		</key-property>
+  		</composite-id>
+	</class>
+</hibernate-mapping>

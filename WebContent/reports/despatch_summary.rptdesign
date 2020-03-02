@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="de Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">railway_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">railway_code</text-property>
+                    <text-property name="heading">railway_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asset_subtype</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">asset_subtype</text-property>
+                    <text-property name="heading">asset_subtype</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asset_gateout_qty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">asset_gateout_qty</text-property>
+                    <text-property name="heading">asset_gateout_qty</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">railway_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">asset_subtype</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">asset_gateout_qty</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">railway_code</property>
+                    <property name="nativeName">railway_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">asset_subtype</property>
+                    <property name="nativeName">asset_subtype</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">asset_gateout_qty</property>
+                    <property name="nativeName">asset_gateout_qty</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select railway_code, asset_subtype, asset_gateout_qty
+from asset_gateout_qty_t]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>railway_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>4</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>railway_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>railway_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>4</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>asset_subtype</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>asset_subtype</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>asset_subtype</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>asset_gateout_qty</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>8</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>asset_gateout_qty</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>asset_gateout_qty</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="DATE Data Set" id="239">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">prev_work_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">prev_work_date</text-property>
+                    <text-property name="heading">prev_work_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">?column?</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">?column?</text-property>
+                    <text-property name="heading">?column?</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">prev_work_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">?column?</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">prev_work_date</property>
+                    <property name="nativeName">prev_work_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">?column?</property>
+                    <property name="nativeName">?column?</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select prev_work_date(crnt_date), 'Year: ' ||crnt_fin_year(prev_work_date(crnt_date::date))
+from set_date]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>prev_work_date</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>prev_work_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>prev_work_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>?column?</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>?column?</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>?column?</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="34">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="35">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="36">
+                            <property name="levels">
+                                <tabular-level name="railway_code" id="37">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">railway_code</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="94">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="95">
+                            <property name="levels">
+                                <tabular-level name="asset_subtype" id="96">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">asset_subtype</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="38">
+                    <property name="measures">
+                        <tabular-measure name="asset_gateout_qty" id="40">
+                            <expression name="measureExpression" type="javascript">dataSetRow["asset_gateout_qty"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">de Data Set</property>
+        </tabular-cube>
+        <tabular-cube name="Data Cube - de Data Set" id="122">
+            <property name="dimensions">
+                <tabular-dimension name="Group2" id="123">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="124">
+                            <property name="levels">
+                                <tabular-level name="railway_code" id="125">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">railway_code</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="dataSet">de Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="226">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="height">0.7833333333333333in</property>
+            <column id="227"/>
+            <column id="228"/>
+            <column id="229"/>
+            <column id="230"/>
+            <row id="231">
+                <property name="height">0.7833333333333333in</property>
+                <cell id="232">
+                    <property name="textAlign">center</property>
+                    <image id="236">
+                        <property name="height">0.7083333333333334in</property>
+                        <property name="width">0.9166666666666666in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="233">
+                    <label id="238">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">DESPATCH SUMMARY FOR THE YEAR 2019-2020</text-property>
+                    </label>
+                </cell>
+                <cell id="234">
+                    <table id="240">
+                        <property name="dataSet">DATE Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">prev_work_date</property>
+                                <text-property name="displayName">prev_work_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["prev_work_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <column id="249"/>
+                        <header>
+                            <row id="241">
+                                <cell id="242">
+                                    <label id="243">
+                                        <property name="fontWeight">bold</property>
+                                        <text-property name="text">DATE</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="244">
+                                <cell id="245">
+                                    <data id="246">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">prev_work_date</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="247">
+                                <cell id="248"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+                <cell id="235">
+                    <property name="textAlign">center</property>
+                    <image id="237">
+                        <property name="height">0.7in</property>
+                        <property name="width">0.9416666666666667in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <grid id="184">
+            <property name="height">1.5104166666666667in</property>
+            <property name="width">7.941666666666666in</property>
+            <column id="185">
+                <property name="width">2.35in</property>
+            </column>
+            <column id="186">
+                <property name="width">2.9833333333333334in</property>
+            </column>
+            <column id="187">
+                <property name="width">2.6083333333333334in</property>
+            </column>
+            <row id="196">
+                <property name="height">1.5104166666666667in</property>
+                <cell id="197">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="200">
+                        <property name="cube">Data Cube</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="201">
+                                <property name="measure">asset_gateout_qty</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="202">
+                                        <property name="aggregationOnRow">Group1/asset_subtype</property>
+                                        <property name="aggregationOnColumn">Group/railway_code</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="content">
+                                            <data id="203">
+                                                <property name="borderBottomStyle">none</property>
+                                                <property name="borderLeftStyle">none</property>
+                                                <property name="borderRightStyle">none</property>
+                                                <property name="borderTopStyle">none</property>
+                                                <property name="textAlign">center</property>
+                                                <property name="whiteSpace">normal</property>
+                                                <property name="resultSetColumn">asset_gateout_qty_Group1/asset_subtype_Group/railway_code</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="204">
+                                        <property name="aggregationOnRow">Group1/asset_subtype</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="content">
+                                            <data id="205">
+                                                <property name="borderBottomStyle">none</property>
+                                                <property name="borderLeftStyle">none</property>
+                                                <property name="borderRightStyle">none</property>
+                                                <property name="borderTopStyle">none</property>
+                                                <property name="textAlign">center</property>
+                                                <property name="resultSetColumn">asset_gateout_qty_Group1/asset_subtype</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="206">
+                                        <property name="backgroundColor">#FFFFFF</property>
+                                    </extended-item>
+                                    <extended-item extensionName="CrosstabCell" id="208">
+                                        <property name="backgroundColor">#FFFFFF</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="210">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="211">
+                                        <property name="dimension">Group1</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View11" id="212">
+                                                <property name="level">Group1/asset_subtype</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="213">
+                                                        <property name="content">
+                                                            <data name="asset_subtype1" id="214">
+                                                                <property name="backgroundColor">#FFFFFF</property>
+                                                                <property name="fontSize">9pt</property>
+                                                                <property name="paddingRight">5pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">asset_subtype</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#FFFFFF</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="columns">
+                            <extended-item extensionName="CrosstabView" id="215">
+                                <property name="grandTotal">
+                                    <extended-item extensionName="CrosstabCell" id="216">
+                                        <property name="content">
+                                            <label id="217">
+                                                <property name="backgroundColor">#FFFFFF</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Total</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="backgroundColor">#FFFFFF</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                    </extended-item>
+                                </property>
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="218">
+                                        <property name="dimension">Group</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="219">
+                                                <property name="level">Group/railway_code</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="220">
+                                                        <property name="content">
+                                                            <data name="railway_code1" id="221">
+                                                                <property name="backgroundColor">#FFFFFF</property>
+                                                                <property name="borderBottomStyle">none</property>
+                                                                <property name="borderLeftStyle">none</property>
+                                                                <property name="borderRightStyle">none</property>
+                                                                <property name="borderTopStyle">none</property>
+                                                                <property name="marginTop">0pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">railway_code</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#FFFFFF</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="222">
+                                <property name="content">
+                                    <label id="223">
+                                        <property name="backgroundColor">#FFFFFF</property>
+                                        <property name="borderBottomStyle">none</property>
+                                        <property name="borderLeftStyle">none</property>
+                                        <property name="borderRightStyle">none</property>
+                                        <property name="borderTopStyle">none</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">ASSET TYPE</text-property>
+                                    </label>
+                                </property>
+                                <property name="backgroundColor">#FFFFFF</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                            </extended-item>
+                        </property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">railway_code</property>
+                                <expression name="expression">dimension["Group"]["railway_code"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">asset_subtype</property>
+                                <expression name="expression">dimension["Group1"]["asset_subtype"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">asset_gateout_qty_Group1/asset_subtype_Group/railway_code</property>
+                                <expression name="expression">measure["asset_gateout_qty"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/asset_subtype</value>
+                                    <value>Group/railway_code</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">asset_gateout_qty_Group1/asset_subtype</property>
+                                <expression name="expression">measure["asset_gateout_qty"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/asset_subtype</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">sum</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

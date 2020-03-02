@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="model.AbnormalityMaster" table="abnormality_master" >
+		<id name="abnormalityID" type="java.lang.Integer">
+			<column name="abnormality_id"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="abnormalityDescription" type="java.lang.String">
+			<column name="abnormality_description" length="150"></column>
+		</property>
+				
+	</class>
+</hibernate-mapping>

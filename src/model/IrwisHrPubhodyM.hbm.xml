@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.IrwisHrPubhodyM" table="IRWIS_HR_PUBHODY_M">
+        <id name="hodyCode" type="string">
+            <column name="HODY_CODE" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="hodyType" type="string">
+            <column name="HODY_TYPE" length="4" not-null="true" />
+        </property>
+        <property name="hodyDesc" type="string">
+            <column name="HODY_DESC" length="50" not-null="true" />
+        </property>
+        <property name="hodyDtype" type="string">
+            <column name="HODY_DTYPE" length="10" />
+        </property>
+        <property name="allowFlag" type="java.lang.Character">
+            <column name="ALLOW_FLAG" length="1" />
+        </property>
+        <property name="seq" type="java.lang.Integer">
+            <column name="seq"/>
+        </property>
+        
+        
+    </class>
+</hibernate-mapping>

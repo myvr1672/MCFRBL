@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+	<package name="default" extends="struts-default, json-default" namespace="/">
+		<result-types>
+		
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<interceptors>
+		<interceptor name="loginInterceptor" class="interceptor.LoginInterceptor"></interceptor>
+		<interceptor-stack name="loginStack">
+		<interceptor-ref name="loginInterceptor"></interceptor-ref>
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+		</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="loginStack"/> 
+
+		<global-results>
+			<result name="login">Login.jsp</result>
+		</global-results>
+		
+		<action name="login" class="ACTION.LoginAction">
+		<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input">Login.jsp</result>
+<!-- 	<result name="success" type="tiles">/welcome.tiles</result>  -->
+	<result name="success" type="tiles">/dashboard_coach.tiles</result> 
+			<result name="error">Login.jsp</result>
+					</action>
+		<action name="home-page">
+			<result name="success" type="tiles">/dashboard_coach.tiles</result>
+       </action>	
+		<action name="resetPwd" class="ACTION.LoginAction" method="resetPwd">
+			<result name="input" type="tiles">/resetPwd.tiles</result>
+			<result name="success" type="tiles">/resetSuccess.tiles</result>
+			<result name="error" type="tiles">/resetPwd.tiles</result>
+					</action>
+		<action name="logout" class="ACTION.LoginAction" method="logout">
+			<result name="LOGOUT">Login.jsp</result>
+		</action>
+	
+	 <action name="changePwd" class="ACTION.LoginAction" method="changePwd">
+			<result name="input" type="tiles">/changePwd.tiles</result>
+			<result name="success" type="tiles">/changeSuccess.tiles</result>
+			<result name="error" type="tiles">/changePwd.tiles</result>
+					</action>	
+		
+		 <action name="working_days" class="ACTION.WorkingDayAction" method="working_days">
+		
+			<result name="success" type="tiles">/working_days.tiles</result>
+			
+					</action>
+<!-- 		<action name="dash_board_coach" class="ACTION.DashboardAction" method="dash_board"> -->
+      <action name="dash_board_coach">
+		
+<!--  			<result name="success" type="tiles">/dash_board.tiles</result>  -->
+			<result name="success">dashboard_coach.jsp</result>
+					</action>
+					<action name="dashboard-component">
+					<result name="success">dashboard-component.jsp</result>
+					</action>
+				
+				<action name="output-position-component-bogie">
+					<result name="success" type="tiles">/outputPositionBogieComponent.tiles</result>
+					</action>
+                   <action name="coach-outturn-detail">
+					<result name="success" type="tiles">/coachOutturnDetail.tiles</result>
+					</action>
+					
+					<action name="dash_board_coach_2">
+					<result name="success" type="tiles">/dash_board_coach_2.tiles</result>
+					</action>
+					<action name="machine-master-report">
+					<result name="success" type="tiles">/MachineMasterReport.tiles</result>
+					</action>
+					<action name="machine-breakdown-report-datewise">
+					<result name="success" type="tiles">/machineBreakdownReportDatewise.tiles</result>
+	</action>
+	<action name="machine-breakdown-history">
+					<result name="success" type="tiles">/machineBreakdownHistory.tiles</result>
+	</action>
+	<action name="machine-breakdown-report-vendorwise">
+					<result name="success" type="tiles">/machineBreakdownReportVendorwise.tiles</result>
+	</action>	
+				
+		<action name="gant-chart-example-display" >
+			<result name="success" type="tiles">/gantChartExampleDisplay.tiles</result>
+		</action>
+				
+					<action name="machine-breakdown-report">
+					<result name="success" type="tiles">/MachineBreakdownReport.tiles</result>
+					</action>
+						
+					<action name="layout-shop">
+					<result name="success" type="tiles">/layout-shop.tiles</result>
+					</action>
+					
+					<action name="layout-shop-trial">
+					<result name="success" type="tiles">/layout_shop_trial.tiles</result>
+					</action>
+					
+					<action name="bogie-production-status">
+					<result name="success" type="tiles">/bogiProductionStatus.tiles</result>
+					</action>
+					<action name="bogie-assembly-yearly-outturn">
+					<result name="success" type="tiles">/bogieAssemblyYearlyOutturn.tiles</result>
+					</action>
+					
+					<action name="bogie-Position-RSP">
+					<result name="success" type="tiles">/bogiePositionRSP.tiles</result>
+					</action>
+					
+					<action name="RSP-Status-Rly-Distribution">
+					<result name="success" type="tiles">/RSPStatusRlyDistribution.tiles</result>
+					</action>
+					
+					<action name="coach-turnout">
+					<result name="success" type="tiles">/CoachTurnOut.tiles</result>
+					</action>
+					
+					
+					<action name="coach-production-status">
+					<result name="success" type="tiles">/CoachProductionStatus.tiles</result>
+					</action>
+				
+					
+					<action name="coach-prod-status">
+					<result name="success" type="tiles">/CoachProdStatus.tiles</result>
+					</action>
+					
+				<action name="yearwise-RSP">
+				<result name="success" type="tiles">/yearwiseRSP.tiles</result>
+				</action>
+				
+				<action name="monthly-yearwise">
+			<result name="success" type="tiles">/MonthlyYearwise.tiles</result>
+		</action>
+		
+		<action name="daywise-total-despatch">
+			<result name="success" type="tiles">/DaywiseTotalDespatch.tiles</result>
+		</action>
+		<action name="shell-sip-component" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellSIPComponent.tiles</result>
+	</action>
+<action name="shell-sip-stage" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellSIPStage.tiles</result>
+		</action>
+<action name="shell-sip-assembly" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellSIPAssembly.tiles</result>
+		</action>
+<action name="shell-sip-final" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellSIPFinal.tiles</result>
+		</action>
+<action name="shell-check-list" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellCheckList.tiles</result>
+		</action>
+<action name="shell-quality-clearance-memo" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellQualityClearanceMemo.tiles</result>
+		</action>
+<action name="shell-Quality-Clearance-Report" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shellQualityClearanceReport.tiles</result>
+		</action>
+<action name="showExistingShellData"  class="struts.action.master.ShowShellData" method="showShellData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="showExistingRoofData"  class="struts.action.master.ShowShellData" method="showShellData">
+         			
+           			<result  name="success" type= "json"/>
+	       </action>
+ <action name="showExistingEndwallData"  class="struts.action.master.ShowShellData" method="showShellData">
+         			
+           			<result  name="success" type= "json"/>
+	       </action>
+  <action name="showExistingShellStage"  class="struts.action.master.ShowShellData" method="showShellData">
+         			
+           			<result  name="success" type= "json"/>
+	       </action>
+<action name="showExistingDataOfShell"  class="struts.action.master.ShowShellData" method="showShellData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+ <action name="showSaveDataSideWall"  class="struts.action.master.ShowSaveDataSideWall" method="showSaveData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+ <action name="showSaveDataRoof"  class="struts.action.master.ShowSaveDataRoof" method="showSaveData">
+         			
+           			<result  name="success" type= "json"/>
+	   </action>
+<action name="showSaveDataLavSideWall"  class="struts.action.master.ShowSaveDataLavSidewall" method="showSaveData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+   <action name="showSaveDataEndWall"  class="struts.action.master.ShowSaveDataEndwall" method="showEndSaveData">
+         			
+           			<result  name="success" type= "json"/>
+	    </action>
+<action name="showSaveDataUnderframe"  class="struts.action.master.ShowSaveDataUnderframe" method="showSaveData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+ <action name="showSaveDataShellStage1"  class="struts.action.master.ShowSaveDataShellStage1" method="showSaveDataStage1">
+         			
+           			<result  name="success" type= "json"/>
+	    </action>
+<action name="showSaveDataStage2"  class="struts.action.master.Stage2ShowSaveData" method="showSaveDataStage2">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="showSaveDataStage3"  class="struts.action.master.Stage3ShowSaveData" method="showSaveDataStage3">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="showSaveDataStage4"  class="struts.action.master.ShowSaveDataStage4" method="SaveDataStage4">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+
+<action name="showExistingDataOfShellSIPAssembly"  class="struts.action.master.ShowShellSIPAssembly" method="showData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+<action name="showExistingDataOfShellSIPFinal"  class="struts.action.master.ShowShellSIPFinal" method="showData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+<action name="showExistingDataOfShellCheckListSip"  class="struts.action.master.ShowShellCheckListSip" method="showData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+ <action name="savesidewallSIP"  class="struts.action.master.SidewallSIPAction" method="saveSidewall">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="saveRoofSIP"  class="struts.action.master.SaveRoofSIP" method="saveRoof">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+
+
+<action name="UnderframeSIP"  class="struts.action.master.SaveUnderframeSIP" method="SaveUnderframe">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="saveLavShell"  class="struts.action.master.SaveLavShell" method="LavShell">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="saveEndShell"  class="struts.action.master.SaveEndwallSIP" method="saveEndwall">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+ <action name="saveShellAssemblyStage1SIP"  class="struts.action.master.SaveShellAssemblyStage1" method="saveStage1">
+         			        			<result  name="success" type= "json"/>
+		
+	    </action>
+ <action name="saveStage2"  class="struts.action.master.Stage2SIPAction" method="saveStage2">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="saveStage3"  class="struts.action.master.Stage3SIPAction" method="saveStage3">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="saveShellStage4SIP"  class="struts.action.master.SaveShellStage4SIP" method="saveShellStage4SIP">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="saveShellSIPAssembly"  class="struts.action.master.SaveShellSIPAssembly" method="saveData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+<action name="saveShellSIPFinal"  class="struts.action.master.SaveShellSIPFinal" method="saveData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+<action name="saveShellCheckListSip"  class="struts.action.master.SaveShellCheckListSip" method="saveData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+	<action name="clearanceShellMemoEntry"  class="struts.action.master.ShellClearanceMemo" method="saveData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+
+<action name="open-lavsidewall-shell-SIP-report">
+			<result name="success">shellLavsidewallSIPReport.jsp</result>
+		</action>
+<action name="open-sidewall-shell-SIP-report">
+			<result name="success">shellsidewallSIPReport.jsp</result>
+		</action>
+<action name="open-endwall-shell-SIP-report">
+			<result name="success">shellendwallSIPReport.jsp</result>
+		</action>
+		<action name="open-roof-shell-SIP-report">
+			<result name="success">shellroofSIPReport.jsp</result>
+		</action>
+		<action name="open-underframe-shell-SIP-report">
+			<result name="success">shellunderframeSIPReport.jsp</result>
+		</action>
+		<action name="open-stage1-shell-SIP-report">
+			<result name="success">shellStage1SIPReport.jsp</result>
+		</action>
+		<action name="open-stage2-shell-SIP-report">
+			<result name="success">shellStage2SIPReport.jsp</result>
+		</action>
+		<action name="open-stage3-shell-SIP-report">
+			<result name="success">shellStage3SIPReport.jsp</result>
+		</action>
+		<action name="open-stage4-shell-SIP-report">
+			<result name="success">shellStage4SIPReport.jsp</result>
+		</action>
+		<action name="open-assembly-shell-SIP-report">
+			<result name="success">shellAssemblySIPReport.jsp</result>
+		</action>
+		<action name="open-final-shell-SIP-report">
+			<result name="success">shellFinalSIPReport.jsp</result>
+		</action>
+		<action name="open-checklist-shell-SIP-report">
+			<result name="success">shellChecklistSIPReport.jsp</result>
+		</action>
+		<action name="open-clearancememo-shell-SIP-report">
+			<result name="success">shellClearanceMemoReport.jsp</result>
+		</action>
+		
+		<action name="bogie-sip" class="ACTION.BogieTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/bogieSIP.tiles</result>
+		</action>
+		<action name="showExistingDataofBogie" class="struts.action.master.ShowExistingDataofBogie" method="showData">
+			<result name="success" type="json"></result>
+		</action>
+
+<action name="showSaveDataBogieFinal" class="struts.action.master.ShowSavedDataBogieSIP" method="showBogieData">
+			<result name="success" type="json"/>
+		</action>
+<action name="saveBogieSIP" class="struts.action.master.SaveBogieSIP" method="saveBogie">
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="despatch-summary">
+			<result name="success" type="tiles">/DespatchSummary.tiles</result>
+		</action>
+		
+		<action name="gateout">
+			<result name="success" type="tiles">/Gateout.tiles</result>
+		</action>
+		
+		<action name="Furnishing-Report2-RSP">
+			<result name="success" type="tiles">/FurnishingReport2.tiles</result>
+		</action>
+		<action name="showexistingdataofbuffercbcheight" class="struts.action.master.Showexistingdataofbuffercbcheight" method="fetchdata">
+               <result name="success" type="json"></result>
+             </action>
+             <action name="savedataofbuffercbcheight" class="struts.action.master.Savedataofbuffercbcheight" method="savedata">
+                <result name="success" type="json"></result>
+               </action>
+               <action name="showsavedataofbuffercbcheight" class="struts.action.master.Showsavedataofbuffercbcheight" method="showsavedata">
+                <result name="success" type="json"></result>
+               </action>
+		<action name="daily-attendance-bogie">
+			<result name="success" type="tiles">/DailyAttendanceBogie.tiles</result>
+		</action>
+		
+		<action name="daily-report-bogie">
+			<result name="success" type="tiles">/DailyReportBogie.tiles</result>
+		</action>
+		
+		<action name="GM-position-bogie">
+			<result name="success" type="tiles">/GMPositionBogie.tiles</result>
+		</action>
+		
+		<action name="bogie-quality-clearance-memo" class="ACTION.BogieTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/bogieQualityClearanceMemo.tiles</result>
+		</action>
+
+		<action name="bogie-Quality-Clearance-Report" class="ACTION.BogieTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/bogieQualityClearanceReport.tiles</result>
+		</action>
+		
+		<action name="clearanceBogieMemoEntry"  class="struts.action.master.BogieClearanceMemo" method="saveData">
+         			
+           			<result  name="success" type= "json"/>
+		</action>
+		
+		<action name="open-bogieStaticSIP-report">
+			<result name="success">bogieStaticSIPReport.jsp</result>
+		</action>
+		<action name="saveFIBATesting" class="struts.action.master.SaveFIBATest" method="fibaTest">          			
+           			<result  name="success" type= "json"/>
+			</action>
+			
+			<action name="showFIBATest" class="struts.action.master.ShowSaveDataFIBATest" method="showFIBATestSaveData">          			
+           			<result  name="success" type= "json"/>
+			</action>
+			
+			  <action name="showExistingFIBATestData" class="struts.action.master.ShowFIBATestData" method="showFIBATestData">          			
+           			<result  name="success" type= "json"/>
+			</action>
+<action name="open-final-bogie-SIP-report">
+			<result name="success">bogieFinalSIPReport.jsp</result>
+		</action>
+
+<action name="open-qualityclearancememo-bogie-report">
+			<result name="success">bogieQualityClearanceMemoReport.jsp</result>
+		</action>
+		
+			<action name="Position-RSP">
+			<result name="success" type="tiles">/PositionRSP.tiles</result>
+		</action>
+		
+		<action name="daily-attendance-wheel">
+			<result name="success" type="tiles">/DailyAttWheel.tiles</result>
+		</action>
+		
+		<action name="list-of-bogie-wheel-prod">
+			<result name="success" type="tiles">/ListBogieWheel.tiles</result>
+		</action>
+		
+		<action name="Inspection-Wheel-Axle-Report" class="ACTION.BogieTypeAction" method="getAssetType">
+					<result name="success" type="tiles">/inspectionwheelaxlectrbreport.tiles</result>
+		</action>
+		<action name="Inspection-ctrb-Report" class="ACTION.BogieTypeAction" method="getAssetType">
+					<result name="success" type="tiles">/inspectionCTRBreport.tiles</result>
+		</action>
+		
+		<action name="wheel-prod">
+			<result name="success" type="tiles">/WheelProd.tiles</result>
+		</action>
+		
+		<action name="coach-position-typewise">
+			<result name="success" type="tiles">/CoachPositionTypewise.tiles</result>
+		</action>
+		
+		<action name="coach-position-yearly-summ">
+			<result name="success" type="tiles">/CoachPositionYearlySumm.tiles</result>
+		</action>
+		
+		
+		<action name="daily-att-furn">
+			<result name="success" type="tiles">/DailyAttendanceFurnishing.tiles</result>
+		</action>
+		
+		
+		<action name="monthly-dispatched-coaches">
+			<result name="success" type="tiles">/MonthlyDispatchedCoaches.tiles</result>
+		</action>
+		
+		
+		<action name="dispatched-coaches-as-on">
+			<result name="success" type="tiles">/DispatchedCoachesAsOn.tiles</result>
+		</action>
+		
+		
+		<action name="monthly-awaiting-to-dispatch">
+			<result name="success" type="tiles">/MonthlyAwaitingToDispatch.tiles</result>
+		</action>
+		
+		
+		<action name="monthly-withheld-coaches">
+			<result name="success" type="tiles">/MonthlyWithheldCoaches.tiles</result>
+		</action>
+		
+		
+		<action name="yearly-awaiting-to-dispatch">
+			<result name="success" type="tiles">/YearlyAwaitingToDispatch.tiles</result>
+		</action>
+		
+		
+		<action name="yearly-dispatch-coaches">
+			<result name="success" type="tiles">/YearlyDispatchCoaches.tiles</result>
+		</action>
+		
+		
+		<action name="yearly-withheld-coaches">
+			<result name="success" type="tiles">/YearlyWithheldCoaches.tiles</result>
+		</action>
+		
+		
+		<action name="daily-attendance-paint">
+			<result name="success" type="tiles">/DailyAttendance.tiles</result>
+		</action>
+		
+			<action name="daily-attendance-shell">
+			<result name="success" type="tiles">/DailyAttendanceS.tiles</result>
+		</action>
+		
+		<action name="coach-dispatch-details">
+			<result name="success" type="tiles">/CoachDispatchDetails.tiles</result>
+		</action>
+		
+		<action name="shopwise-monthly-staff-position">
+			<result name="success" type="tiles">/ShopwiseMonthlyStaffPosition.tiles</result>
+		</action>
+		
+		<action name="wheel-sip-wheelaxle" class="ACTION.WheelTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/wheelSIPAxle.tiles</result>
+		</action>
+
+      <action name="showExistingDataOfWheel"  class="struts.action.master.ShowExistingDataOfWheel" method="showData">
+         			
+           			<result  name="success" type= "json"/>
+	     </action>
+
+      <action name="showExistingDataInSIPWheelAxle"  class="struts.action.master.ShowExistingDataInSIPWheelAxle" method="showData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	
+	<action name="wheelAxleTestingAction"  class="struts.action.master.WheelAxleTestingAction" method="saveWheelAxleTesting">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="ctrbTestingAction"  class="struts.action.master.WheelAxleTestingAction" method="saveCTRBTesting">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+
+<action name="wheel-quality-clearance-memo" class="ACTION.WheelTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/wheelQualityClearanceMemo.tiles</result>
+		</action>
+	
+	<action name="clearanceMemoEntry"  class="struts.action.master.WheelClearanceMemo" method="saveData">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+
+<action name="open-wheelAxleSIP-report">
+			<result name="success">wheelAxleSIPReport.jsp</result>
+		</action>
+
+<action name="open-CTRBSIP-report" >
+			<result name="success">wheelCTRBReport.jsp</result>
+		</action>
+<action name="wheel-Quality-Clearance-Report" class="ACTION.WheelTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/wheelQualityClearanceReport.tiles</result>
+		</action>
+<action name="open-wheelClearanceMemo-report" >
+			<result name="success">wheelClearanceMemo.jsp</result>
+		</action>
+	
+	
+		
+					
+		<action name="add-emp-master" class="ACTION.MachineId"   method="getMachineId">
+			<result name="success" type="tiles">/addEmpMaster.tiles</result>
+		</action>
+		
+<action name="add-machine-master" class="struts.action.master.MachineTypeAction"   method="retrieveMachineType">
+			<result name="success" type="tiles">/addMachineMaster.tiles</result>
+</action>
+<action name="machine-spare-master" class="struts.action.master.MachineTypeAction"   method="retrieveMachineType">
+			<result name="success" type="tiles">/MachineSpare.tiles</result>
+</action>
+
+
+
+<action name="add-amc-agency-master">
+			<result name="success" type="tiles">/addAMCAgencyMaster.tiles</result>
+</action>
+<action name="showexistingdataofbogieSIP" class="struts.action.master.ShowexistingdataofbogieSIP" method="fetchdata">
+			<result name="success" type="json"></result>
+		</action>
+
+<action name="saveBogieStaticSIP" class="struts.action.master.SavesStaticBogieSIP" method="savebogiedata">
+			<result name="success" type="json"></result>
+		</action>
+		
+<action name="showsavedataofbogieSIP" class="struts.action.master.ShowsavedataofbogieSIP" method="showsavedata">
+			<result name="success" type="json"></result>
+		</action>
+
+<action name="spare-master">
+			<result name="success" type="tiles">/spareMaster.tiles</result>
+</action>
+
+<action name="machine-schedule-activity-add" class="struts.action.master.MachineTypeAction"   method="retrieveMachineType">
+			<result name="success" type="tiles">/machineScheduleActivity.tiles</result>
+</action>
+<action name="machine-schedule-add" class="struts.action.master.MachineTypeAction"   method="retrieveMachineType">
+			<result name="success" type="tiles">/machineScheduleAdd.tiles</result>
+</action>
+
+<action name="gantChartAjaxCall" class="ACTION.GantChartExampleAction" method="getData">          			
+           			<result  name="success" type= "json"/>
+			</action>
+<action name="link-spare-master-by-machine" class="ACTION.ShopListAndMachineType" method="getAssetType" >          			
+           			<result  name="success" type= "tiles">/linkSpareMasterByMachine.tiles</result>
+			</action>
+<action name="*ChildAssemblyAction" class="ACTION.ChildAssemblyAction"	method="{1}">
+			<result type="json" />
+		</action>
+
+<action name="shell-defect-master">
+			<result name="success" type="tiles">/shellDefectMaster.tiles</result>
+</action>
+
+<action name="*ShellDefectMasterAction" class="ACTION.ShellDefectMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+
+<action name="shell-defect-log-entry" class="struts.action.master.ShellDefects" method="getShellAndShop" >
+			<result name="success" type="tiles">/shellDefectLogEntry.tiles</result>
+		</action>
+
+<action name="actionForShellDefect" class="struts.action.master.ActionOnShellDefectAction" method="assignActionPerformed">          			
+           			<result  name="success" type= "json"/>
+			</action>
+<action name="*ShellDefectAction" class="ACTION.ShellDefectAction"	method="{1}">
+			<result type="json" />
+		</action>
+ <action name="add_component_for_furnishing_shop"  >          			
+           			<result name="success">addComponentFurnishing.jsp</result>
+        </action>
+<action name="exitForQualityCheck"  class="struts.action.master.ExitForQualityCheckAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="coach-receipt-at-quality" class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/coachReceiptAtQuality.tiles</result>
+		</action>
+<action name="receiptCoachForTesting"  class="struts.action.master.ReceiptForQualityCheckAction" method="assignReceiptDate">
+         			
+           			<result  name="success" type= "json"/>
+	   </action>
+<action name="perform-testing-in-coach" class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/performTestingInCoach.tiles</result>
+</action>
+<action name="furnishingStageClearance">
+					<result name="success" type="tiles">/furnishingStageClearance.tiles</result>
+	</action>
+<action name="showExistingDataofAirBrake" class="struts.action.master.ShowExistingDataofAirBrake" method="showAirBrakeData">
+			<result name="success" type="json"></result>
+		</action>
+<action name="showSaveDataAirBrake" class="struts.action.master.ShowSaveAirBrakeSIP" method="showSavedAirBrakeData">
+			<result name="success" type="json"/>
+		</action>
+<action name="saveAirBrakeSIP" class="struts.action.master.SaveAirBrakeSIP" method="saveAirBrakeData">
+			<result name="success" type="json"/>
+		</action>				
+<!-- <action name="SaveTestingClearance" class="ACTION.SaveTestingClearance"	method="saveData"> -->
+<!-- 			<result name="success" type="tiles">/furnishingStageClearance.tiles</result> -->
+<!-- 		</action> -->
+		
+<action name="SaveTestingClearance" class="ACTION.SaveTestingClearance"	method="saveData">
+			<result name="success" type="json"></result>
+		</action>
+
+<action name="ShowListStages" class="ACTION.ShowListStages"	method="showStages">
+			<result name="success" type="json" />
+		</action>
+<action name="showExistingCctvTesting" class="struts.action.master.ShowExistingCctvTestData" method="showCctvData" >
+			<result name="success" type="json"/>
+		</action>
+
+<action name="showSaveDataCctvform" class="struts.action.master.ShowSaveDataCctv" method="showSaveDataCctvTest" >
+			<result name="success" type="json"/>
+		</action>
+<action name="saveDataFormCctv" class="struts.action.master.SaveDataCctvTesting" method="saveDataCctv" >
+			<result name="success" type="json"/>
+		</action>
+<action name="ShowDetailsShell" class="ACTION.Details" method="getStageDetails">
+			<result name="success" type="tiles">/ShowDetails.tiles</result>
+		</action>
+
+<action name="retrieveFurnNo" class="ACTION.GetFurnNo" method="getFurnNo">
+			<result name="success" type="json"></result>
+		</action>
+<action name="Details" class="ACTION.Details" method="getStageDetails">
+			<result name="success" type="json"/>
+		</action>
+  <action name="FailedStages">
+			<result name="success" type="tiles">/FailedStages.tiles</result>
+	    </action>
+<action name="stagesInterval">
+			<result name="success" type="tiles">/interval.tiles</result>
+		</action>
+<action name="ShellStages">
+			<result name="success" type="tiles">/ShellStage.tiles</result>
+		</action>
+<action name="shellStage" class="ACTION.ShellStage" method="getshellStageDetails">
+			<result name="success" type="json"/>
+		</action>
+<action name="interval" class="ACTION.Interval" method="getintervalDetails">
+<result name="success" type="json" />
+</action>
+<action name="showExistingDataPlumbingTesting" class="struts.action.master.ShowExistingDataPlumbingTesting" method="showPlumbingTestData" >
+			<result name="success" type="json"/>
+		</action>
+
+<action name="showSaveDataPlumbingform" class="struts.action.master.ShowSaveDataPlumbing" method="showSaveDataPlumbingTest" >
+			<result name="success" type="json"/>
+		</action>
+<action name="saveDataFormPlumbing" class="struts.action.master.SaveDataPlumbingTesting" method="saveDataPlumbing" >
+			<result name="success" type="json"/>
+		</action>
+
+<action name="showExistingDataShowerTesting" class="struts.action.master.ShowExistingDataShowerTesting" method="showShowerTestData" >
+			<result name="success" type="json"/>
+		</action>
+		
+		<action name="saveDataFormShower" class="struts.action.master.SaveDataShowerTesting" method="saveDataShower" >
+			<result name="success" type="json"/>
+		</action>
+		<action name="showSaveDataShowerform" class="struts.action.master.ShowSaveDataShower" method="showSaveDataShowerTest" >
+			<result name="success" type="json"/>
+		</action>
+<action name="showSaveDataBioTankform" class="struts.action.master.ShowSaveDataBioTank" method="showSaveDataBioTankTest" >
+			<result name="success" type="json"/>
+		</action>
+<action name="saveDataFormBioTank" class="struts.action.master.SaveDataBioTankTesting" method="saveDataBioTank" >
+			<result name="success" type="json"/>
+		</action>
+		<action name="showSaveDataBioTankform" class="struts.action.master.ShowSaveDataBioTank" method="showSaveDataBioTankTest" >
+			<result name="success" type="json"/>
+		</action>
+<action name="coach-available-for-quality" class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/coachAvailableForQuality.tiles</result>
+		</action>
+<action name="optionforAssemblyDropdown" class="struts.action.master.OptionforAssemblyDropdown"	method="getsSubAssebly">
+			<result type="json" />
+		</action>
+
+<action name="transfer-emp-within-mcf"  class="ACTION.MachineId"  method="getMachineId">
+<result name="success" type="tiles">/transferEmpWithinMCF.tiles</result>
+</action>
+
+		<action name="shift-allotment">
+			<result name="success" type="tiles">/shiftAllotment.tiles</result>
+		</action>
+		
+		<action name="attendance-mark">
+			    <result name="success" type="tiles">/attendanceMarking.tiles</result>
+		           </action>
+		
+		<action name="attendance-absent">
+			<result name="success" type="tiles">/AttendanceAbsent.tiles</result>
+		</action>
+
+<action name="attendance-list">
+			<result name="success" type="tiles">/AttendanceList.tiles</result>
+		</action>
+<action name="job-creation-help">
+			<result name="success" type="tiles">/jobCreationHelp.tiles</result>
+		</action>
+		<action name="shift-allotment-help">
+			<result name="success" type="tiles">/shiftAllotmentHelp.tiles</result>
+		</action>
+		<action name="attendence-marking-help">
+			<result name="success" type="tiles">/attendenceMarkingHelp.tiles</result>
+		</action>
+		<action name="job-allocation-help">
+			<result name="success" type="tiles">/jobAllocationHelp.tiles</result>
+		</action>
+<action name="transfer-emp-out-mcf">
+			<result name="success" type="tiles">/transferEmpOutMCF.tiles</result>
+		</action>
+	<action name="add-machine-production">
+			<result name="success" type="tiles">/addMachineProduction.tiles</result>
+		</action>	
+		
+		<action name="employee-job-description">
+			<result name="success" type="tiles">/employeejobdescription.tiles</result>
+		</action>
+		
+		<action name="attendance-list-report">
+					<result name="success" type="tiles">/AttendanceListReport.tiles</result>
+					</action>
+					
+					<action name="pending-jobs-list">
+					<result name="success" type="tiles">/PendingJobList.tiles</result>
+					</action>
+					
+					<action name="shift-roater">
+					<result name="success" type="tiles">/ShiftRoaster.tiles</result>
+					</action>
+					
+					<action name="layout-shop-all">
+					<result name="success" type="tiles">/layout-shop-all.tiles</result>
+					</action>
+					<action name="listofwheel">
+		                 <result name="success" type="tiles">/listofwheel.tiles</result>
+		            </action>
+		            <action name="listofwheelch">
+		                 <result name="success" type="tiles">/listofwheelch.tiles</result>
+		            </action>
+		             <action name="listofbogieall">
+		                 <result name="success" type="tiles">/listofbogieall.tiles</result>
+		            </action>
+		            
+		            <action name="Flat-Bogie-SIP-Report" class="ACTION.BogieNoById" method="getBogieNo">
+					<result name="success" type="tiles">/flatBogieSIPReport.tiles</result>
+					</action>
+		             <action name="final-Bogie-SIP-Report" class="ACTION.BogieNoById" method="getBogieNo">
+					<result name="success" type="tiles">/finalBogieSIPReport.tiles</result>
+					</action>
+		             <action name="listofbogie">
+		                 <result name="success" type="tiles">/listofbogie.tiles</result>
+		            </action>
+		             <action name="listofshell">
+		                 <result name="success" type="tiles">/listofshell.tiles</result>
+		            </action>
+		             <action name="listofpaint">
+		                 <result name="success" type="tiles">/listofpaint.tiles</result>
+		            </action> 
+			        <action name="listoffurnish">
+		                 <result name="success" type="tiles">/listoffurnish.tiles</result>
+		            </action>
+		            
+		              <action name="coach_dispatch_list">
+		                 <result name="success" type="tiles">/coach_dispatch_list.tiles</result>
+		            </action> 
+			        <action name="coach_dispatch">
+		                 <result name="success" type="tiles">/coach_dispatch.tiles</result>
+		            </action>
+		            <action name="display-employee-job">
+			<result name="success" type="tiles">/displayEmployeeJob.tiles</result>
+		</action>
+		
+		<action name="working_days_year">
+		<result name="success" type="tiles">/working_days_by_year.tiles</result>
+		</action>
+		
+		<action name="withheld-coaches-as-on-date-paint" >
+			<result name="success" type="tiles">/withheldCoachesAsOnDatePaint.tiles</result>
+		</action>
+		<action name="yearly-dispatched-coaches-paint" >
+			<result name="success" type="tiles">/yearlyDispatchedCoachesPaint.tiles</result>
+		</action>
+		<action name="yearly-withheld-coaches-paint" >
+			<result name="success" type="tiles">/yearlyWithheldCoachesPaint.tiles</result>
+		</action>
+		<action name="yearwise" >
+			<result name="success" type="tiles">/yearwise.tiles</result>
+		</action>
+		<action name="monthly-dispatch-coaches-paint" >
+			<result name="success" type="tiles">/monthlyDispatchCoachesPaint.tiles</result>
+		</action>
+		<action name="monthly-withheld-coaches-paint" >
+			<result name="success" type="tiles">/monthlyWithheldCoachesPaint.tiles</result>
+		</action> 
+		<action name="awaiting-to-dispatch-as-on-date" >
+			<result name="success" type="tiles">/awaitingToDispatchAsOnDate.tiles</result>
+		</action> 
+		<action name="dispatched-coaches-as-on-date-paint" >
+			<result name="success" type="tiles">/dispatchedCoachesAsOnDatePaint.tiles</result>
+		</action> 
+		
+		<action name="intr-paint-sip-report" >
+			<result name="success">intrPaintSipReport.jsp</result>
+		</action>
+		<action name="intr-paint-final-report" >
+			<result name="success">intrPaintFinalInspectionReport.jsp</result>
+		</action>
+		<action name="extr-paint-sip-report" >
+			<result name="success">extrPaintSipReport.jsp</result>
+		</action>
+		<action name="extr-paint-final-report" >
+			<result name="success">extrPaintFinalInspectionReport.jsp</result>
+		</action>
+
+		
+		
+		
+		
+		
+		
+		<action name="awaiting-to-dispatch-asondate" >
+			<result name="success" type="tiles">/awaitingToDispatchAsondate.tiles</result>
+		</action> 
+		<action name="dispatched-coaches-asondate" >
+			<result name="success" type="tiles">/dispatchedCoachesAsondate.tiles</result>
+		</action> 
+		<action name="coach-holding-asondate" >
+			<result name="success" type="tiles">/coachHoldingAsondate.tiles</result>
+		</action> 
+		<action name="awaiting-to-dispatch-monthly" >
+			<result name="success" type="tiles">/awaitingToDispatchMonthly.tiles</result>
+		</action> 
+		<action name="dispatched-coaches-monthly" >
+			<result name="success" type="tiles">/dispatchedCoachesMonthly.tiles</result>
+		</action> 
+		<action name="coach-holding-monthly" >
+			<result name="success" type="tiles">/coachHoldingMonthly.tiles</result>
+		</action> 
+		<action name="awaiting-to-dispatch-yearly" >
+			<result name="success" type="tiles">awaitingToDispatchYearly.tiles</result>
+		</action> 
+		<action name="dispatched-coaches-yearly" >
+			<result name="success" type="tiles">/dispatchedCoachesYearly.tiles</result>
+		</action> 
+		<action name="coach-holding-yearly" >
+			<result name="success" type="tiles">/coachHoldingYearly.tiles</result>
+		</action> 
+		
+		
+		
+		
+		
+		<action name="exitStage"  class="struts.action.master.ExitAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+			</action>
+	<action name="exitWheel"  class="struts.action.master.ExitWheelAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="exitBogie"  class="struts.action.master.ExitBogieAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	
+	<action name="exitShell"  class="struts.action.master.ExitShellAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="sheet-metal-master" class="ACTION.ShellTypeAction" method="getAssetType" >
+		
+			<result name="success" type="tiles">/sheetMaster.tiles</result>
+</action>
+<action name="*ScheduleTransactionAction" class="ACTION.ScheduleTransactionAction" method="{1}">
+<result type="json"></result>
+</action>
+<action name="sheet-metal-transaction" class="struts.action.master.DrawingDetails" method="getDrawingDetails" >
+			<result name="success" type="tiles">/sheetMetalTransaction.tiles</result>
+		</action>
+
+<action name="*SheetMasterAction" class="ACTION.SheetMasterAction"	method="{1}">
+	<interceptor-ref name="fileUpload">
+                <param name="allowedTypes">image/jpeg,image/png,image/gif,application/pdf,application/octet-stream</param>
+                <param name="maximumSize">4194304</param>
+            </interceptor-ref>
+            <interceptor-ref name="params" />
+            <interceptor-ref name="validation" />
+           <interceptor-ref name="defaultStack"></interceptor-ref>
+	
+			<result type="json" />
+	</action>
+
+<action name="*SheetMetalTransAction" class="ACTION.SheetMetalTransAction"	method="{1}">
+			<result type="json" />
+		</action>
+<action name="getSubStages"  class="ACTION.GetSubStage" method="getStages">
+  <result  name="success" type= "json"/>
+</action>
+<action name="getSheetMetalMasterDetail"  class="ACTION.GetSheetMetalMasterDetailbyDrawing" method="getDetails">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	
+	<action name="exitCoachForRailway"  class="struts.action.master.ExitCoachAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+		<!-- <action name="actionOnMachine"  class="struts.action.master.ActionOnMachineAction" method="assignActionPerformed">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	 -->
+	
+	
+	
+	
+	<action name="actionForTargetMachineSchedule"  class="struts.action.master.TargetMachineScheduleDue" method="assignTargetActionPerformed">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	
+	<action name="cre-lhb-power-car">
+			<result name="success" type="tiles">/creLhbPowerCar.tiles</result>
+		</action>
+		
+		<action name="safety_para_da_sets">
+			<result name="success" type="tiles">/safetyparadasets.tiles</result>
+		</action>
+		
+	
+	<action name="exitFurnish"  class="struts.action.master.ExitFurnishAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="exitPaint"  class="struts.action.master.ExitPaintAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="exitFinishing"  class="struts.action.master.ExitFinishingAction" method="assignexitDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="releaseMachineFailed"  class="struts.action.master.ReleaseMachineFailed" method="assignReleaseDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="*machineFailed" class="ACTION.MachineFailedAction"	method="{1}"> 
+		<result type="json" /> 
+ 		</action> 
+	<action name="actionForMachineFailure"  class="struts.action.master.PerformActionOnMachineFailed" method="performAction">
+         			
+           			<result  name="success" type= "json"/>
+           </action>
+	<action name="descByWheelAxleId"  class="common.DescById" method="getAxleDesc">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="descByBogieId"  class="common.BogieNumById" method="getBogieDesc">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="descByshellFromIdinPaintShop"  class="common.ShellNoinPaintShop" method="getShellNoinPainSHop">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="descByshellFromId"  class="common.ShellNoinPaintShop" method="getShellNoinPainSHop">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	
+	
+	<action name="assemblyDispatchDatefromShell"  class="common.ShellDispatchDate" method="getShellDispatchDate">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	<action name="receiptWheel"  class="struts.action.master.ExitWheelAction" method="assignReceiptDate">
+         <result  name="success" type= "json"/>
+	</action>
+	<action name="receiptBogie"  class="struts.action.master.ExitBogieAction" method="assignReceiptDate">
+         <result  name="success" type= "json"/>
+	</action>
+	<action name="receiptShell"  class="struts.action.master.ExitShellAction" method="assignReceiptDate">
+         <result  name="success" type= "json"/>
+	</action>
+	<action name="receiptShellAtFurnishing"  class="struts.action.master.ExitShellFromPaintAction" method="assignReceiptDate">
+         <result  name="success" type= "json"/>
+	</action>
+	
+	<action name="receiptRawCoachAtFinishing"  class="struts.action.master.ExitFurnishAction" method="assignReceiptDate">
+         <result  name="success" type= "json"/>
+	</action>
+	
+<!-- 	<action name="receiptCoachForTurnout"  class="struts.action.master.ExitFinishingAction" method="assignReceiptDate"> -->
+<!--          <result  name="success" type= "json"/> -->
+<!-- 	</action> -->
+
+        <action name="receiptCoachForTurnout"  class="struts.action.master.ExitFurnishAction" method="assignReceiptDate"> 
+          <result  name="success" type= "json"/>
+ 	</action>
+	<action name="mergeAssembly"  class="struts.action.master.MergeAssemblyAction" method="mergeEvent">
+         			
+           			<result  name="success" type= "json"/>
+			</action>
+		
+		<action name="releaseMachineSchedule"  class="struts.action.master.ReleaseMachineSchedule" method="assignReleaseDate">
+         			
+           			<result  name="success" type= "json"/>
+			</action>
+		
+		
+		<action name="add_activity_for_shell_stage"  >          			
+           			<result name="success">activity.jsp</result>
+        </action>
+         
+         <action name="add_component_for_bogie_shop"  >          			
+           			<result name="success">addComponent.jsp</result>
+        </action>
+         
+		<action name="working_days_financial_year">
+		<result name="success" type="tiles">/working_days_by_financial_year.tiles</result>
+		</action>
+		
+		<action name="abnormality-form" class="struts.action.master.StageAction" method="getShopAndAbnormality" >
+			<result name="success" type="tiles">/abnormality.tiles</result>
+		</action>
+		<action name="sheet-cutting" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shelltype.tiles</result>
+		</action>
+		<action name="wheel-shop-production" class="ACTION.WheelTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/wheeltype.tiles</result>
+		</action>
+		<action name="bogie-shop-production" class="ACTION.BogieTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/bogietype.tiles</result>
+		</action>
+		
+		<action name="furnishing-shop-production" class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/furnishingShopProduction.tiles</result>
+		</action>
+		<action name="asset-master-fin" class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/assetMasterFin.tiles</result>
+		</action>
+		<action name="asset-master">
+			<result name="success" type="tiles">/assetMaster.tiles</result>
+		</action>
+		<action name="emp-master">
+			<result name="success" type="tiles">/empMaster.tiles</result>
+		</action>
+		<action name="shell-available-at-furnishing">
+			<result name="success" type="tiles">/shellAvailableAtFurnishing.tiles</result>
+		</action>
+		<action name="shell-shop-production" class="ACTION.ShellTypeAction" method="getAssetType" >
+			<result name="success" type="tiles">/shelltransaction.tiles</result>
+		</action>
+		<action name="coach-dispatch-railway" class="ACTION.RailwayAction" method="getRailways" >
+			<result name="success" type="tiles">/coachOutforRailway.tiles</result>
+		</action>
+		<action name="coach-sent-railway" >
+			<result name="success" type="tiles">/coachSentToRailway.tiles</result>
+		</action>
+		
+		<action name="paint-shop-production"  class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/paintTransaction.tiles</result>
+		</action>
+		<action name="paint-shop-sip-tran"  class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/PaintSipTran.tiles</result>
+		</action>
+		<action name="paint-shop-insp-clear-tran"  class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/PaintInspClearTran.tiles</result>
+		</action>
+		<action name="showExistingDataOfPaint"  class="struts.action.master.ShowPaintData" method="showData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+		<action name="showExistingDataOfIntrPaintSip"  class="struts.action.master.ShowIntrPaintSipData" method="showData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+	
+		<action name="showExistingDataOfIntrPaintFinal"  class="struts.action.master.ShowIntrPaintFinalData" method="showData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+	
+		<action name="saveIntrPaintSip"  class="struts.action.master.SaveIntrPaintSip" method="saveData">         			
+           			<result  name="success" type= "json"/>
+		</action>	
+		<action name="saveIntrPaintFinal"  class="struts.action.master.SaveIntrPaintFinal" method="saveData">         			
+           			<result  name="success" type= "json"/>
+		</action>
+
+		<action name="clearanceMemoPaint"  class="ACTION.PaintClearanceMemo" method="saveClearance">         			
+           			<result  name="success" type= "json"/>
+		</action>
+
+
+
+
+
+		<action name="showExistingDataOfExtrPaintSip"  class="struts.action.master.ShowExtrPaintSipData" method="showData">
+         			
+           			<result  name="success" type= "json"/>
+		</action>
+		<action name="showExistingDataOfExtrPaintFinal"  class="struts.action.master.ShowExtrPaintFinalData" method="showData">
+         			
+           			<result  name="success" type= "json"/>
+		</action>
+
+		<action name="saveExtrPaintSip"  class="struts.action.master.SaveExtrPaintSip" method="saveData1">
+         			
+           			<result  name="success" type= "json"/>
+		</action>
+		<action name="saveExtrPaintFinal"  class="struts.action.master.SaveExtrPaintFinal" method="saveData1">
+         			
+           			<result  name="success" type= "json"/>
+		</action>
+		
+		
+		<action name="finishing-shop-production"  >
+			<result name="success" type="tiles">/finishingTransaction.tiles</result>
+		</action>
+		<action name="wheel-dispatch-production">
+			<result name="success" type="tiles">/wheeldispatch.tiles</result>
+		</action>
+		<action name="bogie-dispatch-production">
+			<result name="success" type="tiles">/bogiedispatch.tiles</result>
+		</action>
+		<action name="shell-dispatch-production">
+			<result name="success" type="tiles">/shelldispatch.tiles</result>
+		</action>
+		<action name="paint-dispatch-production">
+			<result name="success" type="tiles">/paintdispatch.tiles</result>
+		</action>
+		
+		<action name="paint-memo-clearance">
+			<result name="success" type="tiles">/paintMemoClearance.tiles</result>
+		</action>
+		
+		<action name="extr-paint-final-inspection">
+			<result name="success" type="tiles">/extrPaintFinalInspection.tiles</result>
+		</action>
+			<action name="extr-paint-sip">
+			<result name="success" type="tiles">/extrPaintSip.tiles</result>
+		</action>
+		<action name="intr-paint-final-inspection">
+			<result name="success" type="tiles">/intrPaintFinalInspection.tiles</result>
+		</action>
+			<action name="intr-paint-sip">
+			<result name="success" type="tiles">/intrPaintSip.tiles</result>
+		</action>
+			
+		
+		
+		
+		<action name="furnishing-dispatch-production">
+			<result name="success" type="tiles">/furnishingdispatch.tiles</result>
+		</action>
+		<action name="wheel-receipt-at-bogie">
+			<result name="success" type="tiles">/wheelreceipt.tiles</result>
+		</action>
+		<action name="bogie-receipt-at-furnishing">
+			<result name="success" type="tiles">/bogiereceipt.tiles</result>
+		</action>
+		<action name="chat-application">
+			<result name="success" type="tiles">/chatApplication.tiles</result>
+		</action>
+		<action name="layout-stage-count">
+			<result name="success" type="tiles">/layout-stage-count.tiles</result>
+		</action>
+		
+		<action name="shell-receipt-at-paint">
+			<result name="success" type="tiles">/shellreceipt.tiles</result>
+		</action>
+		<action name="furnishing-receipt-at-finishing">
+			<result name="success" type="tiles">/furnishingreceipt.tiles</result>
+		</action>
+		<action name="coach-receipt-for-turnout">
+			<result name="success" type="tiles">/coachreceipt.tiles</result>
+		</action>
+		<action name="coach-available-for-turnout">
+			<result name="success" type="tiles">/coachavailableforRack.tiles</result>
+		</action>
+		
+		<action name="shell-receipt-at-furnishing">
+			<result name="success" type="tiles">/shellreceiptAtFurnishing.tiles</result>
+		</action>
+		
+		
+		<action name="wheel-available-at-bogie">
+			<result name="success" type="tiles">/wheelavailable.tiles</result>
+		</action>
+		<action name="wheel-quality-clearance-para">
+			<result name="success" type="tiles">/wheelQualityClearancePara.tiles</result>
+		</action>
+		
+		<action name="wheel-self-inspection-ctrb">
+			<result name="success" type="tiles">/wheelSelfInspectionCtrb.tiles</result>
+		</action>
+		
+		<action name="bogie-available-at-furnishing">
+			<result name="success" type="tiles">/bogieavailable.tiles</result>
+		</action>
+		<action name="coach-available-at-finishing">
+			<result name="success" type="tiles">/coachavailable.tiles</result>
+		</action>
+		
+		<action name="shell-available-at-paint">
+			<result name="success" type="tiles">/shellavailable.tiles</result>
+		</action>
+		
+		<action name="Shell-Assembly-Mearging">
+			<result name="success" type="tiles">/shellAssemblyMearging.tiles</result>
+		</action>
+		<action name="user-form" class="ACTION.CoachTypeAction" method="getAssetType">
+			<result name="success" type="tiles">/user.tiles</result>
+		</action>
+		<action name="emp-master-help">
+			<result name="success" type="tiles">/empMasterHelp.tiles</result>
+		</action>
+		<action name="add-coach-production">
+			<result name="success" type="tiles">/addCoachProduction.tiles</result>
+		</action>
+		<action name="add-shop-production">
+			<result name="success" type="tiles">/addShopProduction.tiles</result>
+		</action>
+		<action name="add-Asset-gateout">
+			<result name="success" type="tiles">/addAssetGateOut.tiles</result>
+		</action>
+		<action name="annual-target">
+			<result name="success" type="tiles">/addAnnualTarget.tiles</result>
+	    </action>
+	    <action name="annual-target-shop">
+			<result name="success" type="tiles">/addAnnualTargetShop.tiles</result>
+	    </action>
+	    
+	    <action name="annual-target-RSP">
+			<result name="success" type="tiles">/addAnnualTargetRSP.tiles</result>
+	    </action>
+	    
+	    <action name="annual-target-monthly">
+			<result name="success" type="tiles">/addAnnualTargetMonthly.tiles</result>
+	    </action>
+	     
+	    <action name="reset-password">
+			<result name="success" type="tiles">/resetPwd.tiles</result>
+	    </action>
+	    
+	     <action name="change-password">
+			<result name="success" type="tiles">/changePwd.tiles</result>
+	    </action>
+	      
+	    <action name="dashboard-shop">
+	    <result name="success">dashboard_shop.jsp</result>
+	    </action>
+	 
+	     <action name="dashboard-manpower-bogie">
+			<result name="success" type="tiles">/dashboard-manpower-bogie.tiles</result>
+	    </action>
+	   <action name="dashboard-shop-production">
+			<result name="success" type="tiles">/dashboard-shop-production.tiles</result>
+	    </action>   
+	 
+	 	<action name="shop-production-status">
+			<result name="success" type="tiles">/shopProductionStatus.tiles</result>
+	    </action>          
+	      
+	    
+	     <action name="machine-master" class="ACTION.ShopListAndMachineType" method="getAssetType" >
+			<result name="success" type="tiles">/machineMaster.tiles</result>
+		</action>
+		
+		<action name="machine-schedule-due" >
+			<result name="success" type="tiles">/machineScheduleDue.tiles</result>
+		</action>  
+		<action name="machine-schedule-failed" >
+			<result name="success" type="tiles">/machineFailed.tiles</result>
+		</action>  
+	    
+	    	<action name="update_workshop_holidays" >          			
+           			<result name="success" type= "tiles">/workshop_holidays.tiles</result>
+           			
+			</action>
+	          <action name="define_new_holidays" >          			
+           			<result name="success" type= "tiles">/define_holidays.tiles</result>
+           			
+			</action>
+			
+			<action name="add-job-master"  class="ACTION.MachineId"   method="getMachineId">
+			<result name="success" type="tiles">/addJobMaster.tiles</result>
+		</action>
+
+			<action name="report-machine-failure" class="ACTION.ShopListAndMachineType"   method="getAssetType">
+			<result name="success" type="tiles">/reportMachineFailure.tiles</result>
+</action>
+<action name="failed-machine-release">
+			<result name="success" type="tiles">/machineFailed.tiles</result>
+		</action>
+<action name="machine-schedule-failed-action">
+			<result name="success" type="tiles">/machineFailedAction.tiles</result>
+		</action>
+<action name="overdue-schedule"  >
+			<result name="success" type="tiles">/MachineScheduleDue.tiles</result>
+		</action>
+<!-- 		<action name="overdue-target-schedule"  > -->
+<!-- 			<result name="success" type="tiles">/MachineScheduleTargetDue.tiles</result> -->
+<!-- 		</action> -->
+<action name="overdue-perform-action">
+			     <result name="success" type="tiles">/overduePerformAction.tiles</result>
+		           </action>
+		         <action name="actionForMachineScheduleDue" class="struts.action.master.MachineScheduleDueActionPerform"	method="performAction">
+			<result type="json" />
+		</action>
+		<action name="equipment-master-report"  >
+					<result name="success" type="tiles">/EquipmentMasterReport.tiles</result>
+				</action>
+				
+				<action name="schedule-due-date-report"  >
+					<result name="success" type="tiles">/ScheduleDueDateReport.tiles</result>
+				</action>
+				
+
+
+<action name="getMachineByShop"  class="ACTION.GetMachineByShop" method="getMachine">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+	
+ <action name="user-manual-machine-maintenance">
+			<result name="success" type="tiles">/userManualMachineMaintenance.tiles</result>
+		</action>
+		
+		 <action name="user-manual-machine-maintenance-2">
+			<result name="success" type="tiles">/userManualMachineMaintenance2.tiles</result>
+		</action>
+		
+		
+<action name="job-allocation">
+			<result name="success" type="tiles">/jobAllotment.tiles</result>
+		</action>
+		
+		<action name="machine_operation">
+			<result name="success" type="tiles">/MachineOperation.tiles</result>
+		</action>
+		
+		<action name="machine_breakdown">
+			<result name="success" type="tiles">/MachineBreakdown.tiles</result>
+		</action>
+		<action name="machine-FIR-master">
+			<result name="success" type="tiles">/machine_FIR_master.tiles</result>
+		</action>
+		<action name="machine-schedule-activity">
+			<result name="success" type="tiles">/MachineScheduleActivity.tiles</result>
+		</action>
+			
+	    <action name="safety-instruction-master">
+			<result name="success" type="tiles">/SafetyInstructionMaster.tiles</result>
+			
+		</action>
+		<action name="machine-list" class="struts.action.master.MachineTypeList" method="retrieveMachineTypeList">
+			<result name="success" type="tiles">/MachineList.tiles</result>
+			
+		</action>
+		
+		<action name="breakDownEntry"  class="struts.action.master.BreakDownEntryAction" method="reportBreakDown">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+		 <action name="bogie-report" >
+			<result name="success" type="tiles">/BogieReport.tiles</result>
+		</action> 
+		
+		 
+		
+		
+<!-- 	    </package> -->
+	    
+
+		
+<!-- 		<package name="default1" extends="json-default"> -->
+		
+		    <action name="getStages" class="struts.action.master.StageAction" method="getStages">          			
+           			<result  name="success" type= "json"/>
+			</action>
+		   
+		   <action name="rackFormation" class="struts.action.master.RackFormationAction" method="createRacks">          			
+           			<result  name="success" type= "json"/>
+			</action>
+		
+			<action name="*LieuMasterAction" class="struts.action.master.LieuMasterAction"
+			method="{1}">
+			<result type= "json"/>
+		</action>
+			
+			
+			<action name="assignLieuDate" class="struts.action.master.LieuAction" method="assignLieuDate">          			
+           			<result  name="success" type= "json"/>
+			</action>
+			<action name="isHolidayHavingLieuDate" class="struts.action.master.LieuAction" method="isHolidayHavingLieuDate">          			
+           			<result  name="success" type= "json"/>
+			</action>
+		
+				<action name="*HolidayMasterAction" class="struts.action.master.HolidayMasterAction"
+			method="{1}">
+			<result type= "json"/>
+		</action>
+		
+		  <action name="getWorkingDayByYear" class="ACTION.WorkingDayAction" method="getWorkingDayByYear">          			
+           			<result  name="success" type= "json"/>
+			</action>
+			
+<action name="getWorkingDayByFinancialYear" class="ACTION.WorkingDaybyFinancialyYearAction" method="getWorkingDayByFinancialYear">          			
+           			<result  name="success" type= "json"/>
+			</action>
+		<action name="getHolidayCodesAndNames" class="struts.action.master.HolidayAction" method="getHolidayCodesAndNames">          			
+           			<result  name="success" type= "json"/>
+			</action>
+			
+			
+			<action name="getHolidayNameByCode" class="struts.action.master.HolidayAction" method="getHolidayNameByCode">          			
+           			<result  name="success" type= "json"/>
+			</action>
+		<action name="getSectionByShop"  class="ACTION.GetSectionByShop" method="getSection">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+<action name="material-shortage-form" class="struts.action.master.MaterialShopList" method="getShopAndMaterial" >
+			<result name="success" type="tiles">/materialShortage.tiles</result>
+</action>
+
+
+<action name="*MaterialShortageAction" class="ACTION.MaterialShortageAction"	method="{1}">
+			<result type="json" />
+		</action>
+
+<action name="actionForMaterialShortage" class="struts.action.master.ActionOnMaterialShortageAction" method="assignActionPerformed">          			
+           			<result  name="success" type= "json"/>
+</action>
+<action name="transfer_retiredEmployee"  class="struts.action.master.TransferRetiredEmployeeAction" method="getTransfer">
+         <result  name="success" type= "json"/>
+	</action>	
+		<action name="actionForAbnormality" class="struts.action.master.ActionOnAbnormalityAction" method="assignActionPerformed">          			
+           			<result  name="success" type= "json"/>
+			</action>
+		<action name="*AbnormalityAction" class="ACTION.AbnormalityAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*AmcAction" class="ACTION.AmcAgencyAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*SpareMasterAction" class="ACTION.SpareMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*SheetCuttingAction" class="ACTION.SheetCuttingAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*WheelAction" class="ACTION.WheelProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+			<action name="*ShellAction" class="ACTION.ShellProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*EmpAction" class="ACTION.Empaction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*EmployeeAction" class="ACTION.EmployeeMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*FailureAction" class="ACTION.MachineFIRMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*ActivityAction" class="ACTION.MachineScheduleActivityAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*SafetyInstructionMasterAction" class="ACTION.SafetyInstructionMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*SafetyTransactionAction" class="ACTION.SafetyTransactionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*MachineListAction" class="ACTION.MachineListAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*EmployeeJobAction" class="ACTION.EmployeeJobAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*CoachAction" class="ACTION.CoachProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*JobAction" class="ACTION.JobMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+
+<action name="getActivityBysubSection"  class="ACTION.GetActivityBysubSection" method="getActivity">
+         			
+           			<result  name="success" type= "json"/>
+	</action>
+
+<action name="jobCompletionAction"  class="struts.action.master.JobCompletionAction" method="setCompletionDate">
+         <result  name="success" type= "json"/>
+	</action>
+		
+		<action name="*PaintAction" class="ACTION.PaintProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*BogieAction" class="ACTION.BogieProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*FurnishingAction" class="ACTION.FurnishingProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*FinishingAction" class="ACTION.FinishingProductionAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*CoachTurnoutAction" class="ACTION.CoachTurnoutAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*UnderFrameAction" class="ACTION.ShellMeargingActionUnderframe"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*SidewallAction" class="ACTION.ShellMeargingSidewallAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*RoofAction" class="ACTION.ShellMeargingRoofAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*EndwallAction" class="ACTION.ShellMeargingEndWallAction"	method="{1}">
+			<result type="json" />
+		</action>
+	
+		<action name="*UserAction" class="ACTION.UserAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*MachineBreakdownAction" class="ACTION.MachineBreakdownAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*DefineHolidayAction" class="ACTION.DefineHolidayAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*MachineMasterAction" class="ACTION.MachineMasterAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*MachineActivityScheduleLinkingAction" class="ACTION.MachineActivityScheduleLinkingAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*ScheduleAction" class="ACTION.ScheduleAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*Asset2Action" class="ACTION.Assetaction2"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*AssetAction" class="ACTION.Assetaction"	method="{1}">
+			<result type="json" />
+		</action>
+
+ 
+		
+
+		
+		<action name="*OperationAction" class="ACTION.machine_operationaction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*SpareAction" class="ACTION.MachineSpareAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="*FailedAction" class="ACTION.ActionOnMachineFailedAction"	method="{1}">
+			<result type="json" />
+		</action>
+		
+		<action name="*machineDueForSchedule" class="ACTION.MachineScheduleDueAction"	method="{1}">
+			<result type="json" />
+		</action>
+		<action name="open-schedule-form" >
+			<result name="success">scheduleFormReportSelection.jsp</result>
+		</action>
+	</package>
+		
+<constant name="struts.action.excludePattern" value="/frameset*,/run*,/preview*,/download*,/parameter*,/document*,/output*,/extract*,/RetrieveImage,/myServlet,/emp_dp_add_do,/http*,/http://10.60.201.247*,//10.60.201.247*,/rest/[a-zA-Z_0-9]*/[a-zA-Z_0-9]* "/>	
+
+</struts>

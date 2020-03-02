@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="model.SubStagesMaster" table="substage_master" >
+		<id name="substageId" type="java.lang.String">
+			<column name="substage_id" length="10"></column>
+			
+		</id>
+		<property name="substageDescription" type="java.lang.String">
+			<column name="substage_description" length="30"></column>
+		</property>
+		
+		<property name="parentStage" type="java.lang.String">
+			<column name="parent_stages" length="25"></column>
+		</property>
+		<property name="substages" type="java.lang.String">
+			<column name="substages" length="25"></column>
+		</property>
+		<property name="subStageValidity" type="java.lang.Integer">
+			<column name="substage_validity"></column>
+		</property>
+		<property name="parentStageId" type="java.lang.String">
+			<column name="parent_stage_id"></column>
+		</property>
+		
+		<property name="qtyPerCoach" type="java.lang.Integer">
+			<column name="qty_per_coach" ></column>
+		</property>
+		
+		<property name="manhourRequired" type="java.lang.Integer">
+			<column name="man_hour_required" ></column>
+		</property>
+		<property name="completionTime" type="java.lang.String">
+			<column name="completion_time" length="10"></column>
+		</property>
+		<property name="sustageSequence" type="java.lang.Integer">
+			<column name="substage_sequence" ></column>
+		</property>
+			
+		<property name="gateoutValidity" type="java.lang.Integer">
+			<column name="gateout_validity" ></column>
+		</property>
+		<property name="previousstageId" type="java.lang.String">
+			<column name="previous_stage_id" length="100"></column>
+		</property>
+		<property name="nextStageId" type="java.lang.String">
+			<column name="next_stage_id" length="100"></column>
+		</property>
+	</class>
+</hibernate-mapping>

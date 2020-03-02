@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Jan, 2020 6:49:52 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.ShellStage1SipTran" table="shell_stage1_sip_tran">
+        <id name="shellAssetId" type="int">
+            <column name="shell_asset_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="stage1SipDocNo" type="string">
+            <column name="stage1_sip_doc_no" length="100" />
+        </property>
+        <property name="stage1SipShift" type="string">
+            <column name="stage1_sip_shift" length="10" />
+        </property>
+        <property name="stage1SipDate" type="date">
+            <column name="stage1_sip_date" length="13" />
+        </property>
+        <property name="stage1WorkBy" type="string">
+            <column name="stage1_work_by" length="30" />
+        </property>
+        <property name="stage1DrawingNo" type="string">
+            <column name="stage1_drawing_no" length="30" />
+        </property>
+        <property name="stage1WiNo" type="string">
+            <column name="stage1_wi_no" length="30" />
+        </property>
+        <property name="itemAsPerDrawingFlag" type="string">
+            <column name="item_as_per_drawing_flag" length="6" />
+        </property>
+        <property name="complianceWiFlag" type="string">
+            <column name="compliance_wi_flag" length="6" />
+        </property>
+        <property name="weldingThroatLengthFlag" type="string">
+            <column name="welding_throat_length_flag" length="6" />
+        </property>
+        <property name="noOfLevelTrestle" type="java.lang.Integer">
+            <column name="no_of_level_trestle" />
+        </property>
+        <property name="levelingCenteringUnderframeFlag" type="string">
+            <column name="leveling_centering_underframe_flag" length="6" />
+        </property>
+        <property name="grindingCleaningSolebarFlag" type="string">
+            <column name="grinding_cleaning_solebar_flag" length="6" />
+        </property>
+        <property name="weildablePrimerSolebarFlag" type="string">
+            <column name="weildable_primer_solebar_flag" length="6" />
+        </property>
+        <property name="lengthOverBodyLh" type="java.lang.Integer">
+            <column name="length_over_body_lh" />
+        </property>
+        <property name="lengthOverBodyRh" type="java.lang.Integer">
+            <column name="length_over_body_rh" />
+        </property>
+        <property name="shellWidthPp" type="java.lang.Integer">
+            <column name="shell_width_pp" />
+        </property>
+        <property name="shellWidthNpp" type="java.lang.Integer">
+            <column name="shell_width_npp" />
+        </property>
+        <property name="shellWidthCenter" type="java.lang.Integer">
+            <column name="shell_width_center" />
+        </property>
+        <property name="lateralWidthAcTroughPp" type="java.lang.Integer">
+            <column name="lateral_width_ac_trough_pp" />
+        </property>
+        <property name="lateralWidthAcTroughNpp" type="java.lang.Integer">
+            <column name="lateral_width_ac_trough_npp" />
+        </property>
+        <property name="longitudinalWidthAcTroughPp" type="java.lang.Integer">
+            <column name="longitudinal_width_ac_trough_pp" />
+        </property>
+        <property name="longitudinalWidthAcTroughNpp" type="java.lang.Integer">
+            <column name="longitudinal_width_ac_trough_npp" />
+        </property>
+        <property name="diagonalWidthEntranceDoor1" type="java.lang.Integer">
+            <column name="diagonal_width_entrance_door1" />
+        </property>
+        <property name="diagonalWidthEntranceDoor2" type="java.lang.Integer">
+            <column name="diagonal_width_entrance_door2" />
+        </property>
+        <property name="diagonalWidthEntranceDoor3" type="java.lang.Integer">
+            <column name="diagonal_width_entrance_door3" />
+        </property>
+        <property name="diagonalWidthEntranceDoor4" type="java.lang.Integer">
+            <column name="diagonal_width_entrance_door4" />
+        </property>
+        <property name="diagonalWidthEntranceDoor5" type="java.lang.Integer">
+            <column name="diagonal_width_entrance_door5" />
+        </property>
+        <property name="diagonalWidthEntranceDoor6" type="java.lang.Integer">
+            <column name="diagonal_width_entrance_door6" />
+        </property>
+        <property name="heightEntranceDoor1" type="java.lang.Integer">
+            <column name="height_entrance_door1" />
+        </property>
+        <property name="heightEntranceDoor2" type="java.lang.Integer">
+            <column name="height_entrance_door2" />
+        </property>
+        <property name="heightEntranceDoor3" type="java.lang.Integer">
+            <column name="height_entrance_door3" />
+        </property>
+        <property name="heightEntranceDoor4" type="java.lang.Integer">
+            <column name="height_entrance_door4" />
+        </property>
+        <property name="heightEntranceDoor5" type="java.lang.Integer">
+            <column name="height_entrance_door5" />
+        </property>
+        <property name="heightEntranceDoor6" type="java.lang.Integer">
+            <column name="height_entrance_door6" />
+        </property>
+        <property name="widthEntranceDoor1" type="java.lang.Integer">
+            <column name="width_entrance_door1" />
+        </property>
+        <property name="widthEntranceDoor2" type="java.lang.Integer">
+            <column name="width_entrance_door2" />
+        </property>
+        <property name="widthEntranceDoor3" type="java.lang.Integer">
+            <column name="width_entrance_door3" />
+        </property>
+        <property name="widthEntranceDoor4" type="java.lang.Integer">
+            <column name="width_entrance_door4" />
+        </property>
+        <property name="widthEntranceDoor5" type="java.lang.Integer">
+            <column name="width_entrance_door5" />
+        </property>
+        <property name="widthEntranceDoor6" type="java.lang.Integer">
+            <column name="width_entrance_door6" />
+        </property>
+        <property name="heightTopTroughfloorToRoofsheetBottomPp" type="java.lang.Integer">
+            <column name="height_top_troughfloor_to_roofsheet_bottom_pp" />
+        </property>
+        <property name="heightTopTroughfloorToRoofsheetBottomNpp" type="java.lang.Integer">
+            <column name="height_top_troughfloor_to_roofsheet_bottom_npp" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceSingleside1" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_singleside1" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceSingleside2" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_singleside2" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceSingleside3" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_singleside3" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceSingleside4" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_singleside4" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceSingleside5" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_singleside5" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceSingleside6" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_singleside6" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceCabinside1" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_cabinside1" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceCabinside2" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_cabinside2" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceCabinside3" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_cabinside3" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceCabinside4" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_cabinside4" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceCabinside5" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_cabinside5" />
+        </property>
+        <property name="heightTopPillarsupportToBottomCrossbraceCabinside6" type="java.lang.Integer">
+            <column name="height_top_pillarsupport_to_bottom_crossbrace_cabinside6" />
+        </property>
+        <property name="heightCrossbracePartitionpillerSingelside1" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_singelside1" />
+        </property>
+        <property name="heightCrossbracePartitionpillerSingelside2" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_singelside2" />
+        </property>
+        <property name="heightCrossbracePartitionpillerSingelside3" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_singelside3" />
+        </property>
+        <property name="heightCrossbracePartitionpillerSingelside4" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_singelside4" />
+        </property>
+        <property name="heightCrossbracePartitionpillerSingelside5" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_singelside5" />
+        </property>
+        <property name="heightCrossbracePartitionpillerSingelside6" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_singelside6" />
+        </property>
+        <property name="heightCrossbracePartitionpillerCabinside1" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_cabinside1" />
+        </property>
+        <property name="heightCrossbracePartitionpillerCabinside2" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_cabinside2" />
+        </property>
+        <property name="heightCrossbracePartitionpillerCabinside3" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_cabinside3" />
+        </property>
+        <property name="heightCrossbracePartitionpillerCabinside4" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_cabinside4" />
+        </property>
+        <property name="heightCrossbracePartitionpillerCabinside5" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_cabinside5" />
+        </property>
+        <property name="heightCrossbracePartitionpillerCabinside6" type="java.lang.Integer">
+            <column name="height_crossbrace_partitionpiller_cabinside6" />
+        </property>
+        <property name="heightVestibuleplateEndwallPp" type="java.lang.Integer">
+            <column name="height_vestibuleplate_endwall_pp" />
+        </property>
+        <property name="heightVestibuleplateEndwallNpp" type="java.lang.Integer">
+            <column name="height_vestibuleplate_endwall_npp" />
+        </property>
+        <property name="heightWtccPp" type="java.lang.Integer">
+            <column name="height_wtcc_pp" />
+        </property>
+        <property name="heightWtccNpp" type="java.lang.Integer">
+            <column name="height_wtcc_npp" />
+        </property>
+        <property name="widthWtccPp" type="java.lang.Integer">
+            <column name="width_wtcc_pp" />
+        </property>
+        <property name="widthWtccNpp" type="java.lang.Integer">
+            <column name="width_wtcc_npp" />
+        </property>
+        <property name="heightTopThroughfloorBottomRoofArchPp" type="java.lang.Integer">
+            <column name="height_top_throughfloor_bottom_roof_arch_pp" />
+        </property>
+        <property name="heightTopThroughfloorBottomRoofArchNpp" type="java.lang.Integer">
+            <column name="height_top_throughfloor_bottom_roof_arch_npp" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle1" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single1" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle2" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single2" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle3" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single3" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle4" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single4" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle5" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single5" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle6" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single6" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle7" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single7" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle8" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single8" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle9" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single9" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle10" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single10" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofSingle11" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_single11" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin1" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin1" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin2" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin2" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin3" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin3" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin4" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin4" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin5" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin5" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin6" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin6" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin7" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin7" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin8" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin8" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin9" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin9" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin10" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin10" />
+        </property>
+        <property name="heightFloorpillerbracketToRoofCabin11" type="java.lang.Integer">
+            <column name="height_floorpillerbracket_to_roof_cabin11" />
+        </property>
+        <property name="slidingDoorHeightLh" type="java.lang.Integer">
+            <column name="sliding_door_height_lh" />
+        </property>
+        <property name="slidingDoorHeightRh" type="java.lang.Integer">
+            <column name="sliding_door_height_rh" />
+        </property>
+        <property name="slidingDoorWidthLh" type="java.lang.Integer">
+            <column name="sliding_door_width_lh" />
+        </property>
+        <property name="slidingDoorWidthRh" type="java.lang.Integer">
+            <column name="sliding_door_width_rh" />
+        </property>
+        <property name="distanceRoofEndwallPp" type="java.lang.Integer">
+            <column name="distance_roof_endwall_pp" />
+        </property>
+        <property name="distanceRoofEndwallNpp" type="java.lang.Integer">
+            <column name="distance_roof_endwall_npp" />
+        </property>
+        <property name="roofElementShellSocketHoleDiePp" type="java.lang.Integer">
+            <column name="roof_element_shell_socket_hole_die_pp" />
+        </property>
+        <property name="roofElementShellSocketHoleDieNpp" type="java.lang.Integer">
+            <column name="roof_element_shell_socket_hole_die_npp" />
+        </property>
+        <property name="roofElementStudDiagonalPp" type="string">
+            <column name="roof_element_stud_diagonal_pp" length="20" />
+        </property>
+        <property name="roofElementStudDiagonalNpp" type="string">
+            <column name="roof_element_stud_diagonal_npp" length="20" />
+        </property>
+        <property name="checkedDimenRemarks" type="string">
+            <column name="checked_dimen_remarks" length="150" />
+        </property>
+        <property name="alignmentSidewallRoofarchFlag" type="string">
+            <column name="alignment_sidewall_roofarch_flag" length="6" />
+        </property>
+        <property name="weldingSidewallLavsidewallFlag" type="string">
+            <column name="welding_sidewall_lavsidewall_flag" length="6" />
+        </property>
+        <property name="weldingRoofarchSidewallCarlineFlag" type="string">
+            <column name="welding_roofarch_sidewall_carline_flag" length="6" />
+        </property>       
+        <property name="weldingCompletedoorframeFlag" type="string">
+            <column name="welding_completedoorframe_flag" length="6" />
+        </property>
+        <property name="weldingCompleteendwallFinalroofelementFlag" type="string">
+            <column name="welding_completeendwall_finalroofelement_flag" length="6" />
+        </property>
+        <property name="weldingRoofSidewallCarlineFlag" type="string">
+            <column name="welding_roof_sidewall_carline_flag" length="6" />
+        </property>       
+        <property name="grindHorizontalVerticalJointFlag" type="string">
+            <column name="grind_horizontal_vertical_joint_flag" length="6" />
+        </property>
+        <property name="alignmentBothSidewallUnderframeFlag" type="string">
+            <column name="alignment_both_sidewall_underframe_flag" length="6" />
+        </property>
+        <property name="detailsOfModification" type="string">
+            <column name="details_of_modification" length="500" />
+        </property>
+        <property name="detailsOfTrial" type="string">
+            <column name="details_of_trial" length="500" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+        <property name="stage1TestingStatus" type="string">
+            <column name="stage1_testing_status" length="15" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" length="29" />
+        </property>
+    </class>
+</hibernate-mapping>

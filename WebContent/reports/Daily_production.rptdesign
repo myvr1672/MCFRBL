@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="96">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cGFzc3dvcmQ=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Daily_Prod_ds" id="465">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">fnyr</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">fnyr</text-property>
+                    <text-property name="heading">fnyr</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">crnt_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crnt_date</text-property>
+                    <text-property name="heading">crnt_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">prev_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">prev_date</text-property>
+                    <text-property name="heading">prev_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">crdt_mfg</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">crdt_mfg</text-property>
+                    <text-property name="heading">crdt_mfg</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">prod_actl_rate</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">prod_actl_rate</text-property>
+                    <text-property name="heading">prod_actl_rate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">prod_reqd_rate</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">prod_reqd_rate</text-property>
+                    <text-property name="heading">prod_reqd_rate</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">fnyr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">crnt_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">prev_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">crdt_mfg</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">prod_actl_rate</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">prod_reqd_rate</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">fnyr</property>
+                    <property name="nativeName">fnyr</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">crnt_date</property>
+                    <property name="nativeName">crnt_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">prev_date</property>
+                    <property name="nativeName">prev_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">crdt_mfg</property>
+                    <property name="nativeName">crdt_mfg</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">prod_actl_rate</property>
+                    <property name="nativeName">prod_actl_rate</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">prod_reqd_rate</property>
+                    <property name="nativeName">prod_reqd_rate</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+fnyr, crnt_date, prev_date, 
+ondt_mfg_qty crdt_mfg,
+ytd_prod_rate prod_actl_rate,
+ytd_req_rate prod_reqd_rate 
+from fin_prod_actl_trgt_v;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>fnyr</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>fnyr</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>fnyr</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>crnt_date</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>crnt_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>crnt_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gate_out</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>gate_out</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gate_out</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>prop_tgt_rate</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>prop_tgt_rate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>prop_tgt_rate</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>prod_actl_rate</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>prod_actl_rate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>prod_actl_rate</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="500">
+            <property name="dataSet">Daily_Prod_ds</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">fnyr</property>
+                    <text-property name="displayName">fnyr</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fnyr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">crnt_date</property>
+                    <text-property name="displayName">crnt_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["crnt_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">prev_date</property>
+                    <text-property name="displayName">prev_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["prev_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">crdt_mfg</property>
+                    <text-property name="displayName">crdt_mfg</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["crdt_mfg"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">prod_actl_rate</property>
+                    <text-property name="displayName">prod_actl_rate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["prod_actl_rate"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">prod_reqd_rate</property>
+                    <text-property name="displayName">prod_reqd_rate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["prod_reqd_rate"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="534"/>
+            <column id="535"/>
+            <column id="536"/>
+            <column id="537"/>
+            <column id="538"/>
+            <column id="539"/>
+            <header>
+                <row id="501">
+                    <cell id="502">
+                        <label id="503">
+                            <text-property name="text">Financial Year</text-property>
+                        </label>
+                    </cell>
+                    <cell id="504">
+                        <label id="505">
+                            <text-property name="text">Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="506">
+                        <label id="507">
+                            <text-property name="text">Previous Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="508">
+                        <label id="509">
+                            <text-property name="text">Manufactured</text-property>
+                        </label>
+                    </cell>
+                    <cell id="510">
+                        <label id="511">
+                            <text-property name="text">Actual Rate</text-property>
+                        </label>
+                    </cell>
+                    <cell id="512">
+                        <label id="513">
+                            <text-property name="text">Required Rate</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="514">
+                    <cell id="515">
+                        <data id="516">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">fnyr</property>
+                        </data>
+                    </cell>
+                    <cell id="517">
+                        <data id="518">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">crnt_date</property>
+                        </data>
+                    </cell>
+                    <cell id="519">
+                        <data id="520">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">prev_date</property>
+                        </data>
+                    </cell>
+                    <cell id="521">
+                        <data id="522">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">crdt_mfg</property>
+                        </data>
+                    </cell>
+                    <cell id="523">
+                        <data id="524">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">prod_actl_rate</property>
+                        </data>
+                    </cell>
+                    <cell id="525">
+                        <data id="526">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">prod_reqd_rate</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="527">
+                    <cell id="528"/>
+                    <cell id="529"/>
+                    <cell id="530"/>
+                    <cell id="531"/>
+                    <cell id="532"/>
+                    <cell id="533"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

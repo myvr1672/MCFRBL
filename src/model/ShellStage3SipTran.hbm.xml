@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 27 Jan, 2020 5:24:40 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.ShellStage3SipTran" table="shell_stage3_sip_tran">
+        <id name="shellAssetId" type="int">
+            <column name="shell_asset_id" />
+<!--             <generator class="assigned" /> -->
+        </id>
+        <property name="stage3SipDocNo" type="string">
+            <column name="stage3_sip_doc_no" length="100" />
+        </property>
+        <property name="stage3SipShift" type="string">
+            <column name="stage3_sip_shift" length="10" />
+        </property>
+        <property name="stage3SipDate" type="date">
+            <column name="stage3_sip_date" length="13" />
+        </property>
+        <property name="stage3WorkBy" type="string">
+            <column name="stage3_work_by" length="30" />
+        </property>
+        <property name="stage3DrawingNo" type="string">
+            <column name="stage3_drawing_no" length="30" />
+        </property>
+        <property name="undulationAboveWindow1" type="java.lang.Float">
+            <column name="undulation_above_window1" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow1" type="java.lang.Float">
+            <column name="undulation_below_window1" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow2" type="java.lang.Float">
+            <column name="undulation_above_window2" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow2" type="java.lang.Float">
+            <column name="undulation_below_window2" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow3" type="java.lang.Float">
+            <column name="undulation_above_window3" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow3" type="java.lang.Float">
+            <column name="undulation_below_window3" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow4" type="java.lang.Float">
+            <column name="undulation_above_window4" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow4" type="java.lang.Float">
+            <column name="undulation_below_window4" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow5" type="java.lang.Float">
+            <column name="undulation_above_window5" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow5" type="java.lang.Float">
+            <column name="undulation_below_window5" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow6" type="java.lang.Float">
+            <column name="undulation_above_window6" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow6" type="java.lang.Float">
+            <column name="undulation_below_window6" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow7" type="java.lang.Float">
+            <column name="undulation_above_window7" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow7" type="java.lang.Float">
+            <column name="undulation_below_window7" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow8" type="java.lang.Float">
+            <column name="undulation_above_window8" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow8" type="java.lang.Float">
+            <column name="undulation_below_window8" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow9" type="java.lang.Float">
+            <column name="undulation_above_window9" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow9" type="java.lang.Float">
+            <column name="undulation_below_window9" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow10" type="java.lang.Float">
+            <column name="undulation_above_window10" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow10" type="java.lang.Float">
+            <column name="undulation_below_window10" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow11" type="java.lang.Float">
+            <column name="undulation_above_window11" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow11" type="java.lang.Float">
+            <column name="undulation_below_window11" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow12" type="java.lang.Float">
+            <column name="undulation_above_window12" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow12" type="java.lang.Float">
+            <column name="undulation_below_window12" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow13" type="java.lang.Float">
+            <column name="undulation_above_window13" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow13" type="java.lang.Float">
+            <column name="undulation_below_window13" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow14" type="java.lang.Float">
+            <column name="undulation_above_window14" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow14" type="java.lang.Float">
+            <column name="undulation_below_window14" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow15" type="java.lang.Float">
+            <column name="undulation_above_window15" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow15" type="java.lang.Float">
+            <column name="undulation_below_window15" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow16" type="java.lang.Float">
+            <column name="undulation_above_window16" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow16" type="java.lang.Float">
+            <column name="undulation_below_window16" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow17" type="java.lang.Float">
+            <column name="undulation_above_window17" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow17" type="java.lang.Float">
+            <column name="undulation_below_window17" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow18" type="java.lang.Float">
+            <column name="undulation_above_window18" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow18" type="java.lang.Float">
+            <column name="undulation_below_window18" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow19" type="java.lang.Float">
+            <column name="undulation_above_window19" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow19" type="java.lang.Float">
+            <column name="undulation_below_window19" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow20" type="java.lang.Float">
+            <column name="undulation_above_window20" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow20" type="java.lang.Float">
+            <column name="undulation_below_window20" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow21" type="java.lang.Float">
+            <column name="undulation_above_window21" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow21" type="java.lang.Float">
+            <column name="undulation_below_window21" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow22" type="java.lang.Float">
+            <column name="undulation_above_window22" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow22" type="java.lang.Float">
+            <column name="undulation_below_window22" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow23" type="java.lang.Float">
+            <column name="undulation_above_window23" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow23" type="java.lang.Float">
+            <column name="undulation_below_window23" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow24" type="java.lang.Float">
+            <column name="undulation_above_window24" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow24" type="java.lang.Float">
+            <column name="undulation_below_window24" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow25" type="java.lang.Float">
+            <column name="undulation_above_window25" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow25" type="java.lang.Float">
+            <column name="undulation_below_window25" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow26" type="java.lang.Float">
+            <column name="undulation_above_window26" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow26" type="java.lang.Float">
+            <column name="undulation_below_window26" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow27" type="java.lang.Float">
+            <column name="undulation_above_window27" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow27" type="java.lang.Float">
+            <column name="undulation_below_window27" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow28" type="java.lang.Float">
+            <column name="undulation_above_window28" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow28" type="java.lang.Float">
+            <column name="undulation_below_window28" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow29" type="java.lang.Float">
+            <column name="undulation_above_window29" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow29" type="java.lang.Float">
+            <column name="undulation_below_window29" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow30" type="java.lang.Float">
+            <column name="undulation_above_window30" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow30" type="java.lang.Float">
+            <column name="undulation_below_window30" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow31" type="java.lang.Float">
+            <column name="undulation_above_window31" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow31" type="java.lang.Float">
+            <column name="undulation_below_window31" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow32" type="java.lang.Float">
+            <column name="undulation_above_window32" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow32" type="java.lang.Float">
+            <column name="undulation_below_window32" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow33" type="java.lang.Float">
+            <column name="undulation_above_window33" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow33" type="java.lang.Float">
+            <column name="undulation_below_window33" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow34" type="java.lang.Float">
+            <column name="undulation_above_window34" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow34" type="java.lang.Float">
+            <column name="undulation_below_window34" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow35" type="java.lang.Float">
+            <column name="undulation_above_window35" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow35" type="java.lang.Float">
+            <column name="undulation_below_window35" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow36" type="java.lang.Float">
+            <column name="undulation_above_window36" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow36" type="java.lang.Float">
+            <column name="undulation_below_window36" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow37" type="java.lang.Float">
+            <column name="undulation_above_window37" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow37" type="java.lang.Float">
+            <column name="undulation_below_window37" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow38" type="java.lang.Float">
+            <column name="undulation_above_window38" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow38" type="java.lang.Float">
+            <column name="undulation_below_window38" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow39" type="java.lang.Float">
+            <column name="undulation_above_window39" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow39" type="java.lang.Float">
+            <column name="undulation_below_window39" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow40" type="java.lang.Float">
+            <column name="undulation_above_window40" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow40" type="java.lang.Float">
+            <column name="undulation_below_window40" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow41" type="java.lang.Float">
+            <column name="undulation_above_window41" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow41" type="java.lang.Float">
+            <column name="undulation_below_window41" precision="8" scale="8" />
+        </property>
+        <property name="undulationAboveWindow42" type="java.lang.Float">
+            <column name="undulation_above_window42" precision="8" scale="8" />
+        </property>
+        <property name="undulationBelowWindow42" type="java.lang.Float">
+            <column name="undulation_below_window42" precision="8" scale="8" />
+        </property>
+        <property name="endwallPpAboveCenterLh" type="string">
+            <column name="endwall_pp_above_center_lh" length="10" />
+        </property>
+        <property name="endwallPpAboveCenterRh" type="string">
+            <column name="endwall_pp_above_center_rh" length="10" />
+        </property>
+        <property name="endwallNppAboveCenterLh" type="string">
+            <column name="endwall_npp_above_center_lh" length="10" />
+        </property>
+        <property name="endwallNppAboveCenterRh" type="string">
+            <column name="endwall_npp_above_center_rh" length="10" />
+        </property>
+        <property name="endwallPpMiddleCenterLh" type="string">
+            <column name="endwall_pp_middle_center_lh" length="10" />
+        </property>
+        <property name="endwallPpMiddleCenterRh" type="string">
+            <column name="endwall_pp_middle_center_rh" length="10" />
+        </property>
+        <property name="endwallNppMiddleCenterLh" type="string">
+            <column name="endwall_npp_middle_center_lh" length="10" />
+        </property>
+        <property name="endwallNppMiddleCenterRh" type="string">
+            <column name="endwall_npp_middle_center_rh" length="10" />
+        </property>
+        <property name="endwallPpBottomCenterLh" type="string">
+            <column name="endwall_pp_bottom_center_lh" length="10" />
+        </property>
+        <property name="endwallPpBottomCenterRh" type="string">
+            <column name="endwall_pp_bottom_center_rh" length="10" />
+        </property>
+        <property name="endwallNppBottomCenterLh" type="string">
+            <column name="endwall_npp_bottom_center_lh" length="10" />
+        </property>
+        <property name="endwallNppBottomCenterRh" type="string">
+            <column name="endwall_npp_bottom_center_rh" length="10" />
+        </property>
+        <property name="dentReduceSidewallEndwallFlag" type="string">
+            <column name="dent_reduce_sidewall_endwall_flag" length="6" />
+        </property>
+        <property name="skinTensioningWiFlag" type="string">
+            <column name="skin_tensioning_wi_flag" length="6" />
+        </property>
+        <property name="skinTensioningSidewallEndwallLavFlag" type="string">
+            <column name="skin_tensioning_sidewall_endwall_lav_flag" length="6" />
+        </property>
+        <property name="heatedSpotFlag" type="string">
+            <column name="heated_spot_flag" length="6" />
+        </property>
+        <property name="weldRainWaterFlag" type="string">
+            <column name="weld_rain_water_flag" length="6" />
+        </property>
+        <property name="insulatingWeldingPinFlag" type="string">
+            <column name="insulating_welding_pin_flag" length="6" />
+        </property>
+        <property name="fitmentWeldingSidewallFlag" type="string">
+            <column name="fitment_welding_sidewall_flag" length="6" />
+        </property>
+        <property name="fitmentWeldingBracketarrangementFlag" type="string">
+            <column name="fitment_welding_bracketarrangement_flag" length="6" />
+        </property>
+        <property name="levelRainWaterGutterFlag" type="string">
+            <column name="level_rain_water_gutter_flag" length="6" />
+        </property>
+        <property name="fitmentWeldingWindowbarFlag" type="string">
+            <column name="fitment_welding_windowbar_flag" length="6" />
+        </property>
+        <property name="fitmentWeldingBracketLavatoryFlag" type="string">
+            <column name="fitment_welding_bracket_lavatory_flag" length="6" />
+        </property>
+        <property name="detailsOfM" type="string">
+            <column name="details_of_modification" length="500" />
+        </property>
+        <property name="detailsOfT" type="string">
+            <column name="details_of_trial" length="500" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remarks" length="500" />
+        </property>
+        <property name="stage3TestingStatus" type="string">
+            <column name="stage3_testing_status" length="15" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" length="29" />
+        </property>
+    </class>
+</hibernate-mapping>

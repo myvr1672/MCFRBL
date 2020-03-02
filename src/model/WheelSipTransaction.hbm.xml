@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.WheelSipTransaction" table="wheel_sip_transaction">
+
+<id name="wheelsetAssetId" type="java.lang.Integer">
+			<column name="wheelset_asset_id"></column>
+		</id>
+            <property name="docNoWheelAxleTesting" type="string">
+               <column name="doc_no_wheel_axle_testing"/> 
+             </property>
+             <property name="dateOfWheelAxleTesting" type="date">
+               <column name="date_of_wheel_axle_testing"/> 
+             </property> 
+             
+             <property name="shiftWheelAxleTesting" type="string">
+               <column name="shift_wheel_axle_testing"/> 
+             </property> 
+             
+         <property name="drawingNoWheelAxle" type="string">
+            <column name="drawing_no_wheel_axle"/>
+        </property>
+         <property name="wiNoWheelAxle" type="string">
+            <column name="wi_no_wheel_axle"/>
+        </property>
+         <property name="heatNoWheelAxle" type="string">
+            <column name="heat_no_wheel_axle" />
+        </property>
+        <property name="docNoCtrbTesting" type="string">
+            <column name="doc_no_ctrb_testing"/>
+        </property>
+         
+         <property name="dateOfCtrbTesting" type="date">
+            <column name="date_of_ctrb_testing"/>
+        </property>
+          <property name="shiftCtrbTesting" type="string">
+            <column name="shift_ctrb_testing"  />
+        </property>
+        
+         <property name="drawingNoCtrb" type="string">
+            <column name="drawing_no_ctrb"/>
+        </property>
+         <property name="wiNoCtrb" type="string">
+            <column name="wi_no_ctrb" length="15" />
+        </property>
+        <property name="docNoQualityClearance" type="string">
+            <column name="doc_no_quality_clearance"/>
+        </property>
+         <property name="stampParticularsLeftWheel" type="string">
+            <column name="stamp_particulars_left_wheel" length="15" />
+        </property>
+        <property name="stampParticularsRightWheel" type="string">
+            <column name="stamp_particulars_right_wheel"/>
+        </property>
+        
+         <property name="stampParticularsWheel" type="string">
+            <column name="stamp_particulars_wheel"/>
+        </property>
+    
+          <property name="stampParticularsAxle" type="string">
+            <column name="stamp_particulars_axle"  />
+        </property>
+        
+        <property name="modificationInWheelAxle" type="string">
+            <column name="modification_in_wheel_axle" />
+        </property>
+            <property name="trialInWheelAxle" type="string">
+            <column name="trial_in_wheel_axle"/>
+        </property>
+        
+        <property name="remarksInWheelAxle" type="string">
+            <column name="remarks_in_wheel_axle" />
+        </property>
+         <property name="ctrbItemAsDrawingFlag" type="string">
+            <column name="ctrb_item_as_drawing_flag" />
+        </property>
+      
+         <property name="ctrbComplianceWiFlag" type="string">
+            <column name="ctrb_compliance_wi_flag"/>
+        </property>
+    
+        <property name="fillingGreaseAxleFlag" type="string">
+            <column name="filling_grease_axle_flag"/>
+        </property>
+        
+       
+        <property name="differenceOfWheelDiaFlag" type="string">
+            <column name="difference_of_wheel_dia_flag"/>
+        </property>
+       
+        <property name="damageInJournalCtrb" type="string">
+            <column name="damage_in_journal_ctrb" />
+        </property>
+         <property name="tighteningHexagonalScrews" type="string">
+            <column name="tightening_hexagonal_screws" />
+        </property>
+      
+         <property name="modificationInCtrb" type="string">
+            <column name="modification_in_ctrb"/>
+        </property>
+    
+        <property name="trialInCtrb" type="string">
+            <column name="trial_in_ctrb"/>
+        </property>
+        
+        <property name="remarksInCtrb" type="string">
+            <column name="remarks_in_ctrb" />
+        </property>
+         <property name="entryBy" type="string">
+            <column name="entry_by"/>
+        </property>
+        
+        <property name="entryDate" type="timestamp">
+            <column name="entry_date"/>
+        </property>
+    
+    </class>
+</hibernate-mapping>

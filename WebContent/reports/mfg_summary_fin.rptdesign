@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">prod_dc.prod_ds.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">prod_dc.prod_ds.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="prod_dc.prod_ds.x">135</property>
+    <property name="prod_dc.prod_ds.y">80</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="prod_ds" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">fnyr</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">fnyr</text-property>
+                    <text-property name="heading">fnyr</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month_seq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">month_seq</text-property>
+                    <text-property name="heading">month_seq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">quarter</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">quarter</text-property>
+                    <text-property name="heading">quarter</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">month</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">month</text-property>
+                    <text-property name="heading">month</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rs_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rs_type</text-property>
+                    <text-property name="heading">rs_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mfg_qty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">mfg_qty</text-property>
+                    <text-property name="heading">mfg_qty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">gate_out_qty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">gate_out_qty</text-property>
+                    <text-property name="heading">gate_out_qty</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">fnyr</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">month_seq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">quarter</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">month</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">rs_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">mfg_qty</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">gate_out_qty</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">fnyr</property>
+                    <property name="nativeName">fnyr</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">month_seq</property>
+                    <property name="nativeName">month_seq</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">5</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">quarter</property>
+                    <property name="nativeName">quarter</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">month</property>
+                    <property name="nativeName">month</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">rs_type</property>
+                    <property name="nativeName">rs_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">mfg_qty</property>
+                    <property name="nativeName">mfg_qty</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">gate_out_qty</property>
+                    <property name="nativeName">gate_out_qty</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select fnyr, month_seq, quarter, month, rs_type,
+public.mfg_type_mon_mfd(fnyr,month, rs_type) AS mfg_qty,
+public.mfg_type_mon_gate_out(fnyr,month, rs_type) AS gate_out_qty
+from fnyr_mon_rstype_v
+where fnyr = crnt_fin_year(now()::date);]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>fnyr</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>fnyr</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>fnyr</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>crnt_date</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>crnt_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>crnt_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rs_type</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rs_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rs_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>mfg</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>mfg</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>mfg</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>gateout</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-5</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>gateout</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>gateout</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="prod_dc" id="6">
+            <property name="dimensions">
+                <tabular-dimension name="rs_group" id="7">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="8">
+                            <property name="levels">
+                                <tabular-level name="rs_type" id="9">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">rs_type</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="yr_group" id="10">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="11">
+                            <property name="levels">
+                                <tabular-level name="fnyr" id="12">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">fnyr</property>
+                                </tabular-level>
+                                <tabular-level name="quarter" id="43">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">quarter</property>
+                                </tabular-level>
+                                <tabular-level name="month" id="85">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">month</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="13">
+                    <property name="measures">
+                        <tabular-measure name="mfg" id="14">
+                            <expression name="measureExpression" type="javascript">dataSetRow["mfg"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+                <tabular-measure-group name="Summary Field1" id="16">
+                    <property name="measures">
+                        <tabular-measure name="gateout" id="17">
+                            <expression name="measureExpression" type="javascript">dataSetRow["gateout"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">prod_ds</property>
+        </tabular-cube>
+        <tabular-cube name="prod_dt_cb" id="102">
+            <property name="dimensions">
+                <tabular-dimension name="fnyr_Group" id="103">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="104">
+                            <property name="levels">
+                                <tabular-level name="fnyr" id="105">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">fnyr</property>
+                                </tabular-level>
+                                <tabular-level name="quarter" id="106">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">quarter</property>
+                                </tabular-level>
+                                <tabular-level name="month_seq" id="111">
+                                    <property name="dataType">integer</property>
+                                    <property name="columnName">month_seq</property>
+                                </tabular-level>
+                                <tabular-level name="month" id="112">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">month</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="rstype_Group" id="113">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="114">
+                            <property name="levels">
+                                <tabular-level name="rs_type" id="115">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">rs_type</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field4" id="116">
+                    <property name="measures">
+                        <tabular-measure name="mfg_qty" id="117">
+                            <expression name="measureExpression" type="javascript">dataSetRow["mfg_qty"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                        <tabular-measure name="gate_out_qty" id="118">
+                            <expression name="measureExpression" type="javascript">dataSetRow["gate_out_qty"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">prod_ds</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-ledger</property>
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="162">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">ANNUAL COACH PRODUCTION SUMMARY </text-property>
+        </label>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="119">
+            <property name="cube">prod_dt_cb</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="147">
+                    <property name="measure">mfg_qty</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="148">
+                            <property name="aggregationOnRow">fnyr_Group/month</property>
+                            <property name="aggregationOnColumn">rstype_Group/rs_type</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="content">
+                                <data id="149">
+                                    <property name="textAlign">right</property>
+                                    <property name="resultSetColumn">mfg_qty_fnyr_Group/month_rstype_Group/rs_type</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="150">
+                            <property name="content">
+                                <label id="151">
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">PROD</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="156">
+                    <property name="measure">gate_out_qty</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="157">
+                            <property name="aggregationOnRow">fnyr_Group/month</property>
+                            <property name="aggregationOnColumn">rstype_Group/rs_type</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="content">
+                                <data id="158">
+                                    <property name="textAlign">right</property>
+                                    <property name="resultSetColumn">gate_out_qty_fnyr_Group/month_rstype_Group/rs_type</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="159">
+                            <property name="content">
+                                <label id="160">
+                                    <property name="textAlign">right</property>
+                                    <text-property name="text">OUT</text-property>
+                                </label>
+                            </property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <property name="borderLeftStyle">solid</property>
+                            <property name="borderLeftWidth">thin</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="121">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="122">
+                            <property name="dimension">fnyr_Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="123">
+                                    <property name="level">fnyr_Group/fnyr</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="124">
+                                            <property name="content">
+                                                <data name="fnyr" id="125">
+                                                    <property name="resultSetColumn">fnyr</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View1" id="127">
+                                    <property name="level">fnyr_Group/quarter</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="128">
+                                            <property name="content">
+                                                <data name="quarter" id="130">
+                                                    <property name="resultSetColumn">quarter</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View2" id="132">
+                                    <property name="level">fnyr_Group/month_seq</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="133"/>
+                                    </property>
+                                </extended-item>
+                                <extended-item extensionName="LevelView" name="NewLevel View3" id="137">
+                                    <property name="level">fnyr_Group/month</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="138">
+                                            <property name="content">
+                                                <data name="month" id="140">
+                                                    <property name="resultSetColumn">month</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="columns">
+                <extended-item extensionName="CrosstabView" id="142">
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="143">
+                            <property name="dimension">rstype_Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View4" id="144">
+                                    <property name="level">rstype_Group/rs_type</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="145">
+                                            <property name="content">
+                                                <data name="rs_type" id="146">
+                                                    <property name="resultSetColumn">rs_type</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="152"/>
+                <extended-item extensionName="CrosstabCell" id="153"/>
+                <extended-item extensionName="CrosstabCell" id="154"/>
+                <extended-item extensionName="CrosstabCell" id="155">
+                    <property name="content">
+                        <label id="161">
+                            <text-property name="text">Coach</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="120">
+                    <property name="content">
+                        <label id="126">
+                            <text-property name="text">YEAR</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="129">
+                    <property name="content">
+                        <label id="131">
+                            <text-property name="text">QTR</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="134">
+                    <property name="content">
+                        <label id="136">
+                            <text-property name="text"></text-property>
+                        </label>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="CrosstabCell" id="139">
+                    <property name="content">
+                        <label id="141">
+                            <text-property name="text">MON</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">fnyr</property>
+                    <expression name="expression">dimension["fnyr_Group"]["fnyr"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">quarter</property>
+                    <expression name="expression">dimension["fnyr_Group"]["quarter"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">month_seq</property>
+                    <expression name="expression">dimension["fnyr_Group"]["month_seq"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">month</property>
+                    <expression name="expression">dimension["fnyr_Group"]["month"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rs_type</property>
+                    <expression name="expression">dimension["rstype_Group"]["rs_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">mfg_qty_fnyr_Group/month_rstype_Group/rs_type</property>
+                    <expression name="expression">measure["mfg_qty"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>fnyr_Group/month</value>
+                        <value>rstype_Group/rs_type</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">gate_out_qty_fnyr_Group/month_rstype_Group/rs_type</property>
+                    <expression name="expression">measure["gate_out_qty"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>fnyr_Group/month</value>
+                        <value>rstype_Group/rs_type</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+</report>

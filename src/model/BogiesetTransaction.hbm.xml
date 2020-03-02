@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.BogiesetTransaction" table="bogieset_trans">
+
+<id name="bogieAssetId" type="java.lang.Integer">
+			<column name="bogie_asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            <property name="bogiesetTrxId" type="string">
+               <column name="bogie_set_trx_id" length="20" /> 
+             </property>
+             
+             <property name="substageId" type="string">
+               <column name="substage_id" length="10" /> 
+             </property> 
+             
+             <property name="prevStageId" type="string">
+               <column name="prev_stage_id" length="20" /> 
+             </property> 
+             
+         <property name="leftWheelAssetId" type="java.lang.Integer">
+            <column name="left_wheel_asset_id" length="15" />
+        </property>
+         <property name="rightWheelAssetId" type="java.lang.Integer">
+            <column name="right_wheel_asset_id" length="15" />
+        </property>
+   
+        <property name="assemblyStartDate" type="date">
+            <column name="assembly_start_date" length="10" />
+        </property>
+         <property name="frameNo" type="string">
+            <column name="frame_no" length="15" />
+        </property>
+         <property name="frameReceiptDate" type="date">
+            <column name="frame_receipt_date" length="10" />
+        </property>
+       <property name="bolsNo" type="string">
+            <column name="bols_no" length="15" />
+        </property>
+        <property name="bolsReceiptDate" type="date">
+            <column name="bols_receipt_date" length="10" />
+        </property>
+       
+        
+         <property name="assemblyEndDate" type="date">
+            <column name="assembly_end_date" length="10" />
+        </property>
+        <property name="assemblyExpectedExtDate" type="date">
+            <column name="assembly_expected_ext_date" length="10" />
+        </property>
+        <property name="assemblyExitDate" type="date">
+            <column name="assembly_exit_date" length="10" />
+        </property>
+         <property name="productionBy" type="string">
+            <column name="production_by" length="15" />
+        </property>
+       
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+         <property name="exitRemarks" type="string">
+            <column name="exit_remarks" length="300" />
+        </property>
+          <property name="lateRemark" type="string">
+            <column name="late_remark" length="300" />
+        </property>
+     
+        <property name="trxUser" type="string">
+            <column name="trx_user" length="15" />
+        </property>
+        <property name="trxDate" type="string">
+            <column name="trx_date" length="20" />
+        </property>
+      
+        <property name="asignedFlag" type="java.lang.Integer">
+            <column name="asigned_flag" length="1" />
+        </property>
+        
+        <property name="receiptAtNextStage" type="date">
+            <column name="receipt_next_shop_date" length="10" />
+        </property>
+         <property name="bogieNumber" type="string">
+            <column name="bogie_number" length="15" />
+        </property>
+         <property name="bogieType" type="string">
+            <column name="bogie_type" length="15" />
+        </property>
+         <property name="dispatchTo" type="string">
+            <column name="dispatch_to" length="15" />
+        </property>
+        <property name="customer" type="string">
+            <column name="customer" length="15" />
+        </property>
+        <property name="frameManufacturedBy" type="string">
+            <column name="frame_manufactured_by" length="10" />
+        </property>
+        <property name="bolsterManufacturedBy" type="string">
+            <column name="bolster_manufactured_by" length="10" />
+        </property>
+        <property name="frameMake" type="string">
+            <column name="frame_make" length="15" />
+        </property>
+        <property name="bolsterMake" type="string">
+            <column name="bolster_make" length="15" />
+        </property>
+        <property name="brakeCylinderNo1" type="string">
+            <column name="brake_cylinder_no1" length="20"/>
+        </property>
+        <property name="brakeCylinderNo2" type="string">
+            <column name="brake_cylinder_no2" length="20"/>
+        </property>
+        <property name="brakeCylinderNo3" type="string">
+            <column name="brake_cylinder_no3" length="20"/>
+        </property>
+        <property name="brakeCylinderNo4" type="string">
+            <column name="brake_cylinder_no4" length="20"/>
+        </property>
+        <property name="brakeCaliperNo1" type="string">
+            <column name="brake_caliper_no1" length="20"/>
+        </property>
+        <property name="brakeCaliperNo2" type="string">
+            <column name="brake_caliper_no2" length="20"/>
+        </property>
+        <property name="brakeCaliperNo3" type="string">
+            <column name="brake_caliper_no3" length="20"/>
+        </property>
+        <property name="brakeCaliperNo4" type="string">
+            <column name="brake_caliper_no4" length="20"/>
+        </property>
+        <property name="vsaAtPrimarySuspNo" type="string">
+            <column name="vsa_at_primary_susp_no" length="15"/>
+        </property>
+        <property name="vsaAtPrimarySuspMake" type="string">
+            <column name="vsa_at_primary_susp_make" length="20"/>
+        </property>
+        <property name="vsaAtSecondarySuspNo" type="string">
+            <column name="vsa_at_secondary_susp_no" length="15"/>
+        </property>
+        <property name="vsaAtSecondarySuspMake" type="string">
+            <column name="vsa_at_secondary_susp_make" length="20"/>
+        </property>
+        
+        
+        <property name="lateralShockAbsorberNo" type="string">
+            <column name="lateral_shock_absorber_no" length="15"/>
+        </property>
+        <property name="lateralShockAbsorberMake" type="string">
+            <column name="lateral_shock_absorber_make" length="20"/>
+        </property>
+        <property name="secAirSpringNo1" type="string">
+            <column name="sec_air_spring_no1" length="15"/>
+        </property>
+        <property name="secAirSpringNo2" type="string">
+            <column name="sec_air_spring_no2" length="15"/>
+        </property>
+        <property name="staticSipBogieFlag" type="java.lang.Integer">
+            <column name="static_sip_bogie_flag"/>
+        </property>
+        <property name="sipFinalFlag" type="java.lang.Integer">
+            <column name="sip_final_flag"/>
+        </property>
+        <property name="testingClearanceMemoFlag" type="java.lang.Integer">
+            <column name="testing_clearance_memo_flag"/>
+        </property>
+        <property name="testingClearanceMemoDocNo" type="string">
+            <column name="testing_clearance_memo_doc_no" length="30"/>
+        </property>
+        
+        <property name="testingClearanceMemoDate" type="date">
+            <column name="testing_clearance_memo_date"/>
+        </property>
+        
+        <property name="testingClearanceMemoStatus" type="string">
+            <column name="testing_clearance_memo_status" length="30"/>
+        </property>
+        <property name="testingClearanceMemoRemark" type="string">
+            <column name="testing_clearance_memo_remark" length="500"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

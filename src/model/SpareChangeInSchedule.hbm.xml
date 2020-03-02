@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.SpareChangeInSchedule" table="spare_change_in_schedule" >
+	
+	  <composite-id>
+	    <key-property name="scheduleId" type="java.lang.Integer" >
+	    <column name="schedule_id"></column>
+	    </key-property>
+	  
+		<key-property name="spareDescription" type="java.lang.String" >
+		<column name="spare_description" length="200" ></column>
+		</key-property>
+		
+		<key-property name="spareSrNo" type="java.lang.String" >
+		<column name="spare_sr_no" length="25"></column>
+		</key-property>
+ 	 </composite-id>
+	
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date" ></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

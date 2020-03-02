@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.BogieFinalSipTran" table="bogie_final_sip_tran">
+
+<id name="bogieAssetId" type="java.lang.Integer">
+			<column name="bogie_asset_id"></column>	
+		</id>
+ <property name="docNo" type="string">
+               <column name="doc_no" length="50" /> 
+             </property>
+             
+             <property name="shiftOfTesting" type="string">
+               <column name="shift_of_testing" length="10" /> 
+             </property> 
+             
+             <property name="dateOfTesting" type="date">
+               <column name="date_of_testing"/> 
+             </property> 
+             <property name="drawingNo" type="string">
+               <column name="drawing_no" length="50" /> 
+             </property>
+         <property name="primarySpringColorInner" type="string">
+            <column name="primary_spring_color_inner" length="15"/>
+        </property>
+         <property name="primarySpringColorOuter" type="string">
+            <column name="primary_spring_color_outer" length="15"/>
+        </property>
+         <property name="secondarySpringColorInner" type="string">
+            <column name="secondary_spring_color_inner" length="15"/>
+        </property>
+         <property name="secondarySpringColorOuter" type="string">
+            <column name="secondary_spring_color_outer" length="15"/>
+        </property>
+        <property name="fitmentAntiRollBarActual" type="java.lang.Integer">
+            <column name="fitment_anti_roll_bar_actual"/>
+        </property>
+ <property name="fitmentAntiRollBarStatus" type="string">
+            <column name="fitment_anti_roll_bar_status" length="10"/>
+        </property>
+         <property name="fitmentAntiRollBarAttendant" type="string">
+            <column name="fitment_anti_roll_bar_attendant" length="25"/>
+        </property>
+  
+ <property name="fitmentTractionLeverJointActual" type="java.lang.Integer">
+            <column name="fitment_traction_lever_joint_actual"/>
+        </property>
+  <property name="fitmentTractionLeverJointStatus" type="string">
+            <column name="fitment_traction_lever_joint_status" length="10"/>
+        </property>
+         <property name="fitmentTractionLeverJointAttendant" type="string">
+            <column name="fitment_traction_lever_joint_attendant" length="25"/>
+        </property>
+       <property name="fitmentLateralDamperBktActual" type="java.lang.Integer">
+            <column name="fitment_lateral_damper_bkt_actual"/>
+        </property>
+        <property name="fitmentLateralDamperBktStatus" type="string">
+            <column name="fitment_lateral_damper_bkt_status" length="10"/>
+        </property>
+         <property name="fitmentLateralDamperBktAttendant" type="string">
+            <column name="fitment_lateral_damper_bkt_attendant" length="25"/>
+        </property>
+	 <property name="fitmentCrossSectionActual" type="java.lang.Integer">
+            <column name="fitment_cross_section_actual"/>
+        </property>
+         <property name="fitmentCrossSectionStatus" type="string">
+            <column name="fitment_cross_section_status" length="10"/>
+        </property>
+          <property name="fitmentCrossSectionAttendant" type="string">
+            <column name="fitment_cross_section_attendant" length="25"/>
+        </property>
+     <property name="fitmentLateralBumpStopActual" type="java.lang.Integer">
+            <column name="fitment_lateral_bump_stop_actual"/>
+        </property>
+         <property name="fitmentLateralBumpStopStatus" type="string">
+            <column name="fitment_lateral_bump_stop_status" length="10"/>
+        </property>
+         <property name="fitmentLateralBumpStopAttendant" type="string">
+            <column name="fitment_lateral_bump_stop_attendant" length="25"/>
+        </property>
+      <property name="fitmentBrakeCylinderActual" type="java.lang.Integer">
+            <column name="fitment_brake_cylinder_actual"/>
+        </property>
+      
+        <property name="fitmentBrakeCylinderStatus" type="string">
+            <column name="fitment_brake_cylinder_status" length="10"/>
+        </property>
+        
+        <property name="fitmentBrakeCylinderAttendant" type="string">
+            <column name="fitment_brake_cylinder_attendant" length="25"/>
+        </property>
+   <property name="fitmentLongitudinalStopActual" type="java.lang.Integer">
+            <column name="fitment_longitudinal_stop_actual"/>
+        </property>
+         <property name="fitmentLongitudinalStopStatus" type="string">
+            <column name="fitment_longitudinal_stop_status" length="10"/>
+        </property>
+         <property name="fitmentLongitudinalStopAttendant" type="string">
+            <column name="fitment_longitudinal_stop_attendant" length="25"/>
+        </property>
+   <property name="fitmentRollLinkActual" type="java.lang.Integer">
+            <column name="fitment_roll_link_actual"/>
+        </property>
+         <property name="fitmentRollLinkStatus" type="string">
+            <column name="fitment_roll_link_status" length="10"/>
+        </property>
+         <property name="fitmentRollLinkAttendant" type="string">
+            <column name="fitment_roll_link_attendant" length="25"/>
+        </property>
+        <property name="fitmentControlArmTopBottomActual" type="java.lang.Integer">
+            <column name="fitment_control_arm_top_bottom_actual"/>
+        </property>
+         <property name="fitmentControlArmTopBottomStatus" type="string">
+            <column name="fitment_control_arm_top_bottom_status" length="10"/>
+        </property>
+         <property name="fitmentControlArmTopBottomAttendant" type="string">
+            <column name="fitment_control_arm_top_bottom_attendant" length="25"/>
+        </property>
+       <property name="fitmentAxleEndCoverActual" type="java.lang.Integer">
+            <column name="fitment_axle_end_cover_actual"/>
+        </property>
+         <property name="fitmentAxleEndCoverStatus" type="string">
+            <column name="fitment_axle_end_cover_status" length="10"/>
+        </property>
+         <property name="fitmentAxleEndCoverAttendant" type="string">
+            <column name="fitment_axle_end_cover_attendant" length="25"/>
+        </property>
+     <property name="fitmentPrimaryBumpActual" type="java.lang.Integer">
+            <column name="fitment_primary_bump_actual"/>
+        </property>
+         <property name="fitmentPrimaryBumpStatus" type="string">
+            <column name="fitment_primary_bump_status" length="10"/>
+        </property>
+         <property name="fitmentPrimaryBumpAttendant" type="string">
+            <column name="fitment_primary_bump_attendant" length="25"/>
+        </property>
+        
+        <property name="fitmentControlArmTopArmbktActual" type="java.lang.Integer">
+            <column name="fitment_control_arm_top_armbkt_actual"/>
+        </property>
+         <property name="fitmentControlArmTopArmbktStatus" type="string">
+            <column name="fitment_control_arm_top_armbkt_status" length="10"/>
+        </property>
+         <property name="fitmentControlArmTopArmbktAttendant" type="string">
+            <column name="fitment_control_arm_top_armbkt_attendant" length="25"/>
+        </property>
+     <property name="fitmentPrimaryShockAbsorberActual" type="java.lang.Integer">
+            <column name="fitment_primary_shock_absorber_actual"/>
+        </property>
+         <property name="fitmentPrimaryShockAbsorberStatus" type="string">
+            <column name="fitment_primary_shock_absorber_status" length="10"/>
+        </property>
+         <property name="fitmentPrimaryShockAbsorberAttendant" type="string">
+            <column name="fitment_primary_shock_absorber_attendant" length="25"/>
+        </property>   
+         <property name="fitmentTractionCentreActual" type="java.lang.Integer">
+            <column name="fitment_traction_centre_actual"/>
+        </property>
+         <property name="fitmentTractionCentreStatus" type="string">
+            <column name="fitment_traction_centre_status" length="10"/>
+        </property>
+         <property name="fitmentTractionCentreAttendant" type="string">
+            <column name="fitment_traction_centre_attendant" length="25"/>
+        </property>
+        <property name="fitmentLateralDamperDiscActual" type="java.lang.Integer">
+            <column name="fitment_lateral_damper_disc_actual"/>
+        </property>
+         <property name="fitmentLateralDamperDiscStatus" type="string">
+            <column name="fitment_lateral_damper_disc_status" length="10"/>
+        </property>
+         <property name="fitmentLateralDamperDiscAttendant" type="string">
+            <column name="fitment_lateral_damper_disc_attendant" length="25"/>
+        </property>   
+	     <property name="fitmentSecVerticalDamperActual" type="java.lang.Integer">
+            <column name="fitment_sec_vertical_damper_actual"/>
+        </property>
+         <property name="fitmentSecVerticalDamperStatus" type="string">
+            <column name="fitment_sec_vertical_damper_status" length="10"/>
+        </property>
+         <property name="fitmentSecVerticalDamperAttendant" type="string">
+            <column name="fitment_sec_vertical_damper_attendant" length="25"/>
+        </property>  
+	     <property name="fitmentLockingPlateActual" type="string">
+            <column name="fitment_locking_plate_actual" length="10"/>
+        </property>
+         <property name="fitmentLockingPlateAttendant" type="string">
+            <column name="fitment_locking_plate_attendant" length="25"/>
+        </property>
+	 <property name="noPlateOfShockAbsorber"  type="string">
+            <column name="no_plate_of_shock_absorber" length="10"/>
+        </property>
+         <property name="noPlateOfShockAbsorberAttendant" type="string">
+            <column name="no_plate_of_shock_absorber_attendant" length="25"/>
+        </property>
+	<property name="pipesLeakageActual"  type="string">
+            <column name="pipes_leakage_actual" length="10"/>
+        </property>
+         <property name="pipesLeakageAttendant" type="string">
+            <column name="pipes_leakage_attendant" length="25"/>
+        </property>
+	    <property name="cotterSplitActual"  type="string">
+            <column name="cotter_split_actual" length="10"/>
+        </property>
+         <property name="cotterSplitAttendant" type="string">
+            <column name="cotter_split_attendant" length="25"/>
+        </property>
+        <property name="nutBoltTightActual"  type="string">
+            <column name="nut_bolt_tight_actual" length="10"/>
+        </property>
+         <property name="nutBoltTightAttendant" type="string">
+            <column name="nut_bolt_tight_attendant" length="25"/>
+        </property>
+         <property name="weldingOfBogieplateActual"  type="string">
+            <column name="welding_of_bogieplate_actual" length="10"/>
+        </property>
+         <property name="weldingOfBogieplateAttendant" type="string">
+            <column name="welding_of_bogieplate_attendant" length="25"/>
+        </property>
+        <property name="paintingOfBogieActual"  type="string">
+            <column name="painting_of_bogie_actual" length="10"/>
+        </property>
+         <property name="paintingOfBogieAttendant" type="string">
+            <column name="painting_of_bogie_attendant" length="25"/>
+        </property>
+	    <property name="fitmentPhonicWheelActual"  type="java.lang.Integer">
+            <column name="fitment_phonic_wheel_actual"/>
+        </property>
+         <property name="fitmentPhonicWheelAttendant" type="string">
+            <column name="fitment_phonic_wheel_attendant" length="25"/>
+        </property>
+        <property name="fitmentAirpipeBolsterActual"  type="string">
+            <column name="fitment_airpipe_bolster_actual" length="10"/>
+        </property>
+         <property name="fitmentAirpipeBolsterAttendant" type="string">
+            <column name="fitment_airpipe_bolster_attendant" length="25"/>
+        </property>
+	     <property name="fitmentAirpipeBrakecylinderActual"  type="string">
+            <column name="fitment_airpipe_brakecylinder_actual" length="10"/>
+        </property>
+         <property name="fitmentAirpipeBrakecylinderAttendant" type="string">
+            <column name="fitment_airpipe_brakecylinder_attendant" length="25"/>
+        </property>
+        <property name="movementBrakeRiggingActual"  type="string">
+            <column name="movement_brake_rigging_actual" length="10"/>
+        </property>
+         <property name="movementBrakeRiggingAttendant" type="string">
+            <column name="movement_brake_rigging_attendant" length="25"/>
+        </property>
+	  <property name="itemFittedAsDrawingFlag"  type="string">
+            <column name="item_fitted_as_drawing_flag" length="10"/>
+        </property>
+         <property name="complianceWiFlag" type="string">
+            <column name="compliance_wi_flag" length="10"/>
+        </property>
+        <property name="weldingThroatLengthFlag"  type="string">
+            <column name="welding_throat_length_flag" length="10"/>
+        </property>
+         <property name="wheelBase" type="float">
+            <column name="wheel_base"/>
+        </property>
+	  <property name="detailsModification"  type="string">
+            <column name="details_modification" length="500"/>
+        </property>
+         <property name="detailsTrialItems" type="string">
+            <column name="details_trial_items" length="500"/>
+        </property>
+        <property name="remarks"  type="string">
+            <column name="remarks" length="500"/>
+        </property>
+         <property name="testingStatus" type="string">
+            <column name="testing_status" length="15"/>
+        </property>
+
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="10" />
+        </property>
+       <property name="entryTime" type="timestamp">
+            <column name="entry_time"/>
+        </property>
+    </class>
+</hibernate-mapping>

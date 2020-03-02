@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.BiotankTestingTransaction" table="biotank_testing_transaction" >
+		<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+			
+		</id>
+		<property name="docNoBiotank" type="java.lang.String">
+			<column name="doc_no_biotank" length="100"></column>
+		</property>
+		<property name="dateOfBiotankTesting" type="date">
+			<column name="date_of_biotank_testing"></column>
+		</property>
+		<property name="shiftBiotank" type="java.lang.String">
+			<column name="shift_biotank" length="10"></column>
+		</property>
+		
+		<property name="biotankWeldingLav1" type="java.lang.String">
+			<column name="biotank_welding_lav1" length="6"></column>
+		</property>
+		<property name="biotankWeldingLav2" type="java.lang.String">
+			<column name="biotank_welding_lav2" length="6"></column>
+		</property>
+		<property name="biotankWeldingLav3" type="java.lang.String">
+			<column name="biotank_welding_lav3" length="6"></column>
+		</property>
+		<property name="biotankWeldingLav4" type="java.lang.String">
+			<column name="biotank_welding_lav4" length="6"></column>
+		</property>
+		<property name="biotankWeldingRemark" type="java.lang.String">
+			<column name="biotank_welding_remark" length="100"></column>
+		</property>
+		<property name="biotankMountingLav1" type="java.lang.String">
+			<column name="biotank_mounting_lav1" length="6"></column>
+		</property>
+		<property name="biotankMountingLav2" type="java.lang.String">
+			<column name="biotank_mounting_lav2" length="6"></column>
+		</property>
+		<property name="biotankMountingLav3" type="java.lang.String">
+			<column name="biotank_mounting_lav3" length="6"></column>
+		</property>
+		<property name="biotankMountingLav4" type="java.lang.String">
+			<column name="biotank_mounting_lav4" length="6"></column>
+		</property>
+		<property name="biotankMountingRemark" type="java.lang.String">
+			<column name="biotank_mounting_remark" length="100"></column>
+		</property>
+		<property name="biotankHoleAlignmentLav1" type="java.lang.String">
+			<column name="biotank_hole_alignment_lav1" length="6"></column>
+		</property>
+		<property name="biotankHoleAlignmentLav2" type="java.lang.String">
+			<column name="biotank_hole_alignment_lav2" length="6"></column>
+		</property>
+		<property name="biotankHoleAlignmentLav3" type="java.lang.String">
+			<column name="biotank_hole_alignment_lav3" length="6"></column>
+		</property>
+		<property name="biotankHoleAlignmentLav4" type="java.lang.String">
+			<column name="biotank_hole_alignment_lav4" length="6"></column>
+		</property>
+		<property name="biotankHoleAlignmenRemark" type="java.lang.String">
+			<column name="biotank_hole_alignmen_remark" length="100"></column>
+		</property>
+		<property name="biotankWeldingJbracketLav1" type="java.lang.String">
+			<column name="biotank_welding_jbracket_lav1" length="6"></column>
+		</property>
+		<property name="biotankWeldingJbracketLav2" type="java.lang.String">
+			<column name="biotank_welding_jbracket_lav2" length="6"></column>
+		</property>
+		<property name="biotankWeldingJbracketLav3" type="java.lang.String">
+			<column name="biotank_welding_jbracket_lav3" length="6"></column>
+		</property>
+		<property name="biotankWeldingJbracketLav4" type="java.lang.String">
+			<column name="biotank_welding_jbracket_lav4" length="6"></column>
+		</property>
+		<property name="biotankWeldingJbracketRemark" type="java.lang.String">
+			<column name="biotank_welding_jbracket_remark" length="100"></column>
+		</property>
+		<property name="biotankFittingJbracketLav1" type="java.lang.String">
+			<column name="biotank_fitting_jbracket_lav1" length="6"></column>
+		</property>
+		<property name="biotankFittingJbracketLav2" type="java.lang.String">
+			<column name="biotank_fitting_jbracket_lav2" length="6"></column>
+		</property>
+		<property name="biotankFittingJbracketLav3" type="java.lang.String">
+			<column name="biotank_fitting_jbracket_lav3" length="6"></column>
+		</property>
+		<property name="biotankFittingJbracketLav4" type="java.lang.String">
+			<column name="biotank_fitting_jbracket_lav4" length="6"></column>
+		</property>
+		<property name="biotankFittingJbracketRemark" type="java.lang.String">
+			<column name="biotank_fitting_jbracket_remark" length="100"></column>
+		</property>
+		<property name="biotankRubberConnectorLav1" type="java.lang.String">
+			<column name="biotank_rubber_connector_lav1" length="6"></column>
+		</property>
+		<property name="biotankRubberConnectorLav2" type="java.lang.String">
+			<column name="biotank_rubber_connector_lav2" length="6"></column>
+		</property>
+		<property name="biotankRubberConnectorLav3" type="java.lang.String">
+			<column name="biotank_rubber_connector_lav3" length="6"></column>
+		</property>
+		<property name="biotankRubberConnectorLav4" type="java.lang.String">
+			<column name="biotank_rubber_connector_lav4" length="6"></column>
+		</property>
+		<property name="biotankRubberConnectorRemark" type="java.lang.String">
+			<column name="biotank_rubber_connector_remark" length="100"></column>
+		</property>
+		<property name="biotankLeakageChlorinatorLav1" type="java.lang.String">
+			<column name="biotank_leakage_chlorinator_lav1" length="6"></column>
+		</property>
+		<property name="biotankLeakageChlorinatorLav2" type="java.lang.String">
+			<column name="biotank_leakage_chlorinator_lav2" length="6"></column>
+		</property>
+		<property name="biotankLeakageChlorinatorLav3" type="java.lang.String">
+			<column name="biotank_leakage_chlorinator_lav3" length="6"></column>
+		</property>
+		<property name="biotankLeakageChlorinatorLav4" type="java.lang.String">
+			<column name="biotank_leakage_chlorinator_lav4" length="6"></column>
+		</property>
+		<property name="biotankLeakageChlorinatorRemark" type="java.lang.String">
+			<column name="biotank_leakage_chlorinator_remark" length="100"></column>
+		</property>
+		<property name="biotankConditionChlorinatorLav1" type="java.lang.String">
+			<column name="biotank_condition_chlorinator_lav1" length="6"></column>
+		</property>
+		<property name="biotankConditionChlorinatorLav2" type="java.lang.String">
+			<column name="biotank_condition_chlorinator_lav2" length="6"></column>
+		</property>
+		<property name="biotankConditionChlorinatorLav3" type="java.lang.String">
+			<column name="biotank_condition_chlorinator_lav3" length="6"></column>
+		</property>
+		<property name="biotankConditionChlorinatorLav4" type="java.lang.String">
+			<column name="biotank_condition_chlorinator_lav4" length="6"></column>
+		</property>
+		<property name="biotankConditionChlorinatorRemark" type="java.lang.String">
+			<column name="biotank_condition_chlorinator_remark" length="100"></column>
+		</property>
+		<property name="biotankConditionSafetystrapLav1" type="java.lang.String">
+			<column name="biotank_condition_safetystrap_lav1" length="6"></column>
+		</property>
+		<property name="biotankConditionSafetystrapLav2" type="java.lang.String">
+			<column name="biotank_condition_safetystrap_lav2" length="6"></column>
+		</property>
+		<property name="biotankConditionSafetystrapLav3" type="java.lang.String">
+			<column name="biotank_condition_safetystrap_lav3" length="6"></column>
+		</property>
+		<property name="biotankConditionSafetystrapLav4" type="java.lang.String">
+			<column name="biotank_condition_safetystrap_lav4" length="6"></column>
+		</property>
+		<property name="biotankConditionSafetystrapRemark" type="java.lang.String">
+			<column name="biotank_condition_safetystrap_remark" length="100"></column>
+		</property>
+		<property name="biotankLeakageRubbergasketLav1" type="java.lang.String">
+			<column name="biotank_leakage_rubbergasket_lav1" length="6"></column>
+		</property>
+		<property name="biotankLeakageRubbergasketLav2" type="java.lang.String">
+			<column name="biotank_leakage_rubbergasket_lav2" length="6"></column>
+		</property>
+		<property name="biotankLeakageRubbergasketLav3" type="java.lang.String">
+			<column name="biotank_leakage_rubbergasket_lav3" length="6"></column>
+		</property>
+		<property name="biotankLeakageRubbergasketLav4" type="java.lang.String">
+			<column name="biotank_leakage_rubbergasket_lav4" length="6"></column>
+		</property>
+		<property name="biotankLeakageRubbergasketRemark" type="java.lang.String">
+			<column name="biotank_leakage_rubbergasket_remark" length="100"></column>
+		</property>
+		<property name="biotankLeakageJointconnectionLav1" type="java.lang.String">
+			<column name="biotank_leakage_jointconnection_lav1" length="6"></column>
+		</property>
+		<property name="biotankLeakageJointconnectionLav2" type="java.lang.String">
+			<column name="biotank_leakage_jointconnection_lav2" length="6"></column>
+		</property>
+		<property name="biotankLeakageJointconnectionLav3" type="java.lang.String">
+			<column name="biotank_leakage_jointconnection_lav3" length="6"></column>
+		</property>
+		<property name="biotankLeakageJointconnectionLav4" type="java.lang.String">
+			<column name="biotank_leakage_jointconnection_lav4" length="6"></column>
+		</property>
+		<property name="biotankLeakageJointconnectionRemark" type="java.lang.String">
+			<column name="biotank_leakage_jointconnection_remark" length="100"></column>
+		</property>
+		<property name="biotankFlushbuttonLav1" type="java.lang.String">
+			<column name="biotank_flushbutton__lav1" length="6"></column>
+		</property>
+		<property name="biotankFlushbuttonLav2" type="java.lang.String">
+			<column name="biotank_flushbutton__lav2" length="6"></column>
+		</property>
+		<property name="biotankFlushbuttonLav3" type="java.lang.String">
+			<column name="biotank_flushbutton__lav3" length="6"></column>
+		</property>
+		<property name="biotankFlushbuttonLav4" type="java.lang.String">
+			<column name="biotank_flushbutton__lav4" length="6"></column>
+		</property>
+		<property name="biotankFlushbuttonRemark" type="java.lang.String">
+			<column name="biotank_flushbutton_remark" length="100"></column>
+		</property>
+		<property name="biotankSufficientFlushingLav1" type="java.lang.String">
+			<column name="biotank_sufficient_flushing__lav1" length="6"></column>
+		</property>
+		<property name="biotankSufficientFlushingLav2" type="java.lang.String">
+			<column name="biotank_sufficient_flushing__lav2" length="6"></column>
+		</property>
+		<property name="biotankSufficientFlushingLav3" type="java.lang.String">
+			<column name="biotank_sufficient_flushing__lav3" length="6"></column>
+		</property>
+		<property name="biotankSufficientFlushingLav4" type="java.lang.String">
+			<column name="biotank_sufficient_flushing__lav4" length="6"></column>
+		</property>
+		<property name="biotankSufficientFlushingRemark" type="java.lang.String">
+			<column name="biotank_sufficient_flushing_remark" length="100"></column>
+		</property>
+		<property name="biotankFoulOdourLav1" type="java.lang.String">
+			<column name="biotank_foul_odour__lav1" length="6"></column>
+		</property>
+		<property name="biotankFoulOdourLav2" type="java.lang.String">
+			<column name="biotank_foul_odour__lav2" length="6"></column>
+		</property>
+		<property name="biotankFoulOdourLav3" type="java.lang.String">
+			<column name="biotank_foul_odour__lav3" length="6"></column>
+		</property>
+		<property name="biotankFoulOdourLav4" type="java.lang.String">
+			<column name="biotank_foul_odour__lav4" length="6"></column>
+		</property>
+		<property name="biotankFoulOdourRemark" type="java.lang.String">
+			<column name="biotank_foul_odour_remark" length="100"></column>
+		</property>
+		<property name="biotankStickerLav1" type="java.lang.String">
+			<column name="biotank_sticker_lav1" length="6"></column>
+		</property>
+		<property name="biotankStickerLav2" type="java.lang.String">
+			<column name="biotank_sticker_lav2" length="6"></column>
+		</property>
+		<property name="biotankStickerLav3" type="java.lang.String">
+			<column name="biotank_sticker_lav3" length="6"></column>
+		</property>
+		<property name="biotankStickerLav4" type="java.lang.String">
+			<column name="biotank_sticker_lav4" length="6"></column>
+		</property>
+		<property name="biotankStickerRemark" type="java.lang.String">
+			<column name="biotank_sticker_remark" length="100"></column>
+		</property>
+		<property name="biotankChockingStrapLav1" type="java.lang.String">
+			<column name="biotank_chocking_strap_lav1" length="6"></column>
+		</property>
+		<property name="biotankChockingStrapLav2" type="java.lang.String">
+			<column name="biotank_chocking_strap_lav2" length="6"></column>
+		</property>
+		<property name="biotankChockingStrapLav3" type="java.lang.String">
+			<column name="biotank_chocking_strap_lav3" length="6"></column>
+		</property>
+		<property name="biotankChockingStrapLav4" type="java.lang.String">
+			<column name="biotank_chocking_strap_lav4" length="6"></column>
+		</property>
+		<property name="biotankChockingStrapRemark" type="java.lang.String">
+			<column name="biotank_chocking_strap_remark" length="100"></column>
+		</property>
+		<property name="biotankConsumptionWaterLav1" type="java.lang.String">
+			<column name="biotank_consumption_water_lav1" length="6"></column>
+		</property>
+		<property name="biotankConsumptionWaterLav2" type="java.lang.String">
+			<column name="biotank_consumption_water_lav2" length="6"></column>
+		</property>
+		<property name="biotankConsumptionWaterLav3" type="java.lang.String">
+			<column name="biotank_consumption_water_lav3" length="6"></column>
+		</property>
+		<property name="biotankConsumptionWaterLav4" type="java.lang.String">
+			<column name="biotank_consumption_water_lav4" length="6"></column>
+		</property>
+		<property name="biotankConsumptionWaterRemark" type="java.lang.String">
+			<column name="biotank_consumption_water_remark" length="100"></column>
+		</property>
+		<property name="biotankReadyNextFlushLav1" type="java.lang.String">
+			<column name="biotank_ready_next_flush_lav1" length="6"></column>
+		</property>
+		<property name="biotankReadyNextFlushLav2" type="java.lang.String">
+			<column name="biotank_ready_next_flush_lav2" length="6"></column>
+		</property>
+		<property name="biotankReadyNextFlushLav3" type="java.lang.String">
+			<column name="biotank_ready_next_flush_lav3" length="6"></column>
+		</property>
+		<property name="biotankReadyNextFlushLav4" type="java.lang.String">
+			<column name="biotank_ready_next_flush_lav4" length="6"></column>
+		</property>
+		<property name="biotankReadyNextFlushRemark" type="java.lang.String">
+			<column name="biotank_ready_next_flush_remark" length="100"></column>
+		</property>
+		<property name="biotankVacuumEvacuationLav1" type="java.lang.String">
+			<column name="biotank_vacuum_evacuation_lav1" length="6"></column>
+		</property>
+		<property name="biotankVacuumEvacuationLav2" type="java.lang.String">
+			<column name="biotank_vacuum_evacuation_lav2" length="6"></column>
+		</property>
+		<property name="biotankVacuumEvacuationLav3" type="java.lang.String">
+			<column name="biotank_vacuum_evacuation_lav3" length="6"></column>
+		</property>
+		<property name="biotankVacuumEvacuationLav4" type="java.lang.String">
+			<column name="biotank_vacuum_evacuation_lav4" length="6"></column>
+		</property>
+		<property name="biotankVacuumEvacuationRemark" type="java.lang.String">
+			<column name="biotank_vacuum_evacuation_remark" length="100"></column>
+		</property>
+		<property name="biotankAirPressureLav1" type="java.lang.String">
+			<column name="biotank_air_pressure_lav1" length="6"></column>
+		</property>
+		<property name="biotankAirPressureLav2" type="java.lang.String">
+			<column name="biotank_air_pressure_lav2" length="6"></column>
+		</property>
+		<property name="biotankAirPressureLav3" type="java.lang.String">
+			<column name="biotank_air_pressure_lav3" length="6"></column>
+		</property>
+		<property name="biotankAirPressureLav4" type="java.lang.String">
+			<column name="biotank_air_pressure_lav4" length="6"></column>
+		</property>
+		<property name="biotankAirPressureRemark" type="java.lang.String">
+			<column name="biotank_air_pressure_remark" length="100"></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date"></column>
+		</property>
+		<property name="bioTankTestingStatus" type="java.lang.String">
+			<column name="biotank_testing_status" length="100"></column>	
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ShellProgress" table="shop_production_stage_for_coach">
+<!--         <composite-id> -->
+<!--             <key-property name="assetID" type="java.lang.Integer"> -->
+<!--                 <column name="asset_id"/> -->
+
+<!--             </key-property> -->
+<!--             <key-property name="substageId" type="string"> -->
+<!--                 <column name="substage_id" length="10" /> -->
+<!--             </key-property>  -->
+<!--             <key-property name="previousStageId" type="string"> -->
+<!--                 <column name="previous_substage_id" length="10" /> -->
+<!--             </key-property> -->
+<!--         </composite-id> -->
+<id name="assetID" type="java.lang.Integer">
+			<column name="asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            <property name="substageId" type="string">
+               <column name="substage_id" length="10" /> 
+             </property> 
+             <property name="previousStageId" type="string">
+               <column name="previous_substage_id" length="10" /> 
+             </property> 
+         <property name="wheelNumber" type="string">
+            <column name="wheelset_no" length="10" />
+        </property>
+          <property name="shellNumber" type="string">
+            <column name="shell_no" length="10" />
+        </property>
+         <property name="bogieNumber" type="string">
+            <column name="bogie_no" length="10" />
+        </property>
+         <property name="coachNumber" type="string">
+            <column name="coach_no" length="10" />
+        </property>
+        
+        <property name="entryDate" type="date">
+            <column name="create_date" length="10" />
+        </property>
+         <property name="receiptDate" type="date">
+            <column name="receipt_date" length="10" />
+        </property>
+        <property name="shellType" type="string">
+            <column name="shell_type" length="15" />
+        </property>
+        <property name="expectedExitDate" type="date">
+            <column name="expected_exit_date" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remark" length="500" />
+        </property>
+        <property name="exitDate" type="date">
+            <column name="exit_date" length="10" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="systemEntryTime" type="string">
+            <column name="system_entry_time" length="30" />
+        </property>
+        
+        <property name="exitRemark" type="string">
+            <column name="exit_remark" length="30" />
+        </property>
+        <property name="mergeFunishFlag" type="java.lang.Integer">
+            <column name="merging_furnish_flag" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

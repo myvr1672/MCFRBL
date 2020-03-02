@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.Asset_master" table="asset_master" >
+	
+	<composite-id>
+	    <key-property name="asset_subtype" type="java.lang.String" >
+	    <column name="asset_subtype"></column>
+	    </key-property>
+	  
+		<key-property name="asset_type" type="java.lang.String" >
+		<column name="asset_type" ></column>
+		</key-property>
+  </composite-id>
+	
+		<property name="asset_subtype_description" type="java.lang.String">
+			<column name="asset_subtype_description"></column>
+		</property>
+		<property name="asset_subtype_class" type="java.lang.String">
+			<column name="asset_subtype_class" ></column>
+		</property>
+		<property name="asset_subtype_capacity" type="java.lang.Integer">
+			<column name="asset_subtype_capacity"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

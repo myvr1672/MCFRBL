@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.AirbrakeTestingTransaction" table="airbrake_testing_transaction">
+
+<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+		</id>
+            <property name="docNoAirbrake" type="string">
+               <column name="doc_no_airbrake" length="100" /> 
+             </property>
+             
+             <property name="dateOfAirbrake" type="date">
+               <column name="date_of_airbrake_testing"/> 
+             </property> 
+             
+             <property name="shiftAirbrake" type="string">
+               <column name="shift_airbrake" length="10" /> 
+             </property>
+             <property name="preTextLockCoach" type="string">
+               <column name="pre_text_lock_coach" length="30" /> 
+             </property> 
+             <property name="preTextConformityBrakeMount" type="string">
+               <column name="pre_text_conformity_brake_mount" length="30" /> 
+             </property> 
+              <property name="preTextVerifyAllBrake" type="string">
+               <column name="pre_text_verify_all_brake" length="30" /> 
+             </property> 
+              <property name="preTextVerifyPositionCockes" type="string">
+               <column name="pre_text_verify_position_cockes" length="30" /> 
+             </property> 
+              <property name="preTextOpenedCockes103" type="string">
+               <column name="pre_text_opened_cockes103" length="30" /> 
+             </property> 
+              <property name="preTextOpenedCockes104_1" type="string">
+               <column name="pre_text_opened_cockes104_1" length="30" /> 
+             </property> 
+             <property name="preTextOpenedCockes104_2" type="string">
+               <column name="pre_text_opened_cockes104_2" length="30" /> 
+             </property> 
+             <property name="preTextEmergencyCock" type="string">
+               <column name="pre_text_emergency_cock" length="30" /> 
+             </property> 
+             <property name="preTextDistributorValve" type="string">
+               <column name="pre_text_distributor_valve" length="30" /> 
+             </property> 
+             <property name="preTextBrakeCylinder" type="string">
+               <column name="pre_text_brake_cylinder" length="35" /> 
+             </property> 
+             
+              <property name="preTextFitmentAuxiliaryReservoir" type="string">
+               <column name="pre_text_fitment_auxiliary_reservoir" length="30" /> 
+             </property> 
+             <property name="reservoirChargingGeneratorCoaches" type="string">
+               <column name="reservoir_charging_generator_Coaches" length="30" /> 
+             </property> 
+             <property name="reservoirChargingBrakePipePressure" type="string">
+               <column name="reservoir_charging_brake_pipe_pressure" length="30" /> 
+             </property> 
+             <property name="reservoirChargingChargingTime" type="string">
+               <column name="reservoir_charging_charging_time" length="30" /> 
+             </property> 
+             
+             <property name="reservoirChargingControlPressure" type="string">
+               <column name="reservoir_charging_control_pressure" length="30" /> 
+             </property> 
+             <property name="sealingTestInterruptCharging" type="string">
+               <column name="sealing_test_interrupt_charging" length="30" /> 
+             </property>
+             <property name="sealingTestOpenCocks" type="string">
+               <column name="sealing_test_open_cocks" length="30" /> 
+             </property>
+             <property name="fullBrakeApplicationReducePressure" type="string">
+               <column name="full_brake_application_reduce_pressure" length="30" /> 
+             </property>
+             <property name="fullBrakeApplicationEmergencyApplication" type="string">
+               <column name="full_brake_application_emergency_application" length="30" /> 
+             </property>
+             <property name="fullBrakeApplicationMaxPressure" type="string">
+               <column name="full_brake_application_max_pressure" length="30" /> 
+             </property>
+             <property name="fullBrakeApplicationAllBrake" type="string">
+               <column name="full_brake_application_all_brake" length="30" /> 
+             </property>
+             <property name="releaseFullBrakeFillBP" type="string">
+               <column name="release_full_brake_fill_bp" length="30" /> 
+             </property>
+             
+             <property name="releaseFullBrakeAllBrake" type="string">
+               <column name="release_full_brake_all_brake" length="30" /> 
+             </property>
+              <property name="emergencyApplicationReduceBrakePressure" type="string">
+               <column name="emergency_application_reduce_brake_pressure" length="30"/> 
+             </property>
+              <property name="emergencyApplicationAcceleratorRespond" type="string">
+               <column name="emergency_application_accelerator_respond" length="30" /> 
+             </property>
+              <property name="emergencyApplicationChargingTime" type="string">
+               <column name="emergency_application_charging_time" length="30" /> 
+             </property>
+             
+             <property name="emergencyApplicationMaxBCPressure" type="string">
+               <column name="emergency_application_max_bc_pressure" length="30"/> 
+             </property>
+             <property name="emergencyApplicationAllBrake" type="string">
+               <column name="emergency_application_all_brake" length="30" /> 
+             </property>
+             <property name="releaseEmergencyBrakeFillBP" type="string">
+               <column name="release_emergency_brake_fill_bp" length="30" /> 
+             </property>
+             <property name="releaseEmergencyBrakePressureDropTime" type="string">
+               <column name="release_emergency_brake_pressure_drop_time" length="30" /> 
+             </property>
+             
+             <property name="releaseEmergencyBrakeBrakeCylinderRelease" type="string">
+               <column name="release_emergency_brake_brake_cylinder_release" length="30" /> 
+             </property>
+             <property name="graduatedBrakeApplication" type="string">
+               <column name="graduated_brake_application" length="30" /> 
+             </property>
+             <property name="pressureGovernorChargeFeedingPipe" type="string">
+               <column name="pressure_governor_charge_feeding_pipe" length="30" /> 
+             </property>
+             <property name="pressureGovernorExhaustFeedingPipe" type="string">
+               <column name="pressure_governor_exhaust_feeding_pipe" length="30" /> 
+             </property>
+             
+             <property name="sealingTestFeed" type="string">
+               <column name="sealing_test_feed" length="30" /> 
+             </property>
+             <property name="normalServiceFeedMaxPressure" type="string">
+               <column name="normal_service_feed_max_pressure" length="30" /> 
+             </property>
+             <property name="controlIndicatingDeviceActualFullBrake" type="string">
+               <column name="control_indicating_device_actual_full_brake" length="30" /> 
+             </property>
+             <property name="controlIndicatingDeviceCockPosition4_1" type="string">
+               <column name="control_indicating_device_cock_position4_1" length="30" /> 
+             </property>
+             <property name="controlIndicatingDeviceCockPosition4_2" type="string">
+               <column name="control_indicating_device_cock_position4_2" length="30" /> 
+             </property>
+             <property name="controlIndicatingDeviceCockPosition41_42" type="string">
+               <column name="control_indicating_device_cock_position41_42" length="30" /> 
+             </property>
+             <property name="controlInsensitivityExhaustBrakePipe" type="string">
+               <column name="control_insensitivity_exhaust_brake_pipe" length="30" /> 
+             </property>
+             <property name="controlSensitivityBrakePipe" type="string">
+               <column name="control_sensitivity_brake_pipe" length="30" /> 
+             </property>
+             <property name="firstBrakeStep" type="string">
+               <column name="first_brake_step" length="30" /> 
+             </property>
+             <property name="reactivityQuickServiceFailure" type="string">
+               <column name="reactivity_quick_service_failure" length="30" /> 
+             </property>
+             <property name="parkingBrakeHandbrakeReleased" type="string">
+               <column name="parking_brake_handbrake_released" length="30" /> 
+             </property>
+             <property name="parkingBrakeHandbrakeApplied" type="string">
+               <column name="parking_brake_handbrake_applied" length="30" /> 
+             </property>
+             
+             <property name="emergencyBrakePassengerExhaustBrake" type="string">
+               <column name="emergency_brake_passenger_exhaust_brake" length="30" /> 
+             </property>
+             <property name="emergencyBrakePassengerCloseHandle" type="string">
+               <column name="emergency_brake_passenger_close_handle" length="30" /> 
+             </property>
+             <property name="emergencyBrakePassengerPassengerAlarm" type="string">
+               <column name="emergency_brake_passenger_passenger_alarm" length="30" /> 
+             </property>
+             <property name="emergencyBrakeGuard" type="string">
+               <column name="emergency_brake_guard" length="30" /> 
+             </property>
+             <property name="cbcFitment" type="string">
+               <column name="cbc_fitment" length="30" /> 
+             </property>
+             <property name="remarks" type="string">
+               <column name="remarks" length="1000" /> 
+             </property>
+             <property name="airbrakeTestingStatus" type="string">
+               <column name="airbrake_testing_status" length="20" /> 
+             </property>
+            
+              <property name="entryBy" type="string">
+               <column name="entry_by" length="15" /> 
+             </property>
+             <property name="entryTime" type="timestamp">
+               <column name="entry_time"/> 
+             </property>
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.BogieStaticSipTran" table="bogie_static_sip_tran">
+
+<id name="bogieAssetId" type="java.lang.Integer">
+			<column name="bogie_asset_id"></column>
+			
+		</id>
+            <property name="docNo" type="string">
+               <column name="doc_no" length="50" /> 
+             </property>
+             
+             <property name="shiftOfTesting" type="string">
+               <column name="shift_of_testing" length="10" /> 
+             </property> 
+             
+             <property name="dateOfTesting" type="date">
+               <column name="date_of_testing"/> 
+             </property> 
+             
+         <property name="drawingNo" type="string">
+            <column name="drawing_no" length="50"/>
+        </property>
+         <property name="wiNo" type="string">
+            <column name="wi_no" length="50" />
+        </property>
+   
+        <property name="loadTareZ11" type="java.lang.Integer">
+            <column name="load_tare_z11"/>
+        </property>
+         <property name="loadTareZ31" type="java.lang.Integer">
+            <column name="load_tare_z31"/>
+        </property>
+         <property name="loadTareZ41" type="java.lang.Integer">
+            <column name="load_tare_z41"/>
+        </property>
+       <property name="loadTareZ21" type="java.lang.Integer">
+            <column name="load_tare_z21"/>
+        </property>
+        <property name="loadTareX" type="java.lang.Integer">
+            <column name="load_tare_x"/>
+        </property>
+       
+        
+         <property name="loadTareZ12Z22" type="float">
+            <column name="load_tare_z12_z22"/>
+        </property>
+        <property name="loadTareZ32Z42" type="float">
+            <column name="load_tare_z32_z42"/>
+        </property>
+   
+   
+        <property name="loadGrossZ11" type="java.lang.Integer">
+            <column name="load_gross_z11"/>
+        </property>
+         <property name="loadGrossZ31" type="java.lang.Integer">
+            <column name="load_gross_z31"/>
+        </property>
+       
+        <property name="loadGrossZ41" type="java.lang.Integer">
+            <column name="load_gross_z41"/>
+        </property>
+         <property name="loadGrossZ21" type="java.lang.Integer">
+            <column name="load_gross_z21"/>
+        </property>
+          <property name="loadGrossX" type="java.lang.Integer">
+            <column name="load_gross_x" />
+        </property>
+     
+        <property name="loadGrossZ12Z22" type="float">
+            <column name="load_gross_z12_z22"/>
+        </property>
+        <property name="loadGrossZ32Z42" type="float">
+            <column name="load_gross_z32_z42"/>
+        </property>
+      
+        <property name="loadTareX14" type="java.lang.Integer">
+            <column name="load_tare_x14"/>
+        </property>
+        
+        <property name="loadTareX24" type="java.lang.Integer">
+            <column name="load_tare_x24"/>
+        </property>
+        
+         <property name="loadTareY13" type="java.lang.Integer">
+            <column name="load_tare_y13"/>
+        </property>
+         <property name="loadTareY33" type="java.lang.Integer">
+            <column name="load_tare_y33"/>
+        </property>
+         <property name="loadTareASide" type="java.lang.Integer">
+            <column name="load_tare_a_side"/>
+        </property>
+        <property name="loadTareBSide" type="java.lang.Integer">
+            <column name="load_tare_b_side"/>
+        </property>
+       <property name="loadGrossX14" type="java.lang.Integer">
+            <column name="load_gross_x14"/>
+        </property>
+         <property name="loadGrossX24" type="java.lang.Integer">
+            <column name="load_gross_x24"/>
+        </property>
+         <property name="loadGrossY13" type="java.lang.Integer">
+            <column name="load_gross_y13"/>
+        </property>
+        <property name="loadGrossY33" type="java.lang.Integer">
+            <column name="load_gross_y33"/>
+        </property>
+         
+        <property name="bogieStaticSipStatus" type="string">
+            <column name="bogie_static_sip_status" length="10" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="10" />
+        </property>
+       <property name="entryTime" type="timestamp">
+            <column name="entry_time"/>
+        </property>
+    </class>
+</hibernate-mapping>

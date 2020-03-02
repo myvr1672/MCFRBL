@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ActivityMaster" table="activity_master">
+        <composite-id>
+            <key-property name="activityId" type="string">
+                <column name="activity_id" length="5" />
+            </key-property>
+            <key-property name="substageId" type="string">
+                <column name="substage_id" length="10" />
+            </key-property> 
+        </composite-id>
+        
+        <property name="activityDescription" type="string">
+            <column name="activity_description" length="200" />
+        </property>
+        <property name="applicableFor" type="string">
+            <column name="applicable_for" length="150" />
+        </property>
+        <property name="standardCompletionTime" type="double">
+            <column name="standard_completion_time" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

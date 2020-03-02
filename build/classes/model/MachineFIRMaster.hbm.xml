@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.MachineFIRMaster" table="machine_failure_master" >
+	
+	    
+	  <id name="failure_code"  type="java.lang.String" >
+			<column name="failure_code"></column>
+			
+		</id>
+		<property name="failure_description"  type="java.lang.String">
+		<column name="failure_description"></column>
+		</property>
+ 
+	
+		
+		
+		
+	</class>
+</hibernate-mapping>

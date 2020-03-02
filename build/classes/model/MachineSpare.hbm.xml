@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.MachineSpare" table="machine_spare_master" >
+		<id name="spareId" type="java.lang.Integer">
+			<column name="spare_id" length="50"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="spareDescription" type="java.lang.String">
+			<column name="spare_description" length="500"></column>
+		</property>
+		<property name="machineId" type="java.lang.Integer">
+			<column name="machine_id" ></column>
+		</property>
+		
+		
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by"  length="15"></column>
+		</property>
+		<property name="createdDate" type="timestamp">
+			<column name="created_date" ></column>
+		</property>
+		  
+	</class>
+</hibernate-mapping>

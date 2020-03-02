@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.PaintTransaction" table="paint_tran">
+
+<id name="paintAssetId" type="java.lang.Integer">
+			<column name="paint_asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+           
+             <property name="stageId" type="string">
+               <column name="stage_id" length="10" /> 
+             </property> 
+             
+             <property name="previousStageId" type="string">
+               <column name="prev_stage_id" length="20" /> 
+             </property> 
+             
+         <property name="shellAssetId" type="java.lang.Integer">
+            <column name="shell_asset_id"/>
+        </property>
+       <property name="assemblyStartDate" type="date">
+            <column name="assembly_start_date" length="10" />
+        </property>
+         <property name="assemblyEndDate" type="date">
+            <column name="assembly_end_date" length="10" />
+        </property>
+      
+        <property name="expectedExitDate" type="date">
+            <column name="expected_exit_date" length="10" />
+        </property>
+       
+        
+         <property name="assemblyDispatchDate" type="date">
+            <column name="assembly_dispatch_date" length="10" />
+        </property>
+        <property name="colorScheme" type="string">
+            <column name="color_scheme" length="15" />
+        </property>
+        
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+         <property name="exitRemarks" type="string">
+            <column name="exit_remarks" length="300" />
+        </property>
+          <property name="lateReason" type="string">
+            <column name="late_reason" length="300" />
+        </property>
+   
+        <property name="transEntryBy" type="string">
+            <column name="transaction_user" length="15" />
+        </property>
+        <property name="transEntryTime" type="string">
+            <column name="transaction_date" length="20" />
+        </property>
+        
+    
+        <property name="asignedFlag" type="java.lang.Integer">
+            <column name="asigned_flag" length="1" />
+        </property>
+        <property name="receiptAtNextStage" type="date">
+            <column name="receipt_at_next_stage" length="10" />
+        </property>
+        <property name="shellType" type="string">
+            <column name="shell_type" length="15" />
+        </property>
+        <property name="furnishingNumber" type="string">
+            <column name="furnishing_no" length="20" />
+        </property>
+        <property name="coachType" type="string">
+            <column name="coach_type" length="15" />
+        </property>
+       
+       
+       
+        <property name="intrPaintSipFlag" type="java.lang.Integer">
+            <column name="intr_paint_sip_flag" length="1" />
+        </property>
+        
+        <property name="intrPaintFinalFlag" type="java.lang.Integer">
+            <column name="intr_paint_final_flag" length="1" />
+        </property>
+               <property name="extrPaintSipFlag" type="java.lang.Integer">
+            <column name="extr_paint_sip_flag" length="1" />
+        </property>
+        
+        <property name="extrPaintFinalFlag" type="java.lang.Integer">
+            <column name="extr_paint_final_flag" length="1" />
+        </property>
+               <property name="testingClearanceMemoFlag" type="java.lang.Integer">
+            <column name="testing_clearance_memo_flag" length="1" />
+        </property>   
+       
+          <property name="testingClearanceMemoDate" type="date">
+            <column name="testing_clearance_memo_date" length="10" />
+        </property>
+       
+        
+        <property name="testingClearanceMemoDocNo" type="string">
+            <column name="testing_clearance_memo_doc_no" length="50" />
+        </property>
+        
+           <property name="testingClearanceMemoStatus" type="string">
+            <column name="testing_clearance_memo_status" length="30" />
+        </property>
+          
+        
+        <property name="testingClearanceMemoRemark" type="string">
+            <column name="testing_clearance_memo_remark" length="500" />
+        </property>
+        
+        
+        
+        
+        
+        
+        
+        
+    </class>
+</hibernate-mapping>

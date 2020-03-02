@@ -1,0 +1,2460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Wheelset_asset_id" id="985">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">decimal</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="date 1 Data Set" id="334">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">crnt_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crnt_date</text-property>
+                    <text-property name="heading">crnt_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">?column?</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">?column?</text-property>
+                    <text-property name="heading">?column?</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">crnt_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">?column?</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">crnt_date</property>
+                    <property name="nativeName">crnt_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">?column?</property>
+                    <property name="nativeName">?column?</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select crnt_date, 'Year: ' ||crnt_fin_year(prev_work_date(crnt_date::date))
+from set_date]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>prev_work_date</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>prev_work_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>prev_work_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>?column?</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>?column?</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>?column?</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="wheelset Data Set" id="355">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">wheelset_transaction_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheelset_transaction_id</text-property>
+                    <text-property name="heading">wheelset_transaction_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">axle_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">axle_no</text-property>
+                    <text-property name="heading">axle_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_left_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_left_make</text-property>
+                    <text-property name="heading">wheeldisc_left_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_left_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_left_no</text-property>
+                    <text-property name="heading">ctrb_left_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_right_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_right_no</text-property>
+                    <text-property name="heading">ctrb_right_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_left_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_left_make</text-property>
+                    <text-property name="heading">ctrb_left_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_right_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_right_no</text-property>
+                    <text-property name="heading">wheeldisc_right_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_left_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_left_no</text-property>
+                    <text-property name="heading">wheeldisc_left_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">journaldialeft</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">journaldialeft</text-property>
+                    <text-property name="heading">journaldialeft</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">journaldiaright</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">journaldiaright</text-property>
+                    <text-property name="heading">journaldiaright</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldialeft</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">wheeldialeft</text-property>
+                    <text-property name="heading">wheeldialeft</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldiaright</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">wheeldiaright</text-property>
+                    <text-property name="heading">wheeldiaright</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">distancebetweenwheel</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">distancebetweenwheel</text-property>
+                    <text-property name="heading">distancebetweenwheel</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheel_disc_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheel_disc_type</text-property>
+                    <text-property name="heading">wheel_disc_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">lateral_clearance_left_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">lateral_clearance_left_ctrb</text-property>
+                    <text-property name="heading">lateral_clearance_left_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">lateral_clearance_right_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">lateral_clearance_right_ctrb</text-property>
+                    <text-property name="heading">lateral_clearance_right_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pressing_pressure_left_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pressing_pressure_left_ctrb</text-property>
+                    <text-property name="heading">pressing_pressure_left_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">pressing_pressure_right_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">pressing_pressure_right_ctrb</text-property>
+                    <text-property name="heading">pressing_pressure_right_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wi_no_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wi_no_ctrb</text-property>
+                    <text-property name="heading">wi_no_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doc_no_ctrb_testing</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">doc_no_ctrb_testing</text-property>
+                    <text-property name="heading">doc_no_ctrb_testing</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">date_of_ctrb_testing</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">date_of_ctrb_testing</text-property>
+                    <text-property name="heading">date_of_ctrb_testing</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shift_ctrb_testing</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shift_ctrb_testing</text-property>
+                    <text-property name="heading">shift_ctrb_testing</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">drawing_no_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">drawing_no_ctrb</text-property>
+                    <text-property name="heading">drawing_no_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_item_as_drawing_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_item_as_drawing_flag</text-property>
+                    <text-property name="heading">ctrb_item_as_drawing_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_compliance_wi_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_compliance_wi_flag</text-property>
+                    <text-property name="heading">ctrb_compliance_wi_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">filling_grease_axle_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">filling_grease_axle_flag</text-property>
+                    <text-property name="heading">filling_grease_axle_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">difference_of_wheel_dia_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">difference_of_wheel_dia_flag</text-property>
+                    <text-property name="heading">difference_of_wheel_dia_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">damage_in_journal_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">damage_in_journal_ctrb</text-property>
+                    <text-property name="heading">damage_in_journal_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tightening_hexagonal_screws</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">tightening_hexagonal_screws</text-property>
+                    <text-property name="heading">tightening_hexagonal_screws</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modification_in_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modification_in_ctrb</text-property>
+                    <text-property name="heading">modification_in_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">trial_in_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">trial_in_ctrb</text-property>
+                    <text-property name="heading">trial_in_ctrb</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remarks_in_ctrb</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remarks_in_ctrb</text-property>
+                    <text-property name="heading">remarks_in_ctrb</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Wheelset_asset_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">2</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">wheelset_transaction_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">axle_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">wheeldisc_left_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ctrb_left_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ctrb_right_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ctrb_left_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">wheeldisc_right_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">wheeldisc_left_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">journaldialeft</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">journaldiaright</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">wheeldialeft</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">wheeldiaright</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">distancebetweenwheel</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">wheel_disc_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">lateral_clearance_left_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">lateral_clearance_right_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">pressing_pressure_left_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">pressing_pressure_right_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">wi_no_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">doc_no_ctrb_testing</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">date_of_ctrb_testing</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">shift_ctrb_testing</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">drawing_no_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">ctrb_item_as_drawing_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">ctrb_compliance_wi_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">filling_grease_axle_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">difference_of_wheel_dia_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">damage_in_journal_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">tightening_hexagonal_screws</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">modification_in_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">trial_in_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">remarks_in_ctrb</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">wheelset_transaction_id</property>
+                    <property name="nativeName">wheelset_transaction_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">axle_no</property>
+                    <property name="nativeName">axle_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">wheeldisc_left_make</property>
+                    <property name="nativeName">wheeldisc_left_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ctrb_left_no</property>
+                    <property name="nativeName">ctrb_left_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ctrb_right_no</property>
+                    <property name="nativeName">ctrb_right_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ctrb_left_make</property>
+                    <property name="nativeName">ctrb_left_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">wheeldisc_right_no</property>
+                    <property name="nativeName">wheeldisc_right_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">wheeldisc_left_no</property>
+                    <property name="nativeName">wheeldisc_left_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">journaldialeft</property>
+                    <property name="nativeName">journaldialeft</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">journaldiaright</property>
+                    <property name="nativeName">journaldiaright</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">wheeldialeft</property>
+                    <property name="nativeName">wheeldialeft</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">wheeldiaright</property>
+                    <property name="nativeName">wheeldiaright</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">distancebetweenwheel</property>
+                    <property name="nativeName">distancebetweenwheel</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">wheel_disc_type</property>
+                    <property name="nativeName">wheel_disc_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">lateral_clearance_left_ctrb</property>
+                    <property name="nativeName">lateral_clearance_left_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">lateral_clearance_right_ctrb</property>
+                    <property name="nativeName">lateral_clearance_right_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">pressing_pressure_left_ctrb</property>
+                    <property name="nativeName">pressing_pressure_left_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">pressing_pressure_right_ctrb</property>
+                    <property name="nativeName">pressing_pressure_right_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">wi_no_ctrb</property>
+                    <property name="nativeName">wi_no_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">doc_no_ctrb_testing</property>
+                    <property name="nativeName">doc_no_ctrb_testing</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">date_of_ctrb_testing</property>
+                    <property name="nativeName">date_of_ctrb_testing</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">shift_ctrb_testing</property>
+                    <property name="nativeName">shift_ctrb_testing</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">drawing_no_ctrb</property>
+                    <property name="nativeName">drawing_no_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">ctrb_item_as_drawing_flag</property>
+                    <property name="nativeName">ctrb_item_as_drawing_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">ctrb_compliance_wi_flag</property>
+                    <property name="nativeName">ctrb_compliance_wi_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">filling_grease_axle_flag</property>
+                    <property name="nativeName">filling_grease_axle_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">difference_of_wheel_dia_flag</property>
+                    <property name="nativeName">difference_of_wheel_dia_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">damage_in_journal_ctrb</property>
+                    <property name="nativeName">damage_in_journal_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">tightening_hexagonal_screws</property>
+                    <property name="nativeName">tightening_hexagonal_screws</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">modification_in_ctrb</property>
+                    <property name="nativeName">modification_in_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">trial_in_ctrb</property>
+                    <property name="nativeName">trial_in_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">remarks_in_ctrb</property>
+                    <property name="nativeName">remarks_in_ctrb</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select w.wheelset_transaction_id,w.axle_no,w.wheeldisc_left_make,w.ctrb_left_no,w.ctrb_right_no,w.ctrb_left_make,w.wheeldisc_right_no,w.wheeldisc_left_no, round(cast(w.journal_dia_left as numeric),2) as journaldialeft, round(cast(w.journal_dia_right as numeric),2) as journaldiaright, round(cast(w.wheel_dia_left as numeric),2) as wheeldialeft, round(cast(w.wheel_dia_right as numeric),2) as wheeldiaright, round(cast(w.distance_between_wheel as numeric),2) as distancebetweenwheel,wheel_disc_type,w.lateral_clearance_left_ctrb,w.lateral_clearance_right_ctrb,w.pressing_pressure_left_ctrb,w.pressing_pressure_right_ctrb,
+ws.wi_no_ctrb,ws.doc_no_ctrb_testing,ws.date_of_ctrb_testing,ws.shift_ctrb_testing,ws.drawing_no_ctrb,ws.ctrb_item_as_drawing_flag,ws.ctrb_compliance_wi_flag,ws.filling_grease_axle_flag,ws.difference_of_wheel_dia_flag,ws.damage_in_journal_ctrb,ws.tightening_hexagonal_screws,ws.modification_in_ctrb,ws.trial_in_ctrb,ws.remarks_in_ctrb
+from wheelset_tran as w
+INNER JOIN  wheel_sip_transaction as ws ON  w.wheelset_asset_id=ws.wheelset_asset_id
+where w.wheelset_asset_id=?
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>distance_between_wheel</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>8</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>distance_between_wheel</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>distance_between_wheel</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>wheel_disc_type</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>wheel_disc_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>wheel_disc_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>lateral_clearance_left_ctrb</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>lateral_clearance_left_ctrb</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>lateral_clearance_left_ctrb</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>lateral_clearance_right_ctrb</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>lateral_clearance_right_ctrb</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>lateral_clearance_right_ctrb</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pressing_pressure_left_ctrb</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pressing_pressure_left_ctrb</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pressing_pressure_left_ctrb</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pressing_pressure_right_ctrb</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pressing_pressure_right_ctrb</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pressing_pressure_right_ctrb</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">portrait</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="316">
+            <property name="height">1in</property>
+            <column id="317"/>
+            <column id="318"/>
+            <column id="319"/>
+            <column id="320"/>
+            <column id="321"/>
+            <row id="322">
+                <property name="height">1in</property>
+                <cell id="323">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <image id="328">
+                        <property name="height">0.8541666666666666in</property>
+                        <property name="width">1.15625in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="324">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="backgroundColor">#FFFFFF</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="331">
+                        <property name="fontWeight">bold</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <text-property name="text">                            Self Inspection Report</text-property>
+                    </label>
+                </cell>
+                <cell id="326">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="333">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">1px</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">1px</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <text-property name="text">                 Date</text-property>
+                    </label>
+                    <data id="1497">
+                        <property name="dataSet">date 1 Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">crnt_date</property>
+                                <text-property name="displayName">crnt_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["crnt_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">crnt_date</property>
+                    </data>
+                </cell>
+                <cell id="327">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <image id="329">
+                        <property name="height">0.8333333333333334in</property>
+                        <property name="width">0.9791666666666666in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <label id="1498"/>
+        <grid id="987">
+            <column id="988"/>
+            <column id="989"/>
+            <column id="990"/>
+            <column id="991"/>
+            <column id="992"/>
+            <column id="993"/>
+            <column id="994"/>
+            <row id="995">
+                <cell id="996">
+                    <label id="1035">
+                        <text-property name="text">         Wheel Shop</text-property>
+                    </label>
+                </cell>
+                <cell id="997"/>
+                <cell id="998"/>
+                <cell id="999"/>
+                <cell id="1000">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1038">
+                        <text-property name="text">        RBL NO. :</text-property>
+                    </label>
+                </cell>
+                <cell id="1001">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1215">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">wheelset_transaction_id</property>
+                                <text-property name="displayName">wheelset_transaction_id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["wheelset_transaction_id"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">wheelset_transaction_id</property>
+                    </data>
+                </cell>
+                <cell id="1002"/>
+            </row>
+            <row id="1003">
+                <cell id="1004">
+                    <label id="1036">
+                        <text-property name="text">              STAGE</text-property>
+                    </label>
+                </cell>
+                <cell id="1005">
+                    <label id="1037">
+                        <text-property name="text"> CTRB</text-property>
+                    </label>
+                </cell>
+                <cell id="1006"/>
+                <cell id="1007"/>
+                <cell id="1008">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1039">
+                        <text-property name="text">       AXLE NO. :</text-property>
+                    </label>
+                </cell>
+                <cell id="1009">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1214">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">axle_no</property>
+                                <text-property name="displayName">axle_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["axle_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">axle_no</property>
+                    </data>
+                </cell>
+                <cell id="1010"/>
+            </row>
+            <row id="1011">
+                <cell id="1012"/>
+                <cell id="1013"/>
+                <cell id="1014"/>
+                <cell id="1015"/>
+                <cell id="1016"/>
+                <cell id="1017">
+                    <label id="1046"/>
+                    <label id="1047"/>
+                </cell>
+                <cell id="1018">
+                    <label id="1044"/>
+                    <label id="1045"/>
+                </cell>
+            </row>
+            <row id="1019">
+                <cell id="1020">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1040">
+                        <text-property name="text">                DATE</text-property>
+                    </label>
+                </cell>
+                <cell id="1021">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1231">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">date_of_ctrb_testing</property>
+                                <text-property name="displayName">date_of_ctrb_testing</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["date_of_ctrb_testing"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">date_of_ctrb_testing</property>
+                    </data>
+                </cell>
+                <cell id="1022"/>
+                <cell id="1023"/>
+                <cell id="1024">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1042">
+                        <text-property name="text">     FORM NO. :</text-property>
+                    </label>
+                </cell>
+                <cell id="1025">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1217">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">doc_no_ctrb_testing</property>
+                                <text-property name="displayName">doc_no_ctrb_testing</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["doc_no_ctrb_testing"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">doc_no_ctrb_testing</property>
+                    </data>
+                </cell>
+                <cell id="1026"/>
+            </row>
+            <row id="1027">
+                <cell id="1028">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1041">
+                        <text-property name="text">               SHIFT</text-property>
+                    </label>
+                </cell>
+                <cell id="1029">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1232">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">shift_ctrb_testing</property>
+                                <text-property name="displayName">shift_ctrb_testing</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["shift_ctrb_testing"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">shift_ctrb_testing</property>
+                    </data>
+                </cell>
+                <cell id="1030"/>
+                <cell id="1031"/>
+                <cell id="1032">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1043">
+                        <text-property name="text">      VERSION   :</text-property>
+                    </label>
+                </cell>
+                <cell id="1033">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1411">
+                        <text-property name="text"> 01/2015</text-property>
+                    </label>
+                </cell>
+                <cell id="1034"/>
+            </row>
+        </grid>
+        <label id="1206"/>
+        <label id="1048">
+            <text-property name="text">1. Applicability :</text-property>
+        </label>
+        <grid id="1050">
+            <column id="1051"/>
+            <column id="1052"/>
+            <column id="1053"/>
+            <column id="1054"/>
+            <row id="1055">
+                <cell id="1056">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1065">
+                        <text-property name="text">1.1 Applicable Drawing No. :</text-property>
+                    </label>
+                </cell>
+                <cell id="1057">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1233">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">drawing_no_ctrb</property>
+                                <text-property name="displayName">drawing_no_ctrb</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["drawing_no_ctrb"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">drawing_no_ctrb</property>
+                    </data>
+                </cell>
+                <cell id="1058"/>
+                <cell id="1059"/>
+            </row>
+            <row id="1060">
+                <cell id="1061">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <label id="1066">
+                        <text-property name="text">1.2 Applicable W.I No. :</text-property>
+                    </label>
+                </cell>
+                <cell id="1062">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <data id="1230">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">wi_no_ctrb</property>
+                                <text-property name="displayName">wi_no_ctrb</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["wi_no_ctrb"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">wi_no_ctrb</property>
+                    </data>
+                </cell>
+                <cell id="1063"/>
+                <cell id="1064"/>
+            </row>
+        </grid>
+        <label id="1209"/>
+        <label id="1067">
+            <text-property name="text">2. Data of Traceability</text-property>
+        </label>
+        <grid id="1068">
+            <property name="width">9.53125in</property>
+            <column id="1069">
+                <property name="width">3.25in</property>
+            </column>
+            <column id="1070">
+                <property name="width">2.9270833333333335in</property>
+            </column>
+            <column id="1071">
+                <property name="width">2.5520833333333335in</property>
+            </column>
+            <column id="1072">
+                <property name="width">2.1145833333333335in</property>
+            </column>
+            <row id="1073">
+                <cell id="1074">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1093">
+                        <text-property name="text">2.1 Wheel Disc No. :</text-property>
+                    </label>
+                </cell>
+                <cell id="1075">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1235">
+                        <column id="1236"/>
+                        <column id="1237"/>
+                        <column id="1440"/>
+                        <column id="1238"/>
+                        <column id="1484"/>
+                        <row id="1239">
+                            <cell id="1240">
+                                <label id="1247">
+                                    <text-property name="text"> left :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1241">
+                                <data id="1249">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">wheeldisc_left_no</property>
+                                            <text-property name="displayName">wheeldisc_left_no</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["wheeldisc_left_no"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">wheeldisc_left_no</property>
+                                </data>
+                            </cell>
+                            <cell id="1438"/>
+                            <cell id="1242"/>
+                            <cell id="1483"/>
+                        </row>
+                        <row id="1491">
+                            <cell id="1492">
+                                <label id="1477">
+                                    <text-property name="text">right :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1493">
+                                <data id="1478">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">wheeldisc_right_no</property>
+                                            <text-property name="displayName">wheeldisc_right_no</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["wheeldisc_right_no"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">wheeldisc_right_no</property>
+                                </data>
+                            </cell>
+                            <cell id="1494"/>
+                            <cell id="1495"/>
+                            <cell id="1496"/>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="1076">
+                    <label id="1407"/>
+                </cell>
+                <cell id="1077"/>
+            </row>
+            <row id="1078">
+                <cell id="1079">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1094">
+                        <text-property name="text">2.2 Wheel Disc Type(Forge/cast)  &amp;Make:</text-property>
+                    </label>
+                </cell>
+                <cell id="1080">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1251">
+                        <column id="1252"/>
+                        <column id="1253"/>
+                        <column id="1443"/>
+                        <column id="1254"/>
+                        <column id="1487"/>
+                        <row id="1255">
+                            <cell id="1256">
+                                <label id="1257">
+                                    <text-property name="text"> type :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1258">
+                                <data id="1269">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">wheel_disc_type</property>
+                                            <text-property name="displayName">wheel_disc_type</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["wheel_disc_type"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">wheel_disc_type</property>
+                                </data>
+                            </cell>
+                            <cell id="1441"/>
+                            <cell id="1260"/>
+                            <cell id="1485"/>
+                        </row>
+                        <row id="1261">
+                            <cell id="1262">
+                                <label id="1479">
+                                    <text-property name="text"> make:</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1264">
+                                <data id="1480">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">wheeldisc_left_make</property>
+                                            <text-property name="displayName">wheeldisc_left_make</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["wheeldisc_left_make"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">wheeldisc_left_make</property>
+                                </data>
+                            </cell>
+                            <cell id="1442"/>
+                            <cell id="1266"/>
+                            <cell id="1486"/>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="1081"/>
+                <cell id="1082"/>
+            </row>
+            <row id="1083">
+                <cell id="1084">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1095">
+                        <text-property name="text">2.3 CTRB Make</text-property>
+                    </label>
+                </cell>
+                <cell id="1085">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1289">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ctrb_left_make</property>
+                                <text-property name="displayName">ctrb_left_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ctrb_left_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ctrb_left_make</property>
+                    </data>
+                </cell>
+                <cell id="1086"/>
+                <cell id="1087"/>
+            </row>
+            <row id="1088">
+                <cell id="1089">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1096">
+                        <text-property name="text">2.4 CTRB No.</text-property>
+                    </label>
+                </cell>
+                <cell id="1090">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1290">
+                        <column id="1291"/>
+                        <column id="1292"/>
+                        <column id="1446"/>
+                        <column id="1293"/>
+                        <column id="1490"/>
+                        <row id="1294">
+                            <cell id="1295">
+                                <label id="1296">
+                                    <text-property name="text"> left  :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1297">
+                                <data id="1308">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ctrb_left_no</property>
+                                            <text-property name="displayName">ctrb_left_no</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["ctrb_left_no"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ctrb_left_no</property>
+                                </data>
+                            </cell>
+                            <cell id="1444"/>
+                            <cell id="1299"/>
+                            <cell id="1488"/>
+                        </row>
+                        <row id="1300">
+                            <cell id="1301">
+                                <label id="1302">
+                                    <text-property name="text">right :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1303">
+                                <data id="1307">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">ctrb_right_no</property>
+                                            <text-property name="displayName">ctrb_right_no</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["ctrb_right_no"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">ctrb_right_no</property>
+                                </data>
+                            </cell>
+                            <cell id="1445"/>
+                            <cell id="1305"/>
+                            <cell id="1489"/>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="1091"/>
+                <cell id="1092"/>
+            </row>
+            <row id="1097">
+                <cell id="1098">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1102">
+                        <text-property name="text">2.5 Date of manufacturing of CTRB </text-property>
+                    </label>
+                </cell>
+                <cell id="1099">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1412">
+                        <text-property name="text">R-07/19,L-06/19</text-property>
+                    </label>
+                </cell>
+                <cell id="1100"/>
+                <cell id="1101">
+                    <label id="1211"/>
+                </cell>
+            </row>
+        </grid>
+        <label id="1212"/>
+        <label id="1103">
+            <text-property name="text">3. Observations</text-property>
+        </label>
+        <grid id="1104">
+            <property name="width">6.947916666666667in</property>
+            <column id="1105">
+                <property name="width">3.96875in</property>
+            </column>
+            <column id="1106">
+                <property name="width">2.1145833333333335in</property>
+            </column>
+            <row id="1109">
+                <cell id="1110">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1164">
+                        <text-property name="text">3.1 Items fitted as per Drawing</text-property>
+                    </label>
+                </cell>
+                <cell id="1111">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1219">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ctrb_item_as_drawing_flag</property>
+                                <text-property name="displayName">ctrb_item_as_drawing_flag</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ctrb_item_as_drawing_flag"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ctrb_item_as_drawing_flag</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1114">
+                <cell id="1115">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1165">
+                        <text-property name="text">3.2 Compliance of applicable W.I</text-property>
+                    </label>
+                </cell>
+                <cell id="1116">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1218">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ctrb_compliance_wi_flag</property>
+                                <text-property name="displayName">ctrb_compliance_wi_flag</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ctrb_compliance_wi_flag"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ctrb_compliance_wi_flag</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1119">
+                <cell id="1120">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1166">
+                        <text-property name="text">3.3 Filling of grease in Axle box(1.75 kg/Housing)</text-property>
+                    </label>
+                </cell>
+                <cell id="1121">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1224">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">filling_grease_axle_flag</property>
+                                <text-property name="displayName">filling_grease_axle_flag</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["filling_grease_axle_flag"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">filling_grease_axle_flag</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1124">
+                <cell id="1125">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1167">
+                        <text-property name="text">3.4 Difference of wheel Dia. in same axle (with in 0.5 mm)</text-property>
+                    </label>
+                </cell>
+                <cell id="1126">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1223">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">difference_of_wheel_dia_flag</property>
+                                <text-property name="displayName">difference_of_wheel_dia_flag</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["difference_of_wheel_dia_flag"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">difference_of_wheel_dia_flag</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1129">
+                <cell id="1130">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1168">
+                        <text-property name="text">3.5 Check the journal &amp; CTRB for any damage/crack</text-property>
+                    </label>
+                </cell>
+                <cell id="1131">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1225">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">damage_in_journal_ctrb</property>
+                                <text-property name="displayName">damage_in_journal_ctrb</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["damage_in_journal_ctrb"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">damage_in_journal_ctrb</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1134">
+                <cell id="1135">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1169">
+                        <text-property name="text">3.6 Journal dia.(130+0.043/+0.068mm)</text-property>
+                    </label>
+                </cell>
+                <cell id="1136">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1309">
+                        <column id="1310"/>
+                        <column id="1311"/>
+                        <column id="1449"/>
+                        <column id="1452"/>
+                        <column id="1312"/>
+                        <row id="1313">
+                            <cell id="1314">
+                                <label id="1315">
+                                    <text-property name="text">  left  :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1316">
+                                <data id="1499">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">journaldialeft</property>
+                                            <text-property name="displayName">journaldialeft</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["journaldialeft"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">journaldialeft</property>
+                                </data>
+                            </cell>
+                            <cell id="1447"/>
+                            <cell id="1450"/>
+                            <cell id="1318"/>
+                        </row>
+                        <row id="1319">
+                            <cell id="1320">
+                                <label id="1321">
+                                    <text-property name="text"> right : </text-property>
+                                </label>
+                            </cell>
+                            <cell id="1322">
+                                <data id="1500">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">journaldiaright</property>
+                                            <text-property name="displayName">journaldiaright</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["journaldiaright"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">journaldiaright</property>
+                                </data>
+                            </cell>
+                            <cell id="1448"/>
+                            <cell id="1451"/>
+                            <cell id="1324"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="1139">
+                <cell id="1140">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1170">
+                        <text-property name="text">3.7 Distance between wheels(1600+-1mm)</text-property>
+                    </label>
+                </cell>
+                <cell id="1141">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1503">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">distancebetweenwheel</property>
+                                <text-property name="displayName">distancebetweenwheel</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["distancebetweenwheel"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">distancebetweenwheel</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1144">
+                <cell id="1145">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1171">
+                        <text-property name="text">3.8 Wheel Diameter(915+4/0mm)</text-property>
+                    </label>
+                </cell>
+                <cell id="1146">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1418">
+                        <column id="1419"/>
+                        <column id="1420"/>
+                        <column id="1455"/>
+                        <column id="1458"/>
+                        <column id="1421"/>
+                        <row id="1422">
+                            <cell id="1423">
+                                <label id="1424">
+                                    <text-property name="text">   left :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1425">
+                                <data id="1501">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">wheeldialeft</property>
+                                            <text-property name="displayName">wheeldialeft</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["wheeldialeft"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">wheeldialeft</property>
+                                </data>
+                            </cell>
+                            <cell id="1453"/>
+                            <cell id="1456"/>
+                            <cell id="1427"/>
+                        </row>
+                        <row id="1428">
+                            <cell id="1429">
+                                <label id="1430">
+                                    <text-property name="text"> right : </text-property>
+                                </label>
+                            </cell>
+                            <cell id="1431">
+                                <data id="1502">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">wheeldiaright</property>
+                                            <text-property name="displayName">wheeldiaright</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["wheeldiaright"]</expression>
+                                            <property name="dataType">decimal</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">wheeldiaright</property>
+                                </data>
+                            </cell>
+                            <cell id="1454"/>
+                            <cell id="1457"/>
+                            <cell id="1433"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="1149">
+                <cell id="1150">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1172">
+                        <text-property name="text">3.9 Tightening of Hexagonal head screws(210 Nm for LHB Type Wheel)</text-property>
+                    </label>
+                </cell>
+                <cell id="1151">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1229">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">tightening_hexagonal_screws</property>
+                                <text-property name="displayName">tightening_hexagonal_screws</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tightening_hexagonal_screws"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">tightening_hexagonal_screws</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1154">
+                <cell id="1155">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1173">
+                        <text-property name="text">3.10 Lateral clearance(20-389 for TIMKEN)(ref. as per TIMKEN manual)and(minimum 25  SKF bearings)(ref.SKF Letter no. PD/MCF/2017/001 dated 19.05.17</text-property>
+                    </label>
+                </cell>
+                <cell id="1156">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1367">
+                        <column id="1368"/>
+                        <column id="1369"/>
+                        <column id="1461"/>
+                        <column id="1464"/>
+                        <column id="1370"/>
+                        <row id="1371">
+                            <cell id="1372">
+                                <label id="1373">
+                                    <text-property name="text">  left :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1374">
+                                <data id="1385">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">lateral_clearance_left_ctrb</property>
+                                            <text-property name="displayName">lateral_clearance_left_ctrb</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["lateral_clearance_left_ctrb"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">lateral_clearance_left_ctrb</property>
+                                </data>
+                            </cell>
+                            <cell id="1459"/>
+                            <cell id="1462"/>
+                            <cell id="1376"/>
+                        </row>
+                        <row id="1377">
+                            <cell id="1378">
+                                <label id="1379">
+                                    <text-property name="text">right :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1380">
+                                <data id="1386">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">lateral_clearance_right_ctrb</property>
+                                            <text-property name="displayName">lateral_clearance_right_ctrb</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["lateral_clearance_right_ctrb"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">lateral_clearance_right_ctrb</property>
+                                </data>
+                            </cell>
+                            <cell id="1460"/>
+                            <cell id="1463"/>
+                            <cell id="1382"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="1159">
+                <cell id="1160">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1175">
+                        <text-property name="text">3.11 Pressing Pressure of CTRB(25-44T for TIMKEN)(ref. as per TIMKEN manual)and(28-32 T for  SKF )(ref.SME/BD Letter no. MD23141 dtd. dated 7/8/2012</text-property>
+                    </label>
+                </cell>
+                <cell id="1161">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <grid id="1387">
+                        <column id="1388"/>
+                        <column id="1389"/>
+                        <column id="1467"/>
+                        <column id="1470"/>
+                        <column id="1390"/>
+                        <row id="1391">
+                            <cell id="1392">
+                                <label id="1393">
+                                    <text-property name="text">  left :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="1394">
+                                <data id="1403">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">pressing_pressure_left_ctrb</property>
+                                            <text-property name="displayName">pressing_pressure_left_ctrb</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["pressing_pressure_left_ctrb"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">pressing_pressure_left_ctrb</property>
+                                </data>
+                            </cell>
+                            <cell id="1465"/>
+                            <cell id="1468"/>
+                            <cell id="1396"/>
+                        </row>
+                        <row id="1397">
+                            <cell id="1398">
+                                <label id="1399">
+                                    <text-property name="text"> right : </text-property>
+                                </label>
+                            </cell>
+                            <cell id="1400">
+                                <data id="1404">
+                                    <property name="dataSet">wheelset Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">pressing_pressure_right_ctrb</property>
+                                            <text-property name="displayName">pressing_pressure_right_ctrb</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["pressing_pressure_right_ctrb"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">pressing_pressure_right_ctrb</property>
+                                </data>
+                            </cell>
+                            <cell id="1466"/>
+                            <cell id="1469"/>
+                            <cell id="1402"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <label id="1473"/>
+        <grid id="1179">
+            <property name="width">9.447916666666666in</property>
+            <column id="1180">
+                <property name="width">2.3020833333333335in</property>
+            </column>
+            <column id="1181">
+                <property name="width">2.8645833333333335in</property>
+            </column>
+            <column id="1182">
+                <property name="width">2.3229166666666665in</property>
+            </column>
+            <column id="1183">
+                <property name="width">1.40625in</property>
+            </column>
+            <column id="1184">
+                <property name="width">1.6979166666666667in</property>
+            </column>
+            <row id="1185">
+                <cell id="1186">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1203">
+                        <text-property name="text">4. Details of Modification Carried out if any:</text-property>
+                    </label>
+                </cell>
+                <cell id="1187">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1228">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">modification_in_ctrb</property>
+                                <text-property name="displayName">modification_in_ctrb</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["modification_in_ctrb"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">modification_in_ctrb</property>
+                    </data>
+                </cell>
+                <cell id="1188"/>
+                <cell id="1189"/>
+                <cell id="1190"/>
+            </row>
+            <row id="1191">
+                <cell id="1192">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1204">
+                        <text-property name="text">5. Detail of trial item if any</text-property>
+                    </label>
+                </cell>
+                <cell id="1193">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1226">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">trial_in_ctrb</property>
+                                <text-property name="displayName">trial_in_ctrb</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["trial_in_ctrb"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">trial_in_ctrb</property>
+                    </data>
+                </cell>
+                <cell id="1194"/>
+                <cell id="1195"/>
+                <cell id="1196"/>
+            </row>
+            <row id="1197">
+                <cell id="1198">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="1205">
+                        <text-property name="text">6. Remarks:</text-property>
+                    </label>
+                </cell>
+                <cell id="1199">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="1227">
+                        <property name="dataSet">wheelset Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">remarks_in_ctrb</property>
+                                <text-property name="displayName">remarks_in_ctrb</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["remarks_in_ctrb"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">remarks_in_ctrb</property>
+                    </data>
+                </cell>
+                <cell id="1200"/>
+                <cell id="1201"/>
+                <cell id="1202"/>
+            </row>
+        </grid>
+        <label id="1471"/>
+        <label id="1472"/>
+        <grid id="528">
+            <property name="height">9.75in</property>
+            <column id="529"/>
+            <row id="530">
+                <property name="height">9.75in</property>
+                <cell id="531">
+                    <label id="825">
+                        <text-property name="text">                                                                                                  Conforming          </text-property>
+                    </label>
+                    <grid id="973">
+                        <property name="height">1in</property>
+                        <column id="974"/>
+                        <column id="975"/>
+                        <column id="976"/>
+                        <row id="977">
+                            <property name="height">1in</property>
+                            <cell id="978">
+                                <label id="981">
+                                    <text-property name="text">   Name : Debraj Ekka</text-property>
+                                </label>
+                                <label id="982">
+                                    <text-property name="text">   Designation: SSE</text-property>
+                                </label>
+                            </cell>
+                            <cell id="979"/>
+                            <cell id="980">
+                                <label id="983">
+                                    <text-property name="text">   Name :Sharda J. Yadav</text-property>
+                                </label>
+                                <label id="984">
+                                    <text-property name="text">   Designation: SSE</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

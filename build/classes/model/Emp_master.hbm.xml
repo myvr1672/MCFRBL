@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.Emp_master" table="emp_master" >
+	
+	<id name="emp_no" type="java.lang.String">
+			<column name="emp_no" length="15"></column>
+		</id>
+		
+		<property name="emp_name" type="java.lang.String" >
+		<column name="emp_name" length="50"></column>
+		</property>
+  
+	
+		<property name="shop" type="java.lang.String">
+			<column name="shop" length="20"></column>
+		</property>
+		<property name="section" type="java.lang.String">
+			<column name="section" length="25"></column>
+		</property>
+		<property name="cadre" type="java.lang.String">
+			<column name="cadre" length="20"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

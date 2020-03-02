@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.MachineBreakdown1" table="machine_breakdown" >
+	
+	<id name="machine_id" type="java.lang.Integer" >
+		<column name="machine_id" ></column>
+		<generator class="increment"></generator>
+  </id>
+	
+		<property name="breakdown_details" type="java.lang.String">
+			<column name="breakdown_details"></column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

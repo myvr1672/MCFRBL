@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.MachineBreakdown" table="machine_breakdown" >
+		<id name="breakdownId" type="java.lang.Integer">
+			<column name="breakdown_id"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="machineId" type="java.lang.Integer">
+			<column name="machine_id" length="15"></column>
+		</property>
+		<property name="breakdownDate" type="timestamp">
+			<column name="breakdown_date"></column>
+		</property>
+		<property name="failureCode" type="java.lang.String">
+			<column name="failure_code" length="20"></column>
+		</property>
+		<property name="breakdownDetails" type="java.lang.String">
+			<column name="breakdown_details" length="500"></column>
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="dispatchDateForRepair" type="date">
+			<column name="dispatch_date_for_repair" length="500"></column>
+		</property>
+		
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+				
+		<property name="createdDate" type="timestamp">
+			<column name="created_date" length="30"></column>
+		</property>
+		
+		<property name="completionDate" type="timestamp">
+			<column name="completion_date" length="30"></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.PlumbingTestingTransaction" table="plumbing_testing_transaction" >
+		<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+			
+		</id>
+		<property name="docNo" type="java.lang.String">
+			<column name="doc_no" length="100"></column>
+		</property>
+		<property name="dateOfTesting" type="date">
+			<column name="date_of_testing" ></column>
+		</property>	
+		<property name="shift" type="java.lang.String">
+			<column name="shift" length="10"></column>
+		</property>	
+		
+		
+		<property name="sealingPipeJointsFlag" type="java.lang.String">
+			<column name="sealing_pipe_joints_flag" length="3"></column>
+		</property>	
+		<property name="sealingLavatoryFlag" type="java.lang.String">
+			<column name="sealing_lavatory_flag" length="3"></column>
+		</property>
+		<property name="sealingDoorWayGangFlag" type="java.lang.String">
+			<column name="sealing_door_way_gang_flag" length="3"></column>
+		</property>
+		<property name="waterFlowLotahFlag" type="java.lang.String">
+			<column name="water_flow_lotah_flag" length="3"></column>
+		</property>
+		<property name="waterFlowInsideWashbasinFlag" type="java.lang.String">
+			<column name="water_flow_inside_washbasin_flag" length="3"></column>
+		</property>
+		<property name="flushingArrangementFlag" type="java.lang.String">
+			<column name="flushing_arrangement_flag" length="3"></column>
+		</property>
+		<property name="waterFlowLavatoryFlag" type="java.lang.String">
+			<column name="water_flow_lavatory_flag" length="3"></column>
+		</property>
+		<property name="waterFlowCommodeFlag" type="java.lang.String">
+			<column name="water_flow_commode_flag" length="3"></column>
+		</property>
+		<property name="waterFlowOusideWashbasinFlag" type="java.lang.String">
+			<column name="water_flow_ouside_washbasin_flag" length="3"></column>
+		</property>
+		<property name="sealingSTrapFlag" type="java.lang.String">
+			<column name="sealing_s_trap_flag" length="3"></column>
+		</property>
+		<property name="waterFlowFlexibleFaucetFlag" type="java.lang.String">
+			<column name="water_flow_flexible_faucet_flag" length="3"></column>
+		</property>
+		<property name="modificationDetails" type="java.lang.String">
+			<column name="modification_details" length="500"></column>
+		</property>
+		<property name="trialItemsDetails" type="java.lang.String">
+			<column name="trial_items_details" length="500"></column>
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date"></column>
+		</property>
+		
+		<property name="testingStatusPlumbing" type="java.lang.String">
+			<column name="plumbing_testing_status" length="20"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.FibaTestingTransaction" table="fiba_testing_transaction">
+
+<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+			
+		</id>
+      <property name="docNoFiba" type="string">
+      <column name="doc_no_fiba" length="100" /> 
+       </property>
+      <property name="dateOfFibaTesting" type="date">
+        <column name="date_of_fiba_testing"/> 
+      </property>   
+        <property name="shiftFiba" type="string">
+               <column name="shift_fiba" length="10"/> 
+        </property> 
+        <property name="generalInstallationNo" type="string">
+           <column name="general_installation_no" length="50"/> 
+        </property> 
+        <property name="wiNo" type="string">
+           <column name="wi_no" length="50"/> 
+         </property>
+         <property name="pslNo" type="string">
+            <column name="psl_no" length="50"/> 
+          </property> 
+       
+        
+        <property name="initialChargingPPAirSpring1" type="string">
+               <column name="initial_charging_pp_airspring1" length="100"/> 
+        </property>
+         
+       <property name="initialChargingPPAirSpring2" type="string">
+               <column name="initial_charging_pp_airspring2" length="100"/> 
+        </property> 
+        <property name="initialChargingNPPAirSpring1" type="string">
+               <column name="initial_charging_npp_airspring1" length="100"/> 
+        </property> 
+         <property name="initialChargingNPPAirSpring2" type="string">
+               <column name="initial_charging_npp_airspring2" length="100"/> 
+         </property> 
+         <property name="leakageDetectionPPAirSpring1" type="string">
+               <column name="leakage_detection_pp_airspring1" length="100"/> 
+         </property> 
+         <property name="leakageDetectionPPAirSpring2" type="string">
+               <column name="leakage_detection_pp_airspring2"/> 
+          </property> 
+         <property name="leakageDetectionNPPAirSpring1" type="string">
+               <column name="leakage_detection_npp_airspring1"  length="100"/> 
+         </property> 
+          <property name="leakageDetectionNPPAirSpring2" type="string">
+               <column name="leakage_detection_npp_airspring2" length="100"/> 
+         </property> 
+         <property name="functionTestFIBAPPAirSpring1" type="string">
+               <column name="function_test_fiba_pp_airspring1" length="100"/> 
+          </property>
+            <property name="functionTestFIBAPPAirSpring2" type="string">
+               <column name="function_test_fiba_pp_airspring2" length="100"/> 
+             </property> 
+             <property name="functionTestFIBANPPAirSpring1" type="string">
+               <column name="function_test_fiba_npp_airspring1" length="100"/> 
+             </property> 
+             
+             <property name="functionTestFIBANPPAirSpring2" type="string">
+               <column name="function_test_fiba_npp_airspring2" length="100"/> 
+             </property> <property name="functionTestBrakePPAirSpring1" type="string">
+               <column name="function_test_brake_pp_airspring1" length="100"/> 
+             </property> <property name="functionTestBrakePPAirSpring2" type="string">
+               <column name="function_test_brake_pp_airspring2" length="100"/> 
+             </property> <property name="functionTestBrakeNPPAirSpring1" type="string">
+               <column name="function_test_brake_npp_airspring1" length="100"/> 
+             </property> 
+             <property name="functionTestBrakeNPPAirSpring2" type="string">
+               <column name="function_test_brake_npp_airspring2" length="100"/> 
+             </property> 
+             <property name="functionTestIndicatorPPAirSpring1" type="string">
+               <column name="function_test_indicator_pp_airspring1" length="100"/> 
+             </property>
+     <property name="functionTestIndicatorPPAirSpring2" type="string">
+               <column name="function_test_indicator_pp_airspring2" length="100"/> 
+      </property> 
+       <property name="functionTestIndicatorNPPAirSpring1" type="string">
+               <column name="function_test_indicator_npp_airspring1" length="100"/> 
+       </property> 
+       <property name="functionTestIndicatorNPPAirSpring2" type="string">
+               <column name="function_test_indicator_npp_airspring2" length="100"/> 
+       </property>
+        <property name="functionTestWrestingBlowPPAirSpring1" type="string">
+               <column name="function_test_wresting_blow_pp_airspring1" length="100"/> 
+         </property> 
+        <property name="functionTestWrestingBlowPPAirSpring2" type="string">
+              <column name="function_test_wresting_blow_pp_airspring2" length="100"/> 
+         </property> 
+         <property name="functionTestWrestingBlowNPPAirSpring1" type="string">
+               <column name="function_test_wresting_blow_npp_airspring1" length="100"/> 
+         </property> 
+          <property name="functionTestWrestingBlowNPPAirSpring2" type="string">
+               <column name="function_test_wresting_blow_npp_airspring2" length="100"/> 
+          </property>
+          <property name="brakePipeIsolationHissingSoundPPAirSpring1" type="string">
+               <column name="brake_pipe_isolation_hissing_sound_pp_airspring1" length="100"/> 
+          </property> 
+   
+          <property name="brakePipeIsolationHissingSoundPPAirSpring2" type="string">
+               <column name="brake_pipe_isolation_hissing_sound_pp_airspring2"  length="100"/> 
+             </property>
+          <property name="brakePipeIsolationHissingSoundNPPAirSpring1" type="string">
+               <column name="brake_pipe_isolation_hissing_sound_npp_airspring1" length="100"/> 
+             </property> 
+
+              <property name="brakePipeIsolationHissingSoundNPPAirSpring2" type="string">
+               <column name="brake_pipe_isolation_hissing_sound_npp_airspring2" length="100"/> 
+             </property> 
+             <property name="brakePipeIsolationBrakeReleasePPAirSpring1" type="string">
+               <column name="brake_pipe_isolation_brake_release_pp_airspring1" length="100"/> 
+             </property> 
+             <property name="brakePipeIsolationBrakeReleasePPAirSpring2" type="string">
+               <column name="brake_pipe_isolation_brake_release_pp_airspring2" length="100"/> 
+             </property> 
+             <property name="brakePipeIsolationBrakeReleaseNPPAirSpring1" type="string">
+               <column name="brake_pipe_isolation_brake_release_npp_airspring1" length="100"/> 
+             </property> 
+              
+              <property name="brakePipeIsolationBrakeReleaseNPPAirSpring2" type="string">
+               <column name="brake_pipe_isolation_brake_release_npp_airspring2" length="100"/> 
+             </property>
+              <property name="brakePipeVariationPPAirSpring1" type="string">
+               <column name="brake_pipe_variation_pp_airspring1" length="100"/> 
+             </property> 
+             <property name="brakePipeVariationPPAirSpring2" type="string">
+               <column name="brake_pipe_variation_pp_airspring2" length="100"/> 
+             </property> 
+             <property name="brakePipeVariationNPPAirSpring1" type="string">
+               <column name="brake_pipe_variation_npp_airspring1" length="100"/> 
+             </property> 
+              
+              <property name="brakePipeVariationNPPAirSpring2" type="string">
+               <column name="brake_pipe_variation_npp_airspring2" length="100"/> 
+             </property> 
+             <property name="repetitionTestPPAirSpring1" type="string">
+               <column name="repetition_test_pp_airspring1" length="100"/> 
+             </property> <property name="repetitionTestPPAirSpring2" type="string">
+               <column name="repetition_test_pp_airspring2" length="100"/> 
+             </property> 
+             <property name="repetitionTestNPPAirSpring1" type="string">
+               <column name="repetition_test_npp_airspring1" length="100"/> 
+             </property> 
+              <property name="repetitionTestNPPAirSpring2" type="string">
+               <column name="repetition_test_npp_airspring2" length="100"/> 
+             </property> 
+
+           
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" />
+        </property>
+       
+    </class>
+</hibernate-mapping>
+
+
+
+   
+   
+   
+    
+    
+    
+    
+    
+    
+    
+     
+  

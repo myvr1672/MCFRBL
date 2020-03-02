@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21 Jan, 2020 3:00:23 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.ShellStage4SipTran" table="shell_stage4_sip_tran">
+        <id name="shellAssetId" type="int">
+            <column name="shell_asset_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="stage4SipDocNo" type="string">
+            <column name="stage4_sip_doc_no" length="100" />
+        </property>
+        <property name="stage4SipShift" type="string">
+            <column name="stage4_sip_shift" length="10" />
+        </property>
+        <property name="stage4SipDate" type="date">
+            <column name="stage4_sip_date" length="13" />
+        </property>
+        <property name="stage4WorkBy" type="string">
+            <column name="stage4_work_by" length="30" />
+        </property>
+        <property name="stage4DrawingNo" type="string">
+            <column name="stage4_drawing_no" length="30" />
+        </property>
+        <property name="stage4WiNo" type="string">
+            <column name="stage4_wi_no" length="30" />
+        </property>
+        <property name="distancePartitionFrameSingleLh" type="string">
+            <column name="distance_partition_frame_single_lh" length="15" />
+        </property>
+        <property name="distancePartitionFrameCabinRh" type="string">
+            <column name="distance_partition_frame_cabin_rh" length="15" />
+        </property>
+        <property name="widthCorridorPartitionFrame" type="string">
+            <column name="width_corridor_partition_frame" length="15" />
+        </property>
+        <property name="distanceDoorcutoutSlidingdoor" type="string">
+            <column name="distance_doorcutout_slidingdoor" length="15" />
+        </property>
+        <property name="distanceMiddleDoorPullboxbkt" type="string">
+            <column name="distance_middle_door_pullboxbkt" length="15" />
+        </property>
+        <property name="distancePullboxbktCenterlinePp" type="string">
+            <column name="distance_pullboxbkt_centerline_pp" length="15" />
+        </property>
+        <property name="distancePullboxbktCenterlineNpp" type="string">
+            <column name="distance_pullboxbkt_centerline_npp" length="15" />
+        </property>
+        <property name="fitmentWatertankbracketBothside" type="string">
+            <column name="fitment_watertankbracket_bothside" length="15" />
+        </property>
+        <property name="heightChannelcomplete" type="string">
+            <column name="height_channelcomplete" length="15" />
+        </property>
+        <property name="distanceSidewallPartitionpillar" type="string">
+            <column name="distance_sidewall_partitionpillar" length="15" />
+        </property>
+        <property name="heightBackpieceLuggageracke" type="string">
+            <column name="height_backpiece_luggageracke" length="15" />
+        </property>
+        <property name="distanceDestinationBoard" type="string">
+            <column name="distance_destination_board" length="15" />
+        </property>
+        <property name="diatanceSidewallpillarPrtmember" type="string">
+            <column name="diatance_sidewallpillar_prtmember" length="15" />
+        </property>
+        <property name="heightRoofflangeFramepart" type="string">
+            <column name="height_roofflange_framepart" length="15" />
+        </property>
+        <property name="ductInternallogitudinalLateral" type="string">
+            <column name="duct_internallogitudinal_lateral" length="15" />
+        </property>
+        <property name="distanceDoorwayCrewcompGenroom" type="string">
+            <column name="distance_doorway_crewcomp_genroom" length="15" />
+        </property>
+        <property name="distanceAuxWatertankbktCentre" type="string">
+            <column name="distance_aux_watertankbkt_centre" length="15" />
+        </property>
+        <property name="disableLavDoor" type="string">
+            <column name="disable_lav_door" length="15" />
+        </property>
+        <property name="disableLavDoorWidth" type="string">
+            <column name="disable_lav_door_width" length="15" />
+        </property>
+        <property name="heightBottomroofCrossbracesbottom" type="string">
+            <column name="height_bottomroof_crossbracesbottom" length="15" />
+        </property>
+        <property name="passengerLavArea" type="string">
+            <column name="passenger_lav_area" length="15" />
+        </property>
+        <property name="distanceLavPrtframeEnd" type="string">
+            <column name="distance_lav_prtframe_end" length="15" />
+        </property>
+        <property name="distanceLavPrtframeLavPrtframe" type="string">
+            <column name="distance_lav_prtframe_lav_prtframe" length="15" />
+        </property>
+        <property name="berthbktLowerLh" type="java.lang.Integer">
+            <column name="berthbkt_lower_lh" />
+        </property>
+        <property name="berthbktMiddleLh" type="java.lang.Integer">
+            <column name="berthbkt_middle_lh" />
+        </property>
+        <property name="berthbktUpperLh" type="java.lang.Integer">
+            <column name="berthbkt_upper_lh" />
+        </property>
+        <property name="berthbktLowerRh" type="java.lang.Integer">
+            <column name="berthbkt_lower_rh" />
+        </property>
+        <property name="berthbktUpperRh" type="java.lang.Integer">
+            <column name="berthbkt_upper_rh" />
+        </property>
+        <property name="dogBoxArea" type="string">
+            <column name="dog_box_area" length="15" />
+        </property>
+        <property name="controlRoomArea" type="string">
+            <column name="control_room_area" length="15" />
+        </property>
+        <property name="stretcherRoomArea" type="string">
+            <column name="stretcher_room_area" length="15" />
+        </property>
+        <property name="distanceSlidingDoorStopper" type="string">
+            <column name="distance_sliding_door_stopper" length="15" />
+        </property>
+        <property name="distanceLavMountingbkt" type="string">
+            <column name="distance_lav_mountingbkt" length="15" />
+        </property>
+        <property name="distanceAuxWatertankbkt" type="string">
+            <column name="distance_aux_watertankbkt" length="15" />
+        </property>
+        <property name="heightBktcompleteRoofflange" type="string">
+            <column name="height_bktcomplete_roofflange" length="15" />
+        </property>
+        <property name="distancePowerpanelmountingCenterline" type="string">
+            <column name="distance_powerpanelmounting_centerline" length="15" />
+        </property>
+        <property name="distanceCoachcenterlineAuxiliarybkt" type="string">
+            <column name="distance_coachcenterline_auxiliarybkt" length="15" />
+        </property>
+        <property name="heightLowerberthUpperberth" type="string">
+            <column name="height_lowerberth_upperberth" length="15" />
+        </property>
+        <property name="distancePullboxPullbox" type="string">
+            <column name="distance_pullbox_pullbox" length="15" />
+        </property>
+        <property name="distanceLuggagerackRoofflangetop" type="string">
+            <column name="distance_luggagerack_roofflangetop" length="15" />
+        </property>
+        <property name="distanceDoorAttachmentbkt" type="string">
+            <column name="distance_door_attachmentbkt" length="15" />
+        </property>
+        <property name="distancePullboxCarlinearch" type="string">
+            <column name="distance_pullbox_carlinearch" length="15" />
+        </property>
+        <property name="heightCrossbraceRoofflange" type="string">
+            <column name="height_crossbrace_roofflange" length="15" />
+        </property>
+        <property name="mountingangleLowerluggagerackBottomsidewall" type="string">
+            <column name="mountingangle_lowerluggagerack_bottomsidewall" length="15" />
+        </property>
+        <property name="fitmentCrossBraces" type="string">
+            <column name="fitment_cross_braces" length="15" />
+        </property>
+        <property name="fitmentStiffeningPlate" type="string">
+            <column name="fitment_stiffening_plate" length="15" />
+        </property>
+        <property name="fitmentPowerPanelFrame" type="string">
+            <column name="fitment_power_panel_frame" length="15" />
+        </property>
+        <property name="fitmentWeldingPartitionFrame" type="string">
+            <column name="fitment_welding_partition_frame" length="15" />
+        </property>
+        <property name="roofbktWireclamping" type="string">
+            <column name="roofbkt_wireclamping" length="15" />
+        </property>
+        <property name="detailsModification" type="string">
+            <column name="details_modification" length="500" />
+        </property>
+        <property name="detailsTrialItem" type="string">
+            <column name="details_trial_item" length="500" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+        <property name="stage4TestingStatus" type="string">
+            <column name="stage4_testing_status" length="15" />
+        </property>
+        <property name="shellAssembly4ObervationRmk" type="string">
+            <column name="observation_remark" length="500" />
+        </property>
+        
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" length="29" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,149 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.DateFormat" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="model.User" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="dao.*" %>
+<%@ page import="hibernateConnect.HibernateConfig" %>
+<%@ page import="org.hibernate.Session" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="org.apache.struts2.dispatcher.SessionMap" %>
+<%@ page import="com.opensymphony.xwork2.ActionSupport" %>
+<%@ page import="org.apache.struts2.ServletActionContext" %>
+<%@ page import="org.apache.struts2.dispatcher.SessionMap" %>
+<%@ page import="org.apache.struts2.interceptor.SessionAware" %>
+<html>
+<head>
+<style>
+.error-msg{
+   background-color: #FF0000;
+}
+</style>
+<% String contextpath=request.getContextPath();%>
+
+<link href="css/jquery-ui-1.10.3.custom.css" rel="stylesheet"type="text/css" />
+<script src="js/jquery-1.8.2.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+	$('#fromDate').datepicker({
+        //inline: true,
+        dateFormat: 'dd-mm-yy',
+        changeMonth: true,
+        maxDate: new Date(),
+        changeYear: true,
+        yearRange: '-1:+1',
+        constrainInput: true,
+        duration: '',
+        gotoCurrent: true,
+
+    }).datepicker("setDate", new Date()); 
+	$('#toDate').datepicker({
+        //inline: true,
+        dateFormat: 'dd-mm-yy',
+        changeMonth: true,
+        maxDate: new Date(),
+        changeYear: true,
+        yearRange: '-1:+1',
+        constrainInput: true,
+        duration: '',
+        gotoCurrent: true,
+
+    }).datepicker("setDate", new Date()); 
+	
+
+	
+	
+	$( "#buttonId" ).click(function(){
+		 $('input').attr('required', true);  
+		
+		var startDate = new Date($('#fromDate').val());
+		var endDate = new Date($('#toDate').val());
+
+		if (startDate > endDate){
+			 $("#errorMessage").html("From Date should be less than End Date")
+             .addClass("error-msg");
+	    return false;
+		}
+		else{
+			 $("#errorMessage").html("")
+             .removeClass("error-msg");
+			
+				 
+			 
+		var url="<%=contextpath %>/ProductionShopStatusReport.jsp?startDate="+$( "#fromDate" ).val()+"&endDate="+$( "#toDate" ).val();
+		url= url+"&shop="+$( "#shop" ).val();
+		 $( "#new-pages" ).load(url);
+		}
+	});
+	
+});
+
+
+</script>
+</head>
+<body>
+<% 
+DbConnection db=new DbConnection();
+Connection con=db.getConnection(); 
+String sql_shop, sql_machineType;
+Statement st_shop= con.createStatement();
+Statement st_machineType=con.createStatement();
+ResultSet rs_machineType, rs_shop;
+
+User loginUser = null;
+Session session_hibernate = null;
+String username= null;
+String roles= null;
+HttpSession session_http = ServletActionContext.getRequest().getSession(true);
+username = (String) session_http.getAttribute("userid");
+
+if (username != null)
+{
+session_hibernate = HibernateConfig.getSession();
+loginUser = (User)session_hibernate.get(User.class,username.trim());
+
+ roles= loginUser.getRoles();
+ roles = roles.replaceAll(", ","','");
+}
+
+Date date = new Date();  
+DateFormat  formatter = new SimpleDateFormat("YYYY-MM-dd");  
+String strDate= formatter.format(date);  
+%>
+
+<div id="errorMessage"></div>
+<p>
+  <b>Select Shop: </b>&nbsp;&nbsp;
+  <select name="shop" id="shop">
+  <option value="">Select</option>
+  <%
+  if(roles.equals("All")){
+	 sql_shop="select substages from public.substage_master where parent_stage_id='0'  and substage_validity=1 order by substage_sequence" ;
+  }
+  else
+  {
+	  sql_shop="select substages from public.substage_master where substages in ('"+roles+"') and parent_stage_id='0'  and substage_validity=1 order by substage_sequence";
+  }
+  rs_shop=st_shop.executeQuery(sql_shop);
+  while(rs_shop.next())
+  {
+	%>
+	<option value=<%=rs_shop.getString(1)%>><%=rs_shop.getString(1)%> Shop</option>  
+<%   }
+  if(roles.equals("All")){ %>
+  <option value="All">All Shop</option> 
+  <% } %>
+  </select>
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<b>Select Date Range</b>&nbsp;&nbsp;&nbsp; From Date :&nbsp;&nbsp; <input type ="text" id="fromDate" name="fromDate"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To Date :&nbsp;&nbsp; <input type ="text" id="toDate" name="toDate"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="buttonId" value="Run Report"/></p>
+ 
+<hr />
+
+<div id="new-pages"></div>
+</body>
+</html>

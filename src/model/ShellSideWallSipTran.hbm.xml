@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.ShellSideWallSipTran" table="shell_side_wall_sip_tran" >
+		
+		<id name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id"></column>
+		</id>
+		
+		<property name="sidewallSipDocNo" type="string">
+			<column name="sidewall_sip_doc_no" length="100"></column>
+		</property>
+		<property name="sidewallSipShift" type="string">
+			<column name="sidewall_sip_shift" length="10"></column>
+		</property>
+		<property name="sidewallSipDate" type="date">
+			<column name=" sidewall_sip_date"></column>
+		</property>
+		<property name="sidewallType" type="string">
+			<column name="sidewall_type" length="10"></column>
+		</property>
+		<property name="drawingNo" type="string">
+			<column name="drawing_no" length="50"></column>
+		</property>
+		<property name="wiNo" type="string">
+			<column name="wi_no" length="50"></column>
+		</property>
+		<property name="frameWorkBy" type="string">
+			<column name="frame_work_by" length="20"></column>
+		</property>
+		<property name="frameJigRoboticsBo" type="string">
+			<column name="frame_jig_robotics_bo" length="20"></column>
+		</property>
+		<property name="spotWeldingBy" type="string">
+			<column name="spot_welding_by" length="20"></column>
+		</property>
+		<property name="spotWeldingJigRoboticsBo" type="string">
+			<column name="spot_welding_jig_robotics_bo" length="20"></column>
+		</property>
+		<property name="interlockJointBy" type="string">
+			<column name="interlock_joint_by" length="20"></column>
+		</property>
+		<property name="interlockJointJigRoboticsBo" type="string">
+			<column name="interlock_joint_jig_robotics_bo" length="20"></column>
+		</property>
+		<property name="sidewallCarlineMakeLh" type="string">
+			<column name="sidewall_carline_make_lh" length="20"></column>
+		</property>
+		<property name="sidewallCarlineMakeRh" type="string">
+			<column name="sidewall_carline_make_rh" length="20"></column>
+		</property>
+		
+		<property name="observationItemAsPerDrawingFlag" type="string">
+			<column name="observation_item_as_per_drawing_flag" length="6"></column>
+		</property>
+		<property name="observationComplianceWiFlag" type="string">
+			<column name="observation_compliance_wi_flag" length="6"></column>
+		</property>
+		<property name="observationWeldingThoatLengthFlag" type="string">
+			<column name="observation_welding_thoat_length_flag" length="6"></column>
+		</property>
+		<property name="observationSheetJointLaserFlag" type="string">
+			<column name="observation_sheet_joint_laser_flag" length="6"></column>
+		</property>
+		<property name="observationSidewallSheetTorque" type="integer">
+			<column name="observation_sidewall_sheet_torque" ></column>
+		</property>
+		<property name="observationSidewallFrameWorkFlag" type="string">
+			<column name="observation_sidewall_frame_work_flag" length="6"></column>
+		</property>
+		<property name="observationSidewallConditionSpotWeldingFlag" type="string">
+			<column name="observation_sidewall_condition_spot_welding_flag" length="6"></column>
+		</property>
+		<property name="observationHorizontalVerticalJointWeldingFlag" type="string">
+			<column name="observation_horizontal_vertical_joint_welding_flag" length="6"></column>
+		</property>
+		<property name="observationRoofFlangeJointFlag" type="string">
+			<column name="observation_roof_flange_joint_flag" length="6"></column>
+		</property>
+		<property name="sidewallSheetLengthLh" type="integer">
+			<column name="sidewall_sheet_length_lh" ></column>
+		</property>
+		<property name="sidewallSheetLengthRh" type="integer">
+			<column name="sidewall_sheet_length_rh" ></column>
+		</property>
+		<property name="sidewallSheetWidth" type="integer">
+			<column name="sidewall_sheet_width" ></column>
+		</property>
+		<property name="sidewallHeightVerticalmemberRoofflange" type="integer">
+			<column name="sidewall_height_verticalmember_roofflange" ></column>
+		</property>
+		<property name="spotWeldingCarlinearchFlag" type="string">
+			<column name="spot_welding_carlinearch_flag" length="6"></column>
+		</property>
+		<property name="brazingCarlineSidewallFlag" type="string">
+			<column name="brazing_carline_sidewall_flag" length="6"></column>
+		</property>
+		<property name="windowProfileFlag" type="string">
+			<column name="window_profile_flag" length="6"></column>
+		</property>
+		<property name="pullBoxDistance" type="string">
+			<column name="pull_box_distance" length="30"></column>
+		</property>
+		<property name="windowSealLeakageFlag" type="string">
+			<column name="window_seal_leakage_flag" length="6"></column>
+		</property>
+		<property name="windowSealAngleFlag" type="string">
+			<column name="window_seal_angle_flag" length="6"></column>
+		</property>
+		<property name="distanceCarlinetopVerticalmember" type="integer">
+			<column name="distance_carlinetop_verticalmember" ></column>
+		</property>
+		<property name="lengthSidewallCarlineLh" type="integer">
+			<column name="length_sidewall_carline_lh" ></column>
+		</property>
+		<property name="lengthSidewallCarlineRh" type="integer">
+			<column name="length_sidewall_carline_rh" ></column>
+		</property>
+		<property name="carlineLeakageFlag" type="string">
+			<column name="carline_leakage_flag" length="6"></column>
+		</property>
+		<property name="horizontalVerticalWeldingGrindingFlag" type="string">
+			<column name="horizontal_vertical_welding_grinding_flag" length="6"></column>
+		</property>
+		<property name="distanceBackpieceVerticalmemberTransverse" type="string">
+			<column name="distance_backpiece_verticalmember_transverse" length="20"></column>
+		</property>
+		<property name="distanceBackpieceVerticalmemberSingle" type="string">
+			<column name="distance_backpiece_verticalmember_single" length="20"></column>
+		</property>
+		<property name="roofFlangeLength" type="integer">
+			<column name="roof_flange_length" ></column>
+		</property>
+		<property name="widthHatchedDoor" type="integer">
+			<column name="width_hatched_door" ></column>
+		</property>
+		<property name="distanceBerthchannelVerticalchannelLowerLh" type="integer">
+			<column name="distance_berthchannel_verticalchannel_lower_lh" ></column>
+		</property>
+		<property name="distanceBerthchannelVerticalchannelMiddleLh" type="integer">
+			<column name="distance_berthchannel_verticalchannel_middle_lh" ></column>
+		</property>
+		<property name="distanceBerthchannelVerticalchannelUpperLh" type="integer">
+			<column name="distance_berthchannel_verticalchannel_upper_lh" ></column>
+		</property>
+		<property name="distanceBerthchannelVerticalchannelLowerRh" type="integer">
+			<column name="distance_berthchannel_verticalchannel_lower_rh" ></column>
+		</property>
+		<property name="distanceBerthchannelVerticalchannelUpperRh" type="integer">
+			<column name="distance_berthchannel_verticalchannel_upper_rh" ></column>
+		</property>
+		<property name="distanceWindowcenterAnglewindowsupport" type="integer">
+			<column name="distance_windowcenter_anglewindowsupport" ></column>
+		</property>
+		<property name="distanceWindowedgeChannel" type="integer">
+			<column name="distance_windowedge_channel" ></column>
+		</property>
+		<property name="heightCarline" type="integer">
+			<column name="height_carline" ></column>
+		</property>
+		<property name="lengthSmallcarline" type="integer">
+			<column name="length_smallcarline" ></column>
+		</property>
+		<property name="angleLowerluggageBottomsidewall" type="integer">
+			<column name="angle_lowerluggage_bottomsidewall" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallDoorside1" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_doorside1" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallDoorside2" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_doorside2" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallDoorside3" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_doorside3" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallDoorside4" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_doorside4" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallMiddlearea1" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_middlearea1" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallMiddlearea2" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_middlearea2" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallMiddlearea3" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_middlearea3" ></column>
+		</property>
+		<property name="distanceAnglehoneyprtSidewallMiddlearea4" type="integer">
+			<column name="distance_anglehoneyprt_sidewall_middlearea4" ></column>
+		</property>
+		<property name="detailsOfModification" type="string">
+			<column name="details_of_modification" length="500"></column>
+		</property>
+		<property name="detailsOfTrialItem" type="string">
+			<column name="details_of_trial_item" length="500"></column>
+		</property>
+		<property name="remarks" type="string">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="shellSidewallTestingStatus" type="string">
+			<column name="shell_sidewall_testing_status" length="15"></column>
+		</property>
+		
+		<property name="entryBy" type="string">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="entryTime" type="timestamp">
+			<column name="entry_time" ></column>
+		</property>
+	</class>
+</hibernate-mapping>     

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.Asset_master2" table="asset_master_fin" >
+	
+	<id name="asset_id" type="java.lang.Integer">
+			<column name="asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+	
+	    <property name="asset_subtype" type="java.lang.String" >
+	    <column name="asset_subtype"></column>
+	    </property>
+	  
+		<property name="asset_type" type="java.lang.String" >
+		<column name="asset_type" ></column>
+		</property>
+  
+	
+		<property name="asset_subtype_description" type="java.lang.String">
+			<column name="asset_subtype_description"></column>
+		</property>
+		<property name="asset_subtype_class" type="java.lang.String">
+			<column name="asset_subtype_class" ></column>
+		</property>
+		<property name="asset_subtype_capacity" type="java.lang.Integer">
+			<column name="asset_subtype_capacity"></column>
+		</property>
+		<property name="fin_yr" type="java.lang.String">
+			<column name="fin_yr"></column>
+		</property>
+		<property name="enable_flag" type="java.lang.String">
+			<column name="enable_flag"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

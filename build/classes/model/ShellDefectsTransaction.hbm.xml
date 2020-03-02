@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.ShellDefectsTransaction" table="shell_defects_transaction">
+		<id name="abid" type="java.lang.Integer">
+			<column name="abid"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="shellDefectId" type="java.lang.Integer">
+			<column name="shell_defect_id" ></column>
+		</property>
+		<property name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id" ></column>
+		</property>
+		
+		<property name="detailShellDefectDescription" type="java.lang.String">
+			<column name="detail_shell_defect_description" length="500"></column>
+		</property>	
+		<property name="defectReportedDate" type="date">
+			<column name="defect_reported_date"></column>
+		</property>	
+		
+		<property name="entryDate" type="java.lang.String">
+			<column name="entry_date" length="30"></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		
+		<property name="actionPerformed" type="java.lang.String">
+			<column name="action_performed" ></column>
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks" ></column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="25"></column>
+		</property>
+		<property name="remarkEntryDate" type="java.lang.String">
+			<column name="remark_entry_date" length="30"></column>
+		</property>
+		<property name="remarkEntryBy" type="java.lang.String">
+			<column name="remark_entry_by" length="15"></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ShellEndwallSipTran" table="shell_endwall_sip_tran">
+
+   <id name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id"></column>
+	</id>
+            
+       <property name="endwallSipDocNo" type="string">
+               <column name="endwall_sip_doc_no" length="100" /> 
+        </property> 
+        
+           <property name="endwallSipShift" type="string">
+               <column name="endwall_sip_shift " length="100" /> 
+        </property> 
+        
+           <property name="endwallSipDate" type="date">
+               <column name="endwall_sip_date" length="100" /> 
+        </property> 
+        
+           <property name="drawingNo" type="string">
+               <column name="drawing_no" length="100" /> 
+        </property> 
+        
+           <property name="wiNo" type="string">
+               <column name="wi_no" length="100" /> 
+        </property> 
+        
+          <property name="observationItemAsPerDrawing" type="string">
+               <column name="observation_item__as_per_drawing" length="100" /> 
+        </property> 
+        
+           <property name="observationComplianceWi" type="string">
+               <column name="observation_compliance_wi" length="100" /> 
+        </property> 
+        
+           <property name="observationWeldingThroatLength" type="string">
+               <column name="observation_welding_throat_length" length="100" /> 
+        </property> 
+        
+           <property name="distanceStopperholeUchannel" type="java.lang.Integer">
+               <column name="distance_stopperhole_uchannel"/> 
+        </property> 
+        
+           <property name="distanceUchannelStopperhole" type="java.lang.Integer">
+               <column name="distance_uchannel_stopperhole"/> 
+        </property> 
+        
+           <property name="distanceVestibuleUchannelPp" type="java.lang.Integer">
+               <column name="distance_vestibule_uchannel_pp"/> 
+        </property> 
+        
+           <property name="distanceVestibuleUchannelNpp" type="java.lang.Integer">
+               <column name="distance_vestibule_uchannel_npp"/> 
+        </property> 
+        
+        
+           <property name="heightVestibuleplateEndwallPp" type="java.lang.Integer">
+               <column name="height_vestibuleplate_endwall_pp"/> 
+        </property> 
+        
+        
+           <property name="heightVestibuleplateEndwallNpp" type="java.lang.Integer">
+               <column name="height_vestibuleplate_endwall_npp"/> 
+        </property> 
+        
+        
+           <property name="conditionTailLampHole" type="string">
+               <column name="condition_tail_lamp_hole" length="100" /> 
+        </property> 
+        
+        <property name="conditionVestibuleHole" type="string">
+               <column name="condition_vestibule_hole" length="100" /> 
+        </property> 
+        
+        
+         <property name="conditionDrainHole" type="string">
+               <column name="condition_drain_hole" length="100" /> 
+        </property> 
+        
+         <property name="endwallOuterWidth" type="java.lang.Integer">
+               <column name="endwall_outer_width" /> 
+        </property> 
+        
+         <property name="endwallWidthPp" type="java.lang.Integer">
+               <column name="endwall_width_pp"/> 
+        </property> 
+        
+         <property name="endwallWidthNpp" type="java.lang.Integer">
+               <column name="endwall_width_npp"/> 
+        </property> 
+        
+         <property name="endwallExhaustCutting" type="string">
+               <column name="endwall_exhaust_cutting" length="100" /> 
+        </property> 
+        
+          <property name="endwallPieceVerstibule" type="string">
+               <column name="endwall_piece_verstibule" length="100" /> 
+        </property> 
+        
+          <property name="roofelementWaterejectHole" type="string">
+               <column name="roofelement_watereject_hole" length="100" /> 
+        </property> 
+        
+          <property name="backpieceVestibuleDoor" type="string">
+               <column name="backpiece_vestibule_door" length="100" /> 
+        </property> 
+        
+          <property name="endwallTestingStatus" type="string">
+               <column name="endwall_testing_status" length="100" /> 
+        </property> 
+        
+          <property name="detailsOfModification" type="string">
+               <column name="details_of_modification" length="100" /> 
+        </property> 
+        
+        
+        <property name="detailsOfTrial" type="string">
+               <column name="details_of_trial" length="100" /> 
+        </property> 
+        
+            <property name="remarks" type="string">
+               <column name="remarks" length="100" /> 
+        </property>
+        
+            <property name="entryBy" type="string">
+               <column name="entry_by" length="100" /> 
+        </property>
+        
+            <property name="entryTime" type="timestamp">
+               <column name="entry_time"/> 
+        </property>
+        
+        
+        
+</class>
+</hibernate-mapping>        
+              

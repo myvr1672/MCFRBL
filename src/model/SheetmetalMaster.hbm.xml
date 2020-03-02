@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.SheetmetalMaster" table="sheetmetal_master" >
+		<id name="drawingNo" type="java.lang.String">
+			<column name="drawing_no" length="20"></column>
+		</id>
+		<property name="description" type="java.lang.String">
+			<column name="description" length="150"></column>
+		</property>
+		
+		<property name="sizeLength" type="java.lang.Float">
+			<column name="size_length"></column>
+		</property>
+		<property name="sizeWidth" type="java.lang.Float">
+			<column name="size_width"></column>
+		</property>
+		<property name="sizeThickness" type="java.lang.Float">
+			<column name="size_thickness"></column>
+		</property>
+		<property name="rawMaterialUsed" type="java.lang.String">
+			<column name="raw_material_used"></column>
+		</property>
+		
+		<property name="sizeUnit" type="java.lang.String">
+			<column name="size_unit"  length="10"></column>
+		</property>
+		
+		<property name="processP1" type="java.lang.String">
+			<column name="process_p1" length="15"></column>
+		</property>
+		
+		<property name="processP2" type="java.lang.String">
+			<column name="process_p2" length="15"></column>
+		</property>
+		
+		<property name="processP3" type="java.lang.String">
+			<column name="process_p3" length="15"></column>
+		</property>
+		
+		<property name="processP4" type="java.lang.String">
+			<column name="process_p4" length="15"></column>
+		</property>
+		
+		<property name="processP5" type="java.lang.String">
+			<column name="process_p5" length="15"></column>
+		</property>
+		
+		<property name="qpc" type="java.lang.Integer">
+			<column name="qpc"></column>
+		</property>
+		<property name="shellType" type="java.lang.String">
+			<column name="shell_type" length="15"></column>
+		</property>
+		<property name="componentType" type="java.lang.String">
+			<column name="component_type" length="15"></column>
+		</property>
+		
+		<property name="fileName" type="java.lang.String">
+			<column name="file_name" length="30"></column>
+		</property>
+		<property name="userShop" type="java.lang.String">
+			<column name="user_shop" length="20"></column>
+		</property>
+		<property name="entrydate" type="java.lang.String">
+			<column name="entry_date" length="30"></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.WheelsetTransaction" table="wheelset_tran">
+
+<id name="wheelsetAssetId" type="java.lang.Integer">
+			<column name="wheelset_asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            <property name="wheelsetTransactionId" type="string">
+               <column name="wheelset_transaction_id" length="20" /> 
+             </property>
+             <property name="substageId" type="string">
+               <column name="stage_id" length="10" /> 
+             </property> 
+             
+             <property name="previousStageId" type="string">
+               <column name="prev_stage_id" length="20" /> 
+             </property> 
+             
+         <property name="wheeldiscLeftNo" type="string">
+            <column name="wheeldisc_left_no" length="15" />
+        </property>
+         <property name="ctrbLeftNo" type="string">
+            <column name="ctrb_left_no" length="15" />
+        </property>
+         <property name="ctrbLeftMake" type="string">
+            <column name="ctrb_left_make" length="15" />
+        </property>
+        <property name="wheeldiscLeftMake" type="string">
+            <column name="wheeldisc_left_make" length="15" />
+        </property>
+         
+         <property name="leftBrakeDiscMake" type="string">
+            <column name="leftbrakediscmake" length="15" />
+        </property>
+          <property name="leftWheelDiscTon" type="float">
+            <column name="leftwheeldiscton"  />
+        </property>
+        
+         <property name="wheeldiscRightNo" type="string">
+            <column name="wheeldisc_right_no" length="15" />
+        </property>
+         <property name="ctrbRightNo" type="string">
+            <column name="ctrb_right_no" length="15" />
+        </property>
+         <property name="ctrbRightMake" type="string">
+            <column name="ctrb_right_make" length="15" />
+        </property>
+        <property name="wheeldiscRightMake" type="string">
+            <column name="wheeldisc_right_make" length="15" />
+        </property>
+        
+         <property name="rightBrakeDiscMake" type="string">
+            <column name="rightbrakediscmake" length="15" />
+        </property>
+          <property name="rightWheelDiscTon" type="float">
+            <column name="rightwheeldiscton"  />
+        </property>
+        
+        <property name="axleNumber" type="string">
+            <column name="axle_no" length="15" />
+        </property>
+            <property name="axleMake" type="string">
+            <column name="axlemake " length="15" />
+        </property>
+        
+        <property name="assemblyStartDate" type="date">
+            <column name="assembly_start_date" />
+        </property>
+         <property name="assemblyEndDate" type="date">
+            <column name="assembly_end_date" length="10" />
+        </property>
+      
+         <property name="assemblyDispatchDate" type="date">
+            <column name="assembly_dispatch_date" length="10" />
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+        
+       
+        <property name="transEntryBy" type="string">
+            <column name="transaction_user" length="15" />
+        </property>
+        <property name="transEntryTime" type="string">
+            <column name="transaction_date" length="20" />
+        </property>
+        
+    
+        <property name="asignedFlag" type="java.lang.Integer">
+            <column name="asigned_flag" length="1" />
+        </property>
+        <property name="receiptAtNextStage" type="date">
+            <column name="receipt_at_next_stage" length="10" />
+        </property>
+        
+        <property name="dispatchTo" type="string">
+            <column name="dispatch_to" length="15" />
+        </property>
+        <property name="customer" type="string">
+            <column name="customer" length="15" />
+        </property>
+        <property name="journalDiaLeft" type="double">
+            <column name="journal_dia_left"/>
+        </property>
+        <property name="journalDiaRight" type="double">
+            <column name="journal_dia_right" />
+        </property>
+        <property name="collarDiaLeft" type="double">
+            <column name="collar_dia_left"/>
+        </property>
+        <property name="collarDiaRight" type="double">
+            <column name="collar_dia_right"/>
+        </property>
+       <property name="wheelDiaLeft" type="double">
+            <column name="wheel_dia_left"/>
+        </property>
+        <property name="wheelDiaRight" type="double">
+            <column name="wheel_dia_right"/>
+        </property>
+        <property name="distanceBetweenWheel" type="double">
+            <column name="distance_between_wheel"/>
+        </property>
+        <property name="distanceBetweenWheelfaceDiscface" type="double">
+            <column name="distance_between_wheelface_discface"/>
+        </property>
+        <property name="brakeDiscPressureLeft" type="integer">
+            <column name="brake_disc_pressure_left"/>
+        </property>
+        <property name="brakeDiscPressureRight" type="integer">
+            <column name="brake_disc_pressure_right"/>
+        </property>
+        <property name="wheelDiscPressureLeft" type="integer">
+            <column name="wheel_disc_pressure_left"/>
+        </property>
+        <property name="wheelDiscPressureRight" type="integer">
+            <column name="wheel_disc_pressure_right"/>
+        </property>
+        <property name="wheelBalancingWeightLeft" type="integer">
+            <column name="wheel_balancing_weight_left"/>
+        </property>
+        <property name="wheelBalancingWeightRight" type="integer">
+            <column name="wheel_balancing_weight_right"/>
+        </property>
+        <property name="wheelUnbalanceWeightLeft" type="integer">
+            <column name="wheel_unbalance_weight_left"/>
+        </property>
+        <property name="wheelUnbalanceWeightRight" type="integer">
+            <column name="wheel_unbalance_weight_right"/>
+        </property>
+        <property name="wheelDiscType" type="string">
+            <column name="wheel_disc_type"/>
+        </property>
+        <property name="sipWheelAssemblyFlag" type="integer">
+            <column name="sip_wheel_assembly_flag"/>
+        </property>
+        <property name="sipWheelCtrbFlag" type="integer">
+            <column name="sip_wheel_ctrb_flag"/>
+        </property>
+        <property name="testingClearanceMemoFlag" type="integer">
+            <column name="testing_clearance_memo_flag"/>
+        </property>
+        <property name="testingClearanceMemoDate" type="date">
+            <column name="testing_clearance_memo_date"/>
+        </property>
+        <property name="testingClearanceMemoStatus" type="string">
+            <column name="testing_clearance_memo_status"/>
+        </property>
+        
+	 <property name="testingClearanceMemoRemark" type="string">
+            <column name="testing_clearance_memo_remark"/>
+        </property>
+        <property name="lateralClearanceLeftCTRB" type="string">
+            <column name="lateral_clearance_left_ctrb"/>
+        </property>
+        <property name="lateralClearanceRightCTRB" type="string">
+            <column name="lateral_clearance_right_ctrb"/>
+        </property>
+        <property name="pressingPressureLeftCTRB" type="string">
+            <column name="pressing_pressure_left_ctrb"/>
+        </property>
+        <property name="pressingPressureRightCTRB" type="string">
+            <column name="pressing_pressure_right_ctrb"/>
+        </property>
+        <property name="wheelSetType" type="string">
+            <column name="wheel_set_type"/>
+        </property>
+        
+    </class>
+</hibernate-mapping>

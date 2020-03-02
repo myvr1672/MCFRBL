@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.User" table="user_master" >
+		<id name="userid" type="java.lang.String">
+			<column name="user_id" length="15"></column>
+		</id>
+		
+		<property name="pwd" type="java.lang.String">
+			<column name="password" length="75"></column>
+		</property>
+		
+		<property name="userType" type="java.lang.String">
+			<column name="user_type" length="15"></column>
+		</property>
+		
+		<property name="userName" type="java.lang.String">
+			<column name="name" length="25"></column>
+		</property>
+		
+		<property name="email" type="java.lang.String">
+			<column name="email" length="35"></column>
+		</property>
+		
+		<property name="telephone" type="java.lang.String">
+			<column name="phone"></column>
+		</property>
+		
+		<property name="designation" type="java.lang.String">
+			<column name="designation" length="15"></column>
+		</property>
+		
+		<property name="dept" type="java.lang.String">
+			<column name="department" length="50"></column>
+		</property>
+		
+		<property name="createdate" type="timestamp">
+			<column name="createdate" length="30"></column>
+		</property>
+		<property name="roles" type="java.lang.String">
+			<column name="role" length="500"></column>
+		</property>
+		<property name="coachtypes" type="java.lang.String">
+			<column name="coach_type" length="500"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

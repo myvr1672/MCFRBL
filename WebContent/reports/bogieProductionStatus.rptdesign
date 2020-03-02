@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">6</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">6</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">6</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="bogie_report_ds1" id="6">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">prev_work_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">prev_work_date</text-property>
+                    <text-property name="heading">prev_work_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgffason</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgffason</text-property>
+                    <text-property name="heading">cntbgffason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgffmon</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgffmon</text-property>
+                    <text-property name="heading">cntbgffmon</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgffyrly</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgffyrly</text-property>
+                    <text-property name="heading">cntbgffyrly</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgfmason</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgfmason</text-property>
+                    <text-property name="heading">cntbgfmason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgfmmon</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgfmmon</text-property>
+                    <text-property name="heading">cntbgfmmon</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgbfason</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgbfason</text-property>
+                    <text-property name="heading">cntbgbfason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgbfmon</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgbfmon</text-property>
+                    <text-property name="heading">cntbgbfmon</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgbfyrly</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgbfyrly</text-property>
+                    <text-property name="heading">cntbgbfyrly</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgbmason</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgbmason</text-property>
+                    <text-property name="heading">cntbgbmason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cntbgbmmon</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cntbgbmmon</text-property>
+                    <text-property name="heading">cntbgbmmon</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">prev_work_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cntbgffason</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cntbgffmon</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">cntbgffyrly</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cntbgfmason</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">cntbgfmmon</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">cntbgbfason</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">cntbgbfmon</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">cntbgbfyrly</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">cntbgbmason</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">cntbgbmmon</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">prev_work_date</property>
+                    <property name="nativeName">prev_work_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cntbgffason</property>
+                    <property name="nativeName">cntbgffason</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">cntbgffmon</property>
+                    <property name="nativeName">cntbgffmon</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">cntbgffyrly</property>
+                    <property name="nativeName">cntbgffyrly</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">cntbgfmason</property>
+                    <property name="nativeName">cntbgfmason</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">cntbgfmmon</property>
+                    <property name="nativeName">cntbgfmmon</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">cntbgbfason</property>
+                    <property name="nativeName">cntbgbfason</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">cntbgbfmon</property>
+                    <property name="nativeName">cntbgbfmon</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">cntbgbfyrly</property>
+                    <property name="nativeName">cntbgbfyrly</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">cntbgbmason</property>
+                    <property name="nativeName">cntbgbmason</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">cntbgbmmon</property>
+                    <property name="nativeName">cntbgbmmon</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select prev_work_date(now()::date), cntbgffason,cntbgffmon, cntbgffyrly, cntbgfmason,cntbgfmmon,
+cntbgbfason,cntbgbfmon, cntbgbfyrly, cntbgbmason,cntbgbmmon
+from public.count_bogie_asmbly_crdate(prev_work_date(now()::date) )]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set2" id="208">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">crdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crdate</text-property>
+                    <text-property name="heading">crdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgffason</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgffason</text-property>
+                    <text-property name="heading">strcntbgffason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgffmon</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgffmon</text-property>
+                    <text-property name="heading">strcntbgffmon</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgffyrly</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgffyrly</text-property>
+                    <text-property name="heading">strcntbgffyrly</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgfmason</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgfmason</text-property>
+                    <text-property name="heading">strcntbgfmason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgfmmon</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgfmmon</text-property>
+                    <text-property name="heading">strcntbgfmmon</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgbfason</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgbfason</text-property>
+                    <text-property name="heading">strcntbgbfason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgbfmon</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgbfmon</text-property>
+                    <text-property name="heading">strcntbgbfmon</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgbfyrly</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgbfyrly</text-property>
+                    <text-property name="heading">strcntbgbfyrly</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgbmason</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgbmason</text-property>
+                    <text-property name="heading">strcntbgbmason</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">strcntbgbmmon</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">strcntbgbmmon</text-property>
+                    <text-property name="heading">strcntbgbmmon</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">crdate</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">strcntbgffason</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">strcntbgffmon</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">strcntbgffyrly</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">strcntbgfmason</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">strcntbgfmmon</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">strcntbgbfason</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">strcntbgbfmon</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">strcntbgbfyrly</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">strcntbgbmason</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">strcntbgbmmon</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">crdate</property>
+                    <property name="nativeName">crdate</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">strcntbgffason</property>
+                    <property name="nativeName">strcntbgffason</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">strcntbgffmon</property>
+                    <property name="nativeName">strcntbgffmon</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">strcntbgffyrly</property>
+                    <property name="nativeName">strcntbgffyrly</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">strcntbgfmason</property>
+                    <property name="nativeName">strcntbgfmason</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">strcntbgfmmon</property>
+                    <property name="nativeName">strcntbgfmmon</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">strcntbgbfason</property>
+                    <property name="nativeName">strcntbgbfason</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">strcntbgbfmon</property>
+                    <property name="nativeName">strcntbgbfmon</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">strcntbgbfyrly</property>
+                    <property name="nativeName">strcntbgbfyrly</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">strcntbgbmason</property>
+                    <property name="nativeName">strcntbgbmason</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">strcntbgbmmon</property>
+                    <property name="nativeName">strcntbgbmmon</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 'Production Status as on: '||prev_work_date(now()::date) crdate, 
+'In House Production: '||cntbgffason||' C/S' strcntbgffason,
+'Cumulative monthly In-house production: '||cntbgffmon||' C/S' strcntbgffmon,
+'Cumulative yearly In-house production: '||cntbgffyrly||' C/S' strcntbgffyrly,
+'Trade: '||cntbgfmason||' C/S' strcntbgfmason,
+'Cumulative monthly trade: '||cntbgfmmon||' C/S' strcntbgfmmon,
+'In House Production: '||cntbgbfason||' C/S' strcntbgbfason,
+'Cumulative monthly In-house production: '||cntbgbfmon||' C/S' strcntbgbfmon,
+'Cumulative yearly In-house production: '||cntbgbfyrly||' C/S' strcntbgbfyrly,
+'Trade: '||cntbgbmason||' C/S' strcntbgbmason,
+'Cumulative monthly trade: '||cntbgbmmon||' C/S' strcntbgbmmon
+from public.count_bogie_asmbly_crdate(prev_work_date(now()::date) )]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>crdate</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>crdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>crdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgffason</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgffason</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgffason</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgffmon</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgffmon</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgffmon</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgffyrly</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgffyrly</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgffyrly</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgfmason</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgfmason</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgfmason</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgfmmon</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgfmmon</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgfmmon</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgbfason</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgbfason</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgbfason</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgbfmon</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgbfmon</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgbfmon</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgbfyrly</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgbfyrly</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgbfyrly</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgbmason</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgbmason</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgbmason</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>strcntbgbmmon</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>strcntbgbmmon</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>strcntbgbmmon</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="NewStyle" id="158">
+            <property name="marginTop">auto</property>
+            <property name="marginLeft">auto</property>
+            <property name="marginBottom">auto</property>
+            <property name="marginRight">auto</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="269">
+            <property name="height">4.010416666666667in</property>
+            <property name="width">7.864583333333333in</property>
+            <column id="270">
+                <property name="width">2.3645833333333335in</property>
+            </column>
+            <column id="271">
+                <property name="width">3.1145833333333335in</property>
+            </column>
+            <column id="272">
+                <property name="width">2.03125in</property>
+            </column>
+            <row id="334">
+                <property name="height">0.6145833333333334in</property>
+                <cell id="335">
+                    <image id="340">
+                        <property name="height">0.3020833333333333in</property>
+                        <property name="width">0.4895833333333333in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="336">
+                    <text id="338">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<CENTER>
+<B>								
+Bogie Production Status as on:
+</B>
+</CENTER>]]></text-property>
+                    </text>
+                </cell>
+                <cell id="337">
+                    <grid id="342">
+                        <property name="width">2.0833333333333335in</property>
+                        <column id="343">
+                            <property name="width">1.46875in</property>
+                        </column>
+                        <column id="344"/>
+                        <row id="345">
+                            <cell id="346">
+                                <data id="348">
+                                    <property name="dataSet">bogie_report_ds1</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">prev_work_date</property>
+                                            <text-property name="displayName">prev_work_date</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["prev_work_date"]</expression>
+                                            <property name="dataType">date</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">prev_work_date</property>
+                                </data>
+                            </cell>
+                            <cell id="347">
+                                <image id="341">
+                                    <property name="height">0.375in</property>
+                                    <property name="width">0.4895833333333333in</property>
+                                    <property name="source">file</property>
+                                    <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                                </image>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="277">
+                <cell id="278">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">5</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="156">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bogie Frame]]></text-property>
+                    </text>
+                </cell>
+                <cell id="279">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="146">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[In House Production (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="280">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="324">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgffason</property>
+                                <text-property name="displayName">cntbgffason</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgffason"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgffason</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="281">
+                <cell id="283">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="147">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cumulative monthly In-ouse production (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="284">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="325">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgffmon</property>
+                                <text-property name="displayName">cntbgffmon</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgffmon"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgffmon</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="285">
+                <cell id="287">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="148">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cumulative yearly In-ouse production (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="288">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="326">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgffyrly</property>
+                                <text-property name="displayName">cntbgffyrly</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgffyrly"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgffyrly</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="289">
+                <cell id="291">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="149">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Trade (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="292">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="327">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgfmason</property>
+                                <text-property name="displayName">cntbgfmason</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgfmason"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgfmason</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="293">
+                <cell id="295">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="150">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cumulative monthly trade (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="296">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="328">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgfmmon</property>
+                                <text-property name="displayName">cntbgfmmon</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgfmmon"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgfmmon</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="297">
+                <cell id="298">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">5</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="157">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Bogie Bolster]]></text-property>
+                    </text>
+                </cell>
+                <cell id="299">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="151">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[In House Production (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="300">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="329">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgbfason</property>
+                                <text-property name="displayName">cntbgbfason</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgbfason"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgbfason</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="301">
+                <cell id="303">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="152">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cumulative monthly In-ouse production (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="304">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="330">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgbfmon</property>
+                                <text-property name="displayName">cntbgbfmon</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgbfmon"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgbfmon</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="305">
+                <cell id="307">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="153">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cumulative yearly In-ouse production (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="308">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="331">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgbfyrly</property>
+                                <text-property name="displayName">cntbgbfyrly</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgbfyrly"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgbfyrly</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="309">
+                <cell id="311">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="154">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Trade (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="312">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="332">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgbmason</property>
+                                <text-property name="displayName">cntbgbmason</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgbmason"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgbmason</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="313">
+                <cell id="315">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <text id="155">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cumulative monthly trade (in C/S)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="316">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">medium</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">medium</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">medium</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">medium</property>
+                    <data id="333">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="dataSet">bogie_report_ds1</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cntbgbmmon</property>
+                                <text-property name="displayName">cntbgbmmon</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cntbgbmmon"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cntbgbmmon</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="317">
+                <cell id="318"/>
+                <cell id="319"/>
+                <cell id="320"/>
+            </row>
+        </grid>
+    </body>
+</report>

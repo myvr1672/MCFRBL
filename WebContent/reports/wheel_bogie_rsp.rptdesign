@@ -1,0 +1,1217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="dispatch_to" id="6">
+            <text-property name="promptText">dispatch_to</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">bogie</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="wheel_ds" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">wheelset_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">wheelset_asset_id</text-property>
+                    <text-property name="heading">wheelset_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheelset_transaction_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheelset_transaction_id</text-property>
+                    <text-property name="heading">wheelset_transaction_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">stage_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">stage_id</text-property>
+                    <text-property name="heading">stage_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">prev_stage_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">prev_stage_id</text-property>
+                    <text-property name="heading">prev_stage_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_left_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_left_no</text-property>
+                    <text-property name="heading">wheeldisc_left_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_left_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_left_no</text-property>
+                    <text-property name="heading">ctrb_left_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_left_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_left_make</text-property>
+                    <text-property name="heading">ctrb_left_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_left_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_left_make</text-property>
+                    <text-property name="heading">wheeldisc_left_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">leftbrakediscmake</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">leftbrakediscmake</text-property>
+                    <text-property name="heading">leftbrakediscmake</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">leftwheeldiscton</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">leftwheeldiscton</text-property>
+                    <text-property name="heading">leftwheeldiscton</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_right_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_right_no</text-property>
+                    <text-property name="heading">wheeldisc_right_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_right_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_right_no</text-property>
+                    <text-property name="heading">ctrb_right_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ctrb_right_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ctrb_right_make</text-property>
+                    <text-property name="heading">ctrb_right_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">wheeldisc_right_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">wheeldisc_right_make</text-property>
+                    <text-property name="heading">wheeldisc_right_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rightbrakediscmake</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rightbrakediscmake</text-property>
+                    <text-property name="heading">rightbrakediscmake</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rightwheeldiscton</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">rightwheeldiscton</text-property>
+                    <text-property name="heading">rightwheeldiscton</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">axle_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">axle_no</text-property>
+                    <text-property name="heading">axle_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">axlemake</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">axlemake</text-property>
+                    <text-property name="heading">axlemake</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_start_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <text-property name="heading">assembly_start_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_end_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_end_date</text-property>
+                    <text-property name="heading">assembly_end_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">assembly_dispatch_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">assembly_dispatch_date</text-property>
+                    <text-property name="heading">assembly_dispatch_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remarks</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remarks</text-property>
+                    <text-property name="heading">remarks</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">asigned_flag</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">asigned_flag</text-property>
+                    <text-property name="heading">asigned_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">receipt_at_next_stage</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">receipt_at_next_stage</text-property>
+                    <text-property name="heading">receipt_at_next_stage</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">transaction_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">transaction_date</text-property>
+                    <text-property name="heading">transaction_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">transaction_user</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">transaction_user</text-property>
+                    <text-property name="heading">transaction_user</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">dispatch_to</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">dispatch_to</text-property>
+                    <text-property name="heading">dispatch_to</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">customer</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">customer</text-property>
+                    <text-property name="heading">customer</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">dispatch_to</property>
+                    <property name="paramName">dispatch_to</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">wheelset_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">wheelset_transaction_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">stage_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">prev_stage_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">wheeldisc_left_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ctrb_left_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ctrb_left_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">wheeldisc_left_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">leftbrakediscmake</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">leftwheeldiscton</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">wheeldisc_right_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">ctrb_right_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">ctrb_right_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">wheeldisc_right_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">rightbrakediscmake</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">rightwheeldiscton</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">axle_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">axlemake</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">assembly_start_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">assembly_end_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">assembly_dispatch_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">remarks</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">asigned_flag</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">receipt_at_next_stage</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">transaction_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">transaction_user</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">dispatch_to</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">customer</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">wheelset_asset_id</property>
+                    <property name="nativeName">wheelset_asset_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">wheelset_transaction_id</property>
+                    <property name="nativeName">wheelset_transaction_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">stage_id</property>
+                    <property name="nativeName">stage_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">prev_stage_id</property>
+                    <property name="nativeName">prev_stage_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">wheeldisc_left_no</property>
+                    <property name="nativeName">wheeldisc_left_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ctrb_left_no</property>
+                    <property name="nativeName">ctrb_left_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ctrb_left_make</property>
+                    <property name="nativeName">ctrb_left_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">wheeldisc_left_make</property>
+                    <property name="nativeName">wheeldisc_left_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">leftbrakediscmake</property>
+                    <property name="nativeName">leftbrakediscmake</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">leftwheeldiscton</property>
+                    <property name="nativeName">leftwheeldiscton</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">wheeldisc_right_no</property>
+                    <property name="nativeName">wheeldisc_right_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">ctrb_right_no</property>
+                    <property name="nativeName">ctrb_right_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">ctrb_right_make</property>
+                    <property name="nativeName">ctrb_right_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">wheeldisc_right_make</property>
+                    <property name="nativeName">wheeldisc_right_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">rightbrakediscmake</property>
+                    <property name="nativeName">rightbrakediscmake</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">rightwheeldiscton</property>
+                    <property name="nativeName">rightwheeldiscton</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">axle_no</property>
+                    <property name="nativeName">axle_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">axlemake</property>
+                    <property name="nativeName">axlemake</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">assembly_start_date</property>
+                    <property name="nativeName">assembly_start_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">assembly_end_date</property>
+                    <property name="nativeName">assembly_end_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">assembly_dispatch_date</property>
+                    <property name="nativeName">assembly_dispatch_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">remarks</property>
+                    <property name="nativeName">remarks</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">asigned_flag</property>
+                    <property name="nativeName">asigned_flag</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">5</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">receipt_at_next_stage</property>
+                    <property name="nativeName">receipt_at_next_stage</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">transaction_date</property>
+                    <property name="nativeName">transaction_date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">transaction_user</property>
+                    <property name="nativeName">transaction_user</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">dispatch_to</property>
+                    <property name="nativeName">dispatch_to</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">customer</property>
+                    <property name="nativeName">customer</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from wheelset_tran
+where public.wheelset_tran.dispatch_to=?;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-ledger</property>
+            <property name="orientation">landscape</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="199">
+            <property name="fontSize">12pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#000040</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">WHEEL SHOP</text-property>
+        </label>
+        <table id="97">
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="width">16.322916666666668in</property>
+            <property name="dataSet">wheel_ds</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">wheelset_transaction_id</property>
+                    <text-property name="displayName">wheelset_transaction_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["wheelset_transaction_id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">assembly_start_date</property>
+                    <text-property name="displayName">assembly_start_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["assembly_start_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">axlemake</property>
+                    <text-property name="displayName">axlemake</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["axlemake"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">axle_no</property>
+                    <text-property name="displayName">axle_no</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["axle_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">wheeldisc_right_no</property>
+                    <text-property name="displayName">wheeldisc_right_no</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["wheeldisc_right_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">wheeldisc_right_make</property>
+                    <text-property name="displayName">wheeldisc_right_make</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["wheeldisc_right_make"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">wheeldisc_left_no</property>
+                    <text-property name="displayName">wheeldisc_left_no</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["wheeldisc_left_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">wheeldisc_left_make</property>
+                    <text-property name="displayName">wheeldisc_left_make</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["wheeldisc_left_make"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rightbrakediscmake</property>
+                    <text-property name="displayName">rightbrakediscmake</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rightbrakediscmake"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">leftbrakediscmake</property>
+                    <text-property name="displayName">leftbrakediscmake</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["leftbrakediscmake"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ctrb_right_make</property>
+                    <text-property name="displayName">ctrb_right_make</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ctrb_right_make"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ctrb_right_no</property>
+                    <text-property name="displayName">ctrb_right_no</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ctrb_right_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ctrb_left_make</property>
+                    <text-property name="displayName">ctrb_left_make</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ctrb_left_make"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ctrb_left_no</property>
+                    <text-property name="displayName">ctrb_left_no</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ctrb_left_no"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">dispatch_to</property>
+                    <text-property name="displayName">dispatch_to</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["dispatch_to"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">customer</property>
+                    <text-property name="displayName">customer</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["customer"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="149">
+                <property name="width">0.9270833333333334in</property>
+            </column>
+            <column id="150">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="151">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="152">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="153">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="154">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="155">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="156">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="157">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="158">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="159">
+                <property name="width">1.0208333333333333in</property>
+            </column>
+            <column id="160">
+                <property name="width">1in</property>
+            </column>
+            <column id="161">
+                <property name="width">1in</property>
+            </column>
+            <column id="162">
+                <property name="width">1in</property>
+            </column>
+            <column id="163">
+                <property name="width">1.1875in</property>
+            </column>
+            <column id="164">
+                <property name="width">1in</property>
+            </column>
+            <header>
+                <row id="98">
+                    <property name="backgroundColor">#C0C0C0</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#000040</property>
+                    <property name="height">0.8333333333333334in</property>
+                    <cell id="99">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="165">
+                            <text-property name="text">Wheel RBL No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="100">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="167">
+                            <text-property name="text">Mounting Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="101">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="169">
+                            <text-property name="text">Axle Make</text-property>
+                        </label>
+                    </cell>
+                    <cell id="102">
+                        <label id="171">
+                            <text-property name="text">Axle No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="103">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="173">
+                            <text-property name="text">Right Wheel disc No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="104">
+                        <label id="175">
+                            <text-property name="text">Right    Wheeldisc Make</text-property>
+                        </label>
+                    </cell>
+                    <cell id="105">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="177">
+                            <text-property name="text">Left Wheel disc No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="106">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="179">
+                            <text-property name="text">Left Wheeldisc Make</text-property>
+                        </label>
+                    </cell>
+                    <cell id="107">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="181">
+                            <text-property name="text">Right Brake Disc Make </text-property>
+                        </label>
+                    </cell>
+                    <cell id="108">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="183">
+                            <text-property name="text">Left Brake Disc Make</text-property>
+                        </label>
+                    </cell>
+                    <cell id="109">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="185">
+                            <text-property name="text">Right CTRB Make</text-property>
+                        </label>
+                    </cell>
+                    <cell id="110">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="187">
+                            <text-property name="text">Right CTRB No.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="111">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="189">
+                            <text-property name="text">Left CTRB Make</text-property>
+                        </label>
+                    </cell>
+                    <cell id="112">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="191">
+                            <text-property name="text">Left CTRB No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="113">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="195">
+                            <text-property name="text">Dispatch To</text-property>
+                        </label>
+                    </cell>
+                    <cell id="114">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">medium</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">medium</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">medium</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">medium</property>
+                        <label id="197">
+                            <text-property name="text">Railway</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="115">
+                    <property name="height">0.4270833333333333in</property>
+                    <cell id="116">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="166">
+                            <property name="resultSetColumn">wheelset_transaction_id</property>
+                        </data>
+                    </cell>
+                    <cell id="117">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="168">
+                            <property name="resultSetColumn">assembly_start_date</property>
+                        </data>
+                    </cell>
+                    <cell id="118">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="170">
+                            <property name="resultSetColumn">axlemake</property>
+                        </data>
+                    </cell>
+                    <cell id="119">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="172">
+                            <property name="resultSetColumn">axle_no</property>
+                        </data>
+                    </cell>
+                    <cell id="120">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="174">
+                            <property name="resultSetColumn">wheeldisc_right_no</property>
+                        </data>
+                    </cell>
+                    <cell id="121">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="176">
+                            <property name="resultSetColumn">wheeldisc_right_make</property>
+                        </data>
+                    </cell>
+                    <cell id="122">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="178">
+                            <property name="resultSetColumn">wheeldisc_left_no</property>
+                        </data>
+                    </cell>
+                    <cell id="123">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="180">
+                            <property name="resultSetColumn">wheeldisc_left_make</property>
+                        </data>
+                    </cell>
+                    <cell id="124">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="182">
+                            <property name="resultSetColumn">rightbrakediscmake</property>
+                        </data>
+                    </cell>
+                    <cell id="125">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="184">
+                            <property name="resultSetColumn">leftbrakediscmake</property>
+                        </data>
+                    </cell>
+                    <cell id="126">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="186">
+                            <property name="resultSetColumn">ctrb_right_make</property>
+                        </data>
+                    </cell>
+                    <cell id="127">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="188">
+                            <property name="resultSetColumn">ctrb_right_no</property>
+                        </data>
+                    </cell>
+                    <cell id="128">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="190">
+                            <property name="resultSetColumn">ctrb_left_make</property>
+                        </data>
+                    </cell>
+                    <cell id="129">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="192">
+                            <property name="resultSetColumn">ctrb_left_no</property>
+                        </data>
+                    </cell>
+                    <cell id="130">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="196">
+                            <property name="resultSetColumn">dispatch_to</property>
+                        </data>
+                    </cell>
+                    <cell id="131">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <data id="198">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">customer</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="132">
+                    <property name="height">0.4270833333333333in</property>
+                    <cell id="133"/>
+                    <cell id="134"/>
+                    <cell id="135"/>
+                    <cell id="136"/>
+                    <cell id="137"/>
+                    <cell id="138"/>
+                    <cell id="139"/>
+                    <cell id="140"/>
+                    <cell id="141"/>
+                    <cell id="142"/>
+                    <cell id="143"/>
+                    <cell id="144"/>
+                    <cell id="145"/>
+                    <cell id="146"/>
+                    <cell id="147"/>
+                    <cell id="148"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

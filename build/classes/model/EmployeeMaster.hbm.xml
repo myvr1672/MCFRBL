@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="model.EmployeeMaster" table="emp_master" >
+
+	
+	<id name="emp_no" type="java.lang.String">
+	<column name="emp_no" length="15"></column>
+    </id>
+
+		<property name="emp_name" type="java.lang.String" >
+		<column name="emp_name" length="50"></column>
+		</property>
+  
+		<property name="shop" type="java.lang.String">
+			<column name="shop" length="20"></column>
+		</property>
+		<property name="section" type="java.lang.String">
+			<column name="section" length="25"></column>
+		</property>
+		<property name="subSection" type="java.lang.String">
+			<column name="sub_section" length="20"></column>
+		</property>
+		<property name="validFrom" type="date">
+			<column name="validity_from"></column>
+		</property>	
+		<property name="validTo" type="date">
+			<column name="validity_to"></column>
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="status" length="15"></column>
+		</property>
+		<property name="designation" type="java.lang.String">
+			<column name="designation" length="15"></column>
+		</property>
+	</class>
+</hibernate-mapping>

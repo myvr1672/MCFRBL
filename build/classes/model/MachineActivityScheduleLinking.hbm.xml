@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.MachineActivityScheduleLinking" table="machine_activity_schedule_linking" >
+		<id name="machineScheduleLinkId" type="java.lang.Integer">
+			<column name="machine_schedule_link_id"></column>
+			<generator class="increment"></generator>
+			
+		</id>
+		<property name="machineId" type="java.lang.Integer">
+			<column name="machine_id"></column>
+			
+		</property> 
+		<property name="scheduleType" type="java.lang.String">
+			<column name="schedule_type"></column>
+		</property>
+		
+		<property name="activityId" type="java.lang.String">
+			<column name="activity_id"></column>
+		</property>		
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date"></column>
+		</property>
+		
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property> 
+			
+	</class>
+</hibernate-mapping>

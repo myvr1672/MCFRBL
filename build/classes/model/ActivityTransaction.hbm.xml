@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ActivityTransaction" table="activity_transaction">
+        <composite-id>
+            <key-property name="activityId" type="string">
+                <column name="activity_id" length="5" />
+            </key-property>
+            <key-property name="substageId" type="string">
+                <column name="substage_id" length="10" />
+            </key-property>
+            <key-property name="assetId" type="java.lang.Integer">
+                <column name="asset_id"/>
+            </key-property> 
+        </composite-id>
+        <property name="reamrks" type="string">
+            <column name="reamrks" length="200" />
+        </property>
+        <property name="activityStartDate" type="date">
+            <column name="activity_start_date" length="10" />
+        </property>
+        <property name="activityCompletionDate" type="date">
+            <column name="activity_end_date" length="10" />
+        </property>
+        
+        <property name="timeTaken" type="double">
+            <column name="time_taken" length="15" />
+        </property>
+        
+       
+        <property name="assignedPerson" type="string">
+            <column name="assigned_person" length="100" />
+        </property>
+        <property name="delayReason" type="string">
+            <column name="delay_reason" length="150" />
+        </property>
+        
+        <property name="systemEntryTime" type="date">
+            <column name="system_entry_time" length="6" />
+        </property>
+        
+         <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+            </class>
+</hibernate-mapping>

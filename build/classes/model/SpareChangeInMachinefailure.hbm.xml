@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.SpareChangeInMachinefailure" table="spare_change_in_machinefailure">
+        <composite-id>
+         <key-property name="machineId" type="java.lang.Integer">
+                <column name="machine_id"/>
+            </key-property>
+            <key-property name="breakdownId" type="java.lang.Integer">
+                <column name="breakdown_id"/>
+            </key-property>
+            <key-property name="spareDescription" type="string">
+                <column name="spare_description" length="200" />
+            </key-property> 
+            <key-property name="spareSrNo" type="string">
+                <column name="spare_sr_no" length="25" />
+            </key-property> 
+        </composite-id>
+        
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryDate" type="java.sql.Timestamp">
+            <column name="entry_date" />
+        </property>
+    </class>
+</hibernate-mapping>

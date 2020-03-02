@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.GantChartExample" table="gant_chart_example" >
+	
+	<id name="taskId" type="java.lang.String">
+			<column name="task_id" length="15"></column>
+		</id>
+		<property name="taskName" type="java.lang.String" >
+		<column name="task_name" length="25"></column>
+		</property>
+        <property name="startDate" type="date" >
+		<column name="start_date"></column>
+		</property>
+	  <property name="endDate" type="date" >
+		<column name="end_date"></column>
+		</property>
+		<property name="progressStatus" type="java.lang.Integer">
+			<column name="progress_status"></column>
+		</property>
+	  <property name="dependsOn" type="java.lang.String" >
+		<column name="depends_on" length="100"></column>
+		</property>
+	</class>
+</hibernate-mapping>

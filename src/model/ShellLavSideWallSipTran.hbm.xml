@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.ShellLavSideWallSipTran" table="shell_lav_side_wall_sip_tran">
+
+   <id name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id"></column>
+	</id>
+            
+       <property name="lavsidewallSipDocNo" type="string">
+               <column name="lavsidewall_sip_doc_no" length="100" /> 
+        </property> 
+              
+           
+         <property name="lavsidewallSipShift" type="string">
+               <column name="lavsidewall_sip_shift" length="100"/> 
+           </property> 
+           
+           <property name="lavsidewallSipDate" type="date">
+               <column name="lavsidewall_sip_date" length="100"/> 
+           </property> 
+       
+           <property name="lavsidewallNo" type="string">
+               <column name="lavsidewall_no" length="100"/> 
+           </property> 
+           
+             <property name="drawingNo" type="string">
+               <column name="drawing_no" length="100"/> 
+           </property> 
+       
+         <property name="wiNo" type="string">
+               <column name="wi_no" length="100"/> 
+           </property> 
+           
+           <property name="frameWorkByLav1" type="string">
+               <column name="frame_work_by_lav1" length="100"/> 
+           </property>
+           
+           <property name="frameWorkByLav2" type="string">
+               <column name="frame_work_by_lav2" length="100"/> 
+           </property>
+           
+           <property name="frameWorkByLav3" type="string">
+               <column name="frame_work_by_lav3" length="100"/> 
+           </property>
+           
+           <property name="frameWorkByLav4" type="string">
+               <column name="frame_work_by_lav4" length="100"/> 
+           </property>
+           
+           <property name="frameJigRoboticsBoLav1" type="string">
+               <column name="frame_jig_robotics_bo_lav1" length="100"/> 
+           </property>
+           
+           <property name="frameJigRoboticsBoLav2" type="string">
+               <column name="frame_jig_robotics_bo_lav2 " length="100"/> 
+           </property>
+           
+           <property name="frameJigRoboticsBoLav3" type="string">
+               <column name="frame_jig_robotics_bo_lav3" length="100"/> 
+           </property>
+           
+           <property name="frameJigRoboticsBoLav4" type="string">
+               <column name="frame_jig_robotics_bo_lav4 " length="100"/> 
+           </property>
+           
+            <property name="spotWeldingByLav1" type="string">
+               <column name="spot_welding_by_lav1" length="100"/> 
+           </property>
+           
+            <property name="spotWeldingByLav2" type="string">
+               <column name="spot_welding_by_lav2" length="100"/> 
+           </property>
+           
+            <property name="spotWeldingByLav3" type="string">
+               <column name="spot_welding_by_lav3" length="100"/> 
+           </property>
+           
+            <property name="spotWeldingByLav4" type="string">
+               <column name="spot_welding_by_lav4" length="100"/> 
+           </property>
+           
+               <property name="spotWeldingJigRoboticsBoLav1" type="string">
+               <column name="spot_welding_jig_robotics_bo_lav1" length="100"/> 
+           </property>
+           
+               <property name="spotWeldingJigRoboticsBoLav2" type="string">
+               <column name="spot_welding_jig_robotics_bo_lav2" length="100"/> 
+           </property>
+           
+               <property name="spotWeldingJigRoboticsBoLav3" type="string">
+               <column name="spot_welding_jig_robotics_bo_lav3" length="100"/> 
+           </property>
+           
+               <property name="spotWeldingJigRoboticsBoLav4" type="string">
+               <column name="spot_welding_jig_robotics_bo_lav4" length="100"/> 
+           </property>
+           
+                <property name="interlockJointByLav1" type="string">
+               <column name="interlock_joint_by_lav1" length="100"/> 
+           </property>
+         
+               <property name="interlockJointByLav2" type="string">
+               <column name="interlock_joint_by_lav2" length="100"/> 
+           </property>
+           
+               <property name="interlockJointByLav3" type="string">
+               <column name="interlock_joint_by_lav3" length="100"/> 
+           </property>
+           
+               <property name="interlockJointByLav4" type="string">
+               <column name="interlock_joint_by_lav4" length="100"/> 
+           </property>
+           
+               <property name="interlockJointJigRoboticsBoLav1" type="string">
+               <column name="interlock_joint_jig_robotics_bo_lav1" length="100"/> 
+           </property>
+           
+               <property name="interlockJointJigRoboticsBoLav2" type="string">
+               <column name="interlock_joint_jig_robotics_bo_lav2" length="100"/> 
+           </property>
+           
+               <property name="interlockJointJigRoboticsBoLav3" type="string">
+               <column name="interlock_joint_jig_robotics_bo_lav3" length="100"/> 
+           </property>
+           
+               <property name="interlockJointJigRoboticsBoLav4" type="string">
+               <column name="interlock_joint_jig_robotics_bo_lav4" length="100"/> 
+           </property>
+           
+            <property name="lavsidewallMake1" type="string">
+               <column name="lavsidewall_make1" length="100"/> 
+           </property>
+           
+            <property name="lavsidewallMake2" type="string">
+               <column name="lavsidewall_make2" length="100"/> 
+           </property>
+           
+            <property name="lavsidewallMake3" type="string">
+               <column name="lavsidewall_make3" length="100"/> 
+           </property>
+           
+            <property name="lavsidewallMake4" type="string">
+               <column name="lavsidewall_make4" length="100"/> 
+           </property>
+           
+            <property name="observationItemsAsPerDrawingFlag" type="string">
+               <column name="observation_items_as_per_drawing_flag" length="100"/> 
+           </property>
+           
+            <property name="observationComplianceWiFlag" type="string">
+               <column name="observation_compliance_wi_flag" length="100"/> 
+           </property>
+           
+               <property name="observationWeldingThroatFlag" type="string">
+               <column name="observation_welding_throat_flag" length="100"/> 
+           </property>
+           
+             <property name="totalheightLav1" type="double">
+               <column name="totalheight_lav1" length="100"/> 
+           </property>
+           
+            <property name="totalheightLav2" type="double">
+               <column name="totalheight_lav2" length="100"/> 
+           </property>
+           
+            <property name="totalheightLav3" type="double">
+               <column name="totalheight_lav3" length="100"/> 
+           </property>
+           
+            <property name="totalheightLav4" type="double">
+               <column name="totalheight_lav4" length="100"/> 
+           </property>
+           
+             <property name="totalwidthoutsideLav1" type="double">
+               <column name="totalwidthoutside_lav1" length="100"/> 
+           </property>
+           
+                  <property name="totalwidthoutsideLav2" type="double">
+               <column name="totalwidthoutside_lav2" length="100"/> 
+           </property>
+           
+                  <property name="totalwidthoutsideLav3" type="double">
+               <column name="totalwidthoutside_lav3" length="100"/> 
+           </property>
+           
+                  <property name="totalwidthoutsideLav4" type="double">
+               <column name="totalwidthoutside_lav4" length="100"/> 
+           </property>
+           
+              <property name="totalwidthinsideLav1" type="double">
+               <column name="totalwidthinside_lav1" length="100"/> 
+           </property>
+           
+              <property name="totalwidthinsideLav2" type="double">
+               <column name="totalwidthinside_lav2" length="100"/> 
+           </property>
+           
+              <property name="totalwidthinsideLav3" type="double">
+               <column name="totalwidthinside_lav3" length="100"/> 
+           </property>
+           
+              <property name="totalwidthinsideLav4" type="double">
+               <column name="totalwidthinside_lav4" length="100"/> 
+           </property>
+           
+            <property name="windowcutOutLav1" type="double">
+               <column name="windowcut_out_lav1" length="100"/> 
+           </property>
+           
+             <property name="windowcutOutLav2" type="double">
+               <column name="windowcut_out_lav2" length="100"/> 
+           </property>
+           
+             <property name="windowcutOutLav3" type="double">
+               <column name="windowcut_out_lav3" length="100"/> 
+           </property>
+           
+             <property name="windowcutOutLav4" type="double">
+               <column name="windowcut_out_lav4" length="100"/> 
+           </property>
+           
+            <property name="windowcutOutsideLav1" type="double">
+               <column name="windowcut_outside_lav1" length="100"/> 
+           </property>
+           
+                 <property name="windowcutOutsideLav2" type="double">
+               <column name="windowcut_outside_lav2" length="100"/> 
+           </property>
+           
+                 <property name="windowcutOutsideLav3" type="double">
+               <column name="windowcut_outside_lav3" length="100"/> 
+           </property>
+           
+                 <property name="windowcutOutsideLav4" type="double">
+               <column name="windowcut_outside_lav4" length="100"/> 
+           </property>
+           
+             <property name="pillarheightSheetLav1" type="double">
+               <column name="pillarheight_sheet_lav1" length="100"/> 
+           </property>
+           
+            <property name="pillarheightSheetLav2" type="double">
+               <column name="pillarheight_sheet_lav2" length="100"/> 
+           </property>
+           
+            <property name="pillarheightSheetLav3" type="double">
+               <column name="pillarheight_sheet_lav3" length="100"/> 
+           </property>
+           
+            <property name="pillarheightSheetLav4" type="double">
+               <column name="pillarheight_sheet_lav4" length="100"/> 
+           </property>
+           
+              <property name="windowprofilecutForExhaustLav1" type="string">
+               <column name="windowprofilecut_for_exhaust_lav1" length="100"/> 
+           </property>
+           
+            <property name="windowprofilecutForExhaustLav2" type="string">
+               <column name="windowprofilecut_for_exhaust_lav2" length="100"/> 
+           </property>
+           
+            <property name="windowprofilecutForExhaustLav3" type="string">
+               <column name="windowprofilecut_for_exhaust_lav3" length="100"/> 
+           </property>
+           
+            <property name="windowprofilecutForExhaustLav4" type="string">
+               <column name="windowprofilecut_for_exhaust_lav4" length="100"/> 
+           </property>
+           
+            <property name="lavsidewallFrameAsPerDrawingFlag" type="string">
+               <column name="lavsidewall_frame_as_per_drawing_flag " length="100"/> 
+           </property>
+           
+             <property name="lavsidewallMemberWeldingFlag" type="string">
+               <column name="lavsidewall_member_welding_flag" length="100"/> 
+           </property>
+           
+               <property name="conditionLavsidewallMemberJointweldingFlag" type="string">
+               <column name="condition_lavsidewall_member_jointwelding_flag" length="100"/> 
+           </property>
+           
+            <property name="conditionLavsidewallSheetLaserweldingFlag" type="string">
+               <column name="condition_lavsidewall_sheet_laserwelding_flag" length="100"/> 
+           </property>
+           
+            <property name="detailsOfModification" type="string">
+               <column name="details_of_modification" length="100"/> 
+           </property>
+           
+            <property name="detailsOfTrial" type="string">
+               <column name="details_of_trial" length="100"/> 
+           </property>
+           
+           <property name="remarks" type="string">
+               <column name="remarks" length="100"/> 
+           </property>
+            <property name="lavSidewallTestingStatus" type="string">
+               <column name="lav_sidewall_testing_status" length="15"/> 
+           </property>
+            <property name="entryBy" type="string">
+               <column name="entry_by" length="100"/> 
+           </property>
+           
+      <property name="entryTime" type="timestamp">
+               <column name="entry_time"/> 
+           </property>           
+             </class>
+</hibernate-mapping>

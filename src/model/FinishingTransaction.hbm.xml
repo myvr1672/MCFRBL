@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.FinishingTransaction" table="finishing_tran">
+
+<id name="finishingAssetId" type="java.lang.Integer">
+			<column name="finishing_asset_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            
+             <property name="stageId" type="string">
+               <column name="stage_id" length="10" /> 
+             </property> 
+             
+             <property name="previousStageId" type="string">
+               <column name="prev_stage_id" length="20" /> 
+             </property>   
+              <property name="furnishingAssetId" type="java.lang.Integer">
+            <column name="furnishing_asset_id"  />
+        </property>          
+         <property name="shellAssetId" type="java.lang.Integer">
+            <column name="shell_asset_id"  />
+        </property>
+
+    
+         <property name="bogiePpSideAssetId" type="java.lang.Integer">
+            <column name="bogie_pp_side_asset_id"  />
+        </property>
+         <property name="bogieNppSideAssetId" type="java.lang.Integer">
+            <column name="bogie_npp_side_asset_id"  />
+        </property>
+         <property name="coachNumber" type="string">
+            <column name="coach_number" length="15" />
+        </property>
+     <property name="assemblyStartDate" type="date">
+            <column name="assembly_start_date" length="10" />
+        </property>
+         <property name="assemblyEndDate" type="date">
+            <column name="assembly_end_date" length="10" />
+        </property>
+      
+        <property name="expectedExitDate" type="date">
+            <column name="expected_exit_date" length="10" />
+        </property>
+       
+        
+         <property name="assemblyDispatchDate" type="date">
+            <column name="assembly_dispatch_date" length="10" />
+        </property>
+  
+        <property name="remarks" type="string">
+            <column name="remarks" length="500" />
+        </property>
+         <property name="exitRemarks" type="string">
+            <column name="exit_remarks" length="300" />
+        </property>
+          <property name="lateRemarks" type="string">
+            <column name="late_reason" length="300" />
+        </property>
+     
+        <property name="transactionUser" type="string">
+            <column name="transaction_user" length="15" />
+        </property>
+        <property name="transactionDate" type="string">
+            <column name="transaction_date" length="20" />
+        </property>
+        
+    
+        <property name="asignedFlag" type="java.lang.Integer">
+            <column name="asigned_flag" length="1" />
+        </property>
+        <property name="receiptAtNextStage" type="date">
+            <column name="receipt_at_next_stage" length="10" />
+        </property>
+    
+    </class>
+</hibernate-mapping>

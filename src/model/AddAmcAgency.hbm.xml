@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.AddAmcAgency" table="machine_amc_agency" >
+	
+	 <id name="amc_agency_id" type="java.lang.String">
+			<column name="amc_agency_id"></column>
+		
+	</id>
+	
+		<property name="amc_agency_name" type="java.lang.String" >
+		<column name="amc_agency_name"></column>
+		</property>
+  
+	
+		<property name="amc_agency_address" type="java.lang.String">
+			<column name="amc_agency_address"></column>
+		</property>
+		<property name="country" type="java.lang.String">
+			<column name="country" ></column>
+		</property>
+		<property name="telephone" type="java.lang.String">
+			<column name="telephone"></column>
+		</property>
+		<property name="mobileNo" type="java.lang.String">
+			<column name="mobile_no"></column>
+		</property>
+		<property name="fax" type="java.lang.String">
+			<column name="fax" ></column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" ></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

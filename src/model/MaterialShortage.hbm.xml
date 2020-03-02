@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.MaterialShortage" table="material_shortage" >
+		<id name="abid" type="java.lang.Integer">
+			<column name="abid"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="unifiedPLNo" type="java.lang.String">
+			<column name="unified_pl_no" length="12"></column>
+		</property>
+		<property name="plDesc" type="java.lang.String">
+			<column name="pl_desc" length="12"></column>
+		</property>
+		<property name="qtyAvl" type="java.lang.String">
+			<column name="qty_avl" length="12"></column>
+		</property>
+		<property name="coachAffected" type="java.lang.Integer">
+			<column name="coach_affected"></column>
+		</property>
+		
+		<property name="dateOfReport" type="date">
+			<column name="date_of_report"></column>
+		</property>
+		<property name="shop" type="java.lang.String">
+			<column name="shop" length="15"></column>
+		</property>
+		<property name="entryDate" type="java.lang.String">
+			<column name="entry_date" length="30"></column>
+		</property>
+		
+				
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="actionPerformed" type="java.lang.String">
+			<column name="action_performed" length="500"></column>
+		</property>
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="remarkEntryDate" type="java.lang.String">
+			<column name="remark_entry_date" length="30"></column>
+		</property>
+		<property name="remarkEntryBy" type="java.lang.String">
+			<column name="remark_entry_by" length="15"></column>
+		</property>
+		
+		<property name="status" type="java.lang.String">
+			<column name="status" length="25"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

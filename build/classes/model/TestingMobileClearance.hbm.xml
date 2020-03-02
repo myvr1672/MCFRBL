@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.TestingMobileClearance" table="testing_mobile_clearance" >
+		
+		<composite-id>
+		<key-property name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+			
+		</key-property>
+		<key-property name="substageId" type="java.lang.String">
+			<column name="substage_id" length="10"></column>
+		</key-property>	
+		</composite-id>
+		<property name="substageDescription" type="java.lang.String">
+			<column name="substage_description" length="30"></column>
+		</property>
+		
+		<property name="testingStatus" type="java.lang.String">
+			<column name="testing_status" length="10"></column>
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="100"></column>
+		</property>
+		<property name="notificationStage" type="java.lang.String">
+		<column name="notification_stage" length="10"></column>
+		</property>
+		<property name="testingStartDate" type="date">
+			<column name="testing_start_date"></column>
+		</property>
+		<property name="testingEndDate" type="date">
+			<column name="testing_end_date"></column>
+		</property>
+		<property name="testingFailedDate" type="date">
+			<column name="testing_failed_date"></column>
+		</property>
+		
+			
+		
+	</class>
+</hibernate-mapping>

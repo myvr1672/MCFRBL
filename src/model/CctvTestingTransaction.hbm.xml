@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.CctvTestingTransaction" table="cctv_testing_transaction">
+
+<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+			
+		</id>
+            <property name="docNoCctv" type="string">
+               <column name="doc_no_cctv" length="100" /> 
+             </property>
+            
+             <property name="dateOfCctvTesting" type="date">
+               <column name="date_of_cctv_testing" /> 
+             </property> 
+             
+             <property name="shiftCctv" type="string">
+               <column name="shift_cctv" length="10"/> 
+             </property>  
+             
+         <property name="mountingOfCameraFlag" type="java.lang.String">
+            <column name="mounting_of_camera_flag" length="10" />
+        </property>
+        <property name="mountingOfCameraRemark" type="java.lang.String">
+            <column name="mounting_of_camera_remark" length="100" />
+        </property>
+         <property name="mountingOfNvrFlag" type="java.lang.String">
+            <column name="mounting_of_nvr_flag" length="10" />
+        </property>
+        <property name="mountingOfNvrRemark" type="java.lang.String">
+            <column name="mounting_of_nvr_remark" length="100" />
+        </property>
+         <property name="dcConverterFlag" type="java.lang.String">
+            <column name="dc_converter_flag" length="10" />
+        </property>
+        <property name="dcConverterRemark" type="java.lang.String">
+            <column name="dc_converter_remark" length="100" />
+        </property>
+         <property name="hddFlag" type="java.lang.String">
+            <column name="hdd_flag" length="10" />
+        </property>
+        <property name="hddRemark" type="java.lang.String">
+            <column name="hdd_remark" length="100" />
+        </property>
+         <property name="sdCardFlag" type="java.lang.String">
+            <column name="sd_card_flag" length="10" />
+        </property>
+        <property name="sdCardRemark" type="java.lang.String">
+            <column name="sd_card_remark" length="100" />
+        </property>
+         <property name="ipProtectionBoxFlag" type="java.lang.String">
+            <column name="ip_protection_box_flag" length="10" />
+        </property>
+        <property name="ipProtectionBoxRemark" type="java.lang.String">
+            <column name="ip_protection_box_remark" length="100" />
+        </property>
+        <property name="cableConnectorFlag" type="java.lang.String">
+            <column name="cable_connector_flag" length="10" />
+        </property>
+        <property name="cableConnectorRemark" type="java.lang.String">
+            <column name="cable_connector_remark" length="100" />
+        </property>
+        <property name="workingCameraInDayFlag" type="java.lang.String">
+            <column name="working_camera_in_day_flag" length="10" />
+        </property>
+        <property name="workingCameraInDayRemark" type="java.lang.String">
+            <column name="working_camera_in_day_remark" length="100" />
+        </property>
+         <property name="workingCameraInNightFlag" type="java.lang.String">
+            <column name="working_camera_in_night_flag" length="10" />
+        </property>
+        <property name="workingCameraInNightRemark" type="java.lang.String">
+            <column name="working_camera_in_night_remark" length="100" />
+        </property>
+        <property name="gpsSupportFlag" type="java.lang.String">
+            <column name="gps_support_flag" length="10" />
+        </property>
+        <property name="gpsSupportRemark" type="java.lang.String">
+            <column name="gps_support_remark" length="100" />
+        </property>
+        <property name="recordingFeatureFlag" type="java.lang.String">
+            <column name="recording_feature_flag" length="10" />
+        </property>
+        <property name="recordingFeatureRemark" type="java.lang.String">
+            <column name="recording_feature_remark" length="100" />
+        </property>
+         <property name="statusOfObservation" type="java.lang.String">
+            <column name="status_of_observation" />
+        </property>
+        
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" />
+        </property>
+       
+    </class>
+</hibernate-mapping>

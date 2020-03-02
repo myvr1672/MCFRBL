@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <!-- 	   <property name="hibernate.connection.driver_class">com.ibm.db2.jcc.DB2Driver</property>  -->
+		<!-- 	   <property name="hibernate.dialect">org.hibernate.dialect.DB2Dialect</property>            -->
+        
+        
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">PostSQL@10</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://10.60.201.249:5432/roams</property>
+        <property name="hibernate.default_schema">lb1adm</property>
+		
+<!-- 		<property name="hibernate.connection.url">jdbc:postgresql://10.60.201.249:5432/postgres</property> -->
+
+	   <property name="hibernate.current_session_context_class">thread</property>
+	   <property name="hibernate.show_sql">false</property>           
+	   <property name="hibernate.format_sql">true</property>           
+	   <property name="hibernate.flushMode">COMMIT</property>
+<!-- 	   <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
+	         
+<!-- 		 setting for production environment  -->
+<!--  <property name="hibernate.connection.url">jdbc:db2://10.64.26.176:50000/SAMPLE</property> -->
+<!--  <property name="hibernate.default_schema">lb1adm</property>  -->
+<!--  <property name="hibernate.connection.username">db2inst1</property>  -->
+<!--  <property name="hibernate.connection.password">cris123</property>  -->
+		
+<!--  	<property name="hibernate.connection.url">jdbc:db2://172.16.21.25:50000/SAMPLE</property>  -->
+<!--   	<property name="hibernate.default_schema">lb1adm</property>   -->
+<!--  	<property name="hibernate.connection.username">roams</property>   -->
+<!--  	<property name="hibernate.connection.password">roams</property>   -->
+		
+		
+<!-- 		<property name="hibernate.connection.url">jdbc:db2://10.64.26.176:50000/TESTDB</property> -->
+<!-- 		 <property name="hibernate.default_schema">lb1adm</property>  -->
+<!-- 		 <property name="hibernate.connection.username">db2inst1</property>  -->
+<!-- 		 <property name="hibernate.connection.password">cris123</property>  -->
+		
+		 
+		  <property name="hibernate.c3p0.min_size">5</property>
+  <property name="hibernate.c3p0.max_size">120</property>
+  <property name="hibernate.c3p0.timeout">300</property>
+  <property name="hibernate.c3p0.max_statements">50</property>
+  <property name="hibernate.c3p0.idle_test_period">3000</property>
+		 
+		 
+		 
+<!-- comment any one of the above settings-->		
+	
+ 	  	<mapping resource="hbm/mappings/RoamsMenu.hbm.xml"></mapping> 
+  		<mapping resource="hbm/mappings/RoamsOwnerMaster.hbm.xml" />
+   		<mapping resource="hbm/mappings/RoamsRakeMaster.hbm.xml" /> 
+    	<mapping resource="hbm/mappings/RoamsNotificationActivities.hbm.xml" /> 
+   		<mapping resource="hbm/mappings/RoamsZoneMaster.hbm.xml" />
+     	<mapping resource="hbm/mappings/RoamsWagonMaster.hbm.xml" /> 
+<!--     	<mapping resource="hbm/mappings/RoamsWagonMasterPohRoh.hbm.xml" />  -->
+   		<mapping resource="hbm/mappings/RoamsNotification.hbm.xml" />
+<!--   		<mapping resource="hbm/mappings/RoamsWagonDepotMaster.hbm.xml" />  -->
+     	<mapping resource="hbm/mappings/RoamsBpcDetails.hbm.xml" /> 
+
+        <mapping resource="hbm/mappings/RoamsWorkshopMaster.hbm.xml" /> 
+        <mapping resource="hbm/mappings/RoamsRakeHeaderTemp.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsCodeList.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsUser.hbm.xml" />  
+        <mapping resource="hbm/mappings/RoamsUserRoles.hbm.xml" /> 	
+      
+        <mapping resource="hbm/mappings/RoamsModuleMaster.hbm.xml" />
+        
+<!--         <mapping resource="hbm/mappings/RoamsManufacturerMaster.hbm.xml" /> -->
+        <mapping resource="hbm/mappings/RoamsRakeHeader.hbm.xml" />
+        <mapping resource="beanshibernate/RoamsRakeDetails.hbm.xml" />
+        <mapping resource="beanshibernate/RoamsRakeDetailsTemp.hbm.xml"/>
+        <mapping resource="hbm/mappings/RoamsRakeOffmemo.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsDivisionMaster.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsWagonTypeMaster.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsStationMaster.hbm.xml" />
+<!--         <mapping resource="hbm/mappings/RoamsWagonYardMaster.hbm.xml" /> -->
+        <mapping resource="hbm/mappings/RoamsUnfitMemo.hbm.xml" />
+<!--         <mapping resource="hbm/mappings/RoamsWagonSectionMaster.hbm.xml" /> -->
+        <mapping resource="hbm/mappings/RoamsWagonsInterchange.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsRakeDetailsLast.hbm.xml" />
+	  	
+	  	
+	  	<!-- Depot related hbm files starts from here-->	
+	  	<!-- Added by Hirak--> 
+<!-- 		<mapping resource="hbm/mappings/FmmWagonStageT.hbm.xml" /> -->
+	  	<mapping resource="hbm/mappings/FmmWagonStageM.hbm.xml" />
+	  	<mapping resource="hbm/mappings/FmmDefectOnNotifT.hbm.xml" />
+<!-- 	  	<mapping resource="hbm/mappings/FmmAsmblyCurrent.hbm.xml" /> -->
+<!-- COMMENTED BELOW TWO AS NEW TABLES WERE CREATED FOR THE SAME AND now not in use -->
+<!-- 	  	<mapping resource="hbm/mappings/FmmDefectM.hbm.xml" /> -->
+<!-- 	  	<mapping resource="hbm/mappings/FmmActionM.hbm.xml" /> -->
+		
+	  	<!-- Depot related hbm files starts from here-->	
+	  	<!-- Added by Yogesh-->
+	  	<mapping resource="hbm/mappings/FmmHrSelModeM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmAsmblyReqDisp.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrSpldutyHistory.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrEmpStatusM.hbm.xml" />
+        
+        <mapping resource="hbm/mappings/FmmHrShiftMaster.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmAsmblyDismntInst.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrEmpM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrDoubleduty.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrLeaveappli.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmAsmblyMaster.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrEmpCatM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrSectionM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrNhGhList.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmCallMemo.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrOrgDeptM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrHandicapM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrRestrictHld.hbm.xml" />
+        <mapping resource="beanshibernate/FmmWagonStageT.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrLeavebal.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmAsmblyBom.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrSplduty.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrLeaveappliHistory.hbm.xml" />
+      
+        <mapping resource="hbm/mappings/FmmAsmblyCurrent.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrReligionM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmJobAllocConfT.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrEmpGradeM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrLeaveapprove.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrRepairUnitM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrSpldutycode.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmAsmblyReasonCode.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmAsmblyDispatch.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrLeaveCredit.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmHrAttendanceStatus.hbm.xml" />
+        
+        <mapping resource="hbm/mappings/FmmParameterM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmParameterRecT.hbm.xml" />
+         	
+	  	 <mapping resource="hbm/mappings/FmmHrLeaveType.hbm.xml" />
+	  	 <mapping resource="hbm/mappings/FmmHrLeavePurpose.hbm.xml" />
+	  	 
+	  	  <mapping resource="hbm/mappings/FmmHrEmpAttendanceT.hbm.xml" />
+  	
+        <mapping resource="hbm/mappings/FmmHrOrgSecShiftM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmWorkCenterGroupM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmWorkCenterSectionMapping.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmGangM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmStorageLocation.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmWorkCenterM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmTaskGangMapping.hbm.xml" />
+        
+  	   	<mapping resource="hbm/mappings/FmmOperationEmpMapping.hbm.xml" />
+  	   	
+  	   	<mapping resource="hbm/mappings/FmmMaterialBomM.hbm.xml" />  
+  	   	<mapping resource="hbm/mappings/FmmObjectTypeM.hbm.xml" />
+  	   	<mapping resource="hbm/mappings/FmmApplogintoken.hbm.xml" />
+  	   	
+  	   	 <mapping resource="hbm/mappings/FmmMaterialRequisition.hbm.xml" />
+	  	
+	  	<mapping resource="hbm/mappings/FmmMaterialMaster.hbm.xml" />
+  	   	<mapping resource="hbm/mappings/FmmMaterialAac.hbm.xml" />    	   	
+  	   	<mapping resource="hbm/mappings/FmmMaterialIssueAsset.hbm.xml" />
+  	   	<mapping resource="hbm/mappings/FmmMaterialBom.hbm.xml" />
+  	   	<mapping resource="hbm/mappings/FmmOrgM.hbm.xml" />	 
+  	   	
+  	   	<mapping resource="hbm/mappings/FmmRakeHeaderFois.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmRakeDetailsFois.hbm.xml" />  	
+  	   	 <mapping resource="hbm/mappings/RoamsPartList.hbm.xml" />	 
+  	   	
+  	   	<mapping resource="hbm/mappings/RoamsNotificationActivities1.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsDefectM.hbm.xml" />  
+        <mapping resource="hbm/mappings/RoamsActionM.hbm.xml" /> 
+        <mapping resource="hbm/mappings/FmmHrEmpSection.hbm.xml" /> 	
+        <mapping resource="hbm/mappings/FmmWagonCondemnInit.hbm.xml" />
+  	   	
+  	   	
+  	   	 <mapping resource="hbm/mappings/FmmPartlistObjectMapM.hbm.xml" />
+        <mapping resource="hbm/mappings/RoamsNotificationDefectT.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmDefectActionMapM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmPartlistDefectMapM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmDefectListM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmActionListM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmPartlistMaintTypeMapM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmPartlistGroupPartlistMapM.hbm.xml" />
+        <mapping resource="hbm/mappings/FmmPartlistM.hbm.xml" />
+  	   	<mapping resource="hbm/mappings/FmmOfferingMemoDetails.hbm.xml" />
+      	<mapping resource="hbm/mappings/FmmHrEmpAttendanceV.hbm.xml" />
+      	<mapping resource="hbm/mappings/FmmMaterialWheelSectionTransfer.hbm.xml" /> 
+      	 <mapping resource="hbm/mappings/FmmStorageLocationMapping.hbm.xml" />
+      	 
+      	 	 <mapping resource="hbm/mappings/FmmHrIod.hbm.xml" />
+      	 	 <mapping resource="hbm/mappings/FmmNotificationTimings.hbm.xml" />
+      	 	 <mapping resource="hbm/mappings/FmmDefectEmpMapping.hbm.xml" />
+      	 	 <mapping resource="hbm/mappings/FmmMaterialReceipt.hbm.xml" />
+      	  <mapping resource="hbm/mappings/FmmMaterialStockHistory.hbm.xml" />
+      	  <mapping resource="hbm/mappings/RoamsMenuRolesMap.hbm.xml" />
+      	  <mapping resource="hbm/mappings/RoamsRolesUsersMap.hbm.xml" />
+      	  
+      	   <mapping resource="hbm/mappings/IrwisMmAllocation.hbm.xml" />
+      	  <mapping resource="hbm/mappings/IrwisMmCostM.hbm.xml" />
+      	  <mapping resource="hbm/mappings/IrwisMmStorageLocM.hbm.xml" />
+      	   <mapping resource="hbm/mappings/IrwisTmpMmItem1.hbm.xml" /> 
+           <mapping resource="hbm/mappings/IrwisTmpMmStock1.hbm.xml" /> 
+      	 	<mapping resource="beanshibernate/RoamsNotificationChanges.hbm.xml" /> 
+      	 	<mapping resource="beanshibernate/FmmWagonCurrentStatus.hbm.xml" />
+      	 	<mapping resource="beanshibernate/FmmWagonRohFitUnfitMemo.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

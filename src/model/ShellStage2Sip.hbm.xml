@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.ShellStage2Sip" table="shell_stage2_sip_tran" >
+		
+		<id name="shellAssetId" type="java.lang.Integer">
+			<column name="shell_asset_id"></column>
+		</id>
+		
+		<property name="stage2SipDocNo" type="string">
+			<column name="stage2_sip_doc_no" length="100"></column>
+		</property>
+		<property name="stage2SipShift" type="string">
+			<column name="stage2_sip_shift " length="10"></column>
+		</property>
+		<property name="stage2SipDate" type="date">
+			<column name="stage2_sip_date"></column>
+		</property>
+		<property name="stage2WorkBy" type="string">
+			<column name="stage2_work_by" length="30"></column>
+		</property>
+		<property name="stage2DrawingNo" type="string">
+			<column name="stage2_drawing_no" length="30"></column>
+		</property>
+		<property name="stage2WiNo" type="string">
+			<column name="stage2_wi_no" length="30"></column>
+		</property>
+		<property name="itemFittedAsDrawingFlag" type="string">
+			<column name="item_fitted_as_drawing_flag" length="6"></column>
+		</property>
+		<property name="complianceWiFlag" type="string">
+			<column name="compliance_wi_flag" length="6"></column>
+		</property>
+		<property name="weldingThroatLengthFlag" type="string">
+			<column name="welding_throat_length_flag" length="6"></column>
+		</property>
+		
+		<property name="weldingEndwallFlag" type="string">
+			<column name="welding_endwall_flag" length="6"></column>
+		</property>
+		
+		<property name="weldingSidewallSolebarFlag" type="string">
+			<column name="welding_sidewall_solebar_flag" length="6"></column>
+		</property>
+		
+		<property name="insideOutsideGrindingFlag" type="string">
+			<column name="inside_outside_grinding_flag" length="6"></column>
+		</property>
+		<property name="grindSpotweldingSidewallFlag" type="string">
+			<column name="grind_spotwelding_sidewall_flag" length="6"></column>
+		</property>
+		<property name="fitWeldPartitionframeFlag" type="string">
+			<column name="fit_weld_partitionframe_flag" length="6"></column>
+		</property>
+		<property name="detailsOfModification" type="string">
+			<column name="details_of_modification" length="50"></column>
+		</property>
+		<property name="detailsOfTrial" type="string">
+			<column name="details_of_trial" length="500"></column>
+		</property>
+		<property name="remarks" type="string">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="stage2TestingStatus" type="string">
+			<column name="stage2_testing_status" length="15"></column>
+		</property>
+		<property name="entryBy" type="string">
+			<column name="entry_by" length="15"></column>
+		</property>
+		<property name="entryTime" type="date">
+			<column name="entry_time"></column>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>   

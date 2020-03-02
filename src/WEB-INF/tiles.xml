@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+   
+<tiles-definitions>
+	<definition name="baseLayout" template="/BaseLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/Header.jsp" />
+		<put-attribute name="menu" value="/Menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/Footer.jsp" />
+	</definition>
+	
+<definition name="/working_days_by_year.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/working_days_by_year.jsp" />
+</definition>
+<definition name="/working_days_by_financial_year.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/working_days_by_financial_year.jsp" />
+</definition>	
+	
+	<definition name="/working_days.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/working_days.jsp" />
+</definition>
+	
+	<definition name="/workshop_holidays.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/workshop_holidays.jsp" />
+</definition>
+	
+	
+	<definition name="/resetSuccess.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Reset Password" />
+		<put-attribute name="body" value="/resetSuccess.jsp" />
+	</definition>
+	<definition name="/resetPwd.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Reset Password" />
+		<put-attribute name="body" value="/ResetPassword.jsp" />
+	</definition>
+	
+	<definition name="/changeSuccess.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/changePasswordSuccess.jsp" />
+	</definition>
+	<definition name="/changePwd.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Change Password" />
+		<put-attribute name="body" value="/changePassword.jsp" />
+	</definition>
+	<definition name="/welcome.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="body" value="/Welcome.jsp" />
+	</definition>
+	<definition name="/user.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add User" />
+		<put-attribute name="body" value="/User.jsp" />
+	</definition>
+	<definition name="/user.success.tiles" extends="baseLayout">
+		<put-attribute name="title" value="User Added" />
+		<put-attribute name="body" value="/SuccessUser.jsp" />
+	</definition>
+	
+	<definition name="/abnormality.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Abnormality" />
+		<put-attribute name="body" value="/Abnormality.jsp" />
+	</definition>
+	<definition name="/user.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Create" />
+		<put-attribute name="body" value="/CreateUser.jsp" />
+	</definition>
+	<definition name="/addCoachProduction.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Coach Production" />
+		<put-attribute name="body" value="/CoachStageCountDate.jsp" />
+	</definition>
+	<definition name="/addCoachGateOut.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Coach Gate-Out" />
+		<put-attribute name="body" value="/CoachOutturnRailwayDate.jsp" />
+	</definition>
+	<definition name="/addAnnualTarget.tiles" extends="baseLayout">
+		<put-attribute name="title" value="Add Annual Coach Target" />
+		<put-attribute name="body" value="/CreateAnnualTargetYear.jsp" />
+		
+	</definition>
+	<definition name="/displayEmployeeJob.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/manpower_parameter.jsp" />
+</definition>
+<definition name="/yashBhatia.tiles" extends="baseLayout">
+        <put-attribute name="body" value="/YashView.jsp" />
+</definition>
+	
+<!-- 	<definition name="/addAndListUser.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Add User Form" /> -->
+<!-- 		<put-attribute name="body" value="/index.jsp" /> -->
+<!-- 	</definition> -->
+	
+<!-- 	<definition name="/addAndListUser1.tiles" extends="baseLayout"> -->
+<!-- 		<put-attribute name="title" value="Add User Form" /> -->
+<!-- 		<put-attribute name="body" value="/Welcome.jsp" /> -->
+<!-- 	</definition> -->
+	
+</tiles-definitions>

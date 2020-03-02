@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.CoachTurnoutTransaction" table="coach_turnout_trans">
+
+<id name="coachNumber" type="string">
+			<column name="coach_number"></column>
+	</id>
+       <property name="coachType" type="string">
+       <column name="coach_type" length="15"></column>
+       </property>       
+         <property name="shellAssetId" type="java.lang.Integer">
+            <column name="shell_asset_id"  />
+        </property>
+
+         <property name="bogiePpSideAssetId" type="java.lang.Integer">
+            <column name="bogie_pp_side_asset_id"  />
+        </property>
+         <property name="bogieNppSideAssetId" type="java.lang.Integer">
+            <column name="bogie_npp_side_asset_id"  />
+        </property>
+         
+      
+        <property name="coachDispatchedDate" type="date">
+            <column name="coach_dispatch_date" length="10" />
+        </property>
+       
+        
+         <property name="coachComissionedDate" type="date">
+            <column name="coach_comission_date" length="10" />
+        </property>
+  
+        <property name="rackCreated" type="java.lang.Integer">
+            <column name="rack_created" />
+        </property>
+         <property name="dispatchedRailway" type="string">
+            <column name="dispatched_railway" length="15" />
+        </property>
+        
+         <property name="coachManufacturedDate" type="date">
+            <column name="coach_manufactured_date" length="10" />
+        </property>
+    
+    </class>
+</hibernate-mapping>

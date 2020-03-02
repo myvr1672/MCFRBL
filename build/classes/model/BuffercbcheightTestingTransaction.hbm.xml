@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.BuffercbcheightTestingTransaction" table="buffercbcheight_testing_transaction">
+
+<id name="furnishingAssetId" type="java.lang.Integer">
+			<column name="furnishing_asset_id"></column>
+		</id>
+            <property name="docNoBuffercbcheight" type="string">
+               <column name="doc_no_buffercbcheight" length="100" /> 
+             </property>
+             
+             <property name="dateOfBuffercbcheight" type="date">
+               <column name="date_of_buffercbcheight_testing"/> 
+             </property> 
+             
+             <property name="shiftBuffercbcheight" type="string">
+               <column name="shift_buffercbcheight" length="10" /> 
+             </property>
+             <property name="cbcHeightPP" type="string">
+               <column name="cbc_height_pp" length="10" /> 
+             </property> 
+             <property name="cbcHeightNPP" type="string">
+               <column name="cbc_height_npp" length="10" /> 
+             </property> 
+              <property name="simHeightPP1" type="string">
+               <column name="sim_height_pp1" length="15" /> 
+             </property> 
+              <property name="simHeightPP2" type="string">
+               <column name="sim_height_pp2" length="15" /> 
+             </property> 
+              <property name="simHeightPP3" type="string">
+               <column name="sim_height_pp3" length="15" /> 
+             </property> 
+              <property name="simHeightPP4" type="string">
+               <column name="sim_height_pp4" length="15" /> 
+             </property> 
+             <property name="simHeightNPP1" type="string">
+               <column name="sim_height_npp1" length="15" /> 
+             </property> 
+             <property name="simHeightNPP2" type="string">
+               <column name="sim_height_npp2" length="15" /> 
+             </property> 
+             <property name="simHeightNPP3" type="string">
+               <column name="sim_height_npp3" length="15" /> 
+             </property> 
+             <property name="simHeightNPP4" type="string">
+               <column name="sim_height_npp4" length="15" /> 
+             </property> 
+             
+              <property name="bufferHeightPP_A" type="string">
+               <column name="buffer_height_pp_a" length="10" /> 
+             </property> 
+             <property name="bufferHeightPP_B" type="string">
+               <column name="buffer_height_pp_b" length="10" /> 
+             </property> 
+             <property name="bufferHeightNPP_C" type="string">
+               <column name="buffer_height_npp_c" length="10" /> 
+             </property> 
+             <property name="bufferHeightNPP_D" type="string">
+               <column name="buffer_height_npp_d" length="10" /> 
+             </property> 
+             
+             <property name="railLevelPP_Z11" type="string">
+               <column name="rail_level_pp_z11" length="10" /> 
+             </property> 
+             <property name="railLevelPP_Z21" type="string">
+               <column name="rail_level_pp_z21" length="10" /> 
+             </property>
+             <property name="railLevelPP_Z31" type="string">
+               <column name="rail_level_pp_z31" length="10" /> 
+             </property>
+             <property name="railLevelPP_Z41" type="string">
+               <column name="rail_level_pp_z41" length="10" /> 
+             </property>
+             <property name="railLevelNPP_Z11" type="string">
+               <column name="rail_level_npp_z11" length="10" /> 
+             </property>
+             <property name="railLevelNPP_Z21" type="string">
+               <column name="rail_level_npp_z21" length="10" /> 
+             </property>
+             <property name="railLevelNPP_Z31" type="string">
+               <column name="rail_level_npp_z31" length="10" /> 
+             </property>
+             <property name="railLevelNPP_Z41" type="string">
+               <column name="rail_level_npp_z41" length="10" /> 
+             </property>
+             
+             <property name="verticalStopClearancePP_Z1" type="string">
+               <column name="vertical_stop_clearance_pp_z1" length="10" /> 
+             </property>
+              <property name="verticalStopClearancePP_Z2" type="string">
+               <column name="vertical_stop_clearance_pp_z2" length="10" /> 
+             </property>
+              <property name="verticalStopClearanceNPP_Z1" type="string">
+               <column name="vertical_stop_clearance_npp_z1" length="10" /> 
+             </property>
+              <property name="verticalStopClearanceNPP_Z2" type="string">
+               <column name="vertical_stop_clearance_npp_z2" length="10" /> 
+             </property>
+             
+             <property name="averageHeightPP_Z13_Z23" type="string">
+               <column name="average_height_pp_z13_z23" length="10" /> 
+             </property>
+             <property name="averageHeightPP_Z33_Z43" type="string">
+               <column name="average_height_pp_z33_z43" length="10" /> 
+             </property>
+             <property name="averageHeightNPP_Z13_Z23" type="string">
+               <column name="average_height_npp_z13_z23" length="10" /> 
+             </property>
+             <property name="averageHeightNPP_Z33_Z43" type="string">
+               <column name="average_height_npp_z33_z43" length="10" /> 
+             </property>
+             
+             <property name="logintudinalClearancePP_X15" type="string">
+               <column name="logintudinal_clearance_pp_x15" length="10" /> 
+             </property>
+             <property name="logintudinalClearancePP_X25" type="string">
+               <column name="logintudinal_clearance_pp_x25" length="10" /> 
+             </property>
+             <property name="logintudinalClearanceNPP_X15" type="string">
+               <column name="logintudinal_clearance_npp_x15" length="10" /> 
+             </property>
+             <property name="logintudinalClearanceNPP_X25" type="string">
+               <column name="logintudinal_clearance_npp_x25" length="10" /> 
+             </property>
+             
+             <property name="lateralClearancePP_Y14" type="string">
+               <column name="lateral_clearance_pp_y14" length="10" /> 
+             </property>
+             <property name="lateralClearancePP_Y34" type="string">
+               <column name="lateral_clearance_pp_y34" length="10" /> 
+             </property>
+             <property name="lateralClearanceNPP_Y14" type="string">
+               <column name="lateral_clearance_npp_y14" length="10" /> 
+             </property>
+             <property name="lateralClearanceNPP_Y34" type="string">
+               <column name="lateral_clearance_npp_y34" length="10" /> 
+             </property>
+             <property name="torqueForceBogiePP_1" type="string">
+               <column name="torque_force_bogie_pp_1" length="10" /> 
+             </property>
+             <property name="torqueForceBogiePP_2" type="string">
+               <column name="torque_force_bogie_pp_2" length="10" /> 
+             </property>
+             <property name="torqueForceBogiePP_3" type="string">
+               <column name="torque_force_bogie_pp_3" length="10" /> 
+             </property>
+             <property name="torqueForceBogiePP_4" type="string">
+               <column name="torque_force_bogie_pp_4" length="10" /> 
+             </property>
+             <property name="torqueForceBogieNPP_1" type="string">
+               <column name="torque_force_bogie_npp_1" length="10" /> 
+             </property>
+             <property name="torqueForceBogieNPP_2" type="string">
+               <column name="torque_force_bogie_npp_2" length="10" /> 
+             </property>
+             <property name="torqueForceBogieNPP_3" type="string">
+               <column name="torque_force_bogie_npp_3" length="10" /> 
+             </property>
+             <property name="torqueForceBogieNPP_4" type="string">
+               <column name="torque_force_bogie_npp_4" length="10" /> 
+             </property>
+             
+             <property name="torqueForceYawDamper170PP_A1" type="string">
+               <column name="torque_force_yaw_damper_170_pp_a1" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper170PP_A2" type="string">
+               <column name="torque_force_yaw_damper_170_pp_a2" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper170NPP_A1" type="string">
+               <column name="torque_force_yaw_damper_170_npp_a1" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper170NPP_A2" type="string">
+               <column name="torque_force_yaw_damper_170_npp_a2" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper160PP_A1" type="string">
+               <column name="torque_force_yaw_damper_160_pp_a1" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper160PP_A2" type="string">
+               <column name="torque_force_yaw_damper_160_pp_a2" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper160NPP_A1" type="string">
+               <column name="torque_force_yaw_damper_160_npp_a1" length="10" /> 
+             </property>
+             <property name="torqueForceYawDamper160NPP_A2" type="string">
+               <column name="torque_force_yaw_damper_160_npp_a2" length="10" /> 
+             </property>
+             
+             <property name="secSpringHeightPP_Z1" type="string">
+               <column name="sec_spring_height_pp_z1" length="10" /> 
+             </property>
+             <property name="secSpringHeightPP_Z2" type="string">
+               <column name="sec_spring_height_pp_z2" length="10" /> 
+             </property>
+             <property name="secSpringHeightNPP_Z1" type="string">
+               <column name="sec_spring_height_npp_z1" length="10" /> 
+             </property>
+             <property name="secSpringHeightNPP_Z2" type="string">
+               <column name="sec_spring_height_npp_z2" length="10" /> 
+             </property>
+             <property name="testingstatus" type="string">
+               <column name="testing_status" length="20" /> 
+             </property>
+             
+              <property name="entryBy" type="string">
+               <column name="entry_by" length="15" /> 
+             </property>
+             <property name="entryDate" type="timestamp">
+               <column name="entry_date"/> 
+             </property>
+       
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,2840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="paint_asset_id" id="270">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">integer</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="20">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="date Data Set" id="21">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">crnt_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">crnt_date</text-property>
+                    <text-property name="heading">crnt_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">?column?</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">?column?</text-property>
+                    <text-property name="heading">?column?</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">crnt_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">?column?</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">crnt_date</property>
+                    <property name="nativeName">crnt_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">?column?</property>
+                    <property name="nativeName">?column?</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select crnt_date, 'Year: ' ||crnt_fin_year(prev_work_date(crnt_date::date))
+from set_date]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="paint Data Set" id="269">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">paint_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">paint_asset_id</text-property>
+                    <text-property name="heading">paint_asset_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_doc_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_doc_no</text-property>
+                    <text-property name="heading">extr_paint_sip_doc_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_date</text-property>
+                    <text-property name="heading">extr_paint_sip_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_vers_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_vers_no</text-property>
+                    <text-property name="heading">extr_paint_sip_vers_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage1_surf_prep</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage1_surf_prep</text-property>
+                    <text-property name="heading">extr_paint_sip_stage1_surf_prep</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage1_surf_prep_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage1_surf_prep_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage1_surf_prep_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage1_surf_prep_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage1_surf_prep_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage1_surf_prep_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage1_app_primer</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage1_app_primer</text-property>
+                    <text-property name="heading">extr_paint_sip_stage1_app_primer</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage1_app_primer_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage1_app_primer_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage1_app_primer_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage1_app_primer_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage1_app_primer_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage1_app_primer_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage2_app_wall</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage2_app_wall</text-property>
+                    <text-property name="heading">extr_paint_sip_stage2_app_wall</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage2_app_wall_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage2_app_wall_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage2_app_wall_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage2_app_wall_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage2_app_wall_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage2_app_wall_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage2_rub_filler</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage2_rub_filler</text-property>
+                    <text-property name="heading">extr_paint_sip_stage2_rub_filler</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage2_rub_filler_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage2_rub_filler_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage2_rub_filler_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage2_rub_filler_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage2_rub_filler_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage2_rub_filler_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_rub</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_rub</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_rub</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_rub_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_rub_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_rub_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_rub_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_rub_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_rub_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_surf</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_surf</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_surf</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_surf_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_surf_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_surf_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_surf_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_surf_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_surf_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_rub_surf</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_rub_surf</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_rub_surf</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_rub_surf_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_rub_surf_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_rub_surf_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_rub_surf_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_rub_surf_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_rub_surf_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_coat</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_coat</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_coat</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_coat_make</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_coat_make</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_coat_make</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">extr_paint_sip_stage3_app_coat_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">extr_paint_sip_stage3_app_coat_date</text-property>
+                    <text-property name="heading">extr_paint_sip_stage3_app_coat_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sidewallgrossval</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">sidewallgrossval</text-property>
+                    <text-property name="heading">sidewallgrossval</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">endwallgrossval</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">endwallgrossval</text-property>
+                    <text-property name="heading">endwallgrossval</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shell_type</text-property>
+                    <text-property name="heading">shell_type</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">furnishing_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">furnishing_no</text-property>
+                    <text-property name="heading">furnishing_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shell_asset_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">shell_asset_id</text-property>
+                    <text-property name="heading">shell_asset_id</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">paint_asset_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">paint_asset_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">extr_paint_sip_doc_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">extr_paint_sip_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">extr_paint_sip_vers_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">extr_paint_sip_stage1_surf_prep</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">extr_paint_sip_stage1_surf_prep_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">extr_paint_sip_stage1_surf_prep_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">extr_paint_sip_stage1_app_primer</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">extr_paint_sip_stage1_app_primer_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">extr_paint_sip_stage1_app_primer_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">extr_paint_sip_stage2_app_wall</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">extr_paint_sip_stage2_app_wall_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">extr_paint_sip_stage2_app_wall_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">extr_paint_sip_stage2_rub_filler</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">extr_paint_sip_stage2_rub_filler_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">extr_paint_sip_stage2_rub_filler_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">extr_paint_sip_stage3_app_rub</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">extr_paint_sip_stage3_app_rub_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">extr_paint_sip_stage3_app_rub_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">extr_paint_sip_stage3_app_surf</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">extr_paint_sip_stage3_app_surf_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">extr_paint_sip_stage3_app_surf_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">extr_paint_sip_stage3_rub_surf</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">extr_paint_sip_stage3_rub_surf_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">extr_paint_sip_stage3_rub_surf_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">extr_paint_sip_stage3_app_coat</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">extr_paint_sip_stage3_app_coat_make</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">extr_paint_sip_stage3_app_coat_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">sidewallgrossval</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">endwallgrossval</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">shell_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">furnishing_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">shell_asset_id</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">paint_asset_id</property>
+                    <property name="nativeName">paint_asset_id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">extr_paint_sip_doc_no</property>
+                    <property name="nativeName">extr_paint_sip_doc_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">extr_paint_sip_date</property>
+                    <property name="nativeName">extr_paint_sip_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">extr_paint_sip_vers_no</property>
+                    <property name="nativeName">extr_paint_sip_vers_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">extr_paint_sip_stage1_surf_prep</property>
+                    <property name="nativeName">extr_paint_sip_stage1_surf_prep</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">extr_paint_sip_stage1_surf_prep_make</property>
+                    <property name="nativeName">extr_paint_sip_stage1_surf_prep_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">extr_paint_sip_stage1_surf_prep_date</property>
+                    <property name="nativeName">extr_paint_sip_stage1_surf_prep_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">extr_paint_sip_stage1_app_primer</property>
+                    <property name="nativeName">extr_paint_sip_stage1_app_primer</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">extr_paint_sip_stage1_app_primer_make</property>
+                    <property name="nativeName">extr_paint_sip_stage1_app_primer_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">extr_paint_sip_stage1_app_primer_date</property>
+                    <property name="nativeName">extr_paint_sip_stage1_app_primer_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">extr_paint_sip_stage2_app_wall</property>
+                    <property name="nativeName">extr_paint_sip_stage2_app_wall</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">extr_paint_sip_stage2_app_wall_make</property>
+                    <property name="nativeName">extr_paint_sip_stage2_app_wall_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">extr_paint_sip_stage2_app_wall_date</property>
+                    <property name="nativeName">extr_paint_sip_stage2_app_wall_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">extr_paint_sip_stage2_rub_filler</property>
+                    <property name="nativeName">extr_paint_sip_stage2_rub_filler</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">extr_paint_sip_stage2_rub_filler_make</property>
+                    <property name="nativeName">extr_paint_sip_stage2_rub_filler_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">extr_paint_sip_stage2_rub_filler_date</property>
+                    <property name="nativeName">extr_paint_sip_stage2_rub_filler_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">extr_paint_sip_stage3_app_rub</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_rub</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">extr_paint_sip_stage3_app_rub_make</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_rub_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">extr_paint_sip_stage3_app_rub_date</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_rub_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">extr_paint_sip_stage3_app_surf</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_surf</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">extr_paint_sip_stage3_app_surf_make</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_surf_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">extr_paint_sip_stage3_app_surf_date</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_surf_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">extr_paint_sip_stage3_rub_surf</property>
+                    <property name="nativeName">extr_paint_sip_stage3_rub_surf</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">extr_paint_sip_stage3_rub_surf_make</property>
+                    <property name="nativeName">extr_paint_sip_stage3_rub_surf_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">extr_paint_sip_stage3_rub_surf_date</property>
+                    <property name="nativeName">extr_paint_sip_stage3_rub_surf_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">extr_paint_sip_stage3_app_coat</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_coat</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">extr_paint_sip_stage3_app_coat_make</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_coat_make</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">extr_paint_sip_stage3_app_coat_date</property>
+                    <property name="nativeName">extr_paint_sip_stage3_app_coat_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">sidewallgrossval</property>
+                    <property name="nativeName">sidewallgrossval</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">endwallgrossval</property>
+                    <property name="nativeName">endwallgrossval</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">shell_type</property>
+                    <property name="nativeName">shell_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">furnishing_no</property>
+                    <property name="nativeName">furnishing_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">shell_asset_id</property>
+                    <property name="nativeName">shell_asset_id</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT e.paint_asset_id, e.extr_paint_sip_doc_no, e.extr_paint_sip_date, e.extr_paint_sip_vers_no, e.extr_paint_sip_stage1_surf_prep, e.extr_paint_sip_stage1_surf_prep_make, e.extr_paint_sip_stage1_surf_prep_date, e.extr_paint_sip_stage1_app_primer, e.extr_paint_sip_stage1_app_primer_make, e.extr_paint_sip_stage1_app_primer_date, e.extr_paint_sip_stage2_app_wall, e.extr_paint_sip_stage2_app_wall_make, e.extr_paint_sip_stage2_app_wall_date, e.extr_paint_sip_stage2_rub_filler, e.extr_paint_sip_stage2_rub_filler_make, e.extr_paint_sip_stage2_rub_filler_date, e.extr_paint_sip_stage3_app_rub, e.extr_paint_sip_stage3_app_rub_make, e.extr_paint_sip_stage3_app_rub_date, e.extr_paint_sip_stage3_app_surf, e.extr_paint_sip_stage3_app_surf_make, e.extr_paint_sip_stage3_app_surf_date, e.extr_paint_sip_stage3_rub_surf, e.extr_paint_sip_stage3_rub_surf_make, e.extr_paint_sip_stage3_rub_surf_date, e.extr_paint_sip_stage3_app_coat, e.extr_paint_sip_stage3_app_coat_make, e.extr_paint_sip_stage3_app_coat_date, round(cast(e.extr_paint_sip_gros_valu_side_wall as numeric),2) as sidewallgrossval, round(cast(e.extr_paint_sip_gros_valu_end_wall as numeric),2) as endwallgrossval,
+ pt.shell_type,pt.furnishing_no,pt.shell_asset_id
+	FROM extr_paint_final_sip_tran as e
+	inner join paint_tran as pt on e.paint_asset_id=pt.paint_asset_id
+	where e.paint_asset_id=?
+	
+	]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>paint_asset_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>paint_asset_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>paint_asset_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_doc_no</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_doc_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_doc_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_date</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_vers_no</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_vers_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_vers_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage1_surf_prep</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage1_surf_prep</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage1_surf_prep</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage1_surf_prep_make</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage1_surf_prep_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage1_surf_prep_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage1_surf_prep_date</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage1_surf_prep_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage1_surf_prep_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage1_app_primer</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage1_app_primer</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage1_app_primer</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage1_app_primer_make</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage1_app_primer_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage1_app_primer_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage1_app_primer_date</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage1_app_primer_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage1_app_primer_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage2_app_wall</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage2_app_wall</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage2_app_wall</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage2_app_wall_make</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage2_app_wall_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage2_app_wall_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage2_app_wall_date</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage2_app_wall_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage2_app_wall_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage2_rub_filler</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage2_rub_filler</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage2_rub_filler</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage2_rub_filler_make</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage2_rub_filler_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage2_rub_filler_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage2_rub_filler_date</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage2_rub_filler_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage2_rub_filler_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_rub</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_rub</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_rub</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_rub_make</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_rub_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_rub_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_rub_date</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_rub_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_rub_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_surf</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_surf</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_surf</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_surf_make</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_surf_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_surf_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_surf_date</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_surf_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_surf_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_rub_surf</design:name>
+              <design:position>23</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_rub_surf</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_rub_surf</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_rub_surf_make</design:name>
+              <design:position>24</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_rub_surf_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_rub_surf_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_rub_surf_date</design:name>
+              <design:position>25</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_rub_surf_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_rub_surf_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_coat</design:name>
+              <design:position>26</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_coat</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_coat</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_coat_make</design:name>
+              <design:position>27</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_coat_make</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_coat_make</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_stage3_app_coat_date</design:name>
+              <design:position>28</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_stage3_app_coat_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_stage3_app_coat_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_gros_valu_side_wall</design:name>
+              <design:position>29</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>8</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_gros_valu_side_wall</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_gros_valu_side_wall</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>extr_paint_sip_gros_valu_end_wall</design:name>
+              <design:position>30</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>8</design:precision>
+            <design:scale>8</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>extr_paint_sip_gros_valu_end_wall</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>extr_paint_sip_gros_valu_end_wall</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell_type</design:name>
+              <design:position>31</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>15</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>15</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>furnishing_no</design:name>
+              <design:position>32</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>furnishing_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>furnishing_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shell_asset_id</design:name>
+              <design:position>33</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shell_asset_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shell_asset_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <property name="height">0.8020833333333334in</property>
+            <column id="5"/>
+            <column id="6"/>
+            <column id="7"/>
+            <column id="8"/>
+            <column id="9"/>
+            <row id="10">
+                <property name="height">0.8020833333333334in</property>
+                <cell id="11">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <image id="17">
+                        <property name="height">0.6458333333333334in</property>
+                        <property name="width">0.8229166666666666in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/cris_logo.jpg</expression>
+                    </image>
+                </cell>
+                <cell id="12">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="267">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">               SELF INSPECTION REPORT         </text-property>
+                    </label>
+                    <label id="268">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">              EXTERIOR  PAINTING OF LHB SHELL</text-property>
+                    </label>
+                </cell>
+                <cell id="14">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="22">
+                        <text-property name="text">               Date</text-property>
+                    </label>
+                    <data id="33">
+                        <property name="dataSet">date Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">crnt_date</property>
+                                <text-property name="displayName">crnt_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["crnt_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">crnt_date</property>
+                    </data>
+                </cell>
+                <cell id="15">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <image id="18">
+                        <property name="height">0.6354166666666666in</property>
+                        <property name="width">0.75in</property>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">/images/mcf_logo.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <label id="35"/>
+        <grid id="36">
+            <column id="37"/>
+            <column id="38"/>
+            <column id="39"/>
+            <column id="65"/>
+            <row id="40">
+                <cell id="41"/>
+                <cell id="42"/>
+                <cell id="43">
+                    <label id="66">
+                        <text-property name="text">                                    FORM NO.:</text-property>
+                    </label>
+                </cell>
+                <cell id="60">
+                    <data id="274">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_doc_no</property>
+                                <text-property name="displayName">extr_paint_sip_doc_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_doc_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_doc_no</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="44">
+                <cell id="45"/>
+                <cell id="46"/>
+                <cell id="47">
+                    <label id="67">
+                        <text-property name="text">                                     VERSION :</text-property>
+                    </label>
+                </cell>
+                <cell id="61">
+                    <data id="273">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_vers_no</property>
+                                <text-property name="displayName">extr_paint_sip_vers_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_vers_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_vers_no</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="48">
+                <cell id="49">
+                    <label id="68">
+                        <text-property name="text">                 SHELL TYPE &amp; NO. :</text-property>
+                    </label>
+                </cell>
+                <cell id="50">
+                    <grid id="275">
+                        <property name="width">1.9270833333333333in</property>
+                        <column id="276">
+                            <property name="width">0.4791666666666667in</property>
+                        </column>
+                        <column id="277">
+                            <property name="width">6%</property>
+                        </column>
+                        <column id="278">
+                            <property name="width">0.90625in</property>
+                        </column>
+                        <row id="279">
+                            <cell id="280">
+                                <data id="284">
+                                    <property name="dataSet">paint Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">shell_type</property>
+                                            <text-property name="displayName">shell_type</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["shell_type"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">shell_type</property>
+                                </data>
+                            </cell>
+                            <cell id="281">
+                                <label id="283">
+                                    <text-property name="text"> ,</text-property>
+                                </label>
+                            </cell>
+                            <cell id="282">
+                                <data id="309">
+                                    <property name="dataSet">paint Data Set</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">furnishing_no</property>
+                                            <text-property name="displayName">furnishing_no</text-property>
+                                            <expression name="expression" type="javascript">dataSetRow["furnishing_no"]</expression>
+                                            <property name="dataType">string</property>
+                                        </structure>
+                                    </list-property>
+                                    <property name="resultSetColumn">furnishing_no</property>
+                                </data>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="51"/>
+                <cell id="62"/>
+            </row>
+            <row id="52">
+                <cell id="53">
+                    <label id="69">
+                        <text-property name="text">                  FURNISHING NO.  :</text-property>
+                    </label>
+                </cell>
+                <cell id="54">
+                    <data id="272">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">furnishing_no</property>
+                                <text-property name="displayName">furnishing_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["furnishing_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">furnishing_no</property>
+                    </data>
+                </cell>
+                <cell id="55">
+                    <label id="190">
+                        <text-property name="text">                                           DATE :</text-property>
+                    </label>
+                </cell>
+                <cell id="63">
+                    <data id="271">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_date</property>
+                                <text-property name="displayName">extr_paint_sip_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_date</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="56">
+                <cell id="57"/>
+                <cell id="58"/>
+                <cell id="59"/>
+                <cell id="64"/>
+            </row>
+        </grid>
+        <label id="70"/>
+        <grid id="71">
+            <property name="height">5.1875in</property>
+            <column id="72"/>
+            <column id="73"/>
+            <column id="74"/>
+            <column id="75"/>
+            <column id="76"/>
+            <column id="77"/>
+            <column id="78"/>
+            <row id="79">
+                <property name="height">0.71875in</property>
+                <cell id="80">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="158">
+                        <text-property name="text"> PAINT STAGE</text-property>
+                    </label>
+                </cell>
+                <cell id="81">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="162">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ PAINTING 
+ ACTIVITIES]]></text-property>
+                    </text>
+                </cell>
+                <cell id="82">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="155">
+                        <text-property name="text">  WI REFERENCE</text-property>
+                    </label>
+                </cell>
+                <cell id="83">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="161">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[  MAKE
+   OF
+  PAINT
+  
+]]></text-property>
+                    </text>
+                </cell>
+                <cell id="84">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="160">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[  SPECIFIED
+   LIMITS]]></text-property>
+                    </text>
+                </cell>
+                <cell id="85">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="159">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[  OBSERVED
+   VALUES]]></text-property>
+                    </text>
+                </cell>
+                <cell id="86">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="166">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ SIGN STAGE
+ SUPERVISOR]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="87">
+                <property name="height">0.5833333333333334in</property>
+                <cell id="88">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="163">
+                        <text-property name="text"> STAGE 1</text-property>
+                    </label>
+                </cell>
+                <cell id="89">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="168">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Surface
+Preparation &amp;
+Cleaning]]></text-property>
+                    </text>
+                </cell>
+                <cell id="90">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="176">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0951 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+                <cell id="91">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="293">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage1_surf_prep_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage1_surf_prep_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage1_surf_prep_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage1_surf_prep_make</property>
+                    </data>
+                </cell>
+                <cell id="92">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="184">
+                        <text-property name="text"> Surface finish</text-property>
+                    </label>
+                </cell>
+                <cell id="93">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="291">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage1_surf_prep</property>
+                                <text-property name="displayName">extr_paint_sip_stage1_surf_prep</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage1_surf_prep"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage1_surf_prep</property>
+                    </data>
+                </cell>
+                <cell id="94">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="292">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage1_surf_prep_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage1_surf_prep_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage1_surf_prep_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage1_surf_prep_date</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="95">
+                <property name="height">0.6041666666666666in</property>
+                <cell id="97">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="169">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Application of
+epoxy metal
+primer]]></text-property>
+                    </text>
+                </cell>
+                <cell id="98">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="177">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0952 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+                <cell id="100">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="290">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage1_app_primer_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage1_app_primer_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage1_app_primer_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage1_app_primer_make</property>
+                    </data>
+                </cell>
+                <cell id="186">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="185">
+                        <text-property name="text"> DFT 60µ(min)</text-property>
+                    </label>
+                </cell>
+                <cell id="101">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="288">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage1_app_primer</property>
+                                <text-property name="displayName">extr_paint_sip_stage1_app_primer</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage1_app_primer"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage1_app_primer</property>
+                    </data>
+                </cell>
+                <cell id="102">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="289">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage1_app_primer_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage1_app_primer_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage1_app_primer_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage1_app_primer_date</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="103">
+                <property name="height">0.5729166666666666in</property>
+                <cell id="104">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="164">
+                        <text-property name="text">STAGE II</text-property>
+                    </label>
+                </cell>
+                <cell id="105">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="170">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Application of
+Polyster Filter
+on Joints &amp; on
+side walls ad end walls(
+two coats)]]></text-property>
+                    </text>
+                </cell>
+                <cell id="106">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="178">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0953 Ver Nil
+ &amp; 0954 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+                <cell id="107">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="295">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage2_app_wall_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage2_app_wall_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage2_app_wall_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage2_app_wall_make</property>
+                    </data>
+                </cell>
+                <cell id="108">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="187">
+                        <text-property name="text"> DFT 60µ(min)</text-property>
+                    </label>
+                </cell>
+                <cell id="109">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="294">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage2_app_wall</property>
+                                <text-property name="displayName">extr_paint_sip_stage2_app_wall</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage2_app_wall"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage2_app_wall</property>
+                    </data>
+                </cell>
+                <cell id="110">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="296">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage2_app_wall_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage2_app_wall_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage2_app_wall_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage2_app_wall_date</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="111">
+                <property name="height">0.71875in</property>
+                <cell id="113">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="171">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Rub down of
+polyster filter &amp; 
+application of fine filter]]></text-property>
+                    </text>
+                </cell>
+                <cell id="114">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="179">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0955 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="119">
+                <property name="height">0.5520833333333334in</property>
+                <cell id="120">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">4</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="165">
+                        <text-property name="text">STAGE III</text-property>
+                    </label>
+                </cell>
+                <cell id="121">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="172">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Application of
+spot putty &amp; its 
+rub down]]></text-property>
+                    </text>
+                </cell>
+                <cell id="122">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="180">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0957 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+                <cell id="123">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="299">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_rub_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_rub_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_rub_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_rub_make</property>
+                    </data>
+                </cell>
+                <cell id="124">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                </cell>
+                <cell id="125">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="297">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_rub</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_rub</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_rub"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_rub</property>
+                    </data>
+                </cell>
+                <cell id="126">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="298">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_rub_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_rub_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_rub_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_rub_date</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="127">
+                <property name="height">0.3958333333333333in</property>
+                <cell id="129">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="173">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Application of PU
+Surfacer]]></text-property>
+                    </text>
+                </cell>
+                <cell id="130">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="181">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0958 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+                <cell id="131">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <data id="305">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_surf_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_surf_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_surf_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_surf_make</property>
+                    </data>
+                    <data id="308">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_rub_surf_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_rub_surf_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_rub_surf_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_rub_surf_make</property>
+                    </data>
+                </cell>
+                <cell id="132">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="188">
+                        <text-property name="text"> DFT 60µ(min)</text-property>
+                    </label>
+                </cell>
+                <cell id="133">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="303">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_surf</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_surf</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_surf"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_surf</property>
+                    </data>
+                    <data id="306">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_rub_surf</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_rub_surf</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_rub_surf"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_rub_surf</property>
+                    </data>
+                </cell>
+                <cell id="134">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="304">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_surf_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_surf_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_surf_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_surf_date</property>
+                    </data>
+                    <data id="307">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_rub_surf_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_rub_surf_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_rub_surf_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_rub_surf_date</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="135">
+                <property name="height">0.4375in</property>
+                <cell id="137">
+                    <text id="174">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Rub down of
+PU Surface]]></text-property>
+                    </text>
+                </cell>
+                <cell id="138">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="182">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0959 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="143">
+                <property name="height">0.6041666666666666in</property>
+                <cell id="145">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="175">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Application of
+PU Top coat
+Enamels]]></text-property>
+                    </text>
+                </cell>
+                <cell id="146">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="183">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[ As Per Doc No
+ PLW 0960 Ver Nil]]></text-property>
+                    </text>
+                </cell>
+                <cell id="147">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="302">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_coat_make</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_coat_make</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_coat_make"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_coat_make</property>
+                    </data>
+                </cell>
+                <cell id="148">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="189">
+                        <text-property name="text"> DFT 40-50µ</text-property>
+                    </label>
+                </cell>
+                <cell id="149">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="300">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_coat</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_coat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_coat"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_coat</property>
+                    </data>
+                </cell>
+                <cell id="150">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <data id="301">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">extr_paint_sip_stage3_app_coat_date</property>
+                                <text-property name="displayName">extr_paint_sip_stage3_app_coat_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["extr_paint_sip_stage3_app_coat_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">extr_paint_sip_stage3_app_coat_date</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <label id="218">
+            <text-property name="text"> REMARKS: </text-property>
+        </label>
+        <label id="219">
+            <text-property name="text">           --Glass value After top coat--</text-property>
+        </label>
+        <grid id="191">
+            <column id="192"/>
+            <column id="193"/>
+            <column id="194"/>
+            <column id="195"/>
+            <column id="196"/>
+            <column id="197"/>
+            <column id="198"/>
+            <column id="199"/>
+            <row id="200">
+                <cell id="201"/>
+                <cell id="202">
+                    <label id="220">
+                        <text-property name="text">            S/wall =</text-property>
+                    </label>
+                </cell>
+                <cell id="203">
+                    <data id="311">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">sidewallgrossval</property>
+                                <text-property name="displayName">sidewallgrossval</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sidewallgrossval"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">sidewallgrossval</property>
+                    </data>
+                </cell>
+                <cell id="204"/>
+                <cell id="205"/>
+                <cell id="206"/>
+                <cell id="207"/>
+                <cell id="208"/>
+            </row>
+            <row id="209">
+                <cell id="210"/>
+                <cell id="211">
+                    <label id="221">
+                        <text-property name="text">             E/wall=</text-property>
+                    </label>
+                </cell>
+                <cell id="212">
+                    <data id="310">
+                        <property name="dataSet">paint Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">endwallgrossval</property>
+                                <text-property name="displayName">endwallgrossval</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["endwallgrossval"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">endwallgrossval</property>
+                    </data>
+                </cell>
+                <cell id="213"/>
+                <cell id="214"/>
+                <cell id="215"/>
+                <cell id="216"/>
+                <cell id="217"/>
+            </row>
+        </grid>
+        <grid id="222">
+            <column id="223"/>
+            <column id="224"/>
+            <column id="225"/>
+            <column id="247"/>
+            <column id="252"/>
+            <column id="257"/>
+            <row id="226">
+                <cell id="227"/>
+                <cell id="228"/>
+                <cell id="229"/>
+                <cell id="243">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="258">
+                        <text-property name="text">                         SIGNATURE</text-property>
+                    </label>
+                </cell>
+                <cell id="253">
+                    <property name="colSpan">1</property>
+                    <property name="rowSpan">2</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                </cell>
+            </row>
+            <row id="230">
+                <cell id="231"/>
+                <cell id="232"/>
+                <cell id="233"/>
+                <cell id="244">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="260">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[        STAGE
+     SUPERVISOR]]></text-property>
+                    </text>
+                </cell>
+                <cell id="249">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <text id="261">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[        SSE
+      INCHARGE]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="234">
+                <cell id="235"/>
+                <cell id="236"/>
+                <cell id="237"/>
+                <cell id="245">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="262">
+                        <text-property name="text">                              NAME</text-property>
+                    </label>
+                </cell>
+                <cell id="255">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                </cell>
+            </row>
+            <row id="238">
+                <cell id="239"/>
+                <cell id="240"/>
+                <cell id="241"/>
+                <cell id="246">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                    <label id="263">
+                        <text-property name="text">                         DESIGNATION</text-property>
+                    </label>
+                </cell>
+                <cell id="256">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">1px</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">1px</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">1px</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">1px</property>
+                </cell>
+            </row>
+        </grid>
+        <label id="264">
+            <text-property name="text"> Copy to :-</text-property>
+        </label>
+        <label id="265">
+            <text-property name="text">         SSE/QC/FUR for record purpose only.</text-property>
+        </label>
+    </body>
+</report>

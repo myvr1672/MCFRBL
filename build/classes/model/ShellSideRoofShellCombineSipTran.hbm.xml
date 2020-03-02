@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23 Jan, 2020 3:54:13 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.ShellSideRoofShellCombineSipTran" table="shell_side_roof_shell_combine_sip_tran">
+        <id name="shellAssetId" type="integer">
+            <column name="shell_asset_id" />
+            <generator class="assigned"/>
+        </id>
+        <property name="docNo" type="string">
+            <column name="doc_no" length="30" />
+        </property>
+        <property name="revNo" type="string">
+            <column name="rev_no" length="10" />
+        </property>
+        <property name="docNoDate" type="date">
+            <column name="doc_no_date" length="13" />
+        </property>
+        <property name="shiftOfTesting" type="string">
+            <column name="shift_of_testing" length="10" />
+        </property>
+        <property name="dateOfTesting" type="date">
+            <column name="date_of_testing" length="13" />
+        </property>
+        <property name="sidewallInspectionVisualHolesObser" type="string">
+            <column name="sidewall_inspection_visual_holes_obser" length="10" />
+        </property>
+        <property name="sidewallInspectionVisualHolesRectStatus" type="string">
+            <column name="sidewall_inspection_visual_holes_rect_status" length="6" />
+        </property>
+        <property name="sidewallSuspectedHolesObser" type="string">
+            <column name="sidewall_suspected_holes_obser"/>
+        </property>
+        <property name="sidewallSuspectedHolesRectStatus" type="string">
+            <column name="sidewall_suspected_holes_rect_status" length="6" />
+        </property>
+        <property name="sidewallIncompleteWeldingObser" type="string">
+            <column name="sidewall_incomplete_welding_obser" length="10" />
+        </property>
+        <property name="sidewallIncompleteWeldingRectStatus" type="string">
+            <column name="sidewall_incomplete_welding_rect_status" length="6" />
+        </property>
+        <property name="sidewallLeakageTestObser" type="string">
+            <column name="sidewall_leakage_test_obser" length="10" />
+        </property>
+        <property name="sidewallLeakageTestRectStatus" type="string">
+            <column name="sidewall_leakage_test_rect_status" length="6" />
+        </property>
+        <property name="roofInspectionVisualHolesObser" type="string">
+            <column name="roof_inspection_visual_holes_obser" length="10" />
+        </property>
+        <property name="roofInspectionVisualHolesRectStatus" type="string">
+            <column name="roof_inspection_visual_holes_rect_status" length="6" />
+        </property>
+        <property name="roofSuspectedHolesObser" type="string">
+            <column name="roof_suspected_holes_obser" length="10" />
+        </property>
+        <property name="roofSuspectedHolesRectStatus" type="string">
+            <column name="roof_suspected_holes_rect_status" length="6" />
+        </property>
+        <property name="roofIncompleteWeldingObser" type="string">
+            <column name="roof_incomplete_welding_obser" length="10" />
+        </property>
+        <property name="roofIncompleteWeldingRectStatus" type="string">
+            <column name="roof_incomplete_welding_rect_status" length="6" />
+        </property>
+        <property name="shellInspectionVisualHolesObser" type="string">
+            <column name="shell_inspection_visual_holes_obser" length="10" />
+        </property>
+        <property name="shellInspectionVisualHolesRectStatus" type="string">
+            <column name="shell_inspection_visual_holes_rect_status" length="6" />
+        </property>
+        <property name="shellIncompleteWeldingObser" type="string">
+            <column name="shell_incomplete_welding_obser" length="10" />
+        </property>
+        <property name="shellIncompleteWeldingRectStatus" type="string">
+            <column name="shell_incomplete_welding_rect_status" length="6" />
+        </property>
+        <property name="shellInspectionHolesTroughObser" type="string">
+            <column name="shell_inspection_holes_trough_obser" length="10" />
+        </property>
+        <property name="shellInspectionHolesTroughRectStatus" type="string">
+            <column name="shell_inspection_holes_trough_rect_status" length="6" />
+        </property>
+        <property name="shellInspectionHolesRoofObser" type="string">
+            <column name="shell_inspection_holes_roof_obser" length="10" />
+        </property>
+        <property name="shellInspectionHolesRoofRectStatus" type="string">
+            <column name="shell_inspection_holes_roof_rect_status" length="6" />
+        </property>
+        <property name="shellSuspectedHolesObser" type="string">
+            <column name="shell_suspected_holes_obser" length="10" />
+        </property>
+        <property name="shellSuspectedHolesRectStatus" type="string">
+            <column name="shell_suspected_holes_rect_status" length="6" />
+        </property>
+        <property name="shellSideRoofShellCombineTestingStatus" type="string">
+            <column name="shell_side_roof_shell_combine_testing_status" length="15" />
+        </property>
+    </class>
+</hibernate-mapping>

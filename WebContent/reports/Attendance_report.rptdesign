@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Bogie_par" id="124">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">bogie</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://localhost:5432/MCFRBL</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">cG9zdGdyZXNz</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="present" id="33">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">emp_no</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">emp_no</text-property>
+                    <text-property name="heading">emp_no</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">emp_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">emp_name</text-property>
+                    <text-property name="heading">emp_name</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">bogie_par</property>
+                    <property name="paramName">Bogie_par</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">emp_no</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">emp_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">emp_no</property>
+                    <property name="nativeName">emp_no</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">emp_name</property>
+                    <property name="nativeName">emp_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT public.emp_master.emp_no,public.emp_master.emp_name FROM public.emp_master WHERE public.emp_master.emp_no IN ( select public.emp_master.emp_no
+from public.emp_master
+where CURRENT_DATE between public.emp_master.validity_from 
+and public.emp_master.validity_to
+and public.emp_master.shop=?
+EXCEPT 
+select public.employee_absent_transaction.emp_id
+from public.employee_absent_transaction
+where public.employee_absent_transaction.absent_date=CURRENT_DATE)
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>emp_no</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>emp_name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shift</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shift</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shift</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="present_half_day" id="34">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">emp_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">emp_id</text-property>
+                    <text-property name="heading">emp_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shift_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shift_id</text-property>
+                    <text-property name="heading">shift_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">present_shift</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">present_shift</text-property>
+                    <text-property name="heading">present_shift</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">emp_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shift_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">present_shift</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">emp_id</property>
+                    <property name="nativeName">emp_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shift_id</property>
+                    <property name="nativeName">shift_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">present_shift</property>
+                    <property name="nativeName">present_shift</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.employee_absent_transaction.emp_id,public.employee_absent_transaction.shift_id,cal_present_shift(public.employee_absent_transaction.emp_id) as present_shift
+from public.employee_absent_transaction
+where public.employee_absent_transaction.absent_type='first_half' or  public.employee_absent_transaction.absent_type='second_half';]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="absent_ds" id="35">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">emp_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">emp_id</text-property>
+                    <text-property name="heading">emp_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">shift</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shift</text-property>
+                    <text-property name="heading">shift</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">absent_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">absent_type</text-property>
+                    <text-property name="heading">absent_type</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">emp_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">shift</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">absent_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">emp_id</property>
+                    <property name="nativeName">emp_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">shift</property>
+                    <property name="nativeName">shift</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">absent_type</property>
+                    <property name="nativeName">absent_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select public.employee_absent_transaction.emp_id,calc_shift(public.employee_absent_transaction.emp_id) as shift,calc_absent_type(public.employee_absent_transaction.emp_id) as absent_type
+from public.employee_absent_transaction
+where public.employee_absent_transaction.absent_date=CURRENT_DATE;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>emp_no</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_no</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_no</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>emp_name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>emp_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>emp_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shift</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shift</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shift</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>absent</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>absent</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>absent</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="36">
+            <property name="height">3.6354166666666665in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Column Binding</property>
+                    <expression name="expression" type="javascript">now = new Date();&#13;
+'List Of Employees Present on '+now.getDate()+"-"+(now.getMonth()+1)+"-"+now.getFullYear();</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Half Day</property>
+                    <expression name="expression" type="javascript">'Employees present for Half Day';</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">absent</property>
+                    <expression name="expression" type="javascript">now = new Date();&#13;
+'List of Employees not available on '+now.getDate()+"-"+(now.getMonth()+1)+"-"+now.getFullYear();</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="37">
+                <property name="width">3.8333333333333335in</property>
+            </column>
+            <column id="38">
+                <property name="width">4.114583333333333in</property>
+            </column>
+            <row id="39">
+                <property name="height">3.6354166666666665in</property>
+                <cell id="40">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderLeftStyle">solid</property>
+                    <property name="borderLeftWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="64">
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#008000</property>
+                        <property name="textAlign">center</property>
+                        <property name="resultSetColumn">Column Binding</property>
+                    </data>
+                    <table id="125">
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="dataSet">present</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">emp_no</property>
+                                <text-property name="displayName">emp_no</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["emp_no"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">emp_name</property>
+                                <text-property name="displayName">emp_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["emp_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="134"/>
+                        <column id="212"/>
+                        <header>
+                            <row id="126">
+                                <property name="backgroundColor">#008000</property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <cell id="127">
+                                    <label id="128">
+                                        <text-property name="text">Employee Id</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="209">
+                                    <label id="214">
+                                        <text-property name="text">Employee Name</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="129">
+                                <cell id="130">
+                                    <data id="131">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">emp_no</property>
+                                    </data>
+                                </cell>
+                                <cell id="210">
+                                    <data id="215">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">emp_name</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="132">
+                                <cell id="133"/>
+                                <cell id="211"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+                <cell id="41">
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <property name="borderRightStyle">solid</property>
+                    <property name="borderRightWidth">thin</property>
+                    <property name="borderTopStyle">solid</property>
+                    <property name="borderTopWidth">thin</property>
+                    <data id="94">
+                        <property name="backgroundColor">#FFFFFF</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">#FF0000</property>
+                        <property name="textAlign">center</property>
+                        <property name="resultSetColumn">absent</property>
+                    </data>
+                    <table id="187">
+                        <property name="dataSet">absent_ds</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">emp_id</property>
+                                <text-property name="displayName">emp_id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["emp_id"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">shift</property>
+                                <text-property name="displayName">shift</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["shift"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">absent_type</property>
+                                <text-property name="displayName">absent_type</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["absent_type"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <column id="206"/>
+                        <column id="207"/>
+                        <column id="208"/>
+                        <header>
+                            <row id="188">
+                                <property name="backgroundColor">#FF0000</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="color">#FFFFFF</property>
+                                <cell id="189">
+                                    <label id="190">
+                                        <text-property name="text">Employee Id</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="191">
+                                    <label id="192">
+                                        <text-property name="text">Shift </text-property>
+                                    </label>
+                                </cell>
+                                <cell id="193">
+                                    <label id="194">
+                                        <text-property name="text">Reason</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="195">
+                                <cell id="196">
+                                    <data id="197">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">emp_id</property>
+                                    </data>
+                                </cell>
+                                <cell id="198">
+                                    <data id="199">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">shift</property>
+                                    </data>
+                                </cell>
+                                <cell id="200">
+                                    <data id="201">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">absent_type</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

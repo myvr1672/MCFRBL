@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23 Jan, 2020 5:20:18 PM by Hibernate Tools 4.0.1.Final -->
+<hibernate-mapping>
+    <class name="beans.ShellCheckListSip" table="shell_check_list_sip">
+        <id name="shellAssetId" type="integer">
+            <column name="shell_asset_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="waterTankBracket" type="string">
+            <column name="water_tank_bracket" length="6" />
+        </property>
+        <property name="crossBrace" type="string">
+            <column name="cross_brace" length="6" />
+        </property>
+        <property name="sidewallAssembly" type="string">
+            <column name="sidewall_assembly" length="15" />
+        </property>
+        <property name="stiffingPlate" type="string">
+            <column name="stiffing_plate" length="6" />
+        </property>
+        <property name="loroPipeBracket" type="string">
+            <column name="loro_pipe_bracket" length="15" />
+        </property>
+        <property name="footStepBracket" type="string">
+            <column name="foot_step_bracket" length="6" />
+        </property>
+        <property name="liftingPad" type="string">
+            <column name="lifting_pad" length="6" />
+        </property>
+        <property name="curveRollBracket" type="string">
+            <column name="curve_roll_bracket" length="6" />
+        </property>
+        <property name="waterTankLiner" type="string">
+            <column name="water_tank_liner" length="15" />
+        </property>
+        <property name="sideLavMountingBracket" type="string">
+            <column name="side_lav_mounting_bracket" length="6" />
+        </property>
+        <property name="sideHoseCouplingBracket" type="string">
+            <column name="side_hose_coupling_bracket" length="6" />
+        </property>
+        <property name="groundingFlapBracket" type="string">
+            <column name="grounding_flap_bracket" length="6" />
+        </property>
+        <property name="powerPanelBracket" type="string">
+            <column name="power_panel_bracket" length="6" />
+        </property>
+        <property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="timestamp">
+            <column name="entry_time" length="29" />
+        </property>
+    </class>
+</hibernate-mapping>

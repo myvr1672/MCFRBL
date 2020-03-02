@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.ShellUnderframeSipTrans" table="shell_underframe_sip_tran" >
+	    <id name="shellAssetId" type="integer" >
+	    <column name="shell_asset_id" ></column>
+	    </id>
+	
+		<property name="underframeDocNo" type="string">
+			<column name="underframe_sip_doc_no" length="100"></column>
+		</property>
+		<property name="underframeShiftSelect" type="string">
+			<column name="underframe_sip_shift" length="10"></column>
+		</property>
+		<property name="underframeDate" type="date">
+			<column name="underframe_sip_date"></column>
+		</property>
+		 <property name="appDrawNoUnderframe" type="string">
+			<column name="drawing_no" length="50"></column>
+		</property> 
+				
+		   <property name="appLineNoUnderframe" type="string">
+			<column name="underframe_line_no" length="50"></column>
+		</property> 
+		<property name="appWiNoUnderframe" type="string">
+			<column name="wi_no" length="50"></column>
+		</property> 
+		
+		
+		<property name="itemsFitted" type="string">
+			<column name="observation_item_as_per_drawing_flag" length="6"></column>
+		</property> 
+		<property name="compAppWi" type="string">
+			<column name="observation_compliance_wi_flag" length="6" ></column>
+		</property> 
+		<property name="weldThroatLen" type="string">
+			<column name="observation_welding_throat_length_flag" length="6" ></column>
+		</property> 
+		<property name="tightScrew" type="string">
+			<column name="observation_tighting_of_screw_flag" length="6"></column>
+		</property> 
+		<property name="outerFaceOuterHead" type="string">
+			<column name="observation_outer_face_flag"  length="6"></column>
+		</property> 
+		<property name="conditionOfPlugWelding" type="string">
+			<column name="observation_condition_plug_welding" length="6" ></column>
+		</property> 
+		<property name="conditionOfConsole" type="string">
+			<column name="observation_condition_console" length="6" ></column>
+		</property> 
+		<property name="bodyBolster" type="integer">
+			<column name="distance_center_of_bodybolster" ></column>
+		</property> 
+		<property name="completeLenUndeframe" type="integer">
+			<column name="length_of_underframe" ></column>
+		</property> 
+		<property name="frntPartToFront" type="integer">
+			<column name="length_front_part " ></column>
+		</property> 
+		<property name="ufWidth" type="integer">
+			<column name="width_uf_outside" ></column>
+		</property> 
+		<property name="coveringPlate" type="integer">
+			<column name="covering_plate_torque" ></column>
+		</property> 
+		<property name="wedgeBolt" type="integer">
+			<column name="wedge_bolt_torque" ></column>
+		</property> 
+		<property name="waterTankMount" type="string">
+			<column name="watertank_mountingbkt_flag" ></column>
+		</property> 
+		<property name="frntPartBrktDist" type="integer">
+			<column name="distance_frontpart_bothside_bracket" ></column>
+		</property> 
+		<property name="distBwConsoleBrkt" type="integer">
+			<column name="distance_consolebracket_centerhub" ></column>
+		</property> 
+		<property name="footStepsDist" type="integer">
+			<column name="distance__footstep_bracket" ></column>
+		</property> 
+		<property name="suppMemTrough" type="string">
+			<column name="supporting_member_sheetwelding_flag" length="6" ></column>
+		</property> 
+		<property name="pillarMountChannel" type="string">
+			<column name="pillar_mounting_sheetwelding_flag" length="6"></column>
+		</property> 
+		<property name="distBwCurvedRoll" type="integer">
+			<column name="distance_curveroll_centerhub" ></column>
+		</property> 
+		<property name="grindWeldJoints" type="string">
+			<column name="grind_weldjoint_flag" length="8"></column>
+		</property> 
+		<property name="holesForDrawing" type="string">
+			<column name="holes_draining_water_flag" length="8" ></column>
+		</property> 
+		<property name="holesDrilled" type="string">
+			<column name="holes_drilled_underframe" length="8"></column>
+		</property> 
+		<property name="distBwCenterCenter" type="string">
+			<column name="distance_member_centre_centre" length="10" ></column>
+		</property> 
+		<property name="doorFixBrkt" type="string">
+			<column name="door_fix_bracket_level_flag" length="8" ></column>
+		</property> 
+		<property name="doorFixBrktOb" type="integer">
+			<column name="distance_door_fix_bracket" ></column>
+		</property> 
+		<property name="fitmentDimenBiotank" type="string">
+			<column name="fitment_biologicaltank_weldingconduction_flag"  length="6"></column>
+		</property> 
+		<property name="longDistBrktBrktpp" type="integer">
+			<column name="distance_logitudinal_bracket_pp" ></column>
+		</property> 
+		<property name="longDistBrktBrktnpp" type="integer">
+			<column name="distance_logitudinal_bracket_npp" ></column>
+		</property>
+		<property name="latDistBrktFrntpp" type="integer">
+			<column name="distance_lateral_bracket_frontpart_pp" ></column>
+		</property> 
+		<property name="latDistBrktFrntnpp" type="integer">
+			<column name="distance_lateral_bracket_frontpart_npp" ></column>
+		</property>
+		<property name="bioTankHoleDist" type="string">
+			<column name="distance_biotank_hole" length="20"></column>
+		</property> 
+		<property name="distCenCen" type="string">
+			<column name="distance_fueltank_mounting_centre" length="20"></column>
+		</property> 
+		<property name="genMmountScrew1" type="string">
+			<column name="distance_generator_screwing_piece" length="20"></column>
+		</property> 
+		<property name="genMmountScrew2" type="string">
+			<column name="gap_generator_screwing_piece" length="20" ></column>
+		</property> 
+		<property name="cbcUncoup" type="string">
+			<column name="cbc_uncoupling_hole_flag" length="15"></column>
+		</property> 
+		<property name="transfMount" type="string">
+			<column name="transformer_outer_hole" length="15" ></column>
+		</property> 
+		<property name="batteryBox" type="string">
+			<column name="batterybox_outer_hole" length="15" ></column>
+		</property> 
+		<property name="airBrakeModule" type="string">
+			<column name="airbrakemodule_outer_hole" length="15"></column>
+		</property> 
+		<property name="guideDistPP" type="string">
+			<column name="guidedistance_pp" length="15"></column>
+		</property> 
+		<property name="guideDistNPP" type="string">
+			<column name="guidedistance_npp" length="15" ></column>
+		</property> 
+		<property name="twinePipHoleObs" type="string">
+			<column name="twine_pipe_hole" length="15" ></column>
+		</property> 
+		<property name="fibaBktAirPro" type="string">
+			<column name="fiba_bkt" length="15"></column>
+		</property> 
+		<property name="reserBktAirPro" type="string">
+			<column name="reservoir_tank_bkt"  length="15"></column>
+		</property>
+		<property name="distanceCrossMemberpp1" type="integer">
+			<column name="distance_cross_member_pp1" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp2" type="integer">
+			<column name="distance_cross_member_pp2" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp3" type="integer">
+			<column name="distance_cross_member_pp3" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp4" type="integer">
+			<column name="distance_cross_member_pp4" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp5" type="integer">
+			<column name="distance_cross_member_pp5" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp6" type="integer">
+			<column name="distance_cross_member_pp6" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp7" type="integer">
+			<column name="distance_cross_member_pp7" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp8" type="integer">
+			<column name="distance_cross_member_pp8" ></column>
+		</property> 
+		<property name="distanceCrossMemberpp9" type="integer">
+			<column name="distance_cross_member_pp9" ></column>
+		</property>  
+		<property name="distanceCrossMemberpp10" type="integer">
+			<column name="distance_cross_member_pp10" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp1" type="integer">
+			<column name="distance_cross_member_npp1" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp2" type="integer">
+			<column name="distance_cross_member_npp2" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp3" type="integer">
+			<column name="distance_cross_member_npp3" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp4" type="integer">
+			<column name="distance_cross_member_npp4" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp5" type="integer">
+			<column name="distance_cross_member_npp5" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp6" type="integer">
+			<column name="distance_cross_member_npp6" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp7" type="integer">
+			<column name="distance_cross_member_npp7" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp8" type="integer">
+			<column name="distance_cross_member_npp8" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp9" type="integer">
+			<column name="distance_cross_member_npp9" ></column>
+		</property>  
+		<property name="distanceCrossMembernpp10" type="integer">
+			<column name="distance_cross_member_npp10" ></column>
+		</property>  
+		<property name="obserVal" type="string">
+			<column name="distance_uf_pillar" length="20"></column>
+		</property>   
+		<property name="detlOfModf" type="string">
+			<column name="details_of_modification" length="500"></column>
+		</property>  
+		<property name="detlOfTrialItems" type="string">
+			<column name="details_of_trial" length="500"></column>
+		</property>  
+		<property name="rmk" type="string">
+			<column name="remarks" length="500"></column>
+		</property>
+		<property name="underframeTestingStatus" type="string">
+			<column name="underframe_testing_status" length="500"></column>
+		</property>
+		
+		<property name="entryBy" type="string">
+            <column name="entry_by" length="15" />
+        </property>
+        <property name="entryTime" type="date">
+            <column name="entry_time" />
+        </property>
+		     
+	</class>
+</hibernate-mapping>

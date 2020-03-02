@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.ShiftRoasterHistory" table="shift_roaster_history" >
+		
+		<composite-id>
+		<key-property name="empId" type="java.lang.String">
+			<column name="emp_id" length="10"></column>
+			
+		</key-property>
+		<key-property name="validityFrom" type="date">
+			<column name="validity_from" ></column>
+		</key-property>	
+		</composite-id>
+		<property name="shiftId" type="java.lang.String">
+			<column name="shift_id" length="15"></column>
+		</property>
+			
+		<property name="validityTo" type="date">
+			<column name="validity_to"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

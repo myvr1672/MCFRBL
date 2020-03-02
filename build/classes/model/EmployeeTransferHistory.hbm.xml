@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.EmployeeTransferHistory" table="employee_transfer_history" >
+
+	<composite-id>
+	<key-property name="empNo" type="java.lang.String">
+			<column name="emp_no" length="15"></column>
+		</key-property>
+	<key-property name="sectionId" type="java.lang.String">
+			<column name="section_id" length="20"></column>
+		</key-property>	
+		
+<key-property name="validFrom" type="date" >
+		<column name="valid_from" length="50"></column>
+		</key-property>
+	</composite-id>	
+		
+  
+		<property name="validTo" type="date">
+			<column name="valid_to" length="20"></column>
+		</property>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.ExtrPaintFinalSipTran" table="extr_paint_final_sip_tran" >
+		<id name="paintAssetId" type="java.lang.Integer">
+			<column name="paint_asset_id"></column>
+		</id>
+		<property name="extrPaintSipDocNo" type="string">
+			<column name="extr_paint_sip_doc_no" length="20"></column>
+		</property>
+		<property name="extrPaintSipVersNo" type="string">
+			<column name="extr_paint_sip_vers_no" length="20"></column>
+		</property>
+		<property name="extrPaintSipDate" type="date">
+			<column name="extr_paint_sip_date"></column>
+		</property>
+		<property name="extrPaintSipStage1SurfPrep" type="string">
+			<column name="extr_paint_sip_stage1_surf_prep" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage1SurfPrepMake" type="string">
+			<column name="extr_paint_sip_stage1_surf_prep_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage1SurfPrepDate" type="date">
+			<column name="extr_paint_sip_stage1_surf_prep_date"></column>
+		</property>
+		<property name="extrPaintSipStage1AppPrimer" type="string">
+			<column name="extr_paint_sip_stage1_app_primer" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage1AppPrimerMake" type="string">
+			<column name="extr_paint_sip_stage1_app_primer_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage1AppPrimerDate" type="date">
+			<column name="extr_paint_sip_stage1_app_primer_date"></column>
+		</property>
+		<property name="extrPaintSipStage2AppWall" type="string">
+			<column name="extr_paint_sip_stage2_app_wall" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage2AppWallMake" type="string">
+			<column name="extr_paint_sip_stage2_app_wall_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage2AppWallDate" type="date">
+			<column name="extr_paint_sip_stage2_app_wall_date"></column>
+		</property>
+		<property name="extrPaintSipStage2RubFiller" type="string">
+			<column name="extr_paint_sip_stage2_rub_filler" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage2RubFillerMake" type="string">
+			<column name="extr_paint_sip_stage2_rub_filler_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage2RubFillerDate" type="date">
+			<column name="extr_paint_sip_stage2_rub_filler_date"></column>
+		</property>
+		<property name="extrPaintSipStage3AppRub" type="string">
+			<column name="extr_paint_sip_stage3_app_rub" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage3AppRubMake" type="string">
+			<column name="extr_paint_sip_stage3_app_rub_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage3AppRubDate" type="date">
+			<column name="extr_paint_sip_stage3_app_rub_date"></column>
+		</property>
+		<property name="extrPaintSipStage3AppSurf" type="string">
+			<column name="extr_paint_sip_stage3_app_surf" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage3AppSurfMake" type="string">
+			<column name="extr_paint_sip_stage3_app_surf_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage3AppSurfDate" type="date">
+			<column name="extr_paint_sip_stage3_app_surf_date"></column>
+		</property>
+		<property name="extrPaintSipStage3RubSurf" type="string">
+			<column name="extr_paint_sip_stage3_rub_surf" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage3RubSurfMake" type="string">
+			<column name="extr_paint_sip_stage3_rub_surf_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage3RubSurfDate" type="date">
+			<column name="extr_paint_sip_stage3_rub_surf_date"></column>
+		</property>
+		<property name="extrPaintSipStage3AppCoat" type="string">
+			<column name="extr_paint_sip_stage3_app_coat" length="50"></column>
+		</property>
+		<property name="extrPaintSipStage3AppCoatMake" type="string">
+			<column name="extr_paint_sip_stage3_app_coat_make" length="20"></column>
+		</property>
+		<property name="extrPaintSipStage3AppCoatDate" type="date">
+			<column name="extr_paint_sip_stage3_app_coat_date"></column>
+		</property>
+		<property name="extrPaintSipGrosValuSideWall" type="double">
+			<column name="extr_paint_sip_gros_valu_side_wall"></column>
+		</property>
+		<property name="extrPaintSipGrosValuEndWall" type="double">
+			<column name="extr_paint_sip_gros_valu_end_wall"></column>
+		</property>
+		<property name="extrPaintFinalDocNo" type="string">
+			<column name="extr_paint_final_doc_no" length="20"></column>
+		</property>		
+		<property name="extrPaintFinalVersNo" type="string">
+			<column name="extr_paint_final_vers_no" length="20"></column>
+		</property>		
+		<property name="extrPaintFinalDate" type="date">
+			<column name="extr_paint_final_date"></column>
+		</property>		
+		<property name="extrPaintFinalSurfDefectFreeFlag" type="string">
+			<column name="extr_paint_final_surf_defect_free_flag" length="5"></column>
+		</property>		
+		<property name="extrPaintFinalDefectObservSideWallFlag" type="string">
+			<column name="extr_paint_final_defect_observ_side_wall_flag" length="5"></column>
+		</property>		
+		<property name="extrPaintFinalDefectObservEndWallFlag" type="string">
+			<column name="extr_paint_final_defect_observ_end_wall_flag" length="5"></column>
+		</property>		
+		<property name="extrPaintFinalDefectObservEndRoofFlag" type="string">
+			<column name="extr_paint_final_defect_observ_roof_flag" length="5"></column>
+		</property>		
+		<property name="extrPaintFinalFinishSurfFlag" type="string">
+			<column name="extr_paint_final_finish_surf_flag" length="20"></column>
+		</property>		
+		<property name="extrPaintFinalAdhensionSurfFlag" type="string">
+			<column name="extr_paint_final_adhension_surf_flag" length="20"></column>
+		</property>		
+		<property name="extrPaintFinalGrosValuSideWall" type="double">
+			<column name="extr_paint_final_gros_valu_side_wall"></column>
+		</property>		
+		<property name="extrPaintFinalGrosValuEndWall" type="double">
+			<column name="extr_paint_final_gros_valu_end_wall"></column>
+		</property>		
+		<property name="extrPaintFinalClearFlag" type="string">
+			<column name="extr_paint_final_clear_flag" length="20"></column>
+		</property>				
+	</class>
+</hibernate-mapping>

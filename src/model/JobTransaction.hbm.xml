@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.JobTransaction" table="job_transaction" >
+		<id name="jobSeqNo" type="java.lang.Integer">
+			<column name="job_seq_no"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="jobDescription" type="java.lang.String">
+			<column name="job_description" length="150"></column>
+		</property>
+		<property name="shop" type="java.lang.String">
+			<column name="shop" length="20"></column>
+		</property>		
+		
+		<property name="section" type="java.lang.String">
+			<column name="section" length="25"></column>
+		</property>
+		<property name="subSection" type="java.lang.String">
+			<column name="sub_section" length="20"></column>
+		</property>
+		<property name="qty" type="java.lang.Float">
+			<column name="qty"></column>
+	</property>
+		<property name="unit" type="java.lang.String">
+			<column name="unit" length="10"></column>
+		</property>	
+		<property name="startDate" type="date">
+			<column name="start_date"></column>
+		</property>	
+		<property name="expectedCompletionDate" type="date">
+			<column name="expected_completion_date"></column>
+		</property>	
+		<property name="completionDate" type="date">
+			<column name="completion_date"></column>
+		</property>	
+		<property name="status" type="java.lang.String">
+			<column name="status" length="15"></column>
+		</property>	
+		<property name="jobId" type="java.lang.String">
+			<column name="job_id" length="15"></column>
+		</property>
+		<property name="activityId" type="java.lang.String">
+			<column name="activity_id" length="10"></column>
+		</property>
+		<property name="inspectionStatus" type="java.lang.String">
+			<column name="inspection_status" length="10"></column>
+		</property>	
+		<property name="remarks" type="java.lang.String">
+			<column name="remarks" length="250"></column>
+		</property>
+		<property name="machineId" type="java.lang.Integer">
+			<column name="machine_id"></column>
+		</property>
+	</class>
+</hibernate-mapping>

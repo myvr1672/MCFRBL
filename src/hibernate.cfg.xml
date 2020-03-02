@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+  <property name="hibernate.connection.username">postgres</property>
+  <property name="hibernate.connection.password">postgress</property>
+  <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/MCFRBL</property>
+  
+  <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  <property name="hibernate.default_schema">public</property>  
+  <property name="show_sql">false</property>
+  <property name="format_sql">true</property> 
+   <mapping resource="model/Abnormality.hbm.xml"/> 
+   <mapping resource="model/User.hbm.xml"/>
+    <mapping resource="model/SubStagesMaster.hbm.xml"/>
+   <mapping resource="model/IrwisHrPltCalidMapM.hbm.xml"/> 
+   <mapping resource="model/IrwisHrPltcalM.hbm.xml"/>
+   <mapping resource="model/IrwisHrPltLieuCalM.hbm.xml"/> 
+   <mapping resource="model/IrwisHrPubhodyM.hbm.xml"/>
+   <mapping resource="model/AbnormalityMaster.hbm.xml"/>
+   <mapping resource="model/ShellProgress.hbm.xml"/>
+   <mapping resource="model/ActivityMaster.hbm.xml"/>
+   <mapping resource="model/ActivityTransaction.hbm.xml"/>
+  <mapping resource="model/WheelsetTransaction.hbm.xml"/> 
+   <mapping resource="model/BogiesetTransaction.hbm.xml"/>
+   <mapping resource="model/ShellTransaction.hbm.xml"/> 
+     <mapping resource="model/PaintTransaction.hbm.xml"/> 
+    <mapping resource="model/FurnishingTransaction.hbm.xml"/> 
+    <mapping resource="model/MaterialShortage.hbm.xml"/>
+<mapping resource="model/MaterialMaster.hbm.xml"/>
+     <mapping resource="model/FinishingTransaction.hbm.xml"/> 
+     <mapping resource="model/CoachTurnoutTransaction.hbm.xml"/> 
+     <mapping resource="model/CoachOutAfterRackFormation.hbm.xml"/>
+      <mapping resource="model/MachineMaster.hbm.xml"/>
+      <mapping resource="model/MachineScheduleTransaction.hbm.xml"/>
+      <mapping resource="model/SheetmetalMaster.hbm.xml"/> 
+      <mapping resource="model/MachineSpareLinking.hbm.xml"/>
+      <mapping resource="model/SheetmetalTransaction.hbm.xml"/>
+<!--       <mapping resource="model/MachineBreakdown.hbm.xml"/> -->
+       <mapping resource="model/Asset_master2.hbm.xml"/>
+       <mapping resource="model/Asset_master.hbm.xml"/>
+<!--         <mapping resource="model/Emp_master.hbm.xml"/> -->
+        <mapping resource="model/EmployeeMaster.hbm.xml"/>
+          <mapping resource="model/EmployeeSection.hbm.xml"/>
+        <mapping resource="model/EmployeeTransferHistory.hbm.xml"/>
+        <mapping resource="model/EmployeeJobMaster.hbm.xml"/>
+        <mapping resource="model/JobTransaction.hbm.xml"/>
+        <mapping resource="model/ShiftRoasterTransaction.hbm.xml"/>
+        <mapping resource="model/ShiftRoasterHistory.hbm.xml"/>
+       <mapping resource="model/JobActivityMaster.hbm.xml"/>
+       <mapping resource="model/machine_operation.hbm.xml"/>
+       <mapping resource="model/MachineBreakdown.hbm.xml"/>
+       <mapping resource="model/FurnishingStageMaster.hbm.xml"/>
+        <mapping resource="model/TestingMobileClearance.hbm.xml"/>
+        <mapping resource="model/MachineActivityScheduleLinking.hbm.xml"/>
+         <mapping resource="model/AddAmcAgency.hbm.xml"/>
+         <mapping resource="model/MachineFIRMaster.hbm.xml"/>
+        <mapping resource="model/SafetyInstructionMaster.hbm.xml"/>
+        <mapping resource="model/MachineScheduleActivity.hbm.xml"/>
+         <mapping resource="model/MachineAction.hbm.xml"/>
+         <mapping resource="model/MachineSpare.hbm.xml"/>
+         <mapping resource="model/MachineFailureHistory.hbm.xml"/>
+          <mapping resource="model/SpareChangeInSchedule.hbm.xml"/>
+           <mapping resource="model/SpareMaster.hbm.xml"/>
+             <mapping resource="model/SafetyTransaction.hbm.xml"/>
+    	 <mapping resource="model/MachineList.hbm.xml"/>
+    	 <mapping resource="model/MachinePerformAction.hbm.xml"/>
+ 			<mapping resource="model/GantChartExample.hbm.xml"/>
+ 			<mapping resource="model/SpareChangeInMachinefailure.hbm.xml"/>
+ 			<mapping resource="model/SupplierDetails.hbm.xml"/>
+         <mapping resource="model/ShellDefectsTransaction.hbm.xml"/>
+          <mapping resource="model/ShellDefectsMaster.hbm.xml"/>
+          <mapping resource="model/WheelSipTransaction.hbm.xml"/>
+          <mapping resource="model/BogieStaticSipTran.hbm.xml"/>
+          <mapping resource="model/BogieFinalSipTran.hbm.xml"/>
+          <mapping resource="model/IntrPaintFinalSipTran.hbm.xml"/>
+          <mapping resource="model/ExtrPaintFinalSipTran.hbm.xml"/>  
+          <mapping resource="model/ShellSideWallSipTran.hbm.xml"/>
+          <mapping resource="model/ShellRoofTransaction.hbm.xml"/>
+          <mapping resource="model/ShellEndwallSipTran.hbm.xml"/>
+<!--             <mapping resource="model/ComponentTransaction.hbm.xml"/> -->
+             <mapping resource="model/ShellStage1SipTran.hbm.xml"/>
+             <mapping resource="model/ShellStage2Sip.hbm.xml"/>
+            <mapping resource="model/ShellStage3SipTran.hbm.xml"/>
+             <mapping resource="model/ShellStage4SipTran.hbm.xml"/>
+             <mapping resource="model/ShellUnderframeSipTrans.hbm.xml"/>
+             <mapping resource="model/ShellLavSideWallSipTran.hbm.xml"/>
+             <mapping resource="model/ShellSideRoofShellCombineSipTran.hbm.xml"/>
+             <mapping resource="model/ShellFinalSipTran.hbm.xml"/>
+             <mapping resource="model/ShellCheckListSip.hbm.xml"/>   
+              <mapping resource="model/PlumbingTestingTransaction.hbm.xml"/>
+               <mapping resource="model/ShowerTestingTransaction.hbm.xml"/>
+               <mapping resource="model/BiotankTestingTransaction.hbm.xml"/>
+               <mapping resource="model/AirbrakeTestingTransaction.hbm.xml"/>
+               
+                <mapping resource="model/CctvTestingTransaction.hbm.xml"/>
+                 <mapping resource="model/BuffercbcheightTestingTransaction.hbm.xml"/>
+               <mapping resource="model/FibaTestingTransaction.hbm.xml"/>	
+ </session-factory>
+</hibernate-configuration>
+

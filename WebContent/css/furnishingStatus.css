@@ -1,0 +1,195 @@
+input[type=text], select {
+	
+  
+  padding: 5px 10px;
+	
+  margin: 4px 0;
+	
+  display: inline-block;
+	
+  border: 1px solid #ccc;
+	
+  border-radius: 4px;
+	
+  box-sizing: border-box;
+	
+
+}
+
+
+
+table {
+	
+	 width:110%;
+	
+
+}
+
+
+.divTable
+{
+	
+	padding-top:20px;
+	
+	padding-bottom:10px;
+	
+	padding-left:20px;
+	
+	width:110%;
+	
+	text-align:left;
+	
+
+}
+
+
+
+.divTable:nth-child(odd){
+	
+	
+	
+	 width:110%;
+	
+	
+	 
+	background-color: #f2f2f2;
+	
+	
+}
+
+
+
+.divTable:nth-child(even){
+	
+	
+background-color: lightgrey
+
+}
+.failed tr:nth-child(even){
+    background-color:lavender
+}
+
+th {
+	
+	
+background-color: SlateBlue;
+	
+	text-align:left;
+	
+	
+    padding-left:15px;
+	
+	  color: white;
+	
+	  
+}
+
+
+
+#list ul {
+	
+	
+text-align:center;
+	
+	
+list-style-type: none;
+	
+	
+ width:110%;
+	
+overflow: hidden;
+	
+  background-color: #333;
+	
+
+}
+
+
+#list li {
+	
+	 float: left;
+	
+	text-align:center;
+	
+	
+}
+
+
+
+#list li a {
+	
+	  display: block;
+	
+color: white;
+	
+  text-align: center;
+	
+   padding: 10px 16px;
+	
+	 text-decoration: none;
+	
+
+}
+
+
+#list li a:hover {
+	
+	
+background-color: #111;
+	
+
+}
+
+
+
+.submitBtn {
+	
+	  background-color:#5555;
+	
+	border: none;
+	
+color: white;
+	
+	  font-size: 16px;
+	
+	text-align: center;
+	
+text-decoration: none;
+	
+	  display: inline-block;
+	
+margin: 4px 2px;
+	
+	  -webkit-transition-duration: 0.4s;
+	
+transition-duration: 0.4s;
+	
+	  cursor: pointer;
+	
+	  border-radius: 4px;
+	
+
+}
+
+
+.submitBtn {
+	
+	
+background-color: white;
+	
+color: black;
+	
+/*border: 2px solid darkgray;
+	*/
+	
+}
+
+
+.submitBtn:hover {
+	
+	 background-color: #5555;
+	
+	 color: white;
+	
+
+}

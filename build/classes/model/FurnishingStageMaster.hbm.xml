@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="beans.FurnishingStageMaster" table="furnishing_stage_master" >
+
+	<composite-id>
+	<key-property name="substageId" type="java.lang.String">
+			<column name="substage_id" length="15"></column>
+		</key-property>
+	<key-property name="coachType" type="java.lang.String">
+			<column name="coach_type" length="15"></column>
+		</key-property>	
+	</composite-id>	
+  <property name="substageDescription" type="java.lang.String">
+			<column name="substage_description" length="75"></column>
+		</property>
+		<property name="previousStageId" type="java.lang.String">
+			<column name="previous_stage_id" length="100"></column>
+		</property>
+		<property name="nextStageId" type="java.lang.String">
+			<column name="next_stage_id" length="100"></column>
+		</property>
+		<property name="stageSequence" type="integer">
+			<column name="stage_sequence"></column>
+		</property>
+	</class>
+</hibernate-mapping>

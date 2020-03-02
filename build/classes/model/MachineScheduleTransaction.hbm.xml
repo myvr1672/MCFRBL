@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.MachineScheduleTransaction" table="machine_schedule_transaction">
+
+<id name="scheduleId" type="java.lang.Integer">
+			<column name="schedule_id"></column>
+			<generator class="increment"></generator>
+		</id>
+            <property name="machineId" type="java.lang.Integer">
+               <column name="machine_id"/> 
+             </property>
+   
+        <property name="scheduleDate" type="date">
+            <column name="schedule_date" />
+        </property>
+        
+         <property name="scheduleType" type="string">
+               <column name="schedule_type" length="10"/> 
+             </property>
+              <property name="scheduleSequence" type="java.lang.Integer">
+               <column name="schedule_sequence"/> 
+             </property>
+         <property name="scheduleCompletedFlag" type="string">
+            <column name="schedule_completed_flag" length="1" />
+        </property>
+         <property name="scheduleCompletedDate" type="date">
+            <column name="schedule_completion_date"/>
+        </property>
+       
+              <property name="dispatchDateForSchedule" type="date">
+            <column name="dispatchDate_for_schedule" />
+        </property>
+        
+        <property name="actionTaken" type="string">
+            <column name="action_taken" length="250" />
+        </property>
+        
+        <property name="remarks" type="string">
+            <column name="remarks" length="250" />
+        </property>
+      
+    </class>
+</hibernate-mapping>

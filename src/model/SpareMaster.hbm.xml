@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<class name="beans.SpareMaster" table="spare_master" >
+		<id name="spareId" type="java.lang.Integer">
+			<column name="spare_id" ></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="spareDescription" type="java.lang.String">
+			<column name="spare_description" length="250"></column>
+		</property>
+		<property name="drawingNo" type="java.lang.String">
+			<column name="drawing_no" length="25"></column>
+		</property>
+		<property name="selfLife" type="java.lang.Integer">
+			<column name="self_life"></column>
+		</property>
+		<property name="unitPrice" type="java.lang.Integer">
+			<column name="unit_price"></column>
+		</property>
+		<property name="entryDate" type="timestamp">
+			<column name="entry_date" ></column>
+		</property>
+		<property name="entryBy" type="java.lang.String">
+			<column name="entry_by"  length="25"></column>
+		</property>
+
+	</class>
+</hibernate-mapping>

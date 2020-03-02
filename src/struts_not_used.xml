@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	
+
+	
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+    <include file= "/struts/config/struts_definitions.xml"/>
+	
+	
+	<package name="default" extends="struts-default, json-default"> 
+
+<!-- 		below action is to represent under development pages -->
+		
+				
+				<result-types>
+	        		<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+	    		</result-types>
+    	
+					 <interceptors>
+			            <interceptor name="loginInterceptor" class="common.AuthenticationInterceptor" />
+			          	<interceptor name="jsonInterceptor" class="org.apache.struts2.json.JSONInterceptor" />
+			          	
+			          	<interceptor-stack name="defaultStackModified">  <!-- name doesn't override existing defaultStack-->
+					        <interceptor-ref name="defaultStack"/>       <!-- include the defaultStack this way--> 
+					         <interceptor-ref name="jsonInterceptor"/>
+					         <interceptor-ref name="loginInterceptor"/>
+					    </interceptor-stack>
+			      	 </interceptors>
+		      	 
+        
+<!--   below line uncommented to enable interceptor -->
+        <default-interceptor-ref name="defaultStackModified"></default-interceptor-ref>
+        			<global-results>
+<!-- 			   			 <result name="authentication_error" type="redirect">http://10.60.201.81:8080/roams</result> -->
+						<result name="authentication_error" type="redirect">/../MCFRBL/</result>
+			   			 <!--              <result name="global_error">/error.jsp</result> -->
+			        </global-results>
+			
+			        <global-exception-mappings>
+			            <exception-mapping exception="java.lang.Exception" result="error"/>
+			        </global-exception-mappings>
+			        
+			        
+			        <action name="under_construction">          			
+           				<result type="tiles" >/under_construction.tiles</result>
+       				</action>
+				
+			        
+		</package>	
+	    
+
+		
+		
+<constant name="struts.action.excludePattern" value="/frameset*,/run*,/preview*,/download*,/parameter*,/document*,/output*,/extract*,/RetrieveImage,/myServlet,/emp_dp_add_do,/http*,/http://10.60.201.247*,//10.60.201.247*,/rest/[a-zA-Z_0-9]*/[a-zA-Z_0-9]* "/>	
+
+</struts>
