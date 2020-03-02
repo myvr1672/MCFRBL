@@ -186,7 +186,7 @@ $(document).ready(function() {
 	  //end: retrieving axle number in dropdown option
 
 	
-	//start: retrieving axle number in dropdown option
+	//start: retrieving axle number in dropdown option.
      var activityDesc=[]; 
 
 	var l=1;
